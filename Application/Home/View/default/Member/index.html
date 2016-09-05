@@ -1,0 +1,63 @@
+<extend name="Base/MemberCommon" />
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css"/>
+	
+</block>
+<block name="pageTitle"><div class="nright">会员中心</div></block>
+<block name="body">
+	<div class="content">
+
+		<div class="content_1">
+			<div class="content_1c">
+				<include file="MemberPublic/nav"/>
+				<div class="right">
+					<div class="right1">会员信息</div>
+					<ul class="right2">
+						<li><span class="s1">{:get_nickname()}</span> 您好：</li>
+						<li>欢迎访问中国不锈钢现货网，在您浏览本网过程中，有任何问题或者建议，请随时跟我们联系。</li>
+						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />会员级别：您是<span class="s1">VIP</span>会员，还有<span class="s1">138</span>天到期</li>
+						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />登录状态：今天您第<span class="s1">1</span>次登录，总共登录<span class="s1">{$loginTimes}</span>次，上次登录的<span class="s1">IP</span>是 {:long2ip($lastIP)}</li>
+					</ul>
+
+					<div class="right3">
+						<span>尊敬的会员：</span>
+						<p>为了给广大不锈钢行业用户一个良好的平台环境，请不要发布虚假的库存信息。即日起，本网工作人员将不定期的监督抽查所有会员的库存，若经本站工作人员提醒后仍不改正，将封号处理！</p>
+					</div>
+					<div class="right4">
+						<ul class="r1">
+							<li>公司名称</li>
+							<li style="letter-spacing:8px;">联系人</li>
+							<li style="letter-spacing:26px;">电话</li>
+							<li style="letter-spacing:26px;">传真</li>
+						</ul>
+						<ul class="r2">
+							<li>温州市龙泰管业有限公司</li>
+							<li>王先生</li>
+							<li> 18057753538 18057753538 </li>
+							<li>057789881156</li>
+						</ul>
+						<ul class="r1">
+							<li>联系地址</li>
+							<li style="letter-spacing:26px;">邮编</li>
+							<li style="letter-spacing:26px;">网址</li>
+							<li style="letter-spacing:26px;">邮箱</li>
+						</ul>
+						<ul class="r2">
+							<li>温州市龙湾区永兴工业区</li>
+							<li></li>
+							<li></li>
+							<li>273336521@qq.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear">
+
+				</div>
+			</div>
+		</div>
+
+</block>
+<block name="script">
+	<script src="__JS__/jquery.validate.js"></script>
+	
+</block>

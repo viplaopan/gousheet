@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/overall.css"/>
+<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="kindeditor/plugins/code/prettify.js"></script>
+	<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="newscontent"]', {
+				cssPath : 'kindeditor/plugins/code/prettify.css',
+				uploadJson : 'kindeditor/php/upload_json.php',
+				fileManagerJson : 'kindeditor/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=example]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+    
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="top">
+<div class="nav">
+<ul>
+<li><a href="#">首页</a></li>
+<li>
+<a href="#"><div style=" float:left">搜索现货</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a>
+</li>
+<li><a href="#"><div style=" float:left">资讯行情</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a></li>
+<li><a href="#">加工定做</a></li>
+<li><a href="#">求购信息</a></li>
+<li><a href="#">人才招聘</a></li>
+<li><a href="#">货运物流</a></li>
+<li><a href="#">商务合作</a></li>
+<li class="user">
+	<div class="us">
+    	<div class="ico"><img src="images/user.png" /></div>
+    	<div class="phone">18057753538</div>
+        <div style=" color:#5a5a5a">|</div>
+        <div class="exit">安全退出</div> 
+    </div>
+</li>
+
+</ul>
+</div>
+
+
+<div class="navdown">
+	<div class="nleft"><img src="images/gs_login.png" /></div>
+    <div class="nright"  style="margin-left:38px">会员中心</div>
+</div>
+
+
+
+<div class="content">
+
+<style>.content .content_1 .content_1c .left ul li:hover{width:165px; height:59px; display:block; line-height:59px; padding-left:45px; font-size:14px; color:#333333; background-color:#FFF;}</style>
+  <div class="content_1">
+  	<div class="content_1c">
+        <div class="left">
+            <ul>
+             <li><a href="personal.html">会员中心首页</a></li>
+             <li><a href="basics.html">基本资料</a></li>
+             <li><a href="field.html">实地认证</a></li>
+             <li><a href="manage.html">管理库存</a></li>
+             <li><a href="recruit.html">人才招聘</a></li>
+             <li><a>我的商铺</a></li>
+             <li><a href="cpwd.html">修改密码</a></li>
+             <li><a>退出登录</a></li>
+           </ul>
+        </div> 
+        <div class="right">
+            <div class="right1">基本资料</div>
+           <ul class="box_r">
+            	<li class="ii">
+                	<div>
+                    	<a href="basics.html">公司信息</a>
+               			<a href="contact.html">联系方式</a>
+                		<a href="home.html">主页图片</a>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="ii">
+                	<label>用户名</label><input name="" type="text"   class="input"/><span class="panduan" style="display:none">----判断信息----</span>
+                </li>
+                <li class="ii">
+                	<label>公司全称</label><input name="" type="text" class="input"/><span class="panduan" style="display:none">----判断信息----</span>
+                </li>
+                <li class="ii">
+                	<label>公司简称</label><input name="" type="text" class="input"/><span class="panduan" style="display:none">----判断信息----</span>
+                </li>
+                <li class="ii">
+                	<label>仓库区</label><select name=""  class="select">
+                    					  	<option selected='selected' >浙江省</option>	
+                                          </select>
+                                          <select name=""  class="select">
+                    					  	<option selected='selected' >温州</option>	
+                                          </select>
+                </li>
+                <li class="ii">
+                	<label>仓库地址</label><input name="" type="text"   class="input"/><span class="panduan" style="display:none">----判断信息----</span>
+                </li>
+                 <li class="ii">
+                <label>经营模式</label>
+                <div  class="box_list">
+                    <input name="" type="radio" value="" checked  class="radio"/><span class="p">生产销售型
+</span> 
+                    <input name="" type="radio"  class="radio"/><span class="p">经销批发型
+</span>
+                    <input name="" type="radio"  class="radio"/><span class="p">贸易型</span>
+                    <input name="" type="radio"  class="radio"/><span class="p">门店型
+</span>
+                     <input name="" type="radio"  class="radio"/><span class="p">服务型</span>
+                    <input name="" type="radio"  class="radio" /><span class="p">政府或其他机构
+	</span>
+                </div>
+                </li>
+                <li class="ii">
+                	<label>主营业务</label>
+                    <div class="box_list">
+                    <input name="" type="checkbox" value=""  class="checkbox" checked="checked"/><span class="p">钢管</span> 
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">型材</span>
+                   	<input name="" type="checkbox" value=""  class="checkbox"/><span class="p">管件</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">法兰</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">阀门</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">板卷</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">带材</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">制品</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">原材料</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">机械设备</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">废品</span>
+                    <input name="" type="checkbox" value=""  class="checkbox"/><span class="p">其它</span>
+                	</div>
+                </li>
+                <li class="ii">
+                	<label>公司所在地</label><select name="" class="select" >
+                    					  		<option selected='selected'>浙江省</option>		
+                                           </select>
+                                           <select name="" class="select" >
+                    					  		<option selected='selected'>温州</option>		
+                                           </select>
+                </li>
+                <li class="ii">
+                	<label>详细地址</label><input name="" type="text"   class="input"/>
+                </li>
+                <li class="ii">
+                	<label>公司网站</label><input name="" type="text"   class="input"/>
+                </li>
+                <li class="ii">
+                	<label>公司简介</label><textarea name="newscontent" id="newscontent" class="txt_con" style="width:650px; min-height:220px;"></textarea>
+                </li>
+                 <li class="tishi">
+                	<p>最多1000字，您还可以输入<span>781</span>字</p>
+                </li>
+               	<li class="ii">
+                	<label></label><input name="" type="submit"  value="提交信息"  class="bt"/></li>
+             
+            </ul>
+            
+  
+        </div>
+         <div class="clear">
+    </div>
+  </div>
+  </div>
+  <div class="foot">
+    	<div class="f">
+            <div class="fleft">
+            	<div class="fup">
+                	<div class="s1"><img src="images/dh_ice.png" /></div>
+                    <div class="s2">客服热线<span>(08:30-17:30)</span></div>
+            	</div>
+                <div class="fdonw">0577-89881176</div>
+            </div>
+            <div class="fright">
+            	<ul class="r1">
+                	<li><a>关于我们</a><div>|</div></li>
+                    <li><a>法律声明</a><div>|</div></li>
+                    <li><a>人才招聘</a><div>|</div></li>
+                    <li><a>投资洽谈</a><div>|</div></li>
+                    <li><a>联系我们</a><div>|</div></li>
+                    <li><a>常见问题</a></li>
+                </ul>
+                <div class="r2">
+                <div class="p">Copyright © 2013 - 2019 gousteel.com</div>
+                <div class="p">购钢现货网版权所有</div>
+                <div class="p">浙ICP备12008543号-2</div>
+                </div>
+                <div class="r3">
+                	<img src="images/110.png"  class="img1"/>
+                   	<img src="images/kxwz.png" class="img1" />
+                </div>
+            </div>
+        </div>
+    </div>		
+</div>
+</div>
+</body>
+</html>

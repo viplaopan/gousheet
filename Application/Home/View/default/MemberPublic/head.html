@@ -1,0 +1,17 @@
+<php>
+	$map['b.status'] = 1;
+	$map['b.type'] = 1;
+	$map['b.path'] = MODULE_NAME."/".CONTROLLER_NAME."/".ACTION_NAME;
+	$advs = D("Adv")->join('__ADV_POS__ as b ON __ADV__.pos_id = b.id','LEFT')->where($map)->select();
+	$advlist = array();
+	foreach($advs as $v){
+		$advlist[$v['name']] = $v;
+	}
+</php>
+<meta charset="UTF-8">
+<include file="Public/seo"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+<block name="style"></block>
+{:hook('pageHeader')}

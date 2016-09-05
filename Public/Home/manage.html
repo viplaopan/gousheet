@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/overall.css"/>
+<link rel="stylesheet" type="text/css" href="css/layer.css"/>
+<script language="javascript" src="js/layer.js"></script>
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="top">
+<div class="nav">
+<ul>
+<li><a href="#">首页</a></li>
+<li>
+<a href="#"><div style=" float:left">搜索现货</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a>
+</li>
+<li><a href="#"><div style=" float:left">资讯行情</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a></li>
+<li><a href="#">加工定做</a></li>
+<li><a href="#">求购信息</a></li>
+<li><a href="#">人才招聘</a></li>
+<li><a href="#">货运物流</a></li>
+<li><a href="#">商务合作</a></li>
+<li class="user">
+	<div class="us">
+    	<div class="ico"><img src="images/user.png" /></div>
+    	<div class="phone">18057753538</div>
+        <div style=" color:#5a5a5a">|</div>
+        <div class="exit">安全退出</div> 
+    </div>
+</li>
+
+</ul>
+</div>
+
+
+<div class="navdown">
+	<div class="nleft"><img src="images/gs_login.png" /></div>
+    <div class="nright"  style="margin-left:38px">会员中心</div>
+</div>
+<div class="content">
+  <div class="content_1">
+  	<div class="content_1c">
+        <div class="left">
+            <ul>
+               <li><a href="personal.html">会员中心首页</a></li>
+              <li><a href="basics.html">基本资料</a></li>
+              <li><a href="field.html">实地认证</a></li>
+              <li><a href="manage.html">管理库存</a></li>
+              <li><a href="recruit.html">人才招聘</a></li>
+              <li><a>我的商铺</a></li>
+              <li><a href="cpwd.html">修改密码</a></li>
+              <li><a>退出登录</a></li>
+            </ul>
+        </div> 
+        <div class="right">
+             <div class="right1">管理库存</div>
+             	 <div class="manage">
+                 	 <div class="ma">当前您有<span >514</span> 条库存信息</div>
+<!--上传库存-->                       
+              		<div class="h1">
+                    <input  type="button" value="上传库存" onclick="showdiv1();"  
+                    style=" width:160px; height:40px;border:#cccccc 1px solid; color:#0e6eb8; background-color:#eee"/>                    
+					<div id="bg1"></div>
+					<div id="show1">
+                    <div class="sckc">
+					<label class="L_1">上传库存</label>
+ 					<input  type="button" value="X" onclick="hidediv1();" class="x1"/>
+					</div>
+  						<div class="clear"></div>                  
+					<div class="LL">
+						<div class="ehdel_upload_show1">
+							<input id="ehdel_upload_text1" type="text" name="txt" value="未选择任何文件"/>
+							<input id="ehdel_upload_btn1"  value="选择文件"/>
+						</div>
+					<div class="clear"></div>
+							<input type="file" onchange="ehdel_upload_text1.value=this.value" class="ehdel_upload1"   dir="ltr"/>	 
+                    </div>
+                    <div class="an_list">
+                    	<div class="minlit">
+                        	<input name="" type="submit"  value="确定"  class="btleft"/>
+                        	<input name="" type="button" value="取消"  onclick="hidediv1();" class="btlright"/>
+                        </div>	
+                    </div>           
+					</div>  
+                    </div>                  
+
+
+<!--更新时间-->                 
+                    <div class="h2">
+                    <input  type="button" value="更新时间" onclick="showdiv2();"  
+                    style=" width:160px; height:40px; border:#cccccc 1px solid; color:#0e6eb8;background-color:#eee"/>
+                    
+					<div id="bg2"></div>
+					<div id="show2">
+                     	<div class="sckc">
+							<label class="L_1">更新时间</label>
+ 							<input  type="button" value="X" onclick="hidediv2();" class="x1"/>
+						</div>
+                        <div class="update">
+                            	<div class="k">
+                                	<div class="wenhao"></div>
+                                    <div class="juzi">您确定要更新库存日期吗？</div>
+                                </div>
+ 								<div class="minlit">
+                        	<input name="" type="submit"  value="确定"  class="btleft"/>
+                        	<input name="" type="button" value="取消"  onclick="hidediv2();" class="btlright"/>
+                        </div>	                         	
+                        </div>
+                    	
+                    </div>
+                    </div>
+                    
+<!--删除库存-->
+              		<div class="h3">
+                    <input  type="button" value="删除库存" onclick="showdiv3();"  
+                    style=" width:160px; height:40px; border:#cccccc 1px solid;color:#0e6eb8;background-color:#eee"/>
+                    
+					<div id="bg3"></div>
+                    
+					<div id="show3">
+					<div class="sckc">
+					<label class="L_1">删除库存</label>
+ 					<input  type="button" value="X" onclick="hidediv3();" class="x1"/>
+					</div>
+                   		<div class="del">
+                    			<div class="k">
+                                	<div class="wenhao"></div>
+                                    <div class="juzi">您确定要删除全部库存吗？</div>
+                                </div>
+                                <div class="minlit">
+                        			<input name="" type="submit"  value="确定"  class="btleft"/>
+                        			<input name="" type="button" value="取消"  onclick="hidediv3();" class="btlright"/>
+                        		</div>	    
+                    	</div>
+					</div>
+                    </div>     
+<!--导出库存-->
+                    <div class="h4">
+                    <input  type="button" value="导出库存" onclick="showdiv4();"  
+                    style=" width:160px; height:40px; border:#cccccc 1px solid;color:#0e6eb8;background-color:#eee"/>
+					<div id="bg4"></div>
+					<div id="show4">
+					<div class="sckc">
+					<label class="L_1">导出库存</label>
+ 					<input  type="button" value="X" onclick="hidediv4();" class="x1"/>
+					</div>
+                    <div class="clear"></div>
+                    	<ul class="daochu">
+                        	<li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">钢管库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">钢件库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">法兰库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">圆管库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">阀门库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">板卷库存样表</div>
+                                    <a class="exp3">导出</a>
+                            </li>
+                            <li class="x3">
+                            	<input name="" type="button" class="bt_colse" onclick="hidediv4();" value="取消" />
+                            </li> 
+                        </ul>
+					</div>
+                    </div>
+<!--下载样表-->                  
+                    <div class="h5">
+                    <input  type="button" value="下载样表" onclick="showdiv5();"  
+                    style=" width:160px; height:40px;  border:#cccccc 1px solid;color:#0e6eb8;background-color:#eee"/>
+					<div id="bg5"></div>
+                    
+					<div id="show5">
+					<div class="sckc">
+					<label class="L_1">下载样表</label>
+ 					<input  type="button" value="X" onclick="hidediv5();" class="x1"/>
+					</div>
+                    <div class="clear"></div>
+                   	<ul class="donw">
+                    <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">钢管库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">钢件库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">法兰库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">圆管库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">阀门库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x2"></li>
+                            <li class="x1">
+                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp2">板卷库存样表</div>
+                                    <a class="exp3">下载</a>
+                            </li>
+                            <li class="x3">
+                            	<input name="" type="button" class="bt_colse" onclick="hidediv5();" value="取消" />
+                            </li> 
+                    </ul>
+					</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="gaiz">
+                		<div class="dd1" style="display:block">尊敬的会员：</div>
+                        <div class="dd2">为了给广大不锈钢行业用户一个良好的平台环境，请不要发布虚假的库存信息。即日起，本网工作人员将不定期的监督抽查所有会员的库存，若经本站工作人员提醒后仍不改正，将封号处理！
+                        </div>
+                         <div class="clear"></div>
+                	</div>
+                    
+                    <div class="judge" style="color:#0F0;margin-left:360px;">
+                    	<div class="judge_left"><img src="images/dui.png" /></div>
+                        <div class="judge_right">删除成功！</div>
+                    </div>
+                    
+                    <div class="judge" style="color:#0F0;display:none; margin-left:360px;">
+                    	<div class="judge_left"><img src="images/dui.png" /></div>
+                        <div class="judge_right">更新成功！</div>
+                    </div>
+                    
+                      <div class="judge" style="display:none">
+                    	<div class="judge_left"><img src="images/dui.png" /></div>
+                        <div class="judge_right">您已经成功上传<span>【钢管库存<!--现货库存，阀门库存，板材库存，卷材库存，法兰库存，型材库存，管件库存-->】207</span>条数据！！！</div>
+                    </div>
+                    
+                    <div class="judge" style="display:none">
+                    	<div class="judge_left"><img src="images/cou.png" /></div>
+                        <div class="judge_right">您今天上传次数已用完，请明天再来！！！</div>
+                    </div>
+                    
+                    
+                    
+                    <div class="judge" style="display:none;">
+                    	<div class="judge_left"><img src="images/cou.png" /></div>
+                        <div class="judge_right">您今天更新次数已用完，请明天再来！！！</div>
+                    </div>
+                    
+					</div>
+        		</div>
+         	<div class="clear">
+    	</div>
+  	</div>
+  </div>
+  
+<div class="foot">
+    	<div class="f">
+            <div class="fleft">
+            	<div class="fup">
+                	<div class="s1"><img src="images/dh_ice.png" /></div>
+                    <div class="s2">客服热线<span>(08:30-17:30)</span></div>
+            	</div>
+                <div class="fdonw">0577-89881176</div>
+            </div>
+            <div class="fright">
+            	<ul class="r1">
+                	<li><a>关于我们</a><div>|</div></li>
+                    <li><a>法律声明</a><div>|</div></li>
+                    <li><a>人才招聘</a><div>|</div></li>
+                    <li><a>投资洽谈</a><div>|</div></li>
+                    <li><a>联系我们</a><div>|</div></li>
+                    <li><a>常见问题</a></li>
+                </ul>
+                <div class="r2">
+                <div class="p">Copyright © 2013 - 2019 gousteel.com</div>
+                <div class="p">购钢现货网版权所有</div>
+                <div class="p">浙ICP备12008543号-2</div>
+                </div>
+                <div class="r3">
+                	<img src="images/110.png"  class="img1"/>
+                   	<img src="images/kxwz.png" class="img1" />
+                </div>
+            </div>
+        </div>
+    </div>		
+</div>
+</div>
+</body>
+</html>

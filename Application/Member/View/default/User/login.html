@@ -1,0 +1,143 @@
+<extend name="Base/common" />
+<block name='style'>
+	<link rel="stylesheet" type="text/css" href="__CSS__/style.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/register.css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/layer.css" />
+	<script type="text/javascript" src="__JS__/resgin.js"></script>
+	<script type="text/javascript" src="__JS__/layer.js"></script>
+</block>
+<block name="pageTitle">
+	<div class="nright">欢迎登录</div>
+</block>
+<block name="body">
+	<div class="content">
+		
+		<div class="login">
+			<div class="in">
+				<div class="box">
+					<form action="" id="loginForm">
+						<ul>
+							<li>
+								<div class="mz">购钢现货网会员</div>
+								<div class="md"><img src="__IMG__/L-IEC.png" />
+									<a href="{:U('Home/User/register')}">立即注册</a>
+								</div>
+							</li>
+							<li><input name="username" type="text" placeholder="请输入11位手机号" value="" class="usname" /></li>
+							<li><input name="password" type="password" placeholder="密码" value="" class="uspwd" /></li>
+							<li>
+								<div class="messages" style="color: red;"></div>
+							</li>
+							<li>
+								<div class="che"><input name="" type="checkbox" value="" class="zd" checked="checked" />自动登录</div>
+
+								<div class="h8">
+									<input type="button" value="忘记密码" onclick="showdiv8();" style=" height:40px;background-color:#FFF; float:right; color:#0e6eb8;cursor:pointer" />
+
+									
+								</div>
+
+							</li>
+							<li><input name="" type="submit" class="btlogin" value="登录" /></li>
+						</ul>
+						</form>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+<div id="bg8"></div>
+
+									<div id="show8">
+										<div class="sckc">
+											<label class="L_1">找回密码</label>
+											<input type="button" value="X" onclick="hidediv8();" class="x1" />
+										</div>
+										<div class="box_xg">
+											<div class=" la_box">输入手机号码：</div>
+											<input name="" type="text" class="la_inp" />
+											<span class="la_ts">获取手机验证码</span>
+										</div>
+										<div class="box_xg1">
+											<div class=" la_box">手机验证码：</div>
+											<input name="" type="text" class="la_inp" />
+											<span class="la_ts"></span>
+										</div>
+										<div class="box_xg1">
+											<div class=" la_box">设置新密码：</div>
+											<input name="" type="text" class="la_inp" />
+											<span class="la_ts"></span>
+										</div>
+										<div class="box_xg2">
+											<div class=" la_box"></div>
+											<input name="" type="button" class="la_inp" value="提交" />
+										</div>
+									</div>
+</block>
+<block name="script">
+	<script src="__JS__/jquery.validate.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 在键盘按下并释放及提交后验证提交表单
+			$("#loginForm").validate({
+				valid: true,
+
+				rules: {
+					username: {
+						required: true,
+						isMobile: true,
+					},
+					password: {
+						required: true,
+						minlength: 6
+					},
+				},
+				messages: {
+					username: {
+						required: "请输入手机号码",
+						remote: "手机号已经存在",
+					},
+					password: {
+						required: "请输入密码",
+						minlength: "密码最少6个字符"
+					},
+
+				},
+				errorPlacement: function(error, element) {
+					$(".messages").html('')
+					error.appendTo($(".messages"));
+				},
+				success: function(label) {
+					// set &nbsp; as text for IE
+					label.html("<i class='success'></i>");
+				},
+				submitHandler: function(form) {
+					var self = $('#loginForm');
+					$.post(self.attr("action"), self.serialize(), success, "json");
+					return false;
+
+					function success(data) {
+						if(data.status) {
+							window.location.href = data.url;
+						} else {
+							$(".messages").html(data.info)
+						}
+					}
+				},
+			});
+			// 手机号码验证 
+			jQuery.validator.addMethod("isMobile", function(value, element) {
+				var length = value.length;
+				var mobile = /^1[3|4|5|7|8]\d{9}$/;
+				return this.optional(element) || (length == 11 && mobile.test(value));
+			}, "请正确填写您的手机号码");
+
+		})
+		$(document)
+			.ajaxStart(function() {
+				$("button:submit").addClass("log-in").attr("disabled", true);
+			})
+			.ajaxStop(function() {
+				$("button:submit").removeClass("log-in").attr("disabled", false);
+			});
+	</script>
+</block>

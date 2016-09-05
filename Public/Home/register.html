@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.validate.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 在键盘按下并释放及提交后验证提交表单
+				$("#registerForm").validate({
+					valid: true,
+					
+					rules: {
+						mobile: {
+							required: true,
+							isMobile:true,
+							
+						},
+
+					},
+					messages: {
+						mobile: {
+							required: "<i class='error'></i>请输入手机号",
+						},
+
+					},
+					errorPlacement:function(error,element) {  
+						error.appendTo(element.next(".messages"));
+				    },
+				    success: function(label) {
+					    // set &nbsp; as text for IE
+					    label.html("<i class='success'></i>");
+					}
+				});
+				// 手机号码验证 
+			    jQuery.validator.addMethod("isMobile", function(value, element) { 
+			      var length = value.length; 
+			      var mobile = /^1[3|4|5|7|8]\d{9}$/; 
+			      return this.optional(element) || (length == 11 && mobile.test(value)); 
+			    }, "<i class='error'></i>手机号码不正确"); 
+			})
+		</script>
+
+		<title>无标题文档</title>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="nav">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li>
+						<a href="#">
+							<div style=" float:left">搜索现货</div>
+							<div class="span" style="float:left"><img src="images/sanjiao.png" /></div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div style=" float:left">资讯行情</div>
+							<div class="span" style="float:left"><img src="images/sanjiao.png" /></div>
+						</a>
+					</li>
+					<li><a href="#">加工定做</a></li>
+					<li><a href="#">求购信息</a></li>
+					<li><a href="#">人才招聘</a></li>
+					<li><a href="#">货运物流</a></li>
+					<li><a href="#">商务合作</a></li>
+					</li>
+					<li class="reg">
+						<div class="login">登录</div>
+						<div>|</div>
+						<div class="register">免费注册</div>
+					</li>
+				</ul>
+			</div>
+			<div class="navdown">
+				<div class="nleft"><img src="images/gs_login.png" /></div>
+				<div class="nright">欢迎注册</div>
+			</div>
+		</div>
+         <div style="width:100%;padding-top:20px; background-color:#f3f3f3;"></div>
+		<div class="content">
+			<div class="con">
+				<form action="{:U('')}" id="registerForm">
+					<ul class="conleft">
+						<!--手机号-->
+						<li>
+							<div> <span class="sp1">手机号</span > <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="mobile" type="text" value="" placeholder="请输入11位手机号" class="iput_phone" />	
+							<div class="messages"></div>
+						</li>
+						<li>
+							<div><span class="sp1">短信验证码</span> <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="" type="text" class="iput_code" />
+							<div class="code">获取短信验证码</div>
+						</li>
+						<!--设置密码-->
+						<li>
+							<div> <span class="sp1">设置密码</span> <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="" type="text" value="请输入密码" class="iput_pwd" />
+                            <div class="messages"></div>
+							
+						</li>
+						<!--确认密码-->
+						<li>
+							<div> <span class="sp1">确认密码</span> <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="" type="text" value="请再一次输入密码" class="iput_pwd" />
+                            <div class="messages"></div>
+						</li>
+						<!--公司名称-->
+						<li>
+							<div> <span class="sp1">公司名称</span> <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="" type="text" value="请输入公司名称" class="iput_name" />
+                            <div class="messages"></div>
+						</li>
+						<!--姓名-->
+						<li>
+							<div> <span class="sp1">姓名</span> <span class="sp1"><img src="images/xh.jpg" /></span> </div>
+							<input name="" type="text" value="请输入姓名" class="iput_name" />
+                            <div class="messages"></div>
+						</li>
+						<li>
+							<input name="" type="checkbox" value="" class="xz"  checked="checked" />
+							<div class="xy">我已同意或阅读<span>《购钢现货网会员服务协议》</span></div>
+						</li>
+						<li>
+							<input name="" type="submit" class="bt" value="提交注册" />
+						</li>
+					</ul>
+				</form>
+				<div class="coright">
+					<ul class="r-up">
+						<li class="h1">已有购钢现货网账号？</li>
+						<li class="h2">登录购钢现货网，即可免费查看或在线购买全国便宜、实惠 的钢材资源，也可以将您的现货资源发布到购钢现货网。 </li>
+						<li class="h3"> <a>登录</a> </li>
+					</ul>
+					<ul class="r-up">
+						<li class="h1">有任何问题请联系客服!</li>
+						<li class="h2">客服热线：0577-89881176</li>
+						<li class="h4">
+							<a></a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+            <div style=" padding-top:55px;"></div>
+		</div>
+		<div class="content">	
+			<div class="foot">
+				<div class="f">
+					<div class="fleft">
+						<div class="fup">
+							<div class="s1"><img src="images/dh_ice.png" /></div>
+							<div class="s2">客服热线<span>(08:30-17:30)</span></div>
+						</div>
+						<div class="fdonw">0577-89881176</div>
+					</div>
+					<div class="fright">
+						<ul class="r1">
+							<li><a>关于我们</a>
+								<div>|</div>
+							</li>
+							<li><a>法律声明</a>
+								<div>|</div>
+							</li>
+							<li><a>人才招聘</a>
+								<div>|</div>
+							</li>
+							<li><a>投资洽谈</a>
+								<div>|</div>
+							</li>
+							<li><a>联系我们</a>
+								<div>|</div>
+							</li>
+							<li><a>常见问题</a></li>
+						</ul>
+						<div class="r2">
+							<div class="p">Copyright © 2013 - 2019 gousteel.com</div>
+							<div class="p">购钢现货网版权所有</div>
+							<div class="p">浙ICP备12008543号-2</div>
+						</div>
+						<div class="r3"> <img src="images/110.png" class="img1" /> <img src="images/kxwz.png" class="img1" /> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

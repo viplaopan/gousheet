@@ -1,0 +1,131 @@
+<extend name="Base/common" />
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/layer.css"/>
+	<script language="javascript" src="__JS__/layer.js"></script>
+
+</block>
+<block name="pageTitle">
+	<div class="nright">会员中心</div>
+</block>
+<block name="body">
+	<div class="content">
+
+		<div class="content_1">
+			<div class="content_1c">
+				<include file="Public/nav" />
+				<div class="right">
+            <div class="right1">修改密码</div>
+            <form class="login-form" action="{:U('User/profile')}" method="post">
+	            <ul class="box_r">
+	                <li class="ii">
+	                	<label>旧密码</label><input name="old" type="password"   class="input"/><span class="panduan"></span>
+	                </li>
+	                <li class="ii">
+	                	<label>新密码</label><input name="password" id="onepass" type="password" class="input"/><span class="panduan"></span>
+	                </li>
+	                <li class="ii">
+	                	<label>确认密码</label><input name="repassword" type="password" class="input"/><span class="panduan"></span>
+	                </li>
+	               	<li class="ii"  style="margin-top:40px;">
+	                	<label></label><input name="" type="submit"  value="提交"  id="bt"/></li>
+	            </ul>
+            </form>
+        </div>
+				<div class="clear">
+				</div>
+			</div>
+		</div>
+</block>
+<block name="script">
+	<script src="__JS__/jquery.validate.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 在键盘按下并释放及提交后验证提交表单
+			$("form").validate({
+				valid: false,
+
+				rules: {
+					old: {
+						required: true,
+						minlength: 6
+					},
+					password: {
+						required: true,
+						minlength: 6
+					},
+					repassword: {
+						required: true,
+						minlength: 6,
+						equalTo: "#onepass"
+					},
+
+									
+				},
+				messages: {
+					old: {
+						required: "请填写旧密码！",
+						minlength:"密码不能小于6个字符",
+					},
+					password: {
+						required: "请填写新密码!",
+						minlength:"密码不能小于6个字符",
+					},
+					repassword: {
+						required: "请再次输入密码!",
+						minlength:"密码不能小于6个字符",
+						 equalTo: "*请再次输入相同的值"
+					},
+
+					
+					
+					
+										
+				},
+				errorElement: 'span',
+				errorPlacement: function(error, element) {
+					error.appendTo(element.next());
+					
+				},
+				success: function(label) {
+					// set &nbsp; as text for IE
+
+				},
+				submitHandler: function(form) {
+					ajaxForm();
+
+					return false;
+				},
+			});
+			// 手机号码验证 
+			jQuery.validator.addMethod("isMobile", function(value, element) {
+				var length = value.length;
+				var mobile = /^1[3|4|5|7|8]\d{9}$/;
+				return this.optional(element) || (length == 11 && mobile.test(value));
+			}, "请正确填写您的手机号码");
+			// 手机号码验证 
+			jQuery.validator.addMethod("isEmail", function(value, element) {
+				var length = value.length;
+				var mobile = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+				return this.optional(element) || (length == 11 && mobile.test(value));
+			}, "请正确填写您的手机号码");
+			
+			function ajaxForm(){
+				var self = $('form');
+
+				$.post(self.attr("action"), self.serialize(), success, "json");
+				return false;
+				
+				function success(data) {
+					if(data.status) {
+						alert('提交成功');
+						window.location.href=''
+					} else {
+						alert(data.info)
+					}
+				}
+			}
+			
+		})
+	</script>
+</block>
