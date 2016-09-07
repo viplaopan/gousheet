@@ -23,7 +23,14 @@
 <body>
 	
 	<!-- 头部 -->
-	<div class="top">
+	<style>
+	.top .navdown .nminll .m img {
+	    width: 189px;
+	    height: 3px;
+	    display: block;
+	}
+</style>
+<div class="top">
 	<div class="nav">
 		<ul>
 			<li>
@@ -233,7 +240,7 @@
 	<a <?php if((ACTION_NAME) == "profile"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/profile');?>">型材</a>
 </div>
 <div class="down_box">
-	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
+	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_two"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_one"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
 </div>
 <div class="down_box">
 	<a class="box_n" href="frenchay.html">法兰</a>
@@ -473,7 +480,7 @@
 								</ul>
 							</div>
 
-							<div class="box_h7">温州</div>
+							<div class="box_h7"><?php echo ($vo["ware_city"]); ?></div>
 							<div class="box_h8"><?php echo (mdate($vo["create_time"])); ?></div>
 						</div><?php endforeach; endif; else: echo "" ;endif; ?>
 

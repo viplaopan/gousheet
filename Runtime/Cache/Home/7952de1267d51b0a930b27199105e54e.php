@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/layer.css"/>
 	<script language="javascript" src="/Public/Home/js/layer.js"></script>
-
+	<script language="javascript" src="/Public/Home/js/jquery.form.js"></script>
 
 <?php echo hook('pageHeader');?>
 
@@ -101,11 +101,11 @@
 							<input id="ehdel_upload_btn1"  value="选择文件"/>
 						</div>
 					<div class="clear"></div>
-							<input type="file" onchange="ehdel_upload_text1.value=this.value" class="ehdel_upload1"   dir="ltr"/>	 
+							<input type="file" id="fileupload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="file" onchange="ehdel_upload_text1.value=this.value" class="ehdel_upload1"   dir="ltr"/>	 
                     </div>
                     <div class="an_list">
                     	<div class="minlit">
-                        	<input name="" type="submit"  value="确定"  class="btleft"/>
+                        	<input name="uploadExcel" type="submit"  value="确定"  class="btleft"/>
                         	<input name="" type="button" value="取消"  onclick="hidediv1();" class="btlright"/>
                         </div>	
                     </div>           
@@ -130,7 +130,7 @@
                                     <div class="juzi">您确定要更新库存日期吗？</div>
                                 </div>
  								<div class="minlit">
-                        	<input name="" type="submit"  value="确定"  class="btleft"/>
+                        	<input name="" type="submit" id="updataTime"  value="确定"  class="btleft"/>
                         	<input name="" type="button" value="取消"  onclick="hidediv2();" class="btlright"/>
                         </div>	                         	
                         </div>
@@ -156,7 +156,7 @@
                                     <div class="juzi">您确定要删除全部库存吗？</div>
                                 </div>
                                 <div class="minlit">
-                        			<input name="" type="submit"  value="确定"  class="btleft"/>
+                        			<input name="" type="submit" id="delSe"  value="确定"  class="btleft"/>
                         			<input name="" type="button" value="取消"  onclick="hidediv3();" class="btlright"/>
                         		</div>	    
                     	</div>
@@ -175,35 +175,35 @@
                     <div class="clear"></div>
                     	<ul class="daochu">
                         	<li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">钢管库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">钢件库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">法兰库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">圆管库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">阀门库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">板卷库存样表</div>
                                     <a class="exp3">导出</a>
                             </li>
@@ -227,37 +227,37 @@
                     <div class="clear"></div>
                    	<ul class="donw">
                     <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">钢管库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/gangguan.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
-                                    <div class="exp2">钢件库存样表</div>
-                                    <a class="exp3">下载</a>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
+                                    <div class="exp2">管件库存样表</div>
+                                    <a class="exp3" href="/Uploads/exceltemp/guanjian.xls">下载</a>
                             </li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">法兰库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/falan.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
-                                    <div class="exp2">圆管库存样表</div>
-                                    <a class="exp3">下载</a>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
+                                    <div class="exp2">型材库存样表</div>
+                                    <a class="exp3" href="/Uploads/exceltemp/xingcai.xls">下载</a>
                             </li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">阀门库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/famen.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                            		<div class="exp1"><img src="images/xz_ico.png" /></div>
+                            		<div class="exp1"><img src="/Public/Home/images/xz_ico.png" /></div>
                                     <div class="exp2">板卷库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/banjuan.xls">下载</a>
                             </li>
                             <li class="x3">
                             	<input name="" type="button" class="bt_colse" onclick="hidediv5();" value="取消" />
@@ -271,168 +271,129 @@
                         <div class="dd2">为了给广大不锈钢行业用户一个良好的平台环境，请不要发布虚假的库存信息。即日起，本网工作人员将不定期的监督抽查所有会员的库存，若经本站工作人员提醒后仍不改正，将封号处理！</div>
                          <div class="clear"></div>
                 	</div>
+                	<div class="judge" id="message" style="display:none">
+                    	
+                    </div>
 					</div>
         		</div>
 				<div class="clear">
 				</div>
 			</div>
+			
 		</div>
 
 	<!-- /主体 -->
 
 	<!-- 底部 -->
-	
-	<div class="foot">
-		<div class="f">
-			<div class="fleft">
-				<div class="fup">
-					<div class="s1"><img src="/Public/Home/images/dh_ice.png" /></div>
-					<div class="s2">客服热线<span>(08:30-17:30)</span></div>
+	<div class="content">	
+			<div class="foot">
+				<div class="f">
+					<div class="fleft">
+						<div class="fup">
+							<div class="s1"><img src="/Public/Home/images/dh_ice.png" /></div>
+							<div class="s2">客服热线<span>(08:30-17:30)</span></div>
+						</div>
+						<div class="fdonw">0577-89881176</div>
+					</div>
+					<div class="fright">
+						<ul class="r1">
+							<li><a>关于我们</a>
+								<div>|</div>
+							</li>
+							<li><a>法律声明</a>
+								<div>|</div>
+							</li>
+							<li><a>人才招聘</a>
+								<div>|</div>
+							</li>
+							<li><a>投资洽谈</a>
+								<div>|</div>
+							</li>
+							<li><a>联系我们</a>
+								<div>|</div>
+							</li>
+							<li><a>常见问题</a></li>
+						</ul>
+						<div class="r2">
+							<div class="p">Copyright © 2013 - 2019 gousteel.com</div>
+							<div class="p">购钢现货网版权所有</div>
+							<div class="p">浙ICP备12008543号-2</div>
+						</div>
+						<div class="r3"> <img src="/Public/Home/images/110.png" class="img1" /> <img src="/Public/Home/images/kxwz.png" class="img1" /> </div>
+					</div>
 				</div>
-				<div class="fdonw">0577-89881176</div>
-			</div>
-			<div class="fright">
-				<ul class="r1">
-					<li><a>关于我们</a>
-						<div>|</div>
-					</li>
-					<li><a>法律声明</a>
-						<div>|</div>
-					</li>
-					<li><a>人才招聘</a>
-						<div>|</div>
-					</li>
-					<li><a>投资洽谈</a>
-						<div>|</div>
-					</li>
-					<li><a>联系我们</a>
-						<div>|</div>
-					</li>
-					<li><a>常见问题</a></li>
-				</ul>
-				<div class="r2">
-					<div class="p">Copyright © 2013 - 2019 gousteel.com</div>
-					<div class="p">购钢现货网版权所有</div>
-					<div class="p">浙ICP备12008543号-2</div>
-				</div>
-				<div class="r3"> <img src="/Public/Home/images/110.png" class="img1" /> <img src="/Public/Home/images/kxwz.png" class="img1" /> </div>
 			</div>
 		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-(function(){
-	var ThinkPHP = window.Think = {
-		"ROOT"   : "", //当前网站地址
-		"APP"    : "/index.php?s=", //当前项目地址
-		"PUBLIC" : "/Public", //项目公共目录地址
-		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
-	}
-})();
-</script>
-
+		
 	<script src="/Public/Home/js/jquery.validate.js"></script>
 	<script type="text/javascript">
-		$(function() {
-			// 在键盘按下并释放及提交后验证提交表单
-			$("form").validate({
-				valid: false,
-
-				rules: {
-					company_name: {
-						required: true,
-					},
-					name: {
-						required: true,
-					},
-					address: {
-						required: true,
-					},
-					mobile: {
-						required: true,
-						isMobile: true
-					},	
-					
-					
-					
-									
-				},
-				messages: {
-					company_name: {
-						required: "请填写公司名称！",
-					},
-					name: {
-						required: "请输入座机号码!",
-					},
-					address: {
-						required: "请输入QQ号码!",
-					},
-					mobile: {
-						required: "请输入手机号码!",
-						isMobile: "错误的手机格式！"
-					},
-					
-					
-					
-										
-				},
-				errorElement: 'span',
-				errorPlacement: function(error, element) {
-					$('#errorSpan').html('')
-					error.appendTo($('#errorSpan'));
-					return false;
-					
-				},
-				success: function(label) {
-					// set &nbsp; as text for IE
-
-				},
-				submitHandler: function(form) {
-					ajaxForm();
-
-					return false;
-				},
-			});
-			// 手机号码验证 
-			jQuery.validator.addMethod("isMobile", function(value, element) {
-				var length = value.length;
-				var mobile = /^1[3|4|5|7|8]\d{9}$/;
-				return this.optional(element) || (length == 11 && mobile.test(value));
-			}, "请正确填写您的手机号码");
-			// 手机号码验证 
-			jQuery.validator.addMethod("isEmail", function(value, element) {
-				var length = value.length;
-				var mobile = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
-				return this.optional(element) || (length == 11 && mobile.test(value));
-			}, "请正确填写您的手机号码");
-			
-			function ajaxForm(){
-				var self = $('form');
-
-				$.post(self.attr("action"), self.serialize(), success, "json");
+		$(function(){
+			$("#updataTime").click(function(){
+				$.post("<?php echo U('update');?>",{},success,'json');
 				return false;
-				
-				function success(data) {
-					if(data.status) {
-						alert('提交成功');
-						window.location.href=''
-					} else {
-						alert('提交失败')
-					}
+				function success(data){
+					hidediv2();
+					$('#message').show();
+					$('#message').html('<div class="judge_left"><img src="/Public/Home/images/dui.png" /></div><div class="judge_right">更新成功！</div>')
 				}
-			}
-			
+			})
+			$("#delSe").click(function(){
+				$.post("<?php echo U('del');?>",{},success,'json');
+				return false;
+				function success(data){
+					hidediv3();
+					$('#message').show();
+					$('#message').html('<div class="judge_left"><img src="/Public/Home/images/dui.png" /></div><div class="judge_right">删除成功！</div>');
+				}
+			})
+			$("#fileupload").wrap("<form id='myupload' action=\"<?php echo U('Member/uploadExcel');?>\" method='post' enctype='multipart/form-data'></form>");
+		    $("input[name='uploadExcel']").click(function(){
+				$("#myupload").ajaxSubmit({
+					dataType:  'json',
+					beforeSend: function() {
+//		        		showimg.empty();
+//						progress.show();
+//		        		var percentVal = '0%';
+//		        		bar.width(percentVal);
+//		        		percent.html(percentVal);
+//						btn.html("上传中...");
+		    		},
+		    		uploadProgress: function(event, position, total, percentComplete) {
+//		        		var percentVal = percentComplete + '%';
+//		        		bar.width(percentVal);
+//		        		percent.html(percentVal);
+		    		},
+					success: function(data) {
+					    hidediv1();
+						if(data.category == '板卷'){
+							$('#message').show();
+							var count = data.bancai.count + data.juancai.count + data.daicai.count;
+							$('#message').html('<div class="judge_left"><img src="/Public/Home/images/dui.png" /></div>' + 
+	                        '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+	                        return false;
+						}
+						if(data.category == '管件'){
+							$('#message').show();
+							var count = data.wantou.count + data.santong.count + data.fengtou.count;
+							$('#message').html('<div class="judge_left"><img src="/Public/Home/images/dui.png" /></div>' + 
+	                        '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+	                        return false;
+						}
+						$('#message').show();
+						$('#message').html('<div class="judge_left"><img src="/Public/Home/images/dui.png" /></div>' + 
+                        '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + data.count + '</span>条数据！！！</div>');
+//						
+					},
+					error:function(xhr){
+//						btn.html("上传失败");
+//						bar.width('0')
+//						files.html(xhr.responseText);
+					}
+				});
+			})
+
 		})
-	</script>
- <!-- 用于加载js代码 -->
-<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
-<?php echo hook('pageFooter', 'widget');?>
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
-	
-</div>
+</script>
 
 	<!-- /底部 -->
 </body>

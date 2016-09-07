@@ -55,7 +55,8 @@ class XianhuoModel{
 			$xls = $objPHPExcel->getsheet(1)->toArray();	
 			$santong =  $this->addGuanjianst($xls);
 			
-			$xls = $objPHPExcel->getsheet(2)->toArray();	
+			$xls = $objPHPExcel->getsheet(2)->toArray();
+            
 			$fengtou =  $this->addGuanjianff($xls);
 			
 			return array('category' => '管件','wantou'=>$wantou,'santong'=>$santong,'fengtou'=>$fengtou);
@@ -627,7 +628,7 @@ class XianhuoModel{
 		array_shift($xls);
         $key = 0;
 		$data = array();
-        foreach ($xlsst as $k => $val) {
+        foreach ($xls as $k => $val) {
 			//获取EXCEL 字段
 			$pinzhong = op_t($val[0]);
 			$gongyi = op_t($val[1]);
@@ -695,7 +696,7 @@ class XianhuoModel{
 		array_shift($xls);
         $key = 0;
 		$data = array();
-        foreach ($xlsfb as $k => $val) {
+        foreach ($xls as $k => $val) {
 			//获取EXCEL 字段
 			$pinzhong = op_t($val[0]);
 			$biaomian = op_t($val[1]);

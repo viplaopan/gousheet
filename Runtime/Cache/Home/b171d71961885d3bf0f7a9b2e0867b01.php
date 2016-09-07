@@ -131,59 +131,46 @@
 	<!-- /主体 -->
 
 	<!-- 底部 -->
-	
-	<div class="foot">
-		<div class="f">
-			<div class="fleft">
-				<div class="fup">
-					<div class="s1"><img src="/Public/Home/images/dh_ice.png" /></div>
-					<div class="s2">客服热线<span>(08:30-17:30)</span></div>
+	<div class="content">	
+			<div class="foot">
+				<div class="f">
+					<div class="fleft">
+						<div class="fup">
+							<div class="s1"><img src="/Public/Home/images/dh_ice.png" /></div>
+							<div class="s2">客服热线<span>(08:30-17:30)</span></div>
+						</div>
+						<div class="fdonw">0577-89881176</div>
+					</div>
+					<div class="fright">
+						<ul class="r1">
+							<li><a>关于我们</a>
+								<div>|</div>
+							</li>
+							<li><a>法律声明</a>
+								<div>|</div>
+							</li>
+							<li><a>人才招聘</a>
+								<div>|</div>
+							</li>
+							<li><a>投资洽谈</a>
+								<div>|</div>
+							</li>
+							<li><a>联系我们</a>
+								<div>|</div>
+							</li>
+							<li><a>常见问题</a></li>
+						</ul>
+						<div class="r2">
+							<div class="p">Copyright © 2013 - 2019 gousteel.com</div>
+							<div class="p">购钢现货网版权所有</div>
+							<div class="p">浙ICP备12008543号-2</div>
+						</div>
+						<div class="r3"> <img src="/Public/Home/images/110.png" class="img1" /> <img src="/Public/Home/images/kxwz.png" class="img1" /> </div>
+					</div>
 				</div>
-				<div class="fdonw">0577-89881176</div>
-			</div>
-			<div class="fright">
-				<ul class="r1">
-					<li><a>关于我们</a>
-						<div>|</div>
-					</li>
-					<li><a>法律声明</a>
-						<div>|</div>
-					</li>
-					<li><a>人才招聘</a>
-						<div>|</div>
-					</li>
-					<li><a>投资洽谈</a>
-						<div>|</div>
-					</li>
-					<li><a>联系我们</a>
-						<div>|</div>
-					</li>
-					<li><a>常见问题</a></li>
-				</ul>
-				<div class="r2">
-					<div class="p">Copyright © 2013 - 2019 gousteel.com</div>
-					<div class="p">购钢现货网版权所有</div>
-					<div class="p">浙ICP备12008543号-2</div>
-				</div>
-				<div class="r3"> <img src="/Public/Home/images/110.png" class="img1" /> <img src="/Public/Home/images/kxwz.png" class="img1" /> </div>
 			</div>
 		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-(function(){
-	var ThinkPHP = window.Think = {
-		"ROOT"   : "", //当前网站地址
-		"APP"    : "/index.php?s=", //当前项目地址
-		"PUBLIC" : "/Public", //项目公共目录地址
-		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
-	}
-})();
-</script>
-
+		
 	<script src="/Public/Home/js/jquery.validate.js"></script>
 	<script type="text/javascript">
 		$(function() {
@@ -250,12 +237,6 @@
 				$("button:submit").removeClass("log-in").attr("disabled", false);
 			});
 	</script>
- <!-- 用于加载js代码 -->
-<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
-<?php echo hook('pageFooter', 'widget');?>
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
-	
-</div>
 
 	<!-- /底部 -->
 </body>

@@ -36,11 +36,11 @@ return array(
 
     /* 数据库配置 */
     'DB_TYPE'   => 'mysql', // 数据库类型
-    'DB_HOST'   => '120.55.119.219', // 服务器地址
-    'DB_NAME'   => 'ohmyoffice_db', // 数据库名
-    'DB_USER'   => 'laopan', // 用户名
-    'DB_PWD'    => 'Pa123456',  // 密码
-    'DB_PORT'   => '3306', // 端口
+    'DB_HOST'   => 'localhost', // 服务器地址
+    'DB_NAME'   => 'gousteel', // 数据库名
+    'DB_USER'   => 'homestead', // 用户名
+    'DB_PWD'    => 'secret',  // 密码
+    'DB_PORT'   => '33060', // 端口
     'DB_PREFIX' => 'xh_', // 数据库表前缀
     
     'LOAD_EXT_CONFIG' => 'router',

@@ -16,6 +16,15 @@
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/spancolle.css" />
 	<script type="text/javascript" src="/Public/Home/js/layer.js"></script>
+	<style>
+        #headm li ul .i_h3 .h3_miss img {
+            width: 8px;
+            height: 8px;
+            margin-top: 1px;
+            padding-top: 4px;
+            display: block;
+        }
+    </style>
 
 <?php echo hook('pageHeader');?>
 
@@ -23,7 +32,14 @@
 <body>
 	
 	<!-- 头部 -->
-	<div class="top">
+	<style>
+	.top .navdown .nminll .m img {
+	    width: 189px;
+	    height: 3px;
+	    display: block;
+	}
+</style>
+<div class="top">
 	<div class="nav">
 		<ul>
 			<li>
@@ -233,7 +249,7 @@
 	<a <?php if((ACTION_NAME) == "profile"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/profile');?>">型材</a>
 </div>
 <div class="down_box">
-	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
+	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_two"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_one"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
 </div>
 <div class="down_box">
 	<a class="box_n" href="frenchay.html">法兰</a>
@@ -254,36 +270,36 @@
 				</div>
 
 				<!--立即搜索-->
-				<form action="">
+				<form action="/Home/Guandao/molding_one/pinzhong/%E9%87%91%E5%B1%9E%E8%BD%AF%E7%AE%A1.html" method="get">
 					<div class="left_middle">
         		<div id="headm">
   <ul>
-	  <li>
-	  <div class="dh"><a class="topa"><input name="" type="text" class="box_ipt5" value="翻边"></a>
+	  <li id="pinzhongLi">
+	  <div class="dh"><a class="topa"><input name="pinzhong" type="text" class="box_ipt5" value="<?php echo I('get.pinzhong');?>" placeholder="翻边"></a>
 	  <ul>
-      <li class="i_h0"><img src="images/ggw_sanjiaoxing.png" /><span>管件</span></li>
+      <li class="i_h0"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /><span>管件</span></li>
 		<li class="i_h1">
-         <a>15度弯头</a>
-        <a>30度弯头</a>
-        <a>45度弯头</a>
-        <a>60度弯头</a>
-        <a>90度弯头</a>
-        <a>120度弯头</a>
-        <a>180度弯头</a>
+         <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'15度弯头'));?>">15度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'30度弯头'));?>">30度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'45度弯头'));?>">45度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'60度弯头'));?>">60度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'90度弯头'));?>">90度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'120度弯头'));?>">120度弯头</a>
+        <a href="<?php echo U('Home/Guandao/molding_three',array('pinzhong'=>'180度弯头'));?>">180度弯头</a>
         </li>
         <li class="i_hxian"></li> 
         <li class="i_h0"></li>
        	<li class="i_h1">
-        <a>三通</a>
-        <a>四通</a>
-        <a>Y型三通</a>
-        <a>同心异径管</a>
-        <a>偏心异径管</a>
+         <a href="<?php echo U('Home/Guandao/molding_two',array('pinzhong'=>'三通'));?>">三通</a>
+        <a href="<?php echo U('Home/Guandao/molding_two',array('pinzhong'=>'四通'));?>">四通</a>
+        <a href="<?php echo U('Home/Guandao/molding_two',array('pinzhong'=>'Y型三通'));?>">Y型三通</a>
+        <a href="<?php echo U('Home/Guandao/molding_two',array('pinzhong'=>'同心异径管'));?>">同心异径管</a>
+        <a href="<?php echo U('Home/Guandao/molding_two',array('pinzhong'=>'偏心异径管'));?>">偏心异径管</a>
         </li>
         <li class="i_hxian"></li>
         <li class="i_h0"></li>
       
-        <li class="i_h1">
+        <li class="i_h1" id="pinzhong">
     	<a>翻边</a>
         <a>管帽</a>
         <a>金属软管</a>
@@ -303,11 +319,34 @@
 	  </ul>
 	  </div>
 	</li>
-	<li>
-	  <div class="dh dh2"><a  class="topa"><input name="" type="text" class="box_ipt5" value="材质"></a>
+
+	<script type="text/javascript">
+        $(function() {
+            $(".clearbtn").click(function(){
+                var n = $(this).attr('parent-name');
+                $("input[name='" +n+ "']").val('');
+                
+                $(this).parent().removeClass('show');
+
+                $("#" + n + "Li").removeClass('show')
+            })
+            $('#pinzhong a').click(function() {
+                $("input[name='pinzhong']").val($(this).html());
+                $idstr = $(this).parent().attr('id');
+                $(this).parent().removeClass('show');
+
+                $("#pinzhongLi").removeClass('show')
+            })
+            
+        })
+
+
+    </script>
+	<li id="caizhiLi">
+	  <div class="dh dh2"><a  class="topa"><input name="caizhi" type="text" class="box_ipt5" value="<?php echo I('get.caizhi');?>" placeholder="材质"></a>
 		  <ul>
-			<li class="i_h3">
-            <div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+			<li class="i_h3" id="caizhi">
+            <div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div"> 
                     <a>200</a>
                    	<a>201</a>
@@ -316,7 +355,7 @@
                     <a>202</a>
                 </div>
                 <div class="clear"></div>
-                <div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+                <div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div">
                 	<a>301</a>
                     <a>302</a>
@@ -343,7 +382,7 @@
                     <a>800H</a>
                     <a>825</a>
                 </div>
-                 <div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+                 <div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div">
                 <a>TP304</a>
                 <a>TP304L</a>
@@ -361,7 +400,7 @@
                 <a>TP347H</a>
                 <a>DP316L</a> 
                 </div>
-                <div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+                <div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div">
                 <a>S31500</a>
                 <a>S31803</a>
@@ -374,7 +413,7 @@
                 <a>C-22</a>
                 <a>C-276</a>
                 </div>
-                <div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+                <div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div">
                 <a>1CR132</a>
                 <a>CR13</a>
@@ -389,15 +428,27 @@
 	  </div>
 	</li>
     
-    
+    <script type="text/javascript">
+        $(function() {
+            $('#caizhi a').click(function() {
+                
+                $("input[name='caizhi']").val($(this).html());
+                $idstr = $(this).parent().attr('id');
+                $(this).parent().removeClass('show');
+
+                $("#caizhiLi").removeClass('show')
+            })
+            
+        })
+    </script>
 	<li>
-    <div class="dh"><input name="" type="text"  class="box_ipt3" value="规格"></div>
+    <div class="dh"><input name="guige" type="text"  class="box_ipt3" value="<?php echo I('get.guige');?>" placeholder="规格"></div>
 	</li>
-       <li>
-	  <div class="dh dh2"><a  class="topa"><input name="" type="text" class="box_ipt5" value="表面"></a>
+       <li id="biaomianLi">
+	  <div class="dh dh2"><a  class="topa"><input name="biaomian" type="text" class="box_ipt5" value="<?php echo I('get.biaomian');?>" placeholder="表面"></a>
 		  <ul>
-			<li class="i_h3">
-            	<div class="h3_miss"><img src="images/ggw_sanjiaoxing.png" /></div>
+			<li class="i_h3" id="biaomian">
+            	<div class="h3_miss"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /></div>
                 <div class="h3_div"> 
                 	         <a>喷砂</a>
                              <a>滚砂</a>
@@ -413,19 +464,32 @@
 		  </ul>
 	  </div>
 	</li>
-	  <li><input name="" type="button" class="box_bt" value="立即搜索"></li>
+	<script type="text/javascript">
+        $(function() {
+            $('#biaomian a').click(function() {
+                
+                $("input[name='biaomian']").val($(this).html());
+                $idstr = $(this).parent().attr('id');
+                $(this).parent().removeClass('show');
+
+                $("#biaomianLi").removeClass('show')
+            })
+            
+        })
+    </script>
+	  <li><input name="" type="submit" class="box_bt" value="立即搜索"></li>
 	</ul>
 </div>
 <script type=text/javascript>
-var lis = document.getElementById("headm").getElementsByTagName("li");
-for(var i=0; i<lis.length; i++){
-	lis[i].onmouseover=function(){
-		this.className+=(this.className.length>0?" ":"") + "show";
+	var lis = document.getElementById("headm").getElementsByTagName("li");
+	for(var i=0; i<lis.length; i++){
+		lis[i].onmouseover=function(){
+			this.className+=(this.className.length>0?" ":"") + "show";
+		}
+		lis[i].onmouseout=function(){
+			this.className=this.className.replace(new RegExp("( ?|^)show\\b"), "");
+		}
 	}
-	lis[i].onmouseout=function(){
-		this.className=this.className.replace(new RegExp("( ?|^)show\\b"), "");
-	}
-}
 </script>
 
        		</div>
@@ -458,7 +522,7 @@ for(var i=0; i<lis.length; i++){
 							<div class="box_h19"> <?php echo ($vo["biaomian"]); ?></div>
 		                    <div class="box_h20"><?php echo ($vo["caizhi"]); ?></div>
 		                    <div class="box_h21"><?php echo ($vo["guige"]); ?></div>
-		                    <div class="box_h22"><?php echo ($vo["zhishu"]); ?></div>
+		                    <div class="box_h22"><?php echo ((isset($vo["shuliang"]) && ($vo["shuliang"] !== ""))?($vo["shuliang"]):0); ?></div>
 		                    <div class="box_h23"><?php echo ($vo['company']['name']); ?> </div> 
 							
 							<div id="title">
@@ -499,8 +563,8 @@ for(var i=0; i<lis.length; i++){
 								</ul>
 							</div>
 
-							<div class="box_h7">温州</div>
-							<div class="box_h8"><?php echo (mdate($vo["create_time"])); ?></div>
+							<div class="box_h25">温州</div>
+							<div class="box_h26"><?php echo (mdate($vo["create_time"])); ?></div>
 						</div><?php endforeach; endif; else: echo "" ;endif; ?>
 
 				</div>

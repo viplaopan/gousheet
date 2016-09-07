@@ -168,6 +168,7 @@ class IndexController extends BaseController {
 	}
 	
 	public function uploadExcel(){
+		
 		/* 调用文件上传组件上传文件 */
 		$File = D('File');
 		$file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
@@ -177,7 +178,6 @@ class IndexController extends BaseController {
 			C('DOWNLOAD_UPLOAD_DRIVER'),
 			C("UPLOAD_{$file_driver}_CONFIG")
 		);
-
 		$excel_path = $info['file']['path'];
 
 		//获取数据
