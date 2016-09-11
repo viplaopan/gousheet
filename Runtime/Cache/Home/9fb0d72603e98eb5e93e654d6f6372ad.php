@@ -259,16 +259,16 @@
 	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_two"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_one"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="frenchay.html">法兰</a>
+	<a <?php if((ACTION_NAME) == "frenchay"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/frenchay');?>">法兰</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="valve.html">阀门</a>
+	<a <?php if((ACTION_NAME) == "valve"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/valve');?>">阀门</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="plank.html">板材</a>
+	<a <?php if((ACTION_NAME) == "plank"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/plank');?>">板材</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="sheet.html">卷材</a>
+	<a <?php if((ACTION_NAME) == "sheet"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/sheet');?>">卷材</a>
 </div>
 <div class="down_box">
 	<a class="box_n" style="border-right:0; color:#F00" href="company.html">搜公司</a>

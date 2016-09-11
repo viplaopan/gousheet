@@ -20,6 +20,12 @@ class GuandaoController extends HomeController {
 	}
 	//网站首页
     public function Sactuals($page = 1,$pinzhong = '', $caizhi = '', $guige = ''){
+    	//获取通知
+    	$message = D('xh_message')->where(array(
+    		'cate'=>1
+    	))->order('round(id)')->find();
+    	$this->assign('message',$message);
+
     	//检测仓库地区
 		$uid = is_login();
 		if(cookie('warehouse') != 0)$map['warehouse'] = cookie('warehouse');
@@ -124,8 +130,14 @@ class GuandaoController extends HomeController {
         $this->display();
     }
 
-	//现货法兰
+	//型材
     public function profile($page = 1,$search =1, $pinzhong = '', $caizhi = '', $guige = '', $gongsi = ''){
+    	//获取通知
+    	$message = D('xh_message')->where(array(
+    		'cate'=>2
+    	))->order('round(id)')->find();
+    	$this->assign('message',$message);
+
 		//检测仓库地区
 		$uid = is_login();
 		if(cookie('warehouse') != 0)$map['warehouse'] = cookie('warehouse');//搜索条件
@@ -439,7 +451,7 @@ class GuandaoController extends HomeController {
 		$main_business = C('COMPANY_TYPE');
 		$warehouse = C('WAREHOUSE');
 		foreach($lists as &$val){
-			 $company = D("Company")->where('id = ' . $val['cid'])->find();
+			$company = D("Company")->where('id = ' . $val['cid'])->find();
             $val['company'] = $company;
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
@@ -477,4 +489,284 @@ class GuandaoController extends HomeController {
 		$this->assign('adlist',$adArray);
         $this->display();
 	    }
+	//法兰
+	function frenchay($p = 1, $search = 1, $pinzhong = '', $caizhi = '', $guige = '', $gongsi = ''){
+		//检测仓库地区
+		$uid = is_login();
+		
+		if($search == 1){
+			//搜索现货开始
+			if($pinzhong != '')$map['pinzhong'] = $pinzhong;
+			if($caizhi != '')$map['caizhi'] = $caizhi;
+			//规格
+			$guiges = explode('*',$guige);
+			$guige_koujing = $guiges[0];
+			$guige_yali = $guiges[1];
+			if($guige_koujing != '')$map['guige_koujing'] = array('like','%'.$guige_koujing.'%');
+			if($guige_yali != '')$map['guige_yali'] = array('like','%'.$guige_yali.'%');
+		}
+		if($order){
+			$order.=",create_time desc";
+		}else{
+			$order.="create_time desc";
+		}
+		//获取每页显示数量
+		$page_nums = C('PAGE_NUM');
+		
+		$lists = D("xhFalan")->where($map)->order($order)->page($p, 20)->select();
+		$totalCount = D('xhFalan')->where($map)->count();
+		
+        $this->assign('totalPageCount', $totalCount);
+        $this->assign('page_num', $page_nums['法兰']);			
+		
+		$warehouse = C('WAREHOUSE');
+		$main_business = C('COMPANY_TYPE');		
+		foreach($lists as &$val){
+			$company = D("Company")->where('id = ' . $val['cid'])->find();
+            $val['company'] = $company;
+            $val['name'] = $company['name'];
+            $val['qq'] = $company['qq'];
+            $val['business'] = doBusiness($company['business']);
+            $val['com_address'] = $company['com_address'];
+
+            //获取仓库
+			$region_name = D('Region')->where('region_id = ' . $company['ware_city'])->getField('region_name');
+			$val['ware_city'] = $region_name;
+			
+            $info = D("ucenter_member")->find($company['uid']);
+            $val['mobile'] = $info['mobile'];
+
+            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
+            $val['mobile2'] = $contact['mobile'];
+            $val['fax'] = $contact['fax'];
+
+            $bus = explode(',',$company['main_business']);
+            $bstr = '';
+            foreach($bus as $bs){
+                $val['main_business'] = $bs;
+                $bstr .= $main_business[$bs] . ',';
+            }
+            $bstr = substr($bstr,0,strlen($bstr)-1);
+            $val['main_business'] = $bstr;
+
+            $val['jian'] = $company['a_company'];
+            $val['warehouse'] = $warehouse[$val['warehouse']];
+			
+		}
+		
+		unset($val);
+		$this->assign('lists',$lists);
+		
+		
+        $this->display();
+	}
+	public function valve($p = 1, $search = 1, $pinzhong = '', $caizhi = '', $guige = '', $gongsi = ''){
+		//检测仓库地区
+		$uid = is_login();
+		
+		if($search ==1){
+			//搜索现货开始
+			if($pinzhong != '')$map['pinzhong'] = $pinzhong;
+			if($caizhi != '')$map['caizhi'] = $caizhi;
+			//规格
+			$guiges = explode('*',$guige);
+			$guige_koujing = $guiges[0];
+			$guige_yali = $guiges[1];
+			if($guige_koujing != '')$map['guige_koujing'] = array('like','%'.$guige_koujing.'%');
+			if($guige_yali != '')$map['guige_yali'] = array('like','%'.$guige_yali.'%');
+		}
+		if($order){
+			$order.=",create_time desc";
+		}else{
+			$order.="create_time desc";
+		}
+		//获取每页显示数量
+		$page_nums = C('PAGE_NUM');
+		
+		$lists = D("xhFamen")->where($map)->order($order)->page($p, $page_nums['阀门'])->select();
+		$totalCount = D('xhFamen')->where($map)->count();
+		
+        $this->assign('totalPageCount', $totalCount);
+        $this->assign('page_num', $page_nums['阀门']);			
+		
+		foreach($lists as &$val){
+			$company = D("Company")->where('id = ' . $val['cid'])->find();
+            $val['company'] = $company;
+            $val['name'] = $company['name'];
+            $val['qq'] = $company['qq'];
+            $val['business'] = doBusiness($company['business']);
+            $val['com_address'] = $company['com_address'];
+
+            //获取仓库
+			$region_name = D('Region')->where('region_id = ' . $company['ware_city'])->getField('region_name');
+			$val['ware_city'] = $region_name;
+			
+            $info = D("ucenter_member")->find($company['uid']);
+            $val['mobile'] = $info['mobile'];
+
+            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
+            $val['mobile2'] = $contact['mobile'];
+            $val['fax'] = $contact['fax'];
+
+            $bus = explode(',',$company['main_business']);
+            $bstr = '';
+            foreach($bus as $bs){
+                $val['main_business'] = $bs;
+                $bstr .= $main_business[$bs] . ',';
+            }
+            $bstr = substr($bstr,0,strlen($bstr)-1);
+            $val['main_business'] = $bstr;
+
+            $val['jian'] = $company['a_company'];
+            $val['warehouse'] = $warehouse[$val['warehouse']];
+			
+		}
+		
+		unset($val);
+		$this->assign('lists',$lists);
+        $this->display();
+	}
+	public function plank($p = 1, $search = 1, $pinzhong = '', $biaomian = '', $caizhi = '', $guige = '', $gongsi = '', $changjia = ''){
+		
+		
+		//搜索条件
+		if($search ==1){
+			//搜索现货开始
+			if($biaomian != '')$map['biaomian'] = $biaomian;
+			if($caizhi != '')$map['caizhi'] = $caizhi;
+			if($changjia != '')$map['changjia'] = array('like',$changjia.'%');
+			
+			//规格
+			$guiges = explode('*',$guige);
+			$guige_houdu = $guiges[0];
+			$guige_kuan = $guiges[1];
+			$guige_chang = $guiges[2];
+			if($guige_houdu != '')$map['guige_houdu'] = array('like','%'.$guige_houdu.'%');
+			if($guige_kuan != '')$map['guige_kuan'] = array('like','%'.$guige_kuan.'%');
+			if($guige_chang != '')$map['guige_chang'] = array('like','%'.$guige_chang.'%');
+		}
+		if($order){
+			$order.=",create_time desc";
+		}else{
+			$order.="create_time desc";
+		}
+		//获取每页显示数量
+		$page_nums = C('PAGE_NUM');
+		
+		$lists = D("xhBancai")->where($map)->order($order)->page($p, $page_nums['钢管'])->select();
+		$totalCount = D('xhBancai')->where($map)->count();
+        $this->assign('totalPageCount', $totalCount);
+        $this->assign('page_num', $page_nums['钢管']);			
+		
+		$main_business = C('COMPANY_TYPE');
+		
+		foreach($lists as &$val){
+			$company = D("Company")->where('id = ' . $val['cid'])->find();
+            $val['company'] = $company;
+            $val['name'] = $company['name'];
+            $val['qq'] = $company['qq'];
+            $val['business'] = doBusiness($company['business']);
+            $val['com_address'] = $company['com_address'];
+
+            //获取仓库
+			$region_name = D('Region')->where('region_id = ' . $company['ware_city'])->getField('region_name');
+			$val['ware_city'] = $region_name;
+			
+            $info = D("ucenter_member")->find($company['uid']);
+            $val['mobile'] = $info['mobile'];
+
+            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
+            $val['mobile2'] = $contact['mobile'];
+            $val['fax'] = $contact['fax'];
+
+            $bus = explode(',',$company['main_business']);
+            $bstr = '';
+            foreach($bus as $bs){
+                $val['main_business'] = $bs;
+                $bstr .= $main_business[$bs] . ',';
+            }
+            $bstr = substr($bstr,0,strlen($bstr)-1);
+            $val['main_business'] = $bstr;
+
+            $val['jian'] = $company['a_company'];
+            $val['warehouse'] = $warehouse[$val['warehouse']];
+		}
+		
+		unset($val);
+		$this->assign('lists',$lists);		
+		
+		
+        $this->display();
+	}
+	//卷材
+	public function sheet($p = 1, $search = 1, $pinzhong = '', $biaomian = '', $caizhi = '', $guige = '', $gongsi = '', $changjia = ''){		
+		//搜索条件
+		if($search ==1){
+			//搜索现货开始
+			if($biaomian != '')$map['biaomian'] = $biaomian;
+			if($caizhi != '')$map['caizhi'] = $caizhi;
+			if($changjia != '')$map['changjia'] = array('like',$changjia.'%');
+			
+			//规格
+			$guiges = explode('*',$guige);
+			$guige_houdu = $guiges[0];
+			$guige_kuan = $guiges[1];
+			$guige_chang = $guiges[2];
+			if($guige_houdu != '')$map['guige_houdu'] = array('like','%'.$guige_houdu.'%');
+			if($guige_kuan != '')$map['guige_kuan'] = array('like','%'.$guige_kuan.'%');
+			if($guige_chang != '')$map['guige_chang'] = array('like','%'.$guige_chang.'%');
+		}
+		if($order){
+			$order.=",create_time desc";
+		}else{
+			$order.="create_time desc";
+		}
+		//获取每页显示数量
+		$page_nums = C('PAGE_NUM');
+		
+		$lists = D("xhJuancai")->where($map)->order($order)->page($p, 20)->select();
+		$totalCount = D('xhJuancai')->where($map)->count();
+		
+        $this->assign('totalPageCount', $totalCount);
+        $this->assign('page_num', $page_nums['钢管']);			
+		
+		$main_business = C('COMPANY_TYPE');
+		$warehouse = C('WAREHOUSE');
+		foreach($lists as &$val){
+			$company = D("Company")->where('id = ' . $val['cid'])->find();
+            $val['company'] = $company;
+            $val['name'] = $company['name'];
+            $val['qq'] = $company['qq'];
+            $val['business'] = doBusiness($company['business']);
+            $val['com_address'] = $company['com_address'];
+
+            //获取仓库
+			$region_name = D('Region')->where('region_id = ' . $company['ware_city'])->getField('region_name');
+			$val['ware_city'] = $region_name;
+			
+            $info = D("ucenter_member")->find($company['uid']);
+            $val['mobile'] = $info['mobile'];
+
+            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
+            $val['mobile2'] = $contact['mobile'];
+            $val['fax'] = $contact['fax'];
+
+            $bus = explode(',',$company['main_business']);
+            $bstr = '';
+            foreach($bus as $bs){
+                $val['main_business'] = $bs;
+                $bstr .= $main_business[$bs] . ',';
+            }
+            $bstr = substr($bstr,0,strlen($bstr)-1);
+            $val['main_business'] = $bstr;
+
+            $val['jian'] = $company['a_company'];
+            $val['warehouse'] = $warehouse[$val['warehouse']];
+		}
+		
+		unset($val);
+		$this->assign('lists',$lists);		
+		
+        $this->display();
+	}
 }

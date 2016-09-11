@@ -243,16 +243,16 @@
 	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_two"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_one"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="frenchay.html">法兰</a>
+	<a <?php if((ACTION_NAME) == "frenchay"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/frenchay');?>">法兰</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="valve.html">阀门</a>
+	<a <?php if((ACTION_NAME) == "valve"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/valve');?>">阀门</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="plank.html">板材</a>
+	<a <?php if((ACTION_NAME) == "plank"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/plank');?>">板材</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="sheet.html">卷材</a>
+	<a <?php if((ACTION_NAME) == "sheet"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/sheet');?>">卷材</a>
 </div>
 <div class="down_box">
 	<a class="box_n" style="border-right:0; color:#F00" href="company.html">搜公司</a>
@@ -415,7 +415,7 @@
 				<div class="left_dies">
 					<div class="dies_gp">广播</div>
 					<div class="dies_ico"><img src="/Public/Home/images/gb.gif" /></div>
-					<div class="dies_news">福建丰瑞不锈钢特价处理一批TP36L 76*4*6的无缝管（质量保证）</div>
+					<div class="dies_news"><a href="<?php echo ($message["url"]); ?>"><?php echo ($message["title"]); ?></a></div>
 				</div>
 
 			</div>
