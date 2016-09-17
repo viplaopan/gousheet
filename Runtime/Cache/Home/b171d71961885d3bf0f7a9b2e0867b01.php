@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/register.css">
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/layer.css" />
+	<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
 	<script type="text/javascript" src="/Public/Home/js/resgin.js"></script>
 	<script type="text/javascript" src="/Public/Home/js/layer.js"></script>
 

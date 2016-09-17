@@ -1,0 +1,67 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/overall.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+    <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="__JS__/focus.js"></script>
+</block>
+<block name='navdown'>
+    <div class="navdown">
+    <div class="nleft"><img src="__IMG__/gs_login.png" /></div>
+    <div class="nminlls">
+        <input name="" type="text" class="nm_input"/><input name="" type="submit"  value="搜索" class="nm_bt"/>
+    </div>
+</div>
+</block>
+<block name="body">
+
+<div class="kuaixun_bg">
+    <div class="kuaixun">
+        <div class="kuaixun_left">
+            <div class="k5 k">
+                <div class="h1"></div>
+                <div class="h2">
+                    <volist name='lists' id='vo'>
+                        <div class="i1">
+                            <div class="i1_left">
+                                <div class="j1"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}" class="blue">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j2">作者:购钢网</div>
+                                <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
+                                <div class="j4">{$vo.view}</div>
+                                <div class="j5">标签:{$vo.tag}</div>
+                                <div class="j6">{$vo.description|msubstr=0,60}</div>
+                            </div>
+                            <div class="i1_right">
+                                <img src="__IMG__/pppppppp.jpg" width="190" height="120">
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="kuaixun_right">
+            <div class="h1"></div>
+            <div class="h2">
+                <volist name='companies' id='vo'>
+                    <div class="i1">
+                        <div class="i1_top"><a class="blue1" href="{$vo.url}">{$vo.company_name}</a></div>
+                        <div class="i1_bot">{$vo.desc}</div>
+                    </div>
+                </volist>
+            </div>
+            <div class="h3">
+                <div class="i1">0577-89881176</div>
+                <div class="i2"><img src="__IMG__/erer1.jpg"></div>
+                <div class="i3"><img src="__IMG__/erer2.jpg"></div>
+                <div class="i4"><p>扫描进入购钢网手机端</p><p>手机选货，安心保障</p></div>
+                <div class="i5"><p>关注购钢网微信</p><p>实时掌握最新消息</p></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="clear"></div>
+</block>

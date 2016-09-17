@@ -1,460 +1,703 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link rel="stylesheet" type="text/css" href="__CSS__/index.css">
-    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
-    <script type="text/javascript" src="__JS__/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/banner.css"/>
+    <script type="text/javascript" src="__JS__/jquery.caroufredsel-6.0.4-packed.js" ></script>
+    <script type="text/javascript" src="__JS__/jquery.js" ></script>
+    <script type="text/javascript" src="__JS__/focus.js" ></script>
 </block>
 <block name="body">
-    <div class="wrap">
-        <div class="banner" style="background: url(/Uploads/Images/{$advlist['index_top']['data']}) center no-repeat;">
-            <div class="inBanner">
-                <ul class="clearfix">
-                    <li>
-                        <p>
-                            <span>地 址</span>
-                            <input type="text" placeholder="上海市徐汇区宜山路">
-                        </p>
-                    </li>
-                    <li>
-                        <div class="tradeArea clearfix">
-                            <span>商圈</span>
-                            <div class="dropdown">
-                                <div class="issue">请选择</div>
-                                <dl>
-                                    <dd>1</dd>
-                                    <dd>2</dd>
-                                    <dd>3</dd>
-                                    <dd>4</dd>
-                                    <dd>5</dd>
-                                    <dd>6</dd>
-                                    <dd>7</dd>
-                                    <dd>8</dd>
-                                    <dd>9</dd>
-                                    <dd>10</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="time clearfix">
-                            <span>时间</span>
-                            <div class="dropdown">
-                                <div class="issue">请选择</div>
-                                <dl>
-                                    <dd>1</dd>
-                                    <dd>2</dd>
-                                    <dd>3</dd>
-                                    <dd>4</dd>
-                                    <dd>5</dd>
-                                    <dd>6</dd>
-                                    <dd>7</dd>
-                                    <dd>8</dd>
-                                    <dd>9</dd>
-                                    <dd>10</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="number clearfix">
-                            <span>人数</span>
-                            <div class="dropdown">
-                                <div class="issue">请选择</div>
-                                <dl>
-                                    <dd>1</dd>
-                                    <dd>2</dd>
-                                    <dd>3</dd>
-                                    <dd>4</dd>
-                                    <dd>5</dd>
-                                    <dd>6</dd>
-                                    <dd>7</dd>
-                                    <dd>8</dd>
-                                    <dd>9</dd>
-                                    <dd>10</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <button>开始搜索</button>
-                    </li>
-                </ul>
-                <div class="hotSearch">
-                    <strong>热门搜索：</strong>
-                    <ol>
-                        <li><a href="javascript:;">徐汇 ,</a></li>
-                        <li><a href="javascript:;">浦东 ,</a></li>
-                        <li><a href="javascript:;">闵行 ,</a></li>
-                        <li><a href="javascript:;">静安 ,</a></li>
-                        <li><a href="javascript:;">闸北 ,</a></li>
-                        <li><a href="javascript:;">青浦 </a></li>
-                    </ol>
+   <!-- banner代码 开始 -->
+  <div class="banner">
+    <div class="banner_show" id="banner_show">
+    <a href="case.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner1.png" width="1920" height="325"></a>
+    <a href="about.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner2.png" width="1920" height="325"></a>
+    <a href="service.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner3.png" width="1920" height="325"></a>
+        
+         
+         <div class="nva_banner">
+            <div class="banner_news">
+                   <script>
+    window.onload = function(){
+        var d1= document.getElementById("dd1");
+        var d2= document.getElementById("dd2"); 
+        var d3= document.getElementById("dd3");
+        var d4= document.getElementById("dd4");
+        
+        var d5= document.getElementById("dd5");
+        var d6= document.getElementById("dd6");
+        var d7= document.getElementById("dd7");
+        var d8= document.getElementById("dd8");
+        
+        d1.onmouseover = function(){
+            dd5.style.display = "block";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "none";
+            
+            
+        };
+         d1.onmouseout = function(){
+             dd5.style.display = "block";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "none"; 
+        };
+        
+        d2.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "block";
+            dd7.style.display = "none";
+            dd8.style.display = "none";
+            
+        };
+        
+        d2.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "block";
+            dd7.style.display = "none";
+            dd8.style.display = "none"; 
+        };
+        
+        
+        d3.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "block";
+            dd8.style.display = "none";
+            
+        };
+        d3.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "block";
+            dd8.style.display = "none"; 
+        };
+        
+        
+        d4.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "block";
+        };
+        d4.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "block"; 
+        };
+        
+            
+     }; 
+    
+</script>
+                <div class="d">
+                
+                <div class="dd1" id="dd1">找现货</div>
+                <div class="dd2" id="dd2">找物流</div>
+                <div class="dd3" id="dd3">找加工</div>
+                <div class="dd4" id="dd4">找厂家</div>
+                
                 </div>
-            </div>
-        </div>
-        <div class="introduce">
-            <ul class="main clearfix">
-                <li>
-                    <img src="__IMG__/introduce_01.png">
-                    <h2>100%真实房源</h2>
-                    <p>所有办公空间均为真实房源，真实实时呈现，保障决策准确高效。</p>
-                </li>
-                <li>
-                    <img src="__IMG__/introduce_02.png">
-                    <h2>优质办公环境</h2>
-                    <p>所有推荐的服务办公空间为高品质，核心商务区域。</p>
-                </li>
-                <li>
-                    <img src="__IMG__/introduce_03.png">
-                    <h2>直接对接业主</h2>
-                    <p>直接与房源业主对接互动，不存在差价土壤，让您得到最真优惠的实价。</p>
-                </li>
-                <li>
-                    <img src="__IMG__/introduce_04.png">
-                    <h2>免佣金</h2>
-                    <p>所有服务不花您一分钱，安心选择您所认可的服务即可。</p>
-                </li>
-            </ul>
-        </div>
-        <div class="serve main">
-            <h3>最佳服务式办公推荐</h3>
-            <ul>
-                <li>
-                    <a href="javascript:;">
-                        <img src="__IMG__/serve_01.jpg">
-                        <div class="down">
-                            <em>[ 浦东新区 ]</em>
-                            <span>东方路 钱江大厦</span>
-                            <p>所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="__IMG__/serve_02.jpg">
-                        <div class="down">
-                            <em>[ 普陀区 ]</em>
-                            <span>金沙江路  环球港中心</span>
-                            <p>所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="__IMG__/serve_03.jpg">
-                        <div class="down">
-                            <em>[ 徐汇区 ]</em><br/>
-                            <span>宜山路  光启城</span>
-                            <p>所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="__IMG__/serve_04.jpg">
-                        <div class="down">
-                            <em>[ 长宁区  ]</em><br/>
-                            <span>延安西路  环球港</span>
-                            <p>所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <img src="__IMG__/serve_05.jpg">
-                        <div class="down">
-                            <em>[ 黄埔区  ]</em><br/>
-                            <span>新天地  环球港中心</span>
-                            <p>所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。所有服务式办公均为五星级以上高质量服务品质，位于高品质办公区域。</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="workFor">
-            <div class="caption">
-                <h3>他们随时为您效劳</h3>
-                <p>来自各个商务中心负责人一对一贴心为您服务</p>
-            </div>
-            <div class="tab main">
-                <div class="tabHd">
-                    <ul class="clearfix">
-                        <li class="current first">
-                            <img src="__IMG__/workFor_01.png">
-                            <div class="down">
-                                <h5>[ 光启城商务楼 ]</h5>
-                                <em>孙悟空</em>
-                            </div>
+                <div class="dd5" id="dd5">
+                    <ul class="banner_downs">
+                        <li class="banner_d">
+                            <div class="s">钢管</div>
+                            <div class="x"></div>
                         </li>
-                        <li>
-                            <img src="__IMG__/workFor_02.png">
-                            <div class="down">
-                                <h5>[ 光启城商务楼 ]</h5>
-                                <em>孙悟空</em>
-                            </div>
+                        
+                        <li class="banner_d">
+                            <div class="s"> 型材</div>
+                            <div class="x"></div>
                         </li>
-                        <li>
-                            <img src="__IMG__/workFor_03.png">
-                            <div class="down">
-                                <h5>[ 光启城商务楼 ]</h5>
-                                <em>孙悟空</em>
-                            </div>
+                        
+                        <li class="banner_d">
+                            <div class="s">管件</div>
+                            <div class="x"></div>
                         </li>
-                        <li>
-                            <img src="__IMG__/workFor_04.png">
-                            <div class="down">
-                                <h5>[ 光启城商务楼 ]</h5>
-                                <em>孙悟空</em>
-                            </div>
+                        
+                        <li class="banner_d">
+                            <div class="s">法兰</div>
+                            <div class="x"></div>
                         </li>
-                        <li>
-                            <img src="__IMG__/workFor_05.png">
-                            <div class="down">
-                                <h5>[ 光启城商务楼 ]</h5>
-                                <em>孙悟空</em>
-                            </div>
+                       
+                        <li class="banner_d">
+                            <div class="s">阀门</div>
+                            <div class="x"></div>
                         </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">板材</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">卷材</div>
+                            <div class="x"></div>
+                        </li> 
+                        <div class="clear"></div>  
                     </ul>
-                </div>
-                <div class="tabBd">
-                    <ol style="display:block">
-                        <li>
-                            <div class="workImg">
-                                <img src="__IMG__/work_01.png">
-                                <img src="__IMG__/work_02.png">
-                                <img src="__IMG__/work_03.png">
+                   <div class="banner_next">
+                        <div class="left_middle">
+                            <div id="headm">
+                                <ul>
+                                    <li>
+                                        <div class="dh">
+                                            <div class="topa"><input name="" type="text" class="box_ipt1" value="工业无缝管"></div>
+                                            <ul>
+                                                <li class="i_h0"><img src="__IMG__//ggw_sanjiaoxing.png" /><span>钢管</span></li>
+                                                <li class="i_h1">
+                                                    <a>工业无缝管</a>
+                                                    <a>工业焊管</a>
+                                                    <a>精密管</a>
+                                                    <a>毛细管</a>
+                                                    <a>卫生级无缝管</a>
+                                                    <a>卫生级焊管</a>
+                                                    <a>六角管</a>
+                                                    <a>装饰管</a>
+                                                </li>
+                                                <li class="i_hxian"></li>
+                                                <li class="i_h2"><span>清除</span></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dh dh2">
+                                            <div class="topa"><input name="" type="text" class="box_ipt2" value="材质"></div>
+                                            <ul>
+                                                <li class="i_h3">
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
+                                                    <div class="h3_div">
+                                                        <span>200</span>
+                                                        <span>201</span>
+                                                        <span>201H</span>
+                                                        <span>201B</span>
+                                                        <span>202</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
+                                                    <div class="h3_div">
+                                                        <span>301</span>
+                                                        <span>302</span>
+                                                        <span>304</span>
+                                                        <span>304L</span>
+                                                        <span>201H</span>
+                                                        <span>304H</span>
+                                                        <span>309</span>
+                                                        <span>309S</span>
+                                                        <span>310S</span>
+                                                        <span>316</span>
+                                                        <span>316L</span>
+                                                        <span>316H</span>
+                                                        <span>316Ti</span>
+                                                        <span>317</span>
+                                                        <span>317L</span>
+                                                        <span>321</span>
+                                                        <span>321H</span>
+                                                        <span>347</span>
+                                                        <span>347H</span>
+                                                        <span>400</span>
+                                                        <span>600H</span>
+                                                        <span>625</span>
+                                                        <span>800H</span>
+                                                        <span>825</span>
+                                                    </div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
+                                                    <div class="h3_div">
+                                                        <span>TP304</span>
+                                                        <span>TP304L</span>
+                                                        <span>TP304H</span>
+                                                        <span>TP310S</span>
+                                                        <span>TP316</span>
+                                                        <span>TP316L</span>
+                                                        <span>TP316H</span>
+                                                        <span>TP316Ti</span>
+                                                        <span>TP317</span>
+                                                        <span>TP317L</span>
+                                                        <span>TP321</span>
+                                                        <span>TP321H</span>
+                                                        <span>TP347</span>
+                                                        <span>TP347H</span>
+                                                        <span>DP316L</span>
+                                                    </div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
+                                                        <div class="h3_div">
+                                                        <span>S31500</span>
+                                                        <span>S31803</span>
+                                                        <span>S32205</span>
+                                                        <span>S32304</span>
+                                                        <span>S32750</span>
+                                                        <span>S32760</span>
+                                                        <span>904L</span>
+                                                        <span>254SMO</span>
+                                                        <span>C-22</span>
+                                                        <span>C-276</span>
+                                                    </div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
+                                                    <div class="h3_div">
+                                                        <span>1CR132</span>
+                                                        <span>CR13</span>
+                                                        <span>3CR13</span>
+                                                        <span>17-4PH</span>
+
+                                                    </div>
+                                                </li>
+                                                <li class="i_h4"></li>
+                                                <li class="i_h5"><span>清除</span></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dh"><input name="" type="text" class="box_ipt3" value="规格">
+
+                                        </div>
+                                    </li>
+                                    <li><input name="" type="text" class="box_bt" value="地区"></li>
+                                </ul>
                             </div>
-                            <div class="workRight">
-                                <h6>给航空公司的感谢信</h6>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容摘要：南方航空公司，是我国运输飞机最多、航线网络最密集、客运量最大的航空公司。1999年至现在，南方航空公司创造了累计安全飞行1000万小时、并连续保证219个月的航空安全纪录，平安运输旅客5.4亿人次的成绩。这都离不开南方航空坚持“安全第一”的核心价值观，南方航空公司禀承“客户至上”的服务理念，通过提供“可靠、准点、便捷”…</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <div class="workImg">
-                                <img src="__IMG__/work_01.png">
-                                <img src="__IMG__/work_02.png">
-                                <img src="__IMG__/work_03.png">
-                            </div>
-                            <div class="workRight">
-                                <h6>2</h6>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容摘要：南方航空公司，是我国运输飞机最多、航线网络最密集、客运量最大的航空公司。1999年至现在，南方航空公司创造了累计安全飞行1000万小时、并连续保证219个月的航空安全纪录，平安运输旅客5.4亿人次的成绩。这都离不开南方航空坚持“安全第一”的核心价值观，南方航空公司禀承“客户至上”的服务理念，通过提供“可靠、准点、便捷”…</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <div class="workImg">
-                                <img src="__IMG__/work_01.png">
-                                <img src="__IMG__/work_02.png">
-                                <img src="__IMG__/work_03.png">
-                            </div>
-                            <div class="workRight">
-                                <h6>3</h6>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容摘要：南方航空公司，是我国运输飞机最多、航线网络最密集、客运量最大的航空公司。1999年至现在，南方航空公司创造了累计安全飞行1000万小时、并连续保证219个月的航空安全纪录，平安运输旅客5.4亿人次的成绩。这都离不开南方航空坚持“安全第一”的核心价值观，南方航空公司禀承“客户至上”的服务理念，通过提供“可靠、准点、便捷”…</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <div class="workImg">
-                                <img src="__IMG__/work_01.png">
-                                <img src="__IMG__/work_02.png">
-                                <img src="__IMG__/work_03.png">
-                            </div>
-                            <div class="workRight">
-                                <h6>4</h6>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容摘要：南方航空公司，是我国运输飞机最多、航线网络最密集、客运量最大的航空公司。1999年至现在，南方航空公司创造了累计安全飞行1000万小时、并连续保证219个月的航空安全纪录，平安运输旅客5.4亿人次的成绩。这都离不开南方航空坚持“安全第一”的核心价值观，南方航空公司禀承“客户至上”的服务理念，通过提供“可靠、准点、便捷”…</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <ol>
-                        <li>
-                            <div class="workImg">
-                                <img src="__IMG__/work_01.png">
-                                <img src="__IMG__/work_02.png">
-                                <img src="__IMG__/work_03.png">
-                            </div>
-                            <div class="workRight">
-                                <h6>5</h6>
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容摘要：南方航空公司，是我国运输飞机最多、航线网络最密集、客运量最大的航空公司。1999年至现在，南方航空公司创造了累计安全飞行1000万小时、并连续保证219个月的航空安全纪录，平安运输旅客5.4亿人次的成绩。这都离不开南方航空坚持“安全第一”的核心价值观，南方航空公司禀承“客户至上”的服务理念，通过提供“可靠、准点、便捷”…</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        <div class="share">
-            <div class="caption">
-                <h3>分享办公</h3><button type="button" class=" btn-primary" data-toggle="modal" data-target="#myModal"></button>
-                <p>全新办公分享模式，适合刚起步的您</p>
-            </div>
-            <div class="inShare">
-                <ul class="clearfix main">
-                    <li>
-                        <a href="javascript:;">
-                            <img src="__IMG__/share_list01.jpg">
-                            <div class="down">
-                                <div class="inDown">
-                                    <h6>浦东新区  钱江大厦</h6>
-                                    <em>意向于设计公司</em>
-                                    <p>我们是一家IT公司，位于普陀区苏州河边上，现有至多6人的办公位闲置，有兴趣者可以一起来办公哦。</p>
-                                </div>
-                                <span>（会议室）可提供5人位</span>
-                                <button>查看更多</button>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="__IMG__/share_list02.jpg">
-                            <div class="down">
-                                <div class="inDown">
-                                    <h6>浦东新区  钱江大厦</h6>
-                                    <em>意向于设计公司</em>
-                                    <p>我们是一家IT公司，位于普陀区苏州河边上，现有至多6人的办公位闲置，有兴趣者可以一起来办公哦。</p>
-                                </div>
-                                <span>（会议室）可提供5人位</span>
-                                <button>查看更多</button>
-                            </div>
-                        </a>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="__IMG__/share_list03.jpg">
-                            <div class="down">
-                                <div class="inDown">
-                                    <h6>浦东新区  钱江大厦</h6>
-                                    <em>意向于设计公司</em>
-                                    <p>我们是一家IT公司，位于普陀区苏州河边上，现有至多6人的办公位闲置，有兴趣者可以一起来办公哦。</p>
-                                </div>
-                                <span>（会议室）可提供5人位</span>
-                                <button>查看更多</button>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="__IMG__/share_list04.jpg">
-                            <div class="down">
-                                <div class="inDown">
-                                    <h6>浦东新区  钱江大厦</h6>
-                                    <em>意向于设计公司</em>
-                                    <p>我们是一家IT公司，位于普陀区苏州河边上，现有至多6人的办公位闲置，有兴趣者可以一起来办公哦。</p>
-                                </div>
-                                <span>（会议室）可提供5人位</span>
-                                <button>查看更多</button>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="simple">
-            <div class="sim">
-                <div class="inSimple main">
-                    <div class="caption">
-                        <h3>简单  轻松  自由  舒适</h3>
-                    </div>
-                    <div class="mid_block">
-                        <div class="count-item first">
-                            <div class="count-number" id="count_1" style="width: 180px">9</div>
-                            <div class="count-fonts">9年的坚持</div>
+                            <script type=text/javascript>
+                                var lis = document.getElementById("headm").getElementsByTagName("li");
+                                for(var i = 0; i < lis.length; i++) {
+                                    lis[i].onmouseover = function() {
+                                        this.className += (this.className.length > 0 ? " " : "") + "show";
+                                    }
+                                    lis[i].onmouseout = function() {
+                                        this.className = this.className.replace(new RegExp("( ?|^)show\\b"), "");
+                                    }
+                                }
+                            </script>
+
                         </div>
-                        <div class="count-item">
-                            <div class="count-number" id="count_2" style="width: 220px">100</div>
-                            <div class="count-mc"></div>
-                            <div class="count-fonts">100多位伙伴</div>
-                        </div>
-                        <div class="count-item">
-                            <div class="count-number" id="count_3" style="width: 180px">4</div>
-                            <div class="count-fonts">4大业务整合</div>
-                        </div>
-                        <div class="count-item">
-                            <div class="count-number" id="count_4" style="width: 220px">100</div>
-                            <div class="count-mc"></div>
-                            <div class="count-fonts">服务100多家知名企业</div>
-                        </div>
+                        
+                    <input name="" type="submit" class="next_bt" value="搜索" />
+                   </div>
+                    <div class=" banner_nd">
+                         <div class="nd_div">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
+                            <span>海量现货库存</span>
+                         </div>
+                         <div class="nd_div">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
+                            <span>供求精准匹配</span>
+                         </div>
+                         <div class="nd_div">
+                            <img src="__IMG__//index_meitian.png"/>
+                            <span>每天20000+使用</span>
+                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="imgTab">
-            <div class="inTab main">
-                <div class="imgTabHead">
-                    <ol class="clearfix">
-                        <li>
-                            <img src="__IMG__/imgTab01.jpg">
+                
+                <div class="dd6" id="dd6">
+                    <ul class="banner_downs">
+                        <li class="banner_d">
+                            <div class="s">找物流</div>
+                            <div class="x"></div>
                         </li>
-                        <li>
-                            <img src="__IMG__/imgTab02.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab03.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab04.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab05.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab06.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab07.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab08.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab09.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab10.jpg">
-                        </li>
-                    </ol>
-                    <ol class="clearfix">
-                        <li>
-                            <img src="__IMG__/imgTab01.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab02.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab03.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab04.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab05.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab06.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab07.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab08.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab09.jpg">
-                        </li>
-                        <li>
-                            <img src="__IMG__/imgTab10.jpg">
-                        </li>
-                    </ol>
-                </div>
-                <div class="imgTabFoot">
-                    <ul class="clearfix">
-                        <li class="first current"></li>
-                        <li></li>
+                        <div class="clear"></div>  
                     </ul>
+                    <div class="banner_next">
+                        <div class="next_list">
+                           <div class="next_pt">出发地</div>
+                           <input name="" type="text"  class="next_input"/> 
+                       </div>
+                       <div class="next_list">
+                            <div class="next_pt">目的地</div>
+                           <input name="" type="text"  class="next_input"/> 
+                       </div>
+                        <div class="next_list">
+                            <div class="next_pt">形&nbsp;&nbsp;态</div>
+                           <input name="" type="text"  class="next_input"/> 
+                           <input name="" type="submit" class="next_bt" />
+                       </div>
+                            
+                       <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                     <div class="banner_nd">
+                        <div class="nd_div">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
+                            <span>海量现货库存</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
+                            <span>供求精准匹配</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_meitian.png"/>
+                            <span>每天20000+使用</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>   
+                <div class="dd7" id="dd7">
+                    <ul class="banner_downs">
+                        <li class="banner_d">
+                            <div class="s">找加工</div>
+                            <div class="x"></div>
+                        </li>
+                        <div class="clear"></div>  
+                    </ul>
+                    <div class="banner_next">
+                        <div class="next_list">
+                            <div class="list_left">钢管类</div>
+                            <div class="list_right"><div class="aa">253MA无缝管</div> <div class="aa">大口径无缝管</div></div>
+                        </div>
+                        <div class="next_list">
+                            <div class="list_left">管件类</div>
+                            <div class="list_right"><div class="aa">高压螺纹管件</div> <div class="aa">180度弯头</div> <div class="aa">不锈钢弯管</div></div>
+                        </div>
+                        <div class="next_list">
+                            <div class="list_left">法兰类</div>
+                            <div class="list_right"><div class="aa">不锈钢法兰</div></div>
+                        </div>
+                        <div class="next_list">
+                            <div class="list_left">其它类</div>
+                            <div class="list_right"><div class="aa">全自动抛光</div> <div class="aa">大口径圆钢</div></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="banner_nd" style=" padding-top:30px;">
+                        <div class="nd_div">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
+                            <span>海量现货库存</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
+                            <span>供求精准匹配</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_meitian.png"/>
+                            <span>每天20000+使用</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div> 
+                </div>
+                <div class="dd8" id="dd8">
+                    <ul class="banner_downs">
+                        <li class="banner_d">
+                            <div class="s">找厂家</div>
+                            <div class="x"></div>
+                        </li>
+                        <div class="clear"></div>  
+                    </ul>
+                    <div class="banner_next">
+                        <div class="next_list" style="margin:50px 0">
+                            <div class="list_left">厂家简称</div><input name="" type="text" class="list_minll" />
+                        </div>
+                        <div class="next_list">
+                            <input name="" type="submit"  class="list_right" value="搜索"/>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="banner_nd">
+                        <div class="nd_div">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
+                            <span>海量现货库存</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
+                            <span>供求精准匹配</span>
+                        </div>
+                        <div class="nd_div">
+                            <img src="__IMG__//index_meitian.png"/>
+                            <span>每天20000+使用</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                
                 </div>
             </div>
+          <div class="yq_banner_list" id="yq_banner_list">
+             
+            <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
+            <a href="javascript:;" rel="1">&nbsp;</a>
+            <a href="javascript:;" rel="2">&nbsp;</a>
+          </div>
+         </div>
+         
+        
+    
+    </div>
+  </div>
+
+</div>
+<!-- 代码 结束 -->
+
+<div class="clear"></div>
+
+
+
+<div class="index_content">
+    <div class="content_bbs">
+        <div class="bbs_tp">
+            <img src="__IMG__/index_tp1.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__/index_tp2.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__/index_tp3.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__/index_tp4.png" />
+        </div>
+        <div class="bbs_tp" style="margin-right:0">
+            <img src="__IMG__/index_tp5.png" />
         </div>
     </div>
+    
+    <div class="content_hot">
+            <div class="content_bt">
+                <div class="bt_left"><img src="__IMG__/index_hotnews.png"/><span>热文要闻</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+            <ul>
+                <volist name='hot' id='vo'>
+                    <li>
+                        <div class="div_spL"></div>
+                        <div class="div_spR">
+                        <div class="spR_s"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,18}</a></div>
+                            <div class="spR_x">{$vo.description|msubstr=0,20}</div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>
+                <div class="clear"></div>
+            </ul>
+    </div>
+    <div class="content_hot">
+            
+            <div class="content_bt">
+                <div class="bt_left"><img src="__IMG__//index_cangjiatuijian.png"/><span>厂家推荐</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+            <ul>
+            <volist name='companies' id='vo'>
+                <li>
+                    <div class="div_spL"></div>
+                    <div class="div_spR">
+                        <div class="spR_s"><a href='{$vo.url}'>{$vo.desc}</a></div>
+                        <div class="spR_x">{$vo.company_name}</div>
+                    </div>
+                    <div class="clear"></div>
+                </li>   
+            </volist>
+                <div class="clear"></div>
+            </ul>
+    </div>
+    <div class="content_hot" style="margin-right:0; padding-bottom:30px;">
+        
+            <div class="content_bt">
+                <div class="bt_left"><img src="__IMG__//index_houjian.png"/><span>市场快讯</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+            <ul>
+                <volist name='shichang' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>
+              <div class="clear"></div>     
+            </ul>
+    </div> 
+    <div class="content_bbs">
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp1.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp2.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp3.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp4.png" />
+        </div>
+        <div class="bbs_tp" style="margin-right:0">
+            <img src="__IMG__//index_tp5.png" />
+        </div>
+    </div>
+     <div class="content_hot">
+            <div class="content_bt1">
+                <div class="bt_left"><img src="__IMG__//index_yuancailiao.png"/><span>原材行情</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+            <ul>
+               <volist name='yuanliao' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>
+               
+                <div class="clear"></div>       
+            </ul>
+           
+    </div> 
+     <div class="content_hot">
+            <div class="content_bt1">
+                <div class="bt_left"><img src="__IMG__//index_guanxinghangqing.png" /><span>管件行情</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+             <ul>
+                <volist name='guanjian' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist> 
+                <div class="clear"></div>       
+           </ul>
+           
+    </div> 
+    <div class="content_hot" style="margin-right:0">
+            <div class="content_bt1">
+                <div class="bt_left"><img src="__IMG__//index_benqinghangqing.png" /><span>泵阀行情</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+            <ul>
+                <volist name='bengfa' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist> 
+                <div class="clear"></div>       
+            </ul>
+           
+     </div>   
+     <div class="content_bbs">
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp1.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp2.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp3.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp4.png" />
+        </div>
+        <div class="bbs_tp" style="margin-right:0">
+            <img src="__IMG__//index_tp5.png" />
+        </div>
+     </div>
+     <div class="content_bbs">
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp1.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp2.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp3.png" />
+        </div>
+        <div class="bbs_tp">
+            <img src="__IMG__//index_tp4.png" />
+        </div>
+        <div class="bbs_tp" style="margin-right:0">
+            <img src="__IMG__//index_tp5.png" />
+        </div>
+    </div>
+    <div class="content_hot">
+            <div class="content_bt1">
+                <div class="bt_left"><img src="__IMG__//index_huiyifazhan.png" /><span>会议会展</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+           
+           <ul>
+                <volist name='huiyi' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>  
+                <div class="clear"></div>
+            </ul>
+           
+    </div>   
+    <div class="content_hot">
+            <div class="content_bt1">
+                <div class="bt_left"><img src="__IMG__//index_qiyuefengcai.png"/><span>企业风采</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+           <ul>
+                <volist name='qiye' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>    
+                <div class="clear"></div>   
+            </ul>
+           
+    </div> 
+     <div class="content_hot" style="margin-right:0">
+            <div class="content_bt1">
+                <div class="bt_left"><img  src="__IMG__//index_wzngahzndongtai.png" /><span>网站动态</span></div>
+                <div class="bt_right">更多</div>
+            </div>
+           
+           <ul>
+                <volist name='wangzhan' id='vo'>
+                    <li>
+                        <div class="div_spL1"></div>
+                        <div class="div_spR1">
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>   
+                </volist>  
+                 <div class="clear"></div>
+            </ul>
+           
+    </div> 
+     <div class="lirk">
+    <div class="content_lirk">
+    
+        <div class="lirk_re">友情链接</div>
+        
+        <div class="lirk_hide">
+            <a>钢材期货</a>
+            <a>全球机械网</a> 
+            <a>中国化工设备网</a>
+            <a>荣泰五金网</a>
+            <a>钢铁英才网</a>
+            <a>不锈钢商城</a>
+            <a>中国制药网</a>
+            <a>中国金属制品网</a>
+        </div>
+        
+        </div>
+    <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    </div>
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
 </block>

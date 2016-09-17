@@ -14,50 +14,48 @@ use Admin\Builder\AdminSortBuilder;
 
 class DatacenterController extends AdminController
 {
-	/* 商圈列表 */
-	public function index($page = 1, $r = 20)
-    {
-		$se_region = session('region');
-        $map['status'] = array('EGT', 0);
-		$map['region'] = array('EQ', $se_region);
-        $model = M('TradingArea');
-        $lists = $model->where($map)->page($page, $r)->order('sort asc')->select();
-        $totalCount = $model->where($map)->count();
-
-        //显示页面
+	/**
+	 * User: laopan
+	 * Date: 16-9-17
+	 * Time: AM7:45
+	 * page:推荐公司
+	 */
+	public function company(){
+		$map['status'] = array('gt',0);
+		$lists = D('ReCompany')->where($map)->select();
+		//显示页面
         $builder = new AdminListBuilder();
         $builder->title('商圈列表')
-            ->buttonNew(U('editTrading'))
+            ->buttonNew(U('editCompany'))
             ->buttonDelete()
-            ->setStatusUrl(U('setTradingStatus'))
+            ->setStatusUrl(U('setStatus'))
             ->buttonEnable()
             ->buttonDisable()
             ->keyId()
-            ->keyText('name', '商圈名称')
+            ->keyText('company_name', '公司名称')
             ->keyText('sort', '排序')
-            ->keyStatus()->keyDoActionEdit('editTrading?id=###')
+            ->keyStatus()->keyDoActionEdit('editCompany?id=###')
             ->data($lists)
             ->pagination($totalCount, $r)
             ->display();
-    }
-	//商圈状态
-	public function setTradingStatus($ids, $status){
-		$builder = new AdminListBuilder();
-        $builder->doSetStatus('TradingArea', $ids, $status);
+		$this->display();
 	}
-	//编辑商圈
-	public function editTrading($id = 0){
+	/**
+	 * User: laopan
+	 * Date: 16-9-17
+	 * Time: AM7:45
+	 * page:编辑/添加推荐公司
+	 */
+	public function editCompany($id = 0){
 		//判断是否为编辑模式
         $isEdit = $id ? true : false;
 		if(IS_POST){
 			if ($isEdit) {
-				$data = D('TradingArea')->create();
-	            $res = D('TradingArea')->save($data);
+				$data = D('ReCompany')->create();
+	            $res = D('ReCompany')->save($data);
 	        } else {
-	            $data = D('TradingArea')->create();
-				$se_region = session('region');
-				$data['city'] = $se_region;
-				$res = D('TradingArea')->add($data);
+	            $data = D('ReCompany')->create();
+				$res = D('ReCompany')->add($data);
 	        }
 			if(!$res){
 				$this->error($isEdit ? '编辑失败' : '创建失败');
@@ -67,79 +65,28 @@ class DatacenterController extends AdminController
 		}else{
 			//读取商圈内容
 	        if ($isEdit) {
-	            $TradingArea = M('TradingArea')->where(array('id' => $id))->find();
-				$se_region = $TradingArea['region'];
-	        } else {
-	        	//读取地区地址
-				$se_region = session('region');
-	            $TradingArea['status'] = 1;
+	            $data = M('ReCompany')->where(array('id' => $id))->find();
+	        }else{
+	        	$data['status'] = 1;
 	        }
-			
-			$this->assign('info',$TradingArea);
-			
-			
-
-			$area = M('Region')->where('parent_id = ' . $se_region)->select();
-			$this->assign('area',$area);
-			
-			$this->display();
-		}
-	}
-	
-	
-	
-	/* 商圈列表 */
-	public function citylists($page = 1, $r = 20)
-    {
-        $map['status'] = array('EQ', 1);
-        $model = M('Region');
-        $lists = $model->where($map)->page($page, $r)->select();
-		foreach($lists as &$val){
-			$val['id'] = $val['region_id'];
-		}
-		unset($val);
-        $totalCount = $model->where($map)->count();
-
-        //显示页面
-        $builder = new AdminListBuilder();
-        $builder->title('商圈列表')
-            ->buttonNew(U('editCity'))
-            ->buttonDelete()
-            ->setStatusUrl(U('setCityStatus',array('status'=>0)))
-            ->buttonEnable()
-            ->buttonDisable()
+	        //显示页面
+	        $builder = new AdminConfigBuilder();
+	        $builder->title($isEdit ? '编辑规则' : '添加规则')
             ->keyId()
-            ->keyText('region_id', '商圈名称')
-            ->keyText('region_name', '城市名称')
+            ->keyText('company_name', '公司名称','')
+			->keyText('url', '链接地址','填写完整的URL')
+            ->keyText('sort','排序','必须填写数字')
+            ->keyTextArea('desc','描述','')
             ->keyStatus()
-            ->data($lists)
-            ->pagination($totalCount, $r)
+            ->data($data)
+            ->buttonSubmit(U('editCompany'))->buttonBack()
             ->display();
-    }
-	//添加城市
-	public function editCity(){
-		if(IS_POST){
-			$area = I('post.area');
-			if($area){				
-				$data['status'] = 1;
-				M('Region')->where('region_id = '.$area)->save($data);
-				$this->success('编辑成功');
-			}
-			else{
-				$this->error('编辑失败');
-			}
-		}else{
-			//读取城市
-			$regions = M('Region')->select();
-			$this -> assign('regions',json_encode($regions));
-			$this -> display();
+			
 		}
 	}
-	//设置默认城市
-	public function setCityStatus($ids, $status){
+	//状态
+	public function setStatus($ids, $status,$database = ''){
 		$builder = new AdminListBuilder();
-		$data['status'] = 0;
-        M('Region')->where(array('region_id'=>array('in',$ids)))->save($data);
-		$this->success('编辑成功');
+        $builder->doSetStatus('Sd', $ids, $status);
 	}
 }

@@ -84,6 +84,11 @@ function get_list_count($category, $status = 1){
     return $count[$category];
 }
 
+function get_cagegory($id){
+    $info = D('category')->find($id);
+    return $info['title'];
+}
+
 /**
  * 获取段落总数
  * @param  string $id 文档ID

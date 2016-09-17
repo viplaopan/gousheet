@@ -167,8 +167,7 @@ class IndexController extends BaseController {
 		}
 	}
 	
-	public function uploadExcel(){
-		
+	public function uploadExcel(){		
 		/* 调用文件上传组件上传文件 */
 		$File = D('File');
 		$file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
@@ -222,5 +221,39 @@ class IndexController extends BaseController {
 		D('xhGuanjianSst')->where('cid = '.$cid)->delete();
 		D('xhGuanjianFt')->where('cid = '.$cid)->delete();
 		$this->success();
+	}
+
+	public function doHomeImg($type = 0){
+		/* 调用文件上传组件上传文件 */
+		$File = D('File');
+		$file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
+		$info = $File->upload(
+			$_FILES,
+			C('DOWNLOAD_HOMEIMG_UPLOAD'),
+			C('DOWNLOAD_UPLOAD_DRIVER'),
+			C("UPLOAD_{$file_driver}_CONFIG")
+		);
+		$path = $info['file']['path'];
+
+
+		$imgInfo = D('HomeImg')->where(array(
+			array('uid' => UID),
+			array('type' => 1)
+		))->find();
+		$id = $imgInfo['id']?$imgInfo['id']:0;
+		//编辑或新增
+		if($id>0){
+			$path = $info['file']['path'];			
+			$data['path'] = $path;
+			$data['type'] = $type;
+			D('HomeImg')->where(array('id'=>$id))->save($data);
+		}else{
+			
+			$data['uid'] = UID;
+			$data['path'] = $path;
+			$data['type'] = $type;
+			D('HomeImg')->add($data);
+		}
+		
 	}
 }

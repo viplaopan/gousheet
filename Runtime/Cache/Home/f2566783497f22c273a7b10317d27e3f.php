@@ -11,6 +11,7 @@
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
@@ -50,12 +51,91 @@
 					<div style=" float:left">搜索现货</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
+				<div class="pay">
+			    	<div class="dis"></div>
+			        <ul>
+			    	<li class="list_1">      
+			        <span>钢管现货</span>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=工业无缝管">工业无缝管</a></div>
+					<div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=卫生级无缝管">卫生级无缝管</a></div>
+					<div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=工业焊管">工业焊管</a></a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=卫生级焊管">卫生级焊管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=精密管">精密管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=装饰管">装饰管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=毛细管">毛细管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=六角管">六角管</a></div>
+			        </li>
+			        <li class="list_1">      
+			        <span>板卷现货</span>
+			     	<div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=圆钢">圆钢</a></div>
+					<div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=管坯">管坯</a></div>
+					<div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=角钢">角钢</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=扁钢">扁钢</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=方钢">方钢</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=槽钢">槽钢</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">线材</a></div>
+			        </li> 
+			        <li class="list_1">      
+			        <span>管件现货</span>
+			     	<div><a href="<?php echo U('Home/Guandao/molding_three');?>">弯头</a></div>
+					<div><a href="<?php echo U('Home/Guandao/molding_two');?>?pinzhong=三通">三通</a></div>
+					<div><a href="<?php echo U('Home/Guandao/molding_two');?>?pinzhong=四通">四通</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/molding_one');?>?pinzhong=翻边">翻边</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">管帽</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">金属软管</a></div>
+			        </li>
+			        <li class="list_1">      
+			        <span>法兰现货</span>
+			     	<div>平焊法兰</div>
+					<div>对焊法兰</div>
+					<div>板式法兰</div>
+			        <div>松套法兰</div>
+			        <div>带颈法兰</div>
+			        <div>人孔法兰</div>
+			        <div>法兰盖</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>阀门现货</span>
+			     	<div>球阀</div>
+					<div>蝶阀</div>
+					<div>闸阀</div>
+			        <div>截止阀</div>
+			        <div>止回阀</div>
+			        <div>旋塞阀</div>
+			        <div>疏水阀</div>
+			        <div>减压阀</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>板卷现货</span>
+			     	<div>板材</div>
+					<div>卷材</div>
+			        </li>
+			        </ul>
+			    </div>
 			</li>
 			<li>
 				<a href="#">
 					<div style=" float:left">资讯行情</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
+				<div class="pay1">
+			    	<div class="dis"></div>
+			        <ul>
+			    	<li class="list_1">      
+			        <span>钢管现货</span>
+			     	<div>热点新闻</div>
+					<div>市场快讯</div>
+					<div>会议会展</div>
+			        <div>企业风采</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>行情频道</span>
+			     	<div>原料行情</div>
+					<div>管型行情</div>
+					<div>泵阀行情</div>
+			        </li> 
+			        </ul>
+			    </div>	
 			</li>
 			<li>
 				<a href="#">加工定做</a>
@@ -72,14 +152,20 @@
 			<li>
 				<a href="#">商务合作</a>
 			</li>
-			<li class="user">
-				<div class="us">
-					<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-					<div class="phone">18057753538</div>
-					<div style=" color:#5a5a5a">|</div>
-					<div class="exit">安全退出</div>
-				</div>
-			</li>
+			<?php if(is_login()): ?><li class="user">
+					<div class="us">
+						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
+						<div class="phone"><?php echo get_username();?></div>
+						<div style=" color:#5a5a5a">|</div>
+						<div class="exit">安全退出</div>
+					</div>
+				</li>
+			<?php else: ?>
+				<li class="reg">
+					<div class="login">登录</div>
+					<div>|</div>
+					<div class="register">免费注册</div>
+				</li><?php endif; ?>
 		</ul>
 	</div>
 
@@ -252,16 +338,16 @@
 	<a <?php if((ACTION_NAME) == "molding_three"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_two"): ?>style="color:#F00"<?php endif; if((ACTION_NAME) == "molding_one"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/molding_three');?>">管件</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="frenchay.html">法兰</a>
+	<a <?php if((ACTION_NAME) == "frenchay"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/frenchay');?>">法兰</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="valve.html">阀门</a>
+	<a <?php if((ACTION_NAME) == "valve"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/valve');?>">阀门</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="plank.html">板材</a>
+	<a <?php if((ACTION_NAME) == "plank"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/plank');?>">板材</a>
 </div>
 <div class="down_box">
-	<a class="box_n" href="sheet.html">卷材</a>
+	<a <?php if((ACTION_NAME) == "sheet"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/sheet');?>">卷材</a>
 </div>
 <div class="down_box">
 	<a class="box_n" style="border-right:0; color:#F00" href="company.html">搜公司</a>
@@ -270,7 +356,7 @@
 				</div>
 
 				<!--立即搜索-->
-				<form action="/Home/Guandao/molding_one/pinzhong/%E9%87%91%E5%B1%9E%E8%BD%AF%E7%AE%A1.html" method="get">
+				<form action="/Home/Guandao/molding_one/pinzhong/%E7%BF%BB%E8%BE%B9.html?pinzhong=%E7%AE%A1%E5%B8%BD&caizhi=&guige=&biaomian=" method="get">
 					<div class="left_middle">
         		<div id="headm">
   <ul>
@@ -563,7 +649,7 @@
 								</ul>
 							</div>
 
-							<div class="box_h25">温州</div>
+							<div class="box_h25"><?php echo ($vo["ware_city"]); ?></div>
 							<div class="box_h26"><?php echo (mdate($vo["create_time"])); ?></div>
 						</div><?php endforeach; endif; else: echo "" ;endif; ?>
 

@@ -11,6 +11,7 @@
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
@@ -41,12 +42,91 @@
 					<div style=" float:left">搜索现货</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
+				<div class="pay">
+			    	<div class="dis"></div>
+			        <ul>
+			    	<li class="list_1">      
+			        <span>钢管现货</span>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=工业无缝管">工业无缝管</a></div>
+					<div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=卫生级无缝管">卫生级无缝管</a></div>
+					<div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=工业焊管">工业焊管</a></a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=卫生级焊管">卫生级焊管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=精密管">精密管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=装饰管">装饰管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=毛细管">毛细管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/sactuals');?>?pinzhong=装饰管">装饰管</a></div>
+			        </li>
+			        <li class="list_1">      
+			        <span>板卷现货</span>
+			     	<div>圆钢</div>
+					<div>管坯</div>
+					<div>角钢</div>
+			        <div>扁钢</div>
+			        <div>方钢</div>
+			        <div>槽钢</div>
+			        <div>线材</div>
+			        </li> 
+			        <li class="list_1">      
+			        <span>管件现货</span>
+			     	<div>弯头</div>
+					<div>三通</div>
+					<div>四通</div>
+			        <div>翻边</div>
+			        <div>管帽</div>
+			        <div>金属软管</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>法兰现货</span>
+			     	<div>平焊法兰</div>
+					<div>对焊法兰</div>
+					<div>板式法兰</div>
+			        <div>松套法兰</div>
+			        <div>带颈法兰</div>
+			        <div>人孔法兰</div>
+			        <div>法兰盖</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>阀门现货</span>
+			     	<div>球阀</div>
+					<div>蝶阀</div>
+					<div>闸阀</div>
+			        <div>截止阀</div>
+			        <div>止回阀</div>
+			        <div>旋塞阀</div>
+			        <div>疏水阀</div>
+			        <div>减压阀</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>板卷现货</span>
+			     	<div>板材</div>
+					<div>卷材</div>
+			        </li>
+			        </ul>
+			    </div>
 			</li>
 			<li>
 				<a href="#">
 					<div style=" float:left">资讯行情</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
+				<div class="pay1">
+			    	<div class="dis"></div>
+			        <ul>
+			    	<li class="list_1">      
+			        <span>钢管现货</span>
+			     	<div>热点新闻</div>
+					<div>市场快讯</div>
+					<div>会议会展</div>
+			        <div>企业风采</div>
+			        </li>
+			        <li class="list_1">      
+			        <span>行情频道</span>
+			     	<div>原料行情</div>
+					<div>管型行情</div>
+					<div>泵阀行情</div>
+			        </li> 
+			        </ul>
+			    </div>	
 			</li>
 			<li>
 				<a href="#">加工定做</a>
@@ -63,14 +143,20 @@
 			<li>
 				<a href="#">商务合作</a>
 			</li>
-			<li class="user">
-				<div class="us">
-					<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-					<div class="phone">18057753538</div>
-					<div style=" color:#5a5a5a">|</div>
-					<div class="exit">安全退出</div>
-				</div>
-			</li>
+			<?php if(is_login()): ?><li class="user">
+					<div class="us">
+						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
+						<div class="phone"><?php echo get_username();?></div>
+						<div style=" color:#5a5a5a">|</div>
+						<div class="exit">安全退出</div>
+					</div>
+				</li>
+			<?php else: ?>
+				<li class="reg">
+					<div class="login">登录</div>
+					<div>|</div>
+					<div class="register">免费注册</div>
+				</li><?php endif; ?>
 		</ul>
 	</div>
 
@@ -269,16 +355,15 @@
 									<div class="dh">
 										<a class="topa"><input name="pinzhong" type="text" class="box_ipt1" value="<?php echo I('get.pinzhong');?>" placeholder="工业无缝管"></a>
 										<ul>
-											<li class="i_h0"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /><span>钢管</span></li>
+											<li class="i_h0"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /><span>型材</span></li>
 											<li class="i_h1" id="pinzhong">
-												<a>工业无缝管</a>
-												<a>工业焊管</a>
-												<a>精密管</a>
-												<a>毛细管</a>
-												<a>卫生级无缝管</a>
-												<a>卫生级焊管</a>
-												<a>六角管</a>
-												<a>装饰管</a>
+												<a>圆钢</a>
+												<a>管坯</a>
+												<a>角钢</a>
+												<a>扁钢</a>
+												<a>方钢</a>
+												<a>槽钢</a>
+												<a>线材</a>
 											</li>
 											<li class="i_hxian"></li>
 											<li class="i_h2"><span>清除</span></li>

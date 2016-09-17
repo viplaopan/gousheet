@@ -1,0 +1,6 @@
+
+
+*{margin:0px; padding:0px; list-style:none;text-decoration:none; border:none;}
+.clear{clear:both}
+body{width:100%; width:expression(document.body.clientWidth <=1180? "1180px": "auto");min-width:1180spx;font-family:"Microsoft Yahei";}
+

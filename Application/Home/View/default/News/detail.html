@@ -1,0 +1,80 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/overall.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+    <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="__JS__/focus.js"></script>
+</block>
+<block name='navdown'>
+    <div class="navdown">
+    <div class="nleft"><img src="__IMG__/gs_login.png" /></div>
+    <div class="nminlls">
+        <input name="" type="text" class="nm_input"/><input name="" type="submit"  value="搜索" class="nm_bt"/>
+    </div>
+</div>
+</block>
+<block name="body">
+
+
+<div class="newsmain_bg">
+    <div class="newsmain">
+        <div class="newsmain_left"> 
+        <div class="h1">当前位置：<a href="{:U('Home/News/Index')}">新闻资讯</a> > 正文</div>
+            <div class="h2">
+                <div class="newstitle">{$info.title}</div>
+                <div class="zuo">作者：购钢网</div>
+                <div class="date">日期：{$info.create_time|date='Y-m-d',###}</div>
+                <div class="dayin">打印</div>
+                <div class="jijia">标签：{$info.tag}</div>
+                <div class="small"><input id="btnAdd" type="button" value=""/></div>
+                <div class="big"><input id="btnSub" type="button" value=""/></div>
+                <div class="newscontent">
+                <p id="pText">
+                    {$info.content}
+                </p>
+                <img src="__IMG__/11111111111.jpg" style="margin:20px 50px;">
+                <p id="pText1">{$info.content}</p>
+                </div>
+            </div>
+            <div class="h3">
+                <a class="a1" href="#"></a>
+                <a class="a2" href="#"></a>
+                <a class="a3" href="#"></a>
+                <a class="a4" href="#"></a>
+            </div>
+            <div class="h4"><a>文章评论</a><span>0条</span></div>
+            <div class="h5">
+                <textarea  name="textarea" id="textarea" placeholder="">我有话要说...</textarea>
+            </div>
+            <div class="h6">
+                <a href="#">发表</a>
+            </div>
+            <div class="h7"></div>
+        </div>
+        <div class="newsmain_right">
+            <div class="h1">
+                <div class="i1">相关新闻</div>
+                <div class="i2"></div>
+            </div>
+            <ul class="h2">
+            <volist name='cates' id='vo'>
+                <li><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,18}</a></li>
+            </volist>
+            </ul>
+            <div class="h3">
+                <div class="i1">0577-89881176</div>
+                <div class="i2"><img src="__IMG__/erer1.jpg" width="107"></div>
+                <div class="i3"><img src="__IMG__/erer2.jpg" width="107"></div>
+                <div class="i4"><p>扫描进入购钢网手机端</p><p>手机选货，安心保障</p></div>
+                <div class="i5"><p>关注购钢网微信</p><p>实时掌握最新消息</p></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+
+</block>

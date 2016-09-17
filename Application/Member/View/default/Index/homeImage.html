@@ -6,6 +6,7 @@
 		<script charset="utf-8" src="__HO__/kindeditor/kindeditor.js"></script>
 		<script charset="utf-8" src="__HO__/kindeditor/lang/zh_CN.js"></script>
 		<script charset="utf-8" src="__HO__/kindeditor/plugins/code/prettify.js"></script>
+		<script language="javascript" src="__JS__/jquery.form.js"></script>
 		<script>
 			KindEditor.ready(function(K) {
 				var editor1 = K.create('textarea[name="newscontent"]', {
@@ -28,6 +29,56 @@
 				prettyPrint();
 			});
 		</script>
+		<script>
+		function upImg(){
+			$("#thismyform").ajaxSubmit({
+			dataType:  'json',
+			beforeSend: function() {
+
+	//		        		showimg.empty();
+	//						progress.show();
+	//		        		var percentVal = '0%';
+	//		        		bar.width(percentVal);
+	//		        		percent.html(percentVal);
+	//						btn.html("上传中...");
+			},
+			uploadProgress: function(event, position, total, percentComplete) {
+	//		        		var percentVal = percentComplete + '%';
+	//		        		bar.width(percentVal);
+	//		        		percent.html(percentVal);
+			},
+			success: function(data) {
+
+			    hidediv1();
+				if(data.category == '板卷'){
+					$('#message').show();
+					var count = data.bancai.count + data.juancai.count + data.daicai.count;
+					$('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+	                '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+	                return false;
+				}
+				if(data.category == '管件'){
+					$('#message').show();
+					var count = data.wantou.count + data.santong.count + data.fengtou.count;
+					$('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+	                '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+	                return false;
+				}
+				$('#message').show();
+				$('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+	            '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + data.count + '</span>条数据！！！</div>');
+	//						
+			},
+			error:function(xhr){
+	//						btn.html("上传失败");
+	//						bar.width('0')
+	//						files.html(xhr.responseText);
+			}
+		});
+
+		}
+	</script>
+
 
 </block>
 <block name="pageTitle">
@@ -70,15 +121,17 @@
                 	<span style="margin-top:15px;">上传新主图</span> 
                 </li>
                 <li class="iii">
-<form method="post" action="" enctype="multipart/form-data" style="margin-left:15px;">
+<form method="post" action="{:U('Member/Index/doHomeImg')}" id="thismyform" enctype="multipart/form-data" style="margin-left:15px;">
 <div class="ehdel_upload_show">
 <input id="ehdel_upload_text" type="text" name="txt" 
 value="选择一个文件上传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..." />
 <input id="ehdel_upload_btn" value="上传" />
 </div>
 <div class="clear"></div>
-<input type="file" onchange="ehdel_upload_text.value=this.value" class="ehdel_upload" style="background:none" />
+<input type="file" id="cbtn" name="file" onchange="ehdel_upload_text.value=this.value;upImg();" class="ehdel_upload" style="background:none" />
+<input type="hidden" name="type" value="1">
 </form>
+	
                 </li>
                 <li class="iii"><span class="upd">支持jpg/gif/png格式图片，文件需小于1M,建议尺寸370*230</span></li>
             </ul>

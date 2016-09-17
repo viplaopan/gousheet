@@ -1,0 +1,175 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/overall.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+    <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="__JS__/focus.js"></script>
+</block>
+<block name="body">
+  
+<div class="hot_news_bg">
+    <div class="hot_news">
+        <div class="h1">
+            <input type="text" name="text" id="text">
+            <input type="submit" name="submit" id="submit" value="搜索">
+        </div>
+        <div class="h2">
+            <div class="left">
+                <volist name='hot' id='vo'>
+                    <div class="i1">
+                        <div class="j1"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}" class="blue">{$vo.title|msubstr=0,20}</a></div>
+                        <div class="j2">{$vo.description|msubstr=0,25}</div>
+                    </div>
+                </volist>
+            </div>
+            <div class="right">
+                <div class="banner">
+                    <div class="banner_show" id="banner_show">
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                    </div>
+                    <div class="yq_banner_list" id="yq_banner_list">
+                        <div class="wenben">台风“妮旦”登陆广东南沙 千余人体育馆过夜</div>
+                        <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
+                        <a href="javascript:;" rel="1">&nbsp;</a>
+                        <a href="javascript:;" rel="2">&nbsp;</a>
+                        <a href="javascript:;" rel="3">&nbsp;</a>
+                        <a href="javascript:;" rel="4">&nbsp;</a>
+                        <a href="javascript:;" rel="5">&nbsp;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="h3"></div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="kuaixun_bg">
+    <div class="kuaixun">
+        <div class="kuaixun_left">
+            <div class="k1 k">
+                <div class="h1"></div>
+                <div class="h2">
+                    <volist name='shichang' id='vo'>
+                        <div class="i1">
+                            <div class="i1_left">
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j2">作者:购钢网</div>
+                                <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
+                                <div class="j4">1322</div>
+                                <div class="j5">标签:指导价</div>
+                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                            </div>
+                            <div class="i1_right">
+                                <img src="__IMG__/pppppppp.jpg" width="190" height="120">
+                            </div>
+                        </div>
+                    </volist>
+                    
+                </div>
+            </div>
+            <div class="k2 k">
+                <div class="h1"></div>
+                <div class="h2">
+                    <volist name='yuancai' id='vo'>
+                        <div class="i1">
+                            <div class="i1_left">
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j2">作者:购钢网</div>
+                                <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
+                                <div class="j4">1322</div>
+                                <div class="j5">标签:指导价</div>
+                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                            </div>
+                            <div class="i1_right">
+                                <img src="__IMG__/pppppppp.jpg" width="190" height="120">
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+            <div class="k3 k">
+                <div class="h1"></div>
+                <div class="h2">
+                    <volist name='guanjian' id='vo'>
+                        <div class="i1">
+                            <div class="i1_left">
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j2">作者:购钢网</div>
+                                <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
+                                <div class="j4">1322</div>
+                                <div class="j5">标签:指导价</div>
+                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                            </div>
+                            <div class="i1_right">
+                                <img src="__IMG__/pppppppp.jpg" width="190" height="120">
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+            <div class="k4 k">
+                <div class="h1"></div>
+                <div class="h2">
+                    <volist name='shuifa' id='vo'>
+                        <div class="i1">
+                            <div class="i1_left">
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j2">作者:购钢网</div>
+                                <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
+                                <div class="j4">1322</div>
+                                <div class="j5">标签:指导价</div>
+                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                            </div>
+                            <div class="i1_right">
+                                <img src="__IMG__/pppppppp.jpg" width="190" height="120">
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="kuaixun_right">
+            <div class="h1"></div>
+            <div class="h2">
+                <div class="i1">
+                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
+                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                </div>
+                <div class="i1">
+                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
+                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                </div>
+                <div class="i1">
+                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
+                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                </div>
+                <div class="i1">
+                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
+                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                </div>
+                <div class="i1">
+                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
+                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                </div>
+            </div>
+            <div class="h3">
+                <div class="i1">0577-89881176</div>
+                <div class="i2"><img src="__IMG__/erer1.jpg"></div>
+                <div class="i3"><img src="__IMG__/erer2.jpg"></div>
+                <div class="i4"><p>扫描进入购钢网手机端</p><p>手机选货，安心保障</p></div>
+                <div class="i5"><p>关注购钢网微信</p><p>实时掌握最新消息</p></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+</block>
