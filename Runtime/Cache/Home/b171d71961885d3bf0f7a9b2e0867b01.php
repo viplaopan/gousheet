@@ -66,6 +66,10 @@
 	<!-- 主体 -->
 	
 
+<div class="navdown">
+	<div class="nleft"><img src="images/gs_login.png"></div>
+    <div class="nright">欢迎注册</div>
+</div>
 	<div class="content">
 		
 		<div class="login">
