@@ -123,6 +123,39 @@ class IndexController extends BaseController {
 	}
 	
 	public function homeImage(){
+		$cid = D('Company')->where(array('uid'=>UID))->getField('id');
+
+		//公司logo
+		$himg0 = D('HomeImg')->where(array(
+			array('cid' => $cid),
+			array('type' => 0)
+		))->find();
+		$this->assign('himg0' , $himg0);
+		//企业愿景
+		$himg1 = D('HomeImg')->where(array(
+			array('cid' => $cid),
+			array('type' => 1)
+		))->find();
+		$this->assign('himg1' , $himg1);
+		//生产设备
+		$himg2 = D('HomeImg')->where(array(
+			array('cid' => $cid),
+			array('type' => 2)
+		))->find();
+		$this->assign('himg2' , $himg2);
+		//质检及仓储
+		$himg3 = D('HomeImg')->where(array(
+			array('cid' => $cid),
+			array('type' => 3)
+		))->find();
+		$this->assign('himg3' , $himg3);
+		//企业资质
+		$himg4 = D('HomeImg')->where(array(
+			array('cid' => $cid),
+			array('type' => 4)
+		))->find();
+		$this->assign('himg4' , $himg4);
+
 		$this->display();
 	}
 	
@@ -234,11 +267,11 @@ class IndexController extends BaseController {
 			C("UPLOAD_{$file_driver}_CONFIG")
 		);
 		$path = $info['file']['path'];
-
+		$cid = D('Company')->where(array('uid'=>UID))->getField('id');
 
 		$imgInfo = D('HomeImg')->where(array(
-			array('uid' => UID),
-			array('type' => 1)
+			array('cid' => $cid),
+			array('type' => $type)
 		))->find();
 		$id = $imgInfo['id']?$imgInfo['id']:0;
 		//编辑或新增
@@ -246,14 +279,26 @@ class IndexController extends BaseController {
 			$path = $info['file']['path'];			
 			$data['path'] = $path;
 			$data['type'] = $type;
-			D('HomeImg')->where(array('id'=>$id))->save($data);
+			$res = D('HomeImg')->where(array('id'=>$id))->save($data);
 		}else{
-			
-			$data['uid'] = UID;
+			$data['cid'] = $cid;
 			$data['path'] = $path;
 			$data['type'] = $type;
-			D('HomeImg')->add($data);
+			$res = D('HomeImg')->add($data);
+		}
+		if($res){
+			$arr = array(
+	            'info' => '提交成功',
+	            'path' => $path,
+	            'status' => 1
+	        );
+		}else{
+			$arr = array(
+	            'info' => '提交错误',
+	            'status' => 0
+	        );
 		}
 		
+        return $this->ajaxReturn($arr);
 	}
 }

@@ -42,6 +42,9 @@ class UserController extends HomeController {
             $User = new UserApi;
 			$uid = $User->register($username, $password, $email, $mobile);
 			if(0 < $uid){ //注册成功
+				$cdata['uid'] = $uid;
+				D('Company')->add($cdata);
+
 				//TODO: 发送验证邮件
 				$this->success('注册成功！',U('login'));
 			} else { //注册失败，显示错误信息

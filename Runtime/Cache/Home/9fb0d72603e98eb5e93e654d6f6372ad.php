@@ -10,7 +10,7 @@
 <?php if($oneplus_seo_meta['keywords']): ?><meta name="keywords" content="<?php echo ($oneplus_seo_meta['keywords']); ?>"/><?php endif; ?>
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" />
+<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" /> -->
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
@@ -35,7 +35,7 @@
 	<div class="nav">
 		<ul>
 			<li>
-				<a href="#">首页</a>
+				<a href="/">首页</a>
 			</li>
 			<li>
 				<a href="#">
@@ -68,44 +68,44 @@
 			        </li> 
 			        <li class="list_1">      
 			        <span>管件现货</span>
-			     	<div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">弯头</a></div>
+			     	<div><a href="<?php echo U('Home/Guandao/molding_three');?>">弯头</a></div>
 					<div><a href="<?php echo U('Home/Guandao/molding_two');?>?pinzhong=三通">三通</a></div>
 					<div><a href="<?php echo U('Home/Guandao/molding_two');?>?pinzhong=四通">四通</a></div>
-			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">翻边</a></div>
-			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">管帽</a></div>
-			        <div><a href="<?php echo U('Home/Guandao/profile');?>?pinzhong=线材">金属软管</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/molding_one');?>?pinzhong=翻边">翻边</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/molding_one');?>?pinzhong=管帽">管帽</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/molding_one');?>?pinzhong=金属软管">金属软管</a></div>
 			        </li>
 			        <li class="list_1">      
 			        <span>法兰现货</span>
-			     	<div>平焊法兰</div>
-					<div>对焊法兰</div>
-					<div>板式法兰</div>
-			        <div>松套法兰</div>
-			        <div>带颈法兰</div>
-			        <div>人孔法兰</div>
-			        <div>法兰盖</div>
+			     	<div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=平焊法兰">平焊法兰</a></div>
+					<div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=对焊法兰">对焊法兰</a></div>
+					<div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=板式法兰">板式法兰</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=松套法兰">松套法兰</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=带颈法兰">带颈法兰</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=人孔法兰">人孔法兰</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/frenchay');?>?pinzhong=法兰盖">法兰盖</a></div>
 			        </li>
 			        <li class="list_1">      
 			        <span>阀门现货</span>
-			     	<div>球阀</div>
-					<div>蝶阀</div>
-					<div>闸阀</div>
-			        <div>截止阀</div>
-			        <div>止回阀</div>
-			        <div>旋塞阀</div>
-			        <div>疏水阀</div>
-			        <div>减压阀</div>
+			     	<div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=球阀">球阀</a></div>
+					<div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=蝶阀">蝶阀</a></div>
+					<div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=闸阀">闸阀</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=截止阀">截止阀</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=止回阀">止回阀</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=旋塞阀">旋塞阀</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=疏水阀">疏水阀</a></div>
+			        <div><a href="<?php echo U('Home/Guandao/valve');?>?pinzhong=减压阀">减压阀</a></div>
 			        </li>
 			        <li class="list_1">      
 			        <span>板卷现货</span>
-			     	<div>板材</div>
-					<div>卷材</div>
+			     	<div><a href="<?php echo U('Home/Guandao/plank');?>">板材</a></div>
+					<div><a href="<?php echo U('Home/Guandao/plank');?>">卷材</a></div>
 			        </li>
 			        </ul>
 			    </div>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?php echo U('Home/News/index');?>">
 					<div style=" float:left">资讯行情</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
@@ -114,16 +114,16 @@
 			        <ul>
 			    	<li class="list_1">      
 			        <span>钢管现货</span>
-			     	<div>热点新闻</div>
-					<div>市场快讯</div>
-					<div>会议会展</div>
-			        <div>企业风采</div>
+
+					<div><a href="<?php echo U('Home/News/lists',array('category'=>39));?>">市场快讯</a></div>
+					<div><a href="<?php echo U('Home/News/lists',array('category'=>2));?>">会议会展</a></div>
+			        <div><a href="<?php echo U('Home/News/lists',array('category'=>40));?>">企业风采</a></div>
 			        </li>
 			        <li class="list_1">      
 			        <span>行情频道</span>
-			     	<div>原料行情</div>
-					<div>管型行情</div>
-					<div>泵阀行情</div>
+			     	<div><a href="<?php echo U('Home/News/lists',array('category'=>41));?>">原料行情</a></div>
+					<div><a href="<?php echo U('Home/News/lists',array('category'=>42));?>">管型行情</a></div>
+					<div><a href="<?php echo U('Home/News/lists',array('category'=>43));?>">泵阀行情</a></div>
 			        </li> 
 			        </ul>
 			    </div>	
@@ -146,29 +146,30 @@
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-						<div class="phone"><?php echo get_username();?></div>
+						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
 						<div class="exit">安全退出</div>
 					</div>
 				</li>
 			<?php else: ?>
 				<li class="reg">
-					<div class="login">登录</div>
+					<div class="login"><a href="<?php echo U('Member/User/login');?>">登录</a></div>
 					<div>|</div>
-					<div class="register">免费注册</div>
+					<div class="register"><a href="<?php echo U('Member/User/login');?>">免费注册</a></div>
 				</li><?php endif; ?>
 		</ul>
 	</div>
 
-
-	<div class="navdown">
-		<div class="nleft"><img src="/Public/Home/images/gs_login.png" /></div>
-		<div class="nminll">
-			<div class="u"><span class="AS_sp1">客服热线</span><span class="AS_sp2">0577-89881176</span></div>
-			<div class="m"><img src="/Public/Home/images/xian_kefulianxi.png" /></div>
-			<div class="d"><span class="AS_sp3">每周一至周六</span><span class="AS_sp4">8:30-17:30</span></div>
+	
+		<div class="navdown">
+			<div class="nleft"><img src="/Public/Home/images/gs_login.png" /></div>
+			<div class="nminll">
+				<div class="u"><span class="AS_sp1">客服热线</span><span class="AS_sp2">0577-89881176</span></div>
+				<div class="m"><img src="/Public/Home/images/xian_kefulianxi.png" /></div>
+				<div class="d"><span class="AS_sp3">每周一至周六</span><span class="AS_sp4">8:30-17:30</span></div>
+			</div>
 		</div>
-	</div>
+	
 </div>
 	<!-- /头部 -->
 	
@@ -365,7 +366,7 @@
 
                 <!--立即搜索-->
                 <div class="left_middle">
-                    <form action="/Home/Guandao/molding_three/pinzhong/15%E5%BA%A6%E5%BC%AF%E5%A4%B4.html" method="get">
+                    <form action="/Home/Guandao/molding_three.html" method="get">
                         <div id="headm">
                             <ul>
                                 <li  id="pinzhongLi">
@@ -857,27 +858,27 @@
 		<div class="fright">
 			<ul class="r1">
 				<li>
-					<a>关于我们</a>
+					<a href="<?php echo U('Home/Other/About');?>">关于我们</a>
 					<div>|</div>
 				</li>
 				<li>
-					<a>法律声明</a>
+					<a href="<?php echo U('Home/Other/Legal');?>">法律声明</a>
 					<div>|</div>
 				</li>
 				<li>
-					<a>人才招聘</a>
+					<a href="<?php echo U('Home/Other/Recruitment');?>">人才招聘</a>
 					<div>|</div>
 				</li>
 				<li>
-					<a>投资洽谈</a>
+					<a href="<?php echo U('Home/Other/Investment');?>">投资洽谈</a>
 					<div>|</div>
 				</li>
 				<li>
-					<a>联系我们</a>
+					<a href="<?php echo U('Home/Other/contact');?>">联系我们</a>
 					<div>|</div>
 				</li>
 				<li>
-					<a>常见问题</a>
+					<a href="<?php echo U('Home/Other/Remittance');?>">汇款方式</a>
 				</li>
 			</ul>
 			<div class="r2">

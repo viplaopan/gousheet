@@ -12,6 +12,32 @@
 <include file="Public/seo"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="__CSS__/whole.css">
+<script type="text/javascript" src="__JS__/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__JS__/focus.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+		   //
+		   $(".nav_bg .nav .s1").hover(function(){
+												   //鼠标放上去时执行
+												 $(this).addClass("s2").removeClass(".s1");  
+												   },function(){
+												//鼠标移开后执行
+												$(this).addClass(".s1").removeClass("s2");  	   
+												})
+		   })
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".nav_bg .nav .s1 a").each(function() {
+            $this = $(this);
+            if ($this[0].href == String(window.location)) {
+                $this.addClass("s2");
+            }
+        });
+    });
+</script>
 <block name="style"></block>
 {:hook('pageHeader')}

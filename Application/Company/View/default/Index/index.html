@@ -1,63 +1,229 @@
 <extend name="Base/common" />
 <block name="style">
-	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css"/>
+	
 	
 </block>
-<block name="pageTitle"><div class="nright">会员中心</div></block>
+
 <block name="body">
-	<div class="content">
+	
+<!--公司简介-->
+<div class="jianjie_bg">
+	<div class="jianjie">
+        <div class="banner">
+            <div class="banner_show" id="banner_show">
+                <a href="javascript:void(0)" class="bannger_inbox"><img src="{$himg1.path|default=''}" width="5.path32" height="380"></a>
+                <a href="javascript:void(0)" class="bannger_inbox"><img src="{$himg2.path|default=''}" width="532" height="380"></a>
+                <a href="javascript:void(0)" class="bannger_inbox"><img src="{$himg3.path|default=''}" width="532" height="380"></a>
+                <a href="javascript:void(0)" class="bannger_inbox"><img src="{$himg4.path|default=''}" width="532" height="380"></a>
+                <div class="yq_banner_list" id="yq_banner_list">
+                  <a href="javascript:;" rel="0" class="hover">企业愿景</a>
+                  <a href="javascript:;" rel="1">生产设备</a>
+                  <a href="javascript:;" rel="2">质检及仓储</a>
+                <a href="javascript:;" rel="3">企业资质</a>	
+                </div>
+            </div>
+        </div>
+        <div class="guanyu">
+        	<div class="h1">
+            	<div class="i1">公司简介</div>
+                <div class="i2">COMPANY PROFILE</div>
+            </div>
+            <div class="h2">
+            	{$company.sm_desc}
+            </div>
+            <a href="about.php" class="h3">查看更多</a>
+        </div>
+        <div class="clear"></div>
+	</div>
+</div>
 
-		<div class="content_1">
-			<div class="content_1c">
-				<include file="Public/nav"/>
-				<div class="right">
-					<div class="right1">会员信息</div>
-					<ul class="right2">
-						<li><span class="s1">{:get_nickname()}</span> 您好：</li>
-						<li>欢迎访问中国不锈钢现货网，在您浏览本网过程中，有任何问题或者建议，请随时跟我们联系。</li>
-						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />会员级别：您是<span class="s1">VIP</span>会员，还有<span class="s1">138</span>天到期</li>
-						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />登录状态：今天您第<span class="s1">1</span>次登录，总共登录<span class="s1">{$loginTimes}</span>次，上次登录的<span class="s1">IP</span>是 {:long2ip($lastIP)}</li>
-					</ul>
-
-					<div class="right3">
-						<span>尊敬的会员：</span>
-						<p>为了给广大不锈钢行业用户一个良好的平台环境，请不要发布虚假的库存信息。即日起，本网工作人员将不定期的监督抽查所有会员的库存，若经本站工作人员提醒后仍不改正，将封号处理！</p>
-					</div>
-					<div class="right4">
-						<ul class="r1">
-							<li>公司名称</li>
-							<li style="letter-spacing:8px;">联系人</li>
-							<li style="letter-spacing:26px;">电话</li>
-							<li style="letter-spacing:26px;">传真</li>
-						</ul>
-						<ul class="r2">
-							<li>温州市龙泰管业有限公司</li>
-							<li>王先生</li>
-							<li> 18057753538 18057753538 </li>
-							<li>057789881156</li>
-						</ul>
-						<ul class="r1">
-							<li>联系地址</li>
-							<li style="letter-spacing:26px;">邮编</li>
-							<li style="letter-spacing:26px;">网址</li>
-							<li style="letter-spacing:26px;">邮箱</li>
-						</ul>
-						<ul class="r2">
-							<li>温州市龙湾区永兴工业区</li>
-							<li></li>
-							<li></li>
-							<li>273336521@qq.com</li>
-						</ul>
-					</div>
-				</div>
-				<div class="clear">
-
-				</div>
-			</div>
-		</div>
-
+<!--联系我们-->
+<div class="lianxi_bg">
+	<div class="lianxi">
+    	<div class="h1">
+        	<div class="i1">联系方式</div>
+            <div class="i2">CONTACT US</div>
+        </div>
+		<div class="h2">
+        	<div class="i1">
+            	<div class="j1 j">联系人：</div>
+                <div class="j2 j">{$contact.name}</div>
+                <div class="j3 j">经营模式：</div>
+                <div class="j4 j">{$company.pattern}</div>
+                <div class="j5 j">电话：</div>
+                <div class="j6 j">{$contact.tel}</div>
+            </div>
+            <div class="i1">
+            	<div class="j1 j">公司简称：</div>
+                <div class="j2 j">{$company.name}</div>
+                <div class="j3 j">仓库区：</div>
+                <div class="j4 j">{$company.ware_city}</div>
+                <div class="j5 j">传真：</div>
+                <div class="j6 j">{$contact.fax}</div>
+            </div>
+            <div class="i1">
+            	<div class="j1 j">主营业务：</div>
+                <div class="j2 j">{$company.main_business}</div>
+                <div class="j3 j">QQ：</div>
+                <div class="j4 j"><a href="#"><img src="../images/qq.jpg" width="77" height="22" style=" margin-top:12px;" /></a></div>
+                <div class="j5 j">手机：</div>
+                <div class="j6 j">{$contact.mobile}</div>
+            </div>
+            <div class="i1">
+            	<div class="j1 j">办公地址：</div>
+                <div class="j7 j">{$company.com_address}</div>
+                <div class="j3 j">仓库地址：</div>
+                <div class="j8 j">{$company.ware_address}</div>
+            </div>
+        </div>
+	<div class="clear"></div>
+    </div>
+</div>
+<!--现货库存-->
+<div class="stock_bg">
+	<div class="stock">
+    	<div class="h1">
+        	<div class="i1">现货库存</div>
+            <div class="i2">CONTACT US</div>
+        </div>
+        <div class="h2">
+        	<div class="s_title_1 s_title">品种</div>
+            <div class="s_title_2 s_title">材质</div>
+            <div class="s_title_3 s_title">规格（MM）</div>
+            <div class="s_title_4 s_title">数量</div>
+            <div class="s_title_5 s_title">重量（KG）</div>
+            <div class="s_title_6 s_title">工艺</div>
+            <div class="s_title_7 s_title">R值</div>
+            <div class="s_title_8 s_title">表面</div>
+            <div class="s_title_9 s_title">备注</div>
+        </div>
+        <div class="h3">
+        	<div class="h3_title_nav_1">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_2">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_1">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_2">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_1">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_2">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_1">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_2">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_1">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+            <div class="h3_title_nav_2">
+                <div class="h3_title_1 h3_title">工业无缝管</div>
+                <div class="h3_title_2 h3_title">TP316L</div>
+                <div class="h3_title_3 h3_title">27*3</div>
+                <div class="h3_title_4 h3_title">0</div>
+                <div class="h3_title_5 h3_title">802</div>
+                <div class="h3_title_6 h3_title"></div>
+                <div class="h3_title_7 h3_title"></div>
+                <div class="h3_title_8 h3_title"></div>
+                <div class="h3_title_9 h3_title"></div>
+            </div>
+        </div>
+        <div class="down">
+            <div class="d1">436条记录 1/22页</div>
+            <div class="d2 d">下一页</div>
+            <div class="d3 d">1</div>
+            <div class="d4 d">2</div>
+            <div class="d5 d">3</div>
+            <div class="d6 d">4</div>
+            <div class="d7 d">5</div>
+            <div class="d8 d">下一页</div>
+            <div class="d9 d">最后一页</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
 </block>
 <block name="script">
-	<script src="__JS__/jquery.validate.js"></script>
-	
 </block>

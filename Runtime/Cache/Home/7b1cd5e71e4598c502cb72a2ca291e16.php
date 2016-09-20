@@ -146,16 +146,16 @@
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-						<div class="phone"><?php echo get_username();?></div>
+						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
 						<div class="exit">安全退出</div>
 					</div>
 				</li>
 			<?php else: ?>
 				<li class="reg">
-					<div class="login">登录</div>
+					<div class="login"><a href="<?php echo U('Member/User/login');?>">登录</a></div>
 					<div>|</div>
-					<div class="register">免费注册</div>
+					<div class="register"><a href="<?php echo U('Member/User/login');?>">免费注册</a></div>
 				</li><?php endif; ?>
 		</ul>
 	</div>

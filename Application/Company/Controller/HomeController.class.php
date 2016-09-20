@@ -30,6 +30,39 @@ class HomeController extends Controller {
         if(!C('WEB_SITE_CLOSE')){
             $this->error('站点已经关闭，请稍后访问~');
         }
+        $cid = I('get.cid');
+        //公司logo
+        $himg0 = D('HomeImg')->where(array(
+            array('cid' => $cid),
+            array('type' => 0)
+        ))->find();
+        $this->assign('himg0' , $himg0);
+        //公司信息
+        
+        $company = D('Company')->find($cid);
+        //主营业务
+        $main_business = C('BUSINESS');        
+        $bus = explode(',',$company['business']);
+        $bstr = '';
+        foreach($bus as $bs){
+            $bstr .= $main_business[$bs] . ',';
+        }
+        $bstr = substr($bstr,0,strlen($bstr)-1); 
+        $company['main_business'] = $bstr;
+        //经营模式
+        $patterns = C('PATTERN');        
+        $company['pattern'] = $patterns[$company['pattern']];
+
+        //获取仓库
+        $region_name = D('Region')->where('region_id = ' . $company['ware_city'])->getField('region_name');
+        $company['ware_city'] = $region_name;
+
+        $this->assign('company' , $company);
+
+        //联系人信息
+        $contact = D('Contact')->where('uid = ' . $company['uid'])->find();
+        $this->assign('contact' , $contact);
+
     }
 
 	/* 用户登录检测 */
