@@ -31,6 +31,10 @@ class HomeController extends Controller {
             $this->error('站点已经关闭，请稍后访问~');
         }
         $cid = I('get.cid');
+        if($cid<=0){
+            $this->error('访问的公司不存在');
+        }
+
         //公司logo
         $himg0 = D('HomeImg')->where(array(
             array('cid' => $cid),

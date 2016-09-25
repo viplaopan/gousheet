@@ -1,4 +1,3 @@
-
 <div class="top_1">
     <div class="head_1">
     <span class="head_1_1">您好，欢迎来到购钢现货网！</span>
@@ -15,11 +14,11 @@
 </div>
 <div class="nav_bg">
     <ul class="nav">
-        <li class="s1"><a href="index.html">首页</a></li>
-        <li class="s1"><a href="about.html">企业简介</a></li>
-        <li class="s1"><a href="qualified.html">企业资质</a></li>
-        <li class="s1"><a href="stock.html">现货库存</a></li>
-        <li class="s1"><a href="recruit.html">企业招聘</a></li>
-        <li class="s1"><a href="contact.html">联系方式</a></li>
+        <li class="s1"><a href="{:U('Company/Index/index',array('cid'=>$company['id']))}">首页</a></li>
+        <li class="s1"><a href="{:U('Company/Index/about',array('cid'=>$company['id']))}">企业简介</a></li>
+        <li class="s1"><a href="{:U('Company/Index/qualified',array('cid'=>$company['id']))}">企业资质</a></li>
+        <li class="s1"><a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>1))}">现货库存</a></li>
+        <li class="s1"><a href="{:U('Company/Index/recruit',array('cid'=>$company['id']))}">企业招聘</a></li>
+        <li class="s1"><a href="{:U('Company/Index/contact',array('cid'=>$company['id']))}">联系方式</a></li>
     </ul>
 </div>

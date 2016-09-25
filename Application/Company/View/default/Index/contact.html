@@ -1,0 +1,65 @@
+<extend name="Base/common" />
+<block name="style">
+	<style>
+     .about .down {
+        width: 100%;
+        margin-left: 225px;
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        float: left;
+        text-align: center;
+    }   
+    </style>
+	
+</block>
+
+<block name="body">
+
+<div class="about_bg">
+    <div class="about">
+        <div class="h1">
+            <div class="i1">联系方式</div>
+            <div class="i2">ENTERPRISE RECRUITMENT</div>
+        </div>
+        <div class="h5">
+            <div class="i1">
+                <div class="j1 j">联系人：</div>
+                <div class="j2 j">{$contact.name}</div>
+                <div class="j3 j">经营模式：</div>
+                <div class="j4 j">{$company.pattern}</div>
+                <div class="j5 j">电话：</div>
+                <div class="j6 j">{$contact.tel}</div>
+            </div>
+            <div class="i1">
+                <div class="j1 j">公司简称：</div>
+                <div class="j2 j">{$company.name}</div>
+                <div class="j3 j">仓库区：</div>
+                <div class="j4 j">{$company.ware_city}</div>
+                <div class="j5 j">传真：</div>
+                <div class="j6 j">{$contact.fax}</div>
+            </div>
+            <div class="i1">
+                <div class="j1 j">主营业务：</div>
+                <div class="j2 j">{$company.main_business}</div>
+                <div class="j3 j">QQ：</div>
+                <div class="j4 j"><a href="#"><img src="__IMG__/qq.jpg" width="77" height="22" style=" margin-top:12px;" /></a></div>
+                <div class="j5 j">手机：</div>
+                <div class="j6 j">{$contact.mobile}</div>
+            </div>
+            <div class="i1">
+                <div class="j1 j">办公地址：</div>
+                <div class="j7 j">{$company.com_address}</div>
+                <div class="j3 j">仓库地址：</div>
+                <div class="j8 j">{$company.ware_address}</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+</block>
+<block name="script">
+</block>

@@ -342,7 +342,7 @@
 	<a <?php if((ACTION_NAME) == "sheet"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/sheet');?>">卷材</a>
 </div>
 <div class="down_box">
-	<a class="box_n" style="border-right:0; color:#F00" href="company.html">搜公司</a>
+	<a <?php if((ACTION_NAME) == "search"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/search');?>">搜公司</a>
 </div>
 <div class="clear"></div>
 				</div>

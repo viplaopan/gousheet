@@ -1,0 +1,29 @@
+<div class="h2" style=" border:1px solid #d2d2d2; border-bottom:none;">
+    <div class="s_title_1 s_title">材质</div>
+    <div class="s_title_2 s_title">规格（MM）</div>
+    <div class="s_title_3 s_title">支数</div>
+    <div class="s_title_4 s_title">重量（KG）</div>
+    <div class="s_title_5 s_title">公司简称</div>
+    <div class="s_title_6 s_title">仓库区</div>
+    <div class="s_title_7 s_title">更新时间</div>
+    <div class="s_title_8 s_title" style="width: 270px;">备注</div>
+</div>
+
+
+<div class="h3">
+    <volist name='lists' id='vo'>
+        <div class="h3_title_nav_1">
+            <div class="h3_title_1 h3_title">{$vo.caizhi}</div>
+            <div class="h3_title_2 h3_title">{$vo.guige}</div>
+            <div class="h3_title_3 h3_title">{$vo.zhishu}</div>
+            <div class="h3_title_4 h3_title">{$vo.zhongliang|default="0"}</div>
+            <div class="h3_title_5 h3_title">{$vo['company']['name']}</div>
+            <div class="h3_title_6 h3_title">{$vo.ware_city}</div>
+            <div class="h3_title_7 h3_title">{$vo.create_time|mdate}</div>
+            <div class="h3_title_8 h3_title" style="width: 270px;">{$vo.beizhu}</div>   
+        </div>
+    </volist>    
+</div>
+<div class="down">
+    {:getPaginationCompany($totalCount,20)}
+</div>

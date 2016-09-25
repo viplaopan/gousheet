@@ -1,0 +1,131 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/main.css"/>
+	<script type="text/javascript" src="__JS__/layer.js"></script>
+	<style>
+        #headm li ul .i_h3 .h3_miss img {
+            width: 8px;
+            height: 8px;
+            margin-top: 1px;
+            padding-top: 4px;
+            display: block;
+        }
+    </style>
+</block>
+<block name="body">
+
+<div class="content_bg"  style="background-color:#ffffff">
+    <div class="content">
+        <div class="conLeft">
+            <div class="pos"   style=" height:30px; line-height:30px;">
+                 您现在的位置：<a class="blue" href="#">购钢现货网</a> > <a class="blue" href="">加工定做</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="hot_news_bg">
+    <div class="hot_news">
+        <div class="h1" style="background:url(__IMG__/jiagongdz.png) no-repeat"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="process">
+
+    <div class="p_left">
+        <div class=" left_list">
+                <div class="list_bt">钢管类</div>
+                <div class="list_con">
+                    <volist name='ggs' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>
+                </div>
+                <div class="list_bt">型材类</div>
+                <div class="list_con">
+                    <volist name='xcl' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>                   
+                </div>
+                   <div class="list_bt">法兰类</div>
+                <div class="list_con">
+                    <volist name='fll' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>   
+                </div>
+                 <div class="list_bt">阀门类</div>
+                <div class="list_con">
+                    <volist name='fml' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>   
+                </div>
+                <div class="list_bt">板卷类</div>
+                <div class="list_con">
+                    <volist name='bjl' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>   
+                </div>
+             
+        </div>
+            <div class="left_rz">
+                <div class="rz_tb">加工企业申请入驻</div>
+                <div class="rz_con">
+                    <a>若您有不锈钢加工资质</a>
+                    <a>欢迎联系购钢现货网申请入驻</a>
+                    <span>电话：0577-89881176</span>
+                </div>
+            </div>
+            
+            <div class="left_sj">
+                <div class="sj_bt">行业数据</div>
+                <div class="sj_xx">
+                    <div class="xx_l"></div>
+                    <div class="xx_r"></div>
+                </div>
+                <div class="sj_con">
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                </div>
+            </div>
+        <div class="clear"></div>
+    </div>
+    
+    
+    <div class="p_right">
+    
+        <div class="right_s">
+            <div class="right_ss">
+                <input name="" type="text" class="ss_input"   value="请输入公司简称"/>
+            </div>
+            <input name="" type="submit"  value="搜索" class="right_bt"/>
+        </div>
+        <volist name='lists' id='vo'>
+            <div class="rgight_con">
+                <div class="con_l">
+                        <div class="l_bt">{$vo.name}</div>
+                        <div class="l_div">主营业务：{$vo.business}</div>
+                        <div class="l_div">地址：{$vo.address}</div>
+                        <div class="l_div">电话：{$vo.mobile}</div>
+                        <div class="l_div">传真：{$vo.fax}</div>
+                        <div class="l_div">联系人：{$vo.contact}</div>
+                </div>
+                <div class="con_r">
+                    <img src="/Uploads/Images/{$vo.cover}" />
+                </div>
+            </div>
+        </volist>
+        <div class="clear"></div>
+    </div>
+        
+    <div class="clear"></div>
+</div>
+
+</block>

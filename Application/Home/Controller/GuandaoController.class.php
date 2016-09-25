@@ -769,4 +769,9 @@ class GuandaoController extends HomeController {
 		
         $this->display();
 	}
+	public function search(){
+		
+		$this->assign('lists',$lists);
+		$this->display();
+	}
 }

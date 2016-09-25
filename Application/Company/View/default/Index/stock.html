@@ -1,0 +1,107 @@
+<extend name="Base/common" />
+<block name="style">
+	<style>
+     .about .down {
+        width: 100%;
+        margin-left: 225px;
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        float: left;
+        text-align: center;
+    }   
+    </style>
+	
+</block>
+
+<block name="body">
+    
+<div class="about_bg">
+
+    <div class="about">
+        <div class="h1">
+            <div class="i1">现货库存</div>
+            <div class="i2">STOCK INVENTORY</div>
+        </div>
+        <style>
+           
+            .store-nav ul li{
+                float: left;
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-bottom: 17px;
+            }
+            .store-nav ul li a{
+                color: #000;
+            }
+        </style>
+
+        <div class="store-nav">
+            <ul>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>1))}">钢管</a>
+                </li>
+                
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>2))}">型材</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>31))}">弯头</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>32))}">三通四通异径管</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>33))}">封头翻遍</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>4))}">法兰</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>5))}">阀门</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>6))}">板材</a>
+                </li>
+                <li>
+                    <a href="{:U('Company/Index/stock',array('cid'=>$company['id'],'type'=>7))}">卷材</a>
+                </li>
+            </ul>
+        </div>
+
+        <eq name='Think.get.type' value='1'>
+            <include file="Lists/sactuals"/>
+        </eq>
+        <eq name='Think.get.type' value='2'>
+            <include file="Lists/profile"/>
+        </eq>
+        <eq name='Think.get.type' value='31'>
+            <include file="Lists/molding_three"/>
+        </eq>
+        <eq name='Think.get.type' value='32'>
+            <include file="Lists/molding_two"/>
+        </eq>
+        <eq name='Think.get.type' value='33'>
+            <include file="Lists/molding_one"/>
+        </eq>
+        <eq name='Think.get.type' value='4'>
+            <include file="Lists/frenchay"/>
+        </eq>
+        <eq name='Think.get.type' value='5'>
+            <include file="Lists/valve"/>
+        </eq>
+        <eq name='Think.get.type' value='6'>
+            <include file="Lists/plank"/>
+        </eq>
+        <eq name='Think.get.type' value='7'>
+            <include file="Lists/sheet"/>
+        </eq>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+</block>
+<block name="script">
+</block>

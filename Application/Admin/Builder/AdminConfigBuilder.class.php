@@ -16,8 +16,6 @@ class AdminConfigBuilder extends AdminBuilder
     private $_buttonList = array();
     private $_savePostUrl = array();
 
-
-
     public function key($name, $title, $subtitle = null, $type, $opt = null)
     {
         $key = array('name' => $name, 'title' => $title, 'subtitle' => $subtitle, 'type' => $type, 'opt' => $opt);

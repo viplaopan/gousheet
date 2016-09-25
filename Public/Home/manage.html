@@ -5,8 +5,10 @@
 <link rel="stylesheet" type="text/css" href="css/overall.css"/>
 <link rel="stylesheet" type="text/css" href="css/top.css"/>
 <link rel="stylesheet" type="text/css" href="css/layer.css"/>
+<link rel="Shortcut Icon" href="images/guo.png" type="image/x-icon">
 <script language="javascript" src="js/layer.js"></script>
-<title>无标题文档</title>
+
+<title>会员中心首页-库存管理</title>
 </head>
 
 <body>
@@ -16,91 +18,8 @@
 <li><a href="#">首页</a></li>
 <li>
 <a href="#"><div style=" float:left">搜索现货</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a>
-
-<div class="pay">
-    	<div class="dis"></div>
-        <ul>
-    	<li class="list_1">      
-        <span>钢管现货</span>
-     	<div>工业无缝管</div>
-		<div>卫生级无缝管</div>
-		<div>工业焊管</div>
-        <div>卫生级焊管</div>
-        <div>精密管</div>
-        <div>装饰管</div>
-        <div>毛细管</div>
-        <div>装饰管</div>
-        </li>
-        <li class="list_1">      
-        <span>板卷现货</span>
-     	<div>圆钢</div>
-		<div>管坯</div>
-		<div>角钢</div>
-        <div>扁钢</div>
-        <div>方钢</div>
-        <div>槽钢</div>
-        <div>线材</div>
-        </li> 
-        <li class="list_1">      
-        <span>管件现货</span>
-     	<div>弯头</div>
-		<div>三通</div>
-		<div>四通</div>
-        <div>翻边</div>
-        <div>管帽</div>
-        <div>金属软管</div>
-        </li>
-        <li class="list_1">      
-        <span>法兰现货</span>
-     	<div>平焊法兰</div>
-		<div>对焊法兰</div>
-		<div>板式法兰</div>
-        <div>松套法兰</div>
-        <div>带颈法兰</div>
-        <div>人孔法兰</div>
-        <div>法兰盖</div>
-        </li>
-        <li class="list_1">      
-        <span>阀门现货</span>
-     	<div>球阀</div>
-		<div>蝶阀</div>
-		<div>闸阀</div>
-        <div>截止阀</div>
-        <div>止回阀</div>
-        <div>旋塞阀</div>
-        <div>疏水阀</div>
-        <div>减压阀</div>
-        </li>
-        <li class="list_1">      
-        <span>板卷现货</span>
-     	<div>板材</div>
-		<div>卷材</div>
-        </li>
-        </ul>
-    </div>
-
 </li>
 <li><a href="#"><div style=" float:left">资讯行情</div><div class="span" style="float:left"><img src="images/sanjiao.png" /></div></a>
-
-<div class="pay1">
-    	<div class="dis"></div>
-        <ul style="margin-top:0px;">
-    	<li class="list_1">      
-        <span>钢管现货</span>
-     	<div>热点新闻</div>
-		<div>市场快讯</div>
-		<div>会议会展</div>
-        <div>企业风采</div>
-        </li>
-        <li class="list_1">      
-        <span>行情频道</span>
-     	<div>原料行情</div>
-		<div>管型行情</div>
-		<div>泵阀行情</div>
-        </li> 
-        </ul>
-    </div>	
-
 </li>
 <li><a href="#">加工定做</a></li>
 <li><a href="#">求购信息</a></li>
@@ -155,20 +74,54 @@
  					<input  type="button" value="X" onclick="hidediv1();" class="x1"/>
 					</div>
   						<div class="clear"></div>                  
-					<div class="LL">
-						<div class="ehdel_upload_show1">
-							<input id="ehdel_upload_text1" type="text" name="txt" value="未选择任何文件"/>
-							<input id="ehdel_upload_btn1"  value="选择文件"/>
-						</div>
-					<div class="clear"></div>
-							<input type="file" onchange="ehdel_upload_text1.value=this.value" class="ehdel_upload1"   dir="ltr"/>	 
+					
+                    
+        <script type="text/javascript">
+
+function f1(){
+    var mypic = document.getElementById('myhead').files[0];
+    var fd = new FormData();
+    fd.append("myhead",mypic);
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            alert(xhr.responseText);
+        }
+    }
+
+    //侦查当前附件上传情况
+    xhr.upload.onprogress = function(evt){
+        //侦查附件上传情况
+        //通过事件对象侦查
+        //该匿名函数表达式大概0.05-0.1秒执行一次
+        //console.log(evt);
+        //console.log(evt.loaded);  //已经上传大小情况
+        //evt.total; 附件总大小
+        var loaded = evt.loaded;
+        var tot = evt.total;
+        var per = Math.floor(100*loaded/tot);  //已经上传的百分比
+        var son =  document.getElementById('son');
+        son.innerHTML = per+"%";
+        son.style.width=per+"%";
+    }
+
+    xhr.open("post","./04.php");
+    xhr.send(fd);
+}
+
+</script>                    
+                    <div class="LL">
+                     <div id="parent"><div id="son"></div></div>
+					<input type="file" id="myhead" name="myhead" onchange="f2()" class="LL_input" style="height:23px; font-size:12px; line-height:23px;"/>			 
                     </div>
                     <div class="an_list">
                     	<div class="minlit">
-                        	<input name="" type="submit"  value="确定"  class="btleft"/>
+                        	<input name="" type="submit"  value="确定"  onclick="f1()"  class="btleft"/>
                         	<input name="" type="button" value="取消"  onclick="hidediv1();" class="btlright"/>
                         </div>	
-                    </div>           
+                    </div>  
+                           
 					</div>  
                     </div>                  
 

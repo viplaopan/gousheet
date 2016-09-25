@@ -1,0 +1,113 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/main.css"/>
+	<script type="text/javascript" src="__JS__/layer.js"></script>
+	<style>
+        #headm li ul .i_h3 .h3_miss img {
+            width: 8px;
+            height: 8px;
+            margin-top: 1px;
+            padding-top: 4px;
+            display: block;
+        }
+    </style>
+</block>
+<block name="body">
+
+
+<div class="content_bg"  style="background-color:#ffffff">
+	<div class="content">
+    	<div class="conLeft">
+        	<div class="pos"   style=" height:30px; line-height:30px;">
+     			 您现在的位置：<a class="blue" href="#">购钢现货网</a> > <a class="blue" href="">货运物流专区</a>
+			</div>
+    	</div>
+    </div>
+</div>
+
+
+<div class="hot_news_bg">
+	<div class="hot_news">
+    	<div class="h1" style=" background:url(__IMG__/hywlzq.png) no-repeat">
+        	<div class="rz">
+            	当前共有<span>412</span>家物流企业入驻
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="logistics">
+	<div class="log_left">
+   
+    	<div class="left_ss">
+	    	<form id="search" action="__SELF__" method="get">
+	    		<span class="sp_z">快速找车</span>
+		      	<input name="from" type="text" value="{:I('get.from')}" class="sp_i"/>
+		        <div class="sp_x"></div>
+		        <input name="to" type="text" value="{:I('get.to')}" class="sp_i"/>
+		        <input name="" type="submit" class="sp_b"  value="搜索"/>
+	    	</form>
+	    	<script>
+	    		$(function(){
+	    			$('#search').submit(function(){
+	    				var from = $("input[name='from']").val();	
+	    				var to = $("input[name='to']").val();
+	    				if(from == '' || to == ''){
+	    					alert('信息必须填写完整');
+	    					return false;
+	    				}
+	    			})
+	    		})
+	    	</script>
+    	</div>
+    	<volist name='lists' id='vo'>
+	        <div class="left_con">
+	        	<div class="con_l">
+	            	<div class="l_bt">{$vo.name}</div>
+	                <div class="l_div">线路：{$vo.lists}</div>
+	                <div class="l_div">地址：{$vo.address}</div>
+	                <div class="l_div">电话：{$vo.mobile}</div>
+	                <div class="l_div">传真：{$vo.fax}</div>
+	                <div class="l_div">联系人：{$vo.contact}</div>
+	            </div>
+	            <div class="con_r">
+	            	<img src="/Uploads/Images/{$vo.cover}" />
+	            </div>
+	        </div>
+        </volist>
+        
+    </div>
+    <div class="log_right">
+    
+    	<div class="right_rz">
+        	<div class="rz_tb">加工企业申请入驻</div>
+                <div class="rz_con">
+                	<a>若您有不锈钢加工资质</a>
+                    <a>欢迎联系购钢现货网申请入驻</a>
+                    <span>电话：0577-89881176</span>
+                </div>
+        </div>
+        <div class="right_sj">
+        		<div class="sj_bt">行业数据</div>
+                <div class="sj_xx">
+                	<div class="xx_l"></div>
+                    <div class="xx_r"></div>
+                </div>
+                <div class="sj_con">
+                	<a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                  	<a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                </div>
+        </div>
+    </div>
+</div>
+
+</block>

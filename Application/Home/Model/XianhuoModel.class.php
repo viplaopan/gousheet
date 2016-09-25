@@ -60,6 +60,7 @@ class XianhuoModel{
 			
 			return array('category' => '管件','wantou'=>$wantou,'santong'=>$santong,'fengtou'=>$fengtou);
 		}
+        
 	}
 	private function addGangguan($xls){
 		array_shift($xls);

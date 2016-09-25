@@ -1,0 +1,47 @@
+<extend name="Base/common" />
+<block name="style">
+	<style>
+     .about .down {
+        width: 100%;
+        margin-left: 225px;
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        float: left;
+        text-align: center;
+    }   
+    </style>
+	
+</block>
+
+<block name="body">
+
+<div class="about_bg">
+    <div class="about">
+        <div class="h1">
+            <div class="i1">企业招聘</div>
+            <div class="i2">ENTERPRISE RECRUITMENT</div>
+        </div>
+        <div class="h4">
+            <ul>
+                <volist name='lists' id='vo'>
+                <li>
+                    <span class="li_1">{$vo.title}</span>
+                    <span class="li_2">温州市龙湾区</span>
+                    <p><span>工作内容：</span>要求从事不锈钢行业或外贸相关行业1年以上。一年两次国外展会、一次国内展会机会。</p>
+                    <p><span>月薪：</span>面议  <span>经验：</span>1年以上  <span>学历：</span>本科及以上</p>
+                    <p><span>电话：</span>13057752318(王先生)</p>
+                    <p><span>有效期：</span>2016-08-31</p>
+                </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+</block>
+<block name="script">
+</block>

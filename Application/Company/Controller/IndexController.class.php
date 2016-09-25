@@ -45,5 +45,37 @@ class IndexController extends HomeController {
         $this->display();
 
     }
-
+    //库存现货
+    public function stock($type = 1,$cid = 0){
+        $map['cid'] = $cid;
+        $info = D('Xianhuo')->getMap($map)->getXinahuo($type);
+        $lists = $info['lists'];
+        $totalCount = $info['count'];
+        $this->assign('lists' , $lists);
+        $this->assign('totalCount',$totalCount);
+        
+        $this->display();
+    }
+    //企业简介
+    public function about($cid = 0){
+        $this->display();
+    }
+    //企业资质
+    public function qualified($cid = 0){
+        //企业资质
+        $himg4 = D('HomeImg')->where(array(
+            array('cid' => $cid),
+            array('type' => 4)
+        ))->find();
+        $this->assign('himg4' , $himg4);
+        $this->display();
+    }
+    //联系方式
+    public function contact(){
+        $this->display();
+    }
+    //招聘
+    public function recruit($cid = 0){
+        $this->display();
+    }
 }
