@@ -163,7 +163,7 @@ class IndexController extends BaseController {
 		$this->display();
 	}
 	public function recruit(){
-		$recruits = D('Recruit')->where('uid = ' . UID) -> select();
+		$recruits = D('Recruit')->where(array('cid'=>get_company())) -> select();
 		$this->assign('recruits',$recruits);
 		$this->display();
 	}

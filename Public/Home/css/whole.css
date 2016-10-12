@@ -40,7 +40,7 @@ body{width:100%; width:expression(document.body.clientWidth <=1180? "1180px": "a
 .bannger_inbox .img{ border:none;}
 /*圆点*/
 .yq_banner_list{ width:532px; height:44px; line-height:44px; font-size:14px;position:absolute; z-index:100; top:336px; left:-1px; *left:1px;}
-.yq_banner_list a{ display:block;width:132px; height:44px;background:#313131; float:left;color:#fff; border-left:1px solid #fff;}
+.yq_banner_list a{ display:block;width:175px; height:44px;background:#313131; float:left;color:#fff; border-left:2px solid #fff;}
 .yq_banner_list a.hover{background:#0d6fba; }
 
 .jianjie .guanyu{ width:565px; float:left; margin-left:20px;}

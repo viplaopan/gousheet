@@ -129,16 +129,16 @@
 			    </div>	
 			</li>
 			<li>
-				<a href="#">加工定做</a>
+				<a href="<?php echo U('Home/Process/index');?>">加工定做</a>
 			</li>
 			<li>
 				<a href="#">求购信息</a>
 			</li>
 			<li>
-				<a href="#">人才招聘</a>
+				<a href="<?php echo U('Home/Talent/index');?>">人才招聘</a>
 			</li>
 			<li>
-				<a href="#">货运物流</a>
+				<a href="<?php echo U('Home/Logistics/index');?>">货运物流</a>
 			</li>
 			<li>
 				<a href="#">商务合作</a>

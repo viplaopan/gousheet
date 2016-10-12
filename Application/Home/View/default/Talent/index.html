@@ -1,0 +1,143 @@
+<extend name="Base/common" />
+
+<block name="style">
+<link rel="stylesheet" type="text/css" href="__CSS__/style.css"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/main.css"/>
+
+	<link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css" />
+	<script type="text/javascript" src="__JS__/layer.js"></script>
+	<style>
+        #headm li ul .i_h3 .h3_miss img {
+            width: 8px;
+            height: 8px;
+            margin-top: 1px;
+            padding-top: 4px;
+            display: block;
+        }
+    </style>
+</block>
+<block name="body">
+
+
+<div class="content_bg"  style="background-color:#ffffff">
+    <div class="content">
+        <div class="conLeft">
+            <div class="pos"   style=" height:30px; line-height:30px;">
+                 您现在的位置：<a class="blue" href="#">购钢现货网</a> > <a class="blue" href="">人才招聘</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="hot_news_bg">
+
+
+    <div class="hot_news">
+        <div class="h1" style=" background:url(__IMG__/rczpzq.png) no-repeat">
+        
+            <div class="search">
+                <input name="" type="text"  class="s_ipt"/>
+                <input name="" type="submit"  class="s_bt" value="搜索"/>
+            </div>
+            <div class="rz">
+                当前共有<span>412</span>家物流企业入驻
+            </div>
+        
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="talent">
+<div class="tal">
+    <div class="tal_left">
+    
+        <div class="tal_left">
+        
+            <div class="left_box">
+                <div class="box_h1">职位</div>
+                <div class="box_h2">公司名称</div>
+                <div class="box_h3">地点</div>
+                <div class="box_h4">时间</div>
+            </div>
+            
+            <volist name='lists' id='vo'>
+                <div class="left_box1">
+                
+                
+                        <div id="title1">                    
+                            <ul>
+                                <li>
+                                    <a href="#">{$vo.title}</a>
+                            <div class="div_ul">
+                            
+                                    <div class="ul_si">
+                                        <div class="si_1">{$vo.company.small_name}</div>
+                                        <div class="si_2">招聘职位:全职招聘</div>
+                                        <div class="si_2">招聘人数：{$vo.num}人</div>
+                                        <div class="si_2">工作经验：{$vo.jyan}年</div>
+                                        <div class="si_2">学历要求：{$vo.xli|default='不限'}</div>
+                                        <div class="si_3">联系人：{$vo.contact.name}</div>
+                                        <div class="si_3">联系电话：{$vo.contact.tel}</div>
+                                        <div class="si_3">公司地址：{$vo.company.com_address}</div>
+                                        <div class="si_4">工作职责：{$vo.content}</div>
+                                    </div>
+                        
+                            
+                            </div>
+                            
+                               </li>
+                            </ul>
+                       </div>
+                            <div class="box_h2">{$vo.company.name}</div>
+                            <div class="box_h3">{$vo.address}</div>
+                            <div class="box_h4">{$vo.create_time|mdate}</div>
+                     
+                       
+                </div>
+            </volist>
+            
+            
+        </div>
+        
+    </div>
+    </div>
+   <div class="tal_right">
+        
+        
+        <div class="right_rz">
+            <div class="rz_tb">发布招聘信息</div>
+                <div class="rz_con">
+                    <a>您可以联系购钢现货网工作人员</a>
+                    <a>由工作人员帮您发布招聘信息</a>
+                    <span>电话：0577-89881176</span>
+                    <a class="aa">在线招聘</a>
+                </div>
+          </div>
+          
+        <div class="right_sj">
+        
+                <div class="sj_bt">行业数据</div>
+                <div class="sj_xx">
+                    <div class="xx_l"></div>
+                    <div class="xx_r"></div>
+                </div>
+                <div class="sj_con">
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
+</block>

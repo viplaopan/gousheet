@@ -29,7 +29,10 @@ function is_login(){
         return session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0;
     }
 }
-
+function get_company(){
+    $uid = is_login();
+    return D('company')->where(array('uid'=>$uid))->getField('id');
+}
 /**
  * 检测当前用户是否为管理员
  * @return boolean true-管理员，false-非管理员

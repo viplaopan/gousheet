@@ -6,15 +6,10 @@
     <script type="text/javascript" src="__JS__/jquery.caroufredsel-6.0.4-packed.js" ></script>
     <script type="text/javascript" src="__JS__/jquery.js" ></script>
     <script type="text/javascript" src="__JS__/focus.js" ></script>
-    <style type="text/css">
-        
-        body{
-            overflow:scroll;overflow-x:hidden;overflow-y:yes;
-        }
-    </style>
 </block>
 <block name="body">
-   <div class="banner">
+   <!-- banner代码 开始 -->
+  <div class="banner">
     <div class="banner_show" id="banner_show">
     <a href="case.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner1.png" width="1920" height="325"></a>
     <a href="about.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner2.png" width="1920" height="325"></a>
@@ -23,10 +18,81 @@
          
          <div class="nva_banner">
             <div class="banner_news">
- <script type="text/javascript" src="../js/duanji.js">     
-</script>  
-
-
+                   <script>
+    window.onload = function(){
+        var d1= document.getElementById("dd1");
+        var d2= document.getElementById("dd2"); 
+        var d3= document.getElementById("dd3");
+        var d4= document.getElementById("dd4");
+        
+        var d5= document.getElementById("dd5");
+        var d6= document.getElementById("dd6");
+        var d7= document.getElementById("dd7");
+        var d8= document.getElementById("dd8");
+        
+        d1.onmouseover = function(){
+            dd5.style.display = "block";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "none";
+            
+            
+        };
+         d1.onmouseout = function(){
+             dd5.style.display = "block";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "none"; 
+        };
+        
+        d2.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "block";
+            dd7.style.display = "none";
+            dd8.style.display = "none";
+            
+        };
+        
+        d2.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "block";
+            dd7.style.display = "none";
+            dd8.style.display = "none"; 
+        };
+        
+        
+        d3.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "block";
+            dd8.style.display = "none";
+            
+        };
+        d3.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "block";
+            dd8.style.display = "none"; 
+        };
+        
+        
+        d4.onmouseover = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "block";
+        };
+        d4.onmouseout = function(){
+            dd5.style.display = "none";
+            dd6.style.display = "none";
+            dd7.style.display = "none";
+            dd8.style.display = "block"; 
+        };
+        
+            
+     }; 
+    
+</script>
                 <div class="d">
                 
                 <div class="dd1" id="dd1">找现货</div>
@@ -36,34 +102,52 @@
                 
                 </div>
                 <div class="dd5" id="dd5">
-                    
-                    <ul class="banner_downs">   
-    
- <script type="text/javascript" src="../js/anniu.js">     
-</script>  
-<style>
-.btn1{width:70px; height:30px;float:left;color:#111111; letter-spacing:1px; outline:none;background: url(__IMG__/index_nobianxian.png) no-repeat; font-family:"微软雅黑"; font-size:16px;}
-.btn2{width:70px; height:30px;float:left;color:red;font-size:16px;letter-spacing:1px;  outline:none; background:url(__IMG__/index_bianxian.png) no-repeat; font-family:"微软雅黑"}
-</style>        <div><input name="" id="1" type="button" class="btn2" value="钢管"></div>  
-                <div><input name="" id="2" type="button" class="btn1" value="型材"></div>  
-                <div><input name="" id="3" type="button" class="btn1" value="管件"></div>  
-                <div><input name="" id="4" type="button" class="btn1" value="法兰"></div>   
-
-                <div><input name="" id="5" type="button" class="btn1" value="阀门"></div>  
-                <div><input name="" id="6" type="button" class="btn1" value="板材"></div>  
-                <div><input name="" id="7" type="button" class="btn1" value="卷材"></div>  
-                
+                    <ul class="banner_downs">
+                        <li class="banner_d">
+                            <div class="s">钢管</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s"> 型材</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">管件</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">法兰</div>
+                            <div class="x"></div>
+                        </li>
+                       
+                        <li class="banner_d">
+                            <div class="s">阀门</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">板材</div>
+                            <div class="x"></div>
+                        </li>
+                        
+                        <li class="banner_d">
+                            <div class="s">卷材</div>
+                            <div class="x"></div>
+                        </li> 
                         <div class="clear"></div>  
                     </ul>
                    <div class="banner_next">
                         <div class="left_middle">
                             <div id="headm">
                                 <ul>
-                                    <li class="">
+                                    <li>
                                         <div class="dh">
                                             <div class="topa"><input name="" type="text" class="box_ipt1" value="工业无缝管"></div>
                                             <ul>
-                                                <li class="i_h0"><img src="__IMG__/ggw_sanjiaoxing.png"><span>钢管</span></li>
+                                                <li class="i_h0"><img src="__IMG__//ggw_sanjiaoxing.png" /><span>钢管</span></li>
                                                 <li class="i_h1">
                                                     <a>工业无缝管</a>
                                                     <a>工业焊管</a>
@@ -79,12 +163,12 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="">
+                                    <li>
                                         <div class="dh dh2">
                                             <div class="topa"><input name="" type="text" class="box_ipt2" value="材质"></div>
                                             <ul>
                                                 <li class="i_h3">
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>200</span>
                                                         <span>201</span>
@@ -93,7 +177,7 @@
                                                         <span>202</span>
                                                     </div>
                                                     <div class="clear"></div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>301</span>
                                                         <span>302</span>
@@ -120,7 +204,7 @@
                                                         <span>800H</span>
                                                         <span>825</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>TP304</span>
                                                         <span>TP304L</span>
@@ -138,7 +222,7 @@
                                                         <span>TP347H</span>
                                                         <span>DP316L</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
                                                         <div class="h3_div">
                                                         <span>S31500</span>
                                                         <span>S31803</span>
@@ -151,7 +235,7 @@
                                                         <span>C-22</span>
                                                         <span>C-276</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__//ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>1CR132</span>
                                                         <span>CR13</span>
@@ -170,10 +254,10 @@
 
                                         </div>
                                     </li>
-                                    <li class=""><input name="" type="text" class="box_bt" value="地区"></li>
+                                    <li><input name="" type="text" class="box_bt" value="地区"></li>
                                 </ul>
                             </div>
-                            <script type="text/javascript">
+                            <script type=text/javascript>
                                 var lis = document.getElementById("headm").getElementsByTagName("li");
                                 for(var i = 0; i < lis.length; i++) {
                                     lis[i].onmouseover = function() {
@@ -187,19 +271,19 @@
 
                         </div>
                         
-                    <input name="" type="submit" class="next_bt" value="搜索">
+                    <input name="" type="submit" class="next_bt" value="搜索" />
                    </div>
                     <div class=" banner_nd">
                          <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                          </div>
                          <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                          </div>
                          <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__//index_meitian.png"/>
                             <span>每天20000+使用</span>
                          </div>
                     </div>
@@ -216,22 +300,16 @@
                     <div class="banner_next">
                         <div class="next_list">
                            <div class="next_pt">出发地</div>
-                           <input name="" type="text" class="next_input"> 
+                           <input name="" type="text"  class="next_input"/> 
                        </div>
                        <div class="next_list">
                             <div class="next_pt">目的地</div>
-                           <input name="" type="text" class="next_input"> 
+                           <input name="" type="text"  class="next_input"/> 
                        </div>
                         <div class="next_list">
-                            <div class="next_pt">形&nbsp;&nbsp;态
-                                
-                            </div>
-                                <select class="next_input" style="width:200px;">
-                                <option style="line-height:30px;">零担</option>
-                                <option style="line-height:30px;">整车</option>
-                                <option style="line-height:30px;">货柜</option>
-                                </select>
-                           <input name="" type="submit" class="next_bt">
+                            <div class="next_pt">形&nbsp;&nbsp;态</div>
+                           <input name="" type="text"  class="next_input"/> 
+                           <input name="" type="submit" class="next_bt" />
                        </div>
                             
                        <div class="clear"></div>
@@ -239,15 +317,15 @@
                     <div class="clear"></div>
                      <div class="banner_nd">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__//index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -283,15 +361,15 @@
                     <div class="clear"></div>
                     <div class="banner_nd" style=" padding-top:30px;">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__//index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -307,24 +385,24 @@
                     </ul>
                     <div class="banner_next">
                         <div class="next_list" style="margin:50px 0">
-                            <div class="list_left">厂家简称</div><input name="" type="text" value="公司全称/公司简称/关键词" class="list_minll">
+                            <div class="list_left">厂家简称</div><input name="" type="text" class="list_minll" />
                         </div>
                         <div class="next_list">
-                            <input name="" type="submit" class="list_right" value="搜索">
+                            <input name="" type="submit"  class="list_right" value="搜索"/>
                         </div>
                     </div>
                     <div class="clear"></div>
                     <div class="banner_nd">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__//index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__//index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__//index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -334,9 +412,9 @@
             </div>
           <div class="yq_banner_list" id="yq_banner_list">
              
-            <a href="javascript:;" rel="0" class="">&nbsp;</a>
-            <a href="javascript:;" rel="1" class="">&nbsp;</a>
-            <a href="javascript:;" rel="2" class="hover">&nbsp;</a>
+            <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
+            <a href="javascript:;" rel="1">&nbsp;</a>
+            <a href="javascript:;" rel="2">&nbsp;</a>
           </div>
          </div>
          
@@ -344,29 +422,36 @@
     
     </div>
   </div>
-  <div class="clear"></div>
+
+</div>
+<!-- 代码 结束 -->
+
+<div class="clear"></div>
+
+
+
 <div class="index_content">
     <div class="content_bbs">
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp1.png">
+            <img src="__IMG__/index_tp1.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp2.png">
+            <img src="__IMG__/index_tp2.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp3.png">
+            <img src="__IMG__/index_tp3.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp4.png">
+            <img src="__IMG__/index_tp4.png" />
         </div>
         <div class="bbs_tp" style="margin-right:0">
-            <img src="__IMG__/index_tp5.png">
+            <img src="__IMG__/index_tp5.png" />
         </div>
     </div>
     
     <div class="content_hot">
             <div class="content_bt">
-                <div class="bt_left"><img src="__IMG__/index_hotnews.png"><span>热文要闻</span></div>
+                <div class="bt_left"><img src="__IMG__/index_hotnews.png"/><span>热文要闻</span></div>
                 <div class="bt_right">更多</div>
             </div>
             <ul>
@@ -383,54 +468,30 @@
                 <div class="clear"></div>
             </ul>
     </div>
-    <div class="content_hot" style="padding-bottom:30px;">
+    <div class="content_hot">
             
             <div class="content_bt">
-                <div class="bt_left"><img src="__IMG__/index_cangjiatuijian.png"><span>厂家推荐</span></div>
+                <div class="bt_left"><img src="__IMG__//index_cangjiatuijian.png"/><span>厂家推荐</span></div>
                 <div class="bt_right">更多</div>
             </div>
-            
-<style>
-#div1{height:320px;overflow:hidden; padding-left:40px;}
-       
-.i1_lists{ width:300px; float:left; padding-bottom:5px;}
-.i1_lists .j1{ width:300px; height:30px; float:left; line-height:30px; font-size:14px;color:#0066cc;/* font-weight:bold; */}
-.i1_lists .j2{ width:300px; height:20px; line-height:20px; float:left;font-size:12px;color: #555555;}
-</style>
-
-
-
-           <div id="div1">
-           <volist name='companies' id='vo'>
-                <a href="{$vo.url}" class="i1_lists">
-                <span class="j1">{$vo.desc|msubstr=0,18}</span>
-                <span class="j2">{$vo.company_name}</span>
-                </a>
-            </volist>
-
-<script>
-var c,_=Function;
-with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=1"); onmouseout=_("c=0");}
-(F=_("if(#%55||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%55?10:3000);".replace(/#/g,"o.scrollTop")))();
-</script>
+            <ul>
             <volist name='companies' id='vo'>
-                <a href="{$vo.url}" class="i1_lists">
-                 <span class="j1">{$vo.desc|msubstr=0,18}</span>
-                 <span class="j2">{$vo.company_name}</span>
-                </a>
+                <li>
+                    <div class="div_spL"></div>
+                    <div class="div_spR">
+                        <div class="spR_s"><a href='{$vo.url}'>{$vo.desc}</a></div>
+                        <div class="spR_x">{$vo.company_name}</div>
+                    </div>
+                    <div class="clear"></div>
+                </li>   
             </volist>
-<script>
-var c,_=Function;
-with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=1"); onmouseout=_("c=0");}
-(F=_("if(#%55||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%55?10:3000);".replace(/#/g,"o.scrollTop")))();
-</script>
-    
-    </div>  
+                <div class="clear"></div>
+            </ul>
     </div>
-    <div class="content_hot" style="margin-right:0; padding-bottom:20px;">
+    <div class="content_hot" style="margin-right:0; padding-bottom:30px;">
         
             <div class="content_bt">
-                <div class="bt_left"><img src="__IMG__/index_houjian.png"><span>市场快讯</span></div>
+                <div class="bt_left"><img src="__IMG__//index_houjian.png"/><span>市场快讯</span></div>
                 <div class="bt_right">更多</div>
             </div>
             <ul>
@@ -438,36 +499,34 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
                 </volist>
-                
-                
               <div class="clear"></div>     
             </ul>
     </div> 
     <div class="content_bbs">
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp1.png">
+            <img src="__IMG__//index_tp1.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp2.png">
+            <img src="__IMG__//index_tp2.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp3.png">
+            <img src="__IMG__//index_tp3.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp4.png">
+            <img src="__IMG__//index_tp4.png" />
         </div>
         <div class="bbs_tp" style="margin-right:0">
-            <img src="__IMG__/index_tp5.png">
+            <img src="__IMG__//index_tp5.png" />
         </div>
     </div>
      <div class="content_hot">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_yuancailiao.png"><span>原材行情</span></div>
+                <div class="bt_left"><img src="__IMG__//index_yuancailiao.png"/><span>原材行情</span></div>
                 <div class="bt_right">更多</div>
             </div>
             <ul>
@@ -475,12 +534,11 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
                 </volist>
-              
                
                 <div class="clear"></div>       
             </ul>
@@ -488,26 +546,26 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
     </div> 
      <div class="content_hot">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_guanxinghangqing.png"><span>管件行情</span></div>
+                <div class="bt_left"><img src="__IMG__//index_guanxinghangqing.png" /><span>管件行情</span></div>
                 <div class="bt_right">更多</div>
             </div>
              <ul>
-                 <volist name='guanjian' id='vo'>
+                <volist name='guanjian' id='vo'>
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><div class="s_right">￥{$vo.price}</div></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
-                 </volist> 
+                </volist> 
                 <div class="clear"></div>       
            </ul>
            
     </div> 
     <div class="content_hot" style="margin-right:0">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_benqinghangqing.png"><span>泵阀行情</span></div>
+                <div class="bt_left"><img src="__IMG__//index_benqinghangqing.png" /><span>泵阀行情</span></div>
                 <div class="bt_right">更多</div>
             </div>
             <ul>
@@ -515,7 +573,7 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
@@ -526,41 +584,41 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
      </div>   
      <div class="content_bbs">
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp1.png">
+            <img src="__IMG__//index_tp1.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp2.png">
+            <img src="__IMG__//index_tp2.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp3.png">
+            <img src="__IMG__//index_tp3.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp4.png">
+            <img src="__IMG__//index_tp4.png" />
         </div>
         <div class="bbs_tp" style="margin-right:0">
-            <img src="__IMG__/index_tp5.png">
+            <img src="__IMG__//index_tp5.png" />
         </div>
      </div>
      <div class="content_bbs">
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp1.png">
+            <img src="__IMG__//index_tp1.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp2.png">
+            <img src="__IMG__//index_tp2.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp3.png">
+            <img src="__IMG__//index_tp3.png" />
         </div>
         <div class="bbs_tp">
-            <img src="__IMG__/index_tp4.png">
+            <img src="__IMG__//index_tp4.png" />
         </div>
         <div class="bbs_tp" style="margin-right:0">
-            <img src="__IMG__/index_tp5.png">
+            <img src="__IMG__//index_tp5.png" />
         </div>
     </div>
     <div class="content_hot">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_huiyifazhan.png"><span>会议会展</span></div>
+                <div class="bt_left"><img src="__IMG__//index_huiyifazhan.png" /><span>会议会展</span></div>
                 <div class="bt_right">更多</div>
             </div>
            
@@ -569,18 +627,18 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
-                </volist>    
+                </volist>  
                 <div class="clear"></div>
             </ul>
            
     </div>   
     <div class="content_hot">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_qiyuefengcai.png"><span>企业风采</span></div>
+                <div class="bt_left"><img src="__IMG__//index_qiyuefengcai.png"/><span>企业风采</span></div>
                 <div class="bt_right">更多</div>
             </div>
            <ul>
@@ -588,18 +646,18 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
-                </volist>   
+                </volist>    
                 <div class="clear"></div>   
             </ul>
            
     </div> 
      <div class="content_hot" style="margin-right:0">
             <div class="content_bt1">
-                <div class="bt_left"><img src="__IMG__/index_wzngahzndongtai.png"><span>网站动态</span></div>
+                <div class="bt_left"><img  src="__IMG__//index_wzngahzndongtai.png" /><span>网站动态</span></div>
                 <div class="bt_right">更多</div>
             </div>
            
@@ -608,11 +666,11 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
+                            <div class="spR_s" title="{$vo.title}"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
-                </volist> 
+                </volist>  
                  <div class="clear"></div>
             </ul>
            
@@ -630,8 +688,7 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
             <a>钢铁英才网</a>
             <a>不锈钢商城</a>
             <a>中国制药网</a>
-            <a>各国不锈钢牌号对照表</a>
-            
+            <a>中国金属制品网</a>
         </div>
         
         </div>
@@ -639,5 +696,8 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
     </div>
     <div class="clear"></div>
     </div>
-    <div class="clear"></div>
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
 </block>

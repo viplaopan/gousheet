@@ -45,15 +45,26 @@
 					<form action="__SELF__" method="post" name="reruit">
 						<ul class="box_r">
 							<li class="ii">
-								<label>标题：</label><input name="title" value="{$recruit.title}" type="text" class="input" /><span class="panduan"></span>
+								<label>职位：</label><input name="title" placeholder="填写职位" value="{$recruit.title}" type="text" class="input" /><span class="panduan"></span>
 							</li>
 							<li class="ii">
-								<label>信息内容：</label><textarea name="content" id="content" class="txt_con" style="width:650px; min-height:320px;">{$recruit.content}</textarea>
+								<label>工作地址：</label><input placeholder="请填写详细地址" name="address" value="{$recruit.address}" type="text" class="input" /><span class="panduan"></span>
+							</li>
+							<li class="ii">
+								<label>招聘人数：</label><input placeholder="请填写数量" name="num" value="{$recruit.num}" type="text" class="input" /><span class="panduan"></span>
+							</li>
+							<li class="ii">
+								<label>工作经验：</label><input placeholder="填写工作年限/几年" name="jyan" value="{$recruit.jyan}" type="text" class="input" /><span class="panduan"></span>
+							</li>
+							<li class="ii">
+								<label>学历要求：</label><input placeholder="例如:大专" name="xli" value="{$recruit.xli}" type="text" class="input" /><span class="panduan"></span>
+							</li>
+							<li class="ii">
+								<label>招聘要求：</label><textarea name="content" id="content" class="txt_con" style="width:650px; min-height:320px;">{$recruit.content}</textarea>
 							</li>
 							<li class="ii">
 								<input type="hidden" name="id" id="id" value="{$recruit.id}" />
 								<label></label><input name="" type="submit" value="提交信息" class="bt" /></li>
-
 						</ul>
 					</form>
 				</div>

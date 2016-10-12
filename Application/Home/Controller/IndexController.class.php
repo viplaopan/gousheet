@@ -28,31 +28,31 @@ class IndexController extends Controller {
     	$this->assign('hot', $hot);
 
     	//市场快讯
-    	$shichang = D('Document')->lists('shichang');
+    	$shichang = D('Document')->limit(11)->lists(39);
     	$this->assign('shichang', $shichang);
 
         //原料行情
-        $yuanliao = D('Document')->lists('yuanliao');
+        $yuanliao = D('Document')->limit(8)->lists(41);
         $this->assign('yuanliao', $yuanliao);
 
-        //管型行情
-        $guanxing = D('Document')->lists('guanxing');
-        $this->assign('guanxing', $guanxing);
+        //管件行情
+        $guanjian = D('Document')->limit(8)->lists(42);
+        $this->assign('guanjian', $guanjian);
         
         //泵阀行情
-        $bengfa = D('Document')->lists('bengfa');
+        $bengfa = D('Document')->limit(8)->lists(43);
         $this->assign('bengfa', $bengfa);
 
         //会议会展
-        $huiyi = D('Document')->lists('huiyi');
+        $huiyi = D('Document')->limit(8)->lists(2);
         $this->assign('huiyi', $huiyi);
 
         //企业风采
-        $qiye = D('Document')->lists('qiye');
+        $qiye = D('Document')->limit(8)->lists(40);
         $this->assign('qiye', $qiye);
 
         //网站动态
-        $wangzhan = D('Document')->lists('wangzhan');
+        $wangzhan = D('Document')->limit(8)->lists(44);
         $this->assign('wangzhan', $wangzhan);
 
 

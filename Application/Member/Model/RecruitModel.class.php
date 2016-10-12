@@ -16,7 +16,7 @@ use Think\Model;
 class RecruitModel extends Model{
 
      protected $_auto = array(
-        array('uid', 'is_login', self::MODEL_INSERT, 'function', 1),
+        array('cid', 'get_company', self::MODEL_INSERT, 'function', 1),
     	array('create_time', NOW_TIME, self::MODEL_INSERT),
         array('update_time', NOW_TIME, self::MODEL_BOTH),
     );

@@ -38,11 +38,11 @@
 				<a href="/">首页</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?php echo U('Home/Guandao/sactuals');?>">
 					<div style=" float:left">搜索现货</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
-				<div class="pay">
+				<!-- <div class="pay">
 			    	<div class="dis"></div>
 			        <ul>
 			    	<li class="list_1">      
@@ -102,14 +102,14 @@
 					<div><a href="<?php echo U('Home/Guandao/plank');?>">卷材</a></div>
 			        </li>
 			        </ul>
-			    </div>
+			    </div> -->
 			</li>
 			<li>
 				<a href="<?php echo U('Home/News/index');?>">
 					<div style=" float:left">资讯行情</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
-				<div class="pay1">
+				<!-- <div class="pay1">
 			    	<div class="dis"></div>
 			        <ul>
 			    	<li class="list_1">      
@@ -126,19 +126,19 @@
 					<div><a href="<?php echo U('Home/News/lists',array('category'=>43));?>">泵阀行情</a></div>
 			        </li> 
 			        </ul>
-			    </div>	
+			    </div> -->	
 			</li>
 			<li>
-				<a href="#">加工定做</a>
+				<a href="<?php echo U('Home/Process/index');?>">加工定做</a>
 			</li>
 			<li>
 				<a href="#">求购信息</a>
 			</li>
 			<li>
-				<a href="#">人才招聘</a>
+				<a href="<?php echo U('Home/Talent/index');?>">人才招聘</a>
 			</li>
 			<li>
-				<a href="#">货运物流</a>
+				<a href="<?php echo U('Home/Logistics/index');?>">货运物流</a>
 			</li>
 			<li>
 				<a href="#">商务合作</a>
