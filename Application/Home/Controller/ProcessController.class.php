@@ -15,6 +15,7 @@ use Think\Controller;
  */
 class ProcessController extends Controller {
     public function index($cate = 0){
+        $name = I("get.name");
     	//读取钢管类 分类
     	$map['status'] = 1;
     	$map['pid'] = 1;
@@ -52,8 +53,13 @@ class ProcessController extends Controller {
     		$map['category'] = $cate;
     	}
 
-        $map['status'] = 1;
-        $lists = D('Process')->where($map)->select();
+        
+        $mapmap['status'] = 1;
+        if($name){
+            $mapmap['name'] = array('like',$name.'%');
+        }
+        
+        $lists = D('Process')->where($mapmap)->select();
 
         $this->assign('lists', $lists);
         $this->display();

@@ -102,10 +102,12 @@
     <div class="p_right">
     
         <div class="right_s">
-            <div class="right_ss">
-                <input name="" type="text" class="ss_input"   value="请输入公司简称"/>
-            </div>
-            <input name="" type="submit"  value="搜索" class="right_bt"/>
+            <form action="{:U('Home/Process/index')}" method="get">
+                <div class="right_ss">
+                    <input name="name" type="text" class="ss_input" placeholder="请输入公司简称" value="{:I('get.name')}"/>
+                </div>
+                <input name="" type="submit"  value="搜索" class="right_bt"/>
+            </form>
         </div>
         <volist name='lists' id='vo'>
             <div class="rgight_con">

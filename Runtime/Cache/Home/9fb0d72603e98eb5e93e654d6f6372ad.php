@@ -38,7 +38,7 @@
 				<a href="/">首页</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?php echo U('Home/Guandao/sactuals');?>">
 					<div style=" float:left">搜索现货</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
@@ -715,24 +715,7 @@
                                                     <span>执照已验证</span>
                                                     <span style="display:none">执照未验证</span>
                                                 </li>
-                                                <li class="s4">
-                                                    <span>信用等级</span>
-                                                    <div>
-                                                        <img src="/Public/Home/images/hongxing.png" />
-                                                    </div>
-                                                    <div>
-                                                        <img src="/Public/Home/images/hongxing.png" />
-                                                    </div>
-                                                    <div>
-                                                        <img src="/Public/Home/images/hongxing.png" />
-                                                    </div>
-                                                    <div>
-                                                        <img src="/Public/Home/images/huixing.png" />
-                                                    </div>
-                                                    <div>
-                                                        <img src="/Public/Home/images/huixing.png" />
-                                                    </div>
-                                                </li>
+                                                
                                                 <li class="s5"></li>
                                                 <li class="s6">
                                                     联系人:朱呼呼（总经理）

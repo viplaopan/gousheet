@@ -1,10 +1,36 @@
 <extend name="Base/common"/>
 
 <block name="style">
+<link rel="stylesheet" type="text/css" href="__CSS__/overall.css" />
     <link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
     <link rel="stylesheet" type="text/css" href="__CSS__/banner.css"/>
     <script type="text/javascript" src="__JS__/jquery.caroufredsel-6.0.4-packed.js" ></script>
     <script type="text/javascript" src="__JS__/jquery.js" ></script>
+    <script type="text/javascript">
+                                    
+                                        $(function() {
+
+                                            $('#pinzhong ul li a').click(function() {
+                                                
+                                                $("input[name='pinzhong']").val($(this).html());
+                                                $idstr = $(this).parent().attr('id');
+                                                $(this).parent().removeClass('show');
+        
+                                                $("#" + $idstr + "Li").removeClass('show')
+                                            })
+                                            $('#caizhi ul li span').click(function() {
+                                                
+                                                $("input[name='caizhi']").val($(this).html());
+                                                $idstr = $(this).parent().parent().attr('id');
+                                                $(this).parent().parent().removeClass('show');
+        
+                                                $("#" + $idstr + "Li").removeClass('show')
+                                            })
+                                            $('#actformbtn').click(function(){
+                                                $('#actform').submit()
+                                            })
+                                        })
+                                    </script>
     <script type="text/javascript" src="__JS__/focus.js" ></script>
     <style type="text/css">
         
@@ -14,7 +40,8 @@
     </style>
 </block>
 <block name="body">
-   <div class="banner">
+   <!-- banner代码 开始 -->
+  <div class="banner">
     <div class="banner_show" id="banner_show">
     <a href="case.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner1.png" width="1920" height="325"></a>
     <a href="about.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner2.png" width="1920" height="325"></a>
@@ -23,7 +50,7 @@
          
          <div class="nva_banner">
             <div class="banner_news">
- <script type="text/javascript" src="../js/duanji.js">     
+ <script type="text/javascript" src="__JS__/duanji.js">     
 </script>  
 
 
@@ -38,32 +65,32 @@
                 <div class="dd5" id="dd5">
                     
                     <ul class="banner_downs">   
-    
- <script type="text/javascript" src="../js/anniu.js">     
-</script>  
+                    
 <style>
 .btn1{width:70px; height:30px;float:left;color:#111111; letter-spacing:1px; outline:none;background: url(__IMG__/index_nobianxian.png) no-repeat; font-family:"微软雅黑"; font-size:16px;}
-.btn2{width:70px; height:30px;float:left;color:red;font-size:16px;letter-spacing:1px;  outline:none; background:url(__IMG__/index_bianxian.png) no-repeat; font-family:"微软雅黑"}
-</style>        <div><input name="" id="1" type="button" class="btn2" value="钢管"></div>  
-                <div><input name="" id="2" type="button" class="btn1" value="型材"></div>  
-                <div><input name="" id="3" type="button" class="btn1" value="管件"></div>  
-                <div><input name="" id="4" type="button" class="btn1" value="法兰"></div>   
+.btn1:hover{width:70px; height:30px;float:left;color:red;font-size:16px;letter-spacing:1px;  outline:none; background:url(__IMG__/index_bianxian.png) no-repeat; font-family:"微软雅黑"}
+</style>        <div ><input name="" id = "1" type = "button" class = "btn1" value="钢管"/></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="型材"/></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="管件"/></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="法兰"/></div>   
 
-                <div><input name="" id="5" type="button" class="btn1" value="阀门"></div>  
-                <div><input name="" id="6" type="button" class="btn1" value="板材"></div>  
-                <div><input name="" id="7" type="button" class="btn1" value="卷材"></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="阀门"/></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="板材"/></div>  
+                <div ><input name="" id = "1" type = "button" class = "btn1" value="卷材"/></div>  
                 
                         <div class="clear"></div>  
                     </ul>
                    <div class="banner_next">
                         <div class="left_middle">
                             <div id="headm">
+                                <form action="{:U('Home/Guandao/sactuals')}" id="actform" method="get">
                                 <ul>
-                                    <li class="">
-                                        <div class="dh">
-                                            <div class="topa"><input name="" type="text" class="box_ipt1" value="工业无缝管"></div>
+
+                                    <li>
+                                        <div class="dh" id="pinzhong">
+                                            <div class="topa"><input name="pinzhong" placeholder="工业无缝管" type="text" class="box_ipt1" value=""></div>
                                             <ul>
-                                                <li class="i_h0"><img src="__IMG__/ggw_sanjiaoxing.png"><span>钢管</span></li>
+                                                <li class="i_h0"><img src="__IMG__/ggw_sanjiaoxing.png" /><span>钢管</span></li>
                                                 <li class="i_h1">
                                                     <a>工业无缝管</a>
                                                     <a>工业焊管</a>
@@ -79,12 +106,12 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li class="">
-                                        <div class="dh dh2">
-                                            <div class="topa"><input name="" type="text" class="box_ipt2" value="材质"></div>
+                                    <li>
+                                        <div class="dh dh2" id="caizhi">
+                                            <div class="topa"><input name="caizhi" placeholder="材质" type="text" class="box_ipt2" value=""></div>
                                             <ul>
                                                 <li class="i_h3">
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>200</span>
                                                         <span>201</span>
@@ -93,7 +120,7 @@
                                                         <span>202</span>
                                                     </div>
                                                     <div class="clear"></div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>301</span>
                                                         <span>302</span>
@@ -120,7 +147,7 @@
                                                         <span>800H</span>
                                                         <span>825</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>TP304</span>
                                                         <span>TP304L</span>
@@ -138,7 +165,7 @@
                                                         <span>TP347H</span>
                                                         <span>DP316L</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                         <div class="h3_div">
                                                         <span>S31500</span>
                                                         <span>S31803</span>
@@ -151,7 +178,7 @@
                                                         <span>C-22</span>
                                                         <span>C-276</span>
                                                     </div>
-                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png"></div>
+                                                    <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <span>1CR132</span>
                                                         <span>CR13</span>
@@ -166,14 +193,16 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="dh"><input name="" type="text" class="box_ipt3" value="规格">
+
+                                        <div class="dh"><input name="guige" placeholder="规格" type="text" class="box_ipt3" value="">
 
                                         </div>
                                     </li>
-                                    <li class=""><input name="" type="text" class="box_bt" value="地区"></li>
+                                    <li><input name="" type="text" class="box_bt" value="地区"></li>
                                 </ul>
+                                </form>
                             </div>
-                            <script type="text/javascript">
+                            <script type=text/javascript>
                                 var lis = document.getElementById("headm").getElementsByTagName("li");
                                 for(var i = 0; i < lis.length; i++) {
                                     lis[i].onmouseover = function() {
@@ -187,19 +216,19 @@
 
                         </div>
                         
-                    <input name="" type="submit" class="next_bt" value="搜索">
+                    <input name="" type="submit" class="next_bt" id="actformbtn" value="搜索" />
                    </div>
                     <div class=" banner_nd">
                          <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__/index_hailianbtnanhou.png" />
                             <span>海量现货库存</span>
                          </div>
                          <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__/index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                          </div>
                          <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__/index_meitian.png"/>
                             <span>每天20000+使用</span>
                          </div>
                     </div>
@@ -214,40 +243,41 @@
                         <div class="clear"></div>  
                     </ul>
                     <div class="banner_next">
+                        <form action="{:U('Home/Logistics/index')}" method="get">
                         <div class="next_list">
                            <div class="next_pt">出发地</div>
-                           <input name="" type="text" class="next_input"> 
+                           <input name="from" type="text"  class="next_input"/> 
                        </div>
                        <div class="next_list">
                             <div class="next_pt">目的地</div>
-                           <input name="" type="text" class="next_input"> 
+                           <input name="to" type="text"  class="next_input"/> 
                        </div>
                         <div class="next_list">
                             <div class="next_pt">形&nbsp;&nbsp;态
                                 
                             </div>
                                 <select class="next_input" style="width:200px;">
-                                <option style="line-height:30px;">零担</option>
-                                <option style="line-height:30px;">整车</option>
-                                <option style="line-height:30px;">货柜</option>
+                                <option  style="line-height:30px;">零担</option>
+                                <option  style="line-height:30px;">整车</option>
+                                <option  style="line-height:30px;">货柜</option>
                                 </select>
-                           <input name="" type="submit" class="next_bt">
+                           <input name="" type="submit" class="next_bt" />
                        </div>
-                            
+                        </form>
                        <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
                      <div class="banner_nd">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__/index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__/index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__/index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -283,15 +313,15 @@
                     <div class="clear"></div>
                     <div class="banner_nd" style=" padding-top:30px;">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__/index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__/index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__/index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -306,25 +336,27 @@
                         <div class="clear"></div>  
                     </ul>
                     <div class="banner_next">
-                        <div class="next_list" style="margin:50px 0">
-                            <div class="list_left">厂家简称</div><input name="" type="text" value="公司全称/公司简称/关键词" class="list_minll">
-                        </div>
-                        <div class="next_list">
-                            <input name="" type="submit" class="list_right" value="搜索">
-                        </div>
+                        <form action="{:U('Home/Process/index')}" method="get">
+                            <div class="next_list" style="margin:50px 0">
+                                <div class="list_left">厂家简称</div><input name="name" type="text"  value="公司全称/公司简称/关键词"  class="list_minll" />
+                            </div>
+                            <div class="next_list">
+                                <input name="" type="submit"  class="list_right" value="搜索"/>
+                            </div>
+                        </form>
                     </div>
                     <div class="clear"></div>
                     <div class="banner_nd">
                         <div class="nd_div">
-                            <img src="__IMG__/index_hailiangxianhou.png">
+                            <img src="__IMG__/index_hailiangxianhou.png" />
                             <span>海量现货库存</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_gongqiujzpb.png">
+                            <img src="__IMG__/index_gongqiujzpb.png" />
                             <span>供求精准匹配</span>
                         </div>
                         <div class="nd_div">
-                            <img src="__IMG__/index_meitian.png">
+                            <img src="__IMG__/index_meitian.png"/>
                             <span>每天20000+使用</span>
                         </div>
                         <div class="clear"></div>
@@ -334,9 +366,9 @@
             </div>
           <div class="yq_banner_list" id="yq_banner_list">
              
-            <a href="javascript:;" rel="0" class="">&nbsp;</a>
-            <a href="javascript:;" rel="1" class="">&nbsp;</a>
-            <a href="javascript:;" rel="2" class="hover">&nbsp;</a>
+            <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
+            <a href="javascript:;" rel="1">&nbsp;</a>
+            <a href="javascript:;" rel="2">&nbsp;</a>
           </div>
          </div>
          
@@ -344,6 +376,9 @@
     
     </div>
   </div>
+
+</div>
+<!-- 代码 结束 -->
   <div class="clear"></div>
 <div class="index_content">
     <div class="content_bbs">
@@ -366,7 +401,7 @@
     
     <div class="content_hot">
             <div class="content_bt">
-                <div class="bt_left"><img src="__IMG__/index_hotnews.png"><span>热文要闻</span></div>
+                <div class="bt_left"><img src="__IMG__/index_hotnews.png"><span>热点新闻</span></div>
                 <div class="bt_right">更多</div>
             </div>
             <ul>

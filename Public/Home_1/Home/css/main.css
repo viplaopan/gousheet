@@ -1,0 +1,64 @@
+@charset "utf-8";
+*{margin:0px; padding:0px; list-style:none;text-decoration:none; border:none;}
+.clear{clear:both}.blue{ color:#464646}.blue:hover{ color:#e95850}
+body{width:100%; width:expression(document.body.clientWidth <=1200? "1200px": "auto");min-width:1000px;font-family:"Microsoft Yahei";}
+.content_bg{ width:100%; float:left;}
+.content{ width:1180px; margin:0 auto;}
+
+/*左边导航*/
+.conLeft{ width:280px; float:left;color:#464646;}
+.conLeft .pos{ height:60px; line-height:60px; font-size:12px; padding-left:25px; width:255px; float:left; background:url(../images/home.png) left center no-repeat;}
+.conLeft .nav{ width:280px; height:547px; float:left; background:url(../images/navLeft_bg.png) no-repeat;}
+.conLeft .nav .s1{ margin:0 12px; width:256px; height:91px; float:left;}
+.conLeft .nav .s1 .ico{ width:90px; height:90px; float:left;}
+.conLeft .nav .s1 .i1{ float:left; width:166px; height:70px; margin-top:20px;}
+.conLeft .nav .s2{ color:#e95850;background:url(../images/cra_left_bg.png) no-repeat 135px 10px;}
+.conLeft .nav .s2:hover a{color:#e95850}
+.conLeft .nav a{ display:block; color:#464646; width:166px; height:70px; float:left; font-size:22px;}
+.conLeft .nav span{ display:block; width:166px; float:left; font-size:16px;}
+
+/*右边内容*/
+.conRight{ width:860px; float:left; margin-left:40px;}
+.conRight .conPic{ width:860px; height:60px; float:left;}
+.conRight .conTitle{ width:860px; height:50px; float:left; background:url(../images/navRight_title.png) no-repeat;}
+.conRight .conTitle .title-1{ padding-left:15px; font-size:23px; line-height:50px; float:left;}
+.conRight .conTitle .title-2{ padding-left:10px; font-size:14px; line-height:60px; float:left; font-family:Arial;}
+.conRight .conCon{ width:840px; float:left; padding:10px;}
+.conRight .conCon p{ width:840px; float:left; line-height:28px; font-size:16px; color:#454545; text-indent:2em;}
+.conRight .conCon h1{ font-size:20px; font-weight:400; color:#000; line-height:80px;}
+.conRight .conCon span{ width:840px; float:left; display:block; line-height:28px; font-size:16px; color:#454545;}
+.conRight .conCon a{line-height:28px; font-size:16px; color:#454545; text-indent:2em; text-indent:2em; display:block; margin-top:10px;}
+.conRight .conConList{ width:860px; float:left;}
+.conRight .conConList .conList{width:350px;/* height:100px; */background:#eee;border:2px solid #d2d2d2;float:left;margin-left:15px;margin-top:15px;padding:30px;}
+.conList .con_1{ font-size:20px; color:#000; float:left; height:40px;}
+.conList .con_2{ font-size:16px; color:#000; float:left; height:38px;}
+.conList .con_2s{ margin-left:6px; margin-right:140px; line-height:22px; height:40px; float:left; line-height:30px;}
+.conList .con_3{ font-size:16px; color:#565656; float:left; height:38px;}
+.conList a{display:block;float: right;background:url(../images/list_bgg.png);width:120px;height:44px;line-height:44px;color:#fff;font-size:16px;text-align:center;/* margin-left:64px; */}
+.conList .listLeft{ width:400px; float:left;}
+.conList .listLeft .st1{ width:80px; height:40px; float:left; background:url(../images/contact-bg111.png) center no-repeat; color:#fff; line-height:40px; text-align:center; font-size:16px;}
+.conList .listLeft .st2{ width:310px; height:40px; float:left; color:#e95850; line-height:40px; font-size:32px; margin-left:10px;}
+.conList .listLeft p{ font-size:16px; width:400px; float:left; color:#515151; line-height:28px;}
+
+.conCon .listLeft{ width:460px; float:left;}
+.conCon .listLeft .st1{ width:80px; height:40px; float:left; background:url(../images/contact-bg111.png) center no-repeat; color:#fff; line-height:40px; text-align:center; font-size:16px;}
+.conCon .listLeft .st2{ width:370px; height:40px; float:left; color:#e95850; line-height:40px; font-size:32px; margin-left:10px;}
+.conCon .listLeft p{ font-size:16px; width:400px; float:left; color:#515151; line-height:28px; text-indent:0em;}
+
+
+.foot{ width:100%; height:210px; background-color:#333333;margin-top:50px;}
+.foot .f{width:1180px; margin: 0 auto; padding-top:40px;}
+.foot .f .fleft{ width:305px; height:125px;float:left; border-right:#444444 1px solid; margin-left:120px;}
+.foot .f .fleft .fup{ width:305px; height:45px; float:left}
+.foot .f .fleft .fup .s1{ width:35px; height:45px; float:left}
+.foot .f .fleft .fup .s2{ width:270px; height:45px; float:left;color:#fff; font-size:18px; line-height:45px;}
+.foot .f .fleft .fup .s2 span{color:#a2a2a2; font-size:12px;} 
+.foot .f .fleft .fdonw{ width:305px; height:40px; float:left;color:#fff;font-size:26px; line-height:40px;} 
+.foot .f .fright{margin-left:110px; height:125px;width:540px; float:left} 
+.foot .f .fright .r1{width:540px; height:40px;}
+.foot .f .fright .r1 li{ width:90px; height:40px; float:left}
+.foot .f .fright .r1 li a{ width:80px; height:40px; float:left;text-align:center;display:block; color:#aaaaaa;font-size:15px; line-height:40px;}
+.foot .f .fright .r1 li div{ width:10px; height:40px;float:left; text-align:center; font-size:15px;color:#aaaaaa;line-height:40px;}
+.foot .f .fright .r2{ width:540px; height:30px; float:left; line-height:30px; font-size:12px;color:#aaaaaa;}
+.foot .f .fright .r2 .p{margin-left:10px; font-size:12px;color:#aaaaaa; height:30px; float:left}
+.foot .f .fright .r3 .img1{ float:left; margin-left:10px; margin-right:20px;}
