@@ -211,7 +211,7 @@ class IndexController extends BaseController {
 			C("UPLOAD_{$file_driver}_CONFIG")
 		);
 		$excel_path = $info['file']['path'];
-
+		dump($excel_path);die;
 		//获取数据
         import("Org.Util.PHPExcel");
         import("Org.Util.PHPExcel.IOFactory");

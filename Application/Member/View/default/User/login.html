@@ -71,7 +71,7 @@
 
 											<div class=" la_box">输入手机号码：</div>
 											<input name="mobile" id="mobile" type="text" class="la_inp" />
-											<span id="zphone" class="la_ts">获取手机验证码</span>
+											<button id="zphone" class="la_ts">获取手机验证码</button>
 										</div>
 										<div class="box_xg1">
 											<div class=" la_box">手机验证码：</div>
@@ -93,10 +93,15 @@
 												$("#tijiaosms").click(function(){
 													
 													var ajaxUrl = $("#foromProfile").attr('action');
-													$.post(ajaxUrl,{mobile:$("input[name='mobile']").val(),mobile_code:$("input[name='mobile_code']").val(),password:$("input[name='password2']").val()},success,'text');
+													$.post(ajaxUrl,{mobile:$("input[name='mobile']").val(),mobile_code:$("input[name='mobile_code']").val(),password:$("input[name='password2']").val()},success,'json');
 													return false;
 													function success(data){
-														alert(data);
+														if(data.status){
+															alert(data.info)
+															hidediv8();
+														}else{
+															alert(data.info)
+														}
 													}
 												})
 											})
