@@ -62,6 +62,7 @@
 <div id="bg8"></div>
 
 									<div id="show8">
+										<div id="foromProfile" action="{:U('Member/User/profile')}">
 										<div class="sckc">
 											<label class="L_1">找回密码</label>
 											<input type="button" value="X" onclick="hidediv8();" class="x1" />
@@ -69,26 +70,92 @@
 										<div class="box_xg">
 
 											<div class=" la_box">输入手机号码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts">获取手机验证码</span>
+											<input name="mobile" id="mobile" type="text" class="la_inp" />
+											<span id="zphone" class="la_ts">获取手机验证码</span>
 										</div>
 										<div class="box_xg1">
 											<div class=" la_box">手机验证码：</div>
-											<input name="" type="text" class="la_inp" />
+											<input name="mobile_code" type="text" class="la_inp" />
 											<span class="la_ts"></span>
 										</div>
 										<div class="box_xg1">
 											<div class=" la_box">设置新密码：</div>
-											<input name="" type="text" class="la_inp" />
+											<input name="password2" type="password" class="la_inp" />
 											<span class="la_ts"></span>
 										</div>
 										<div class="box_xg2">
 											<div class=" la_box"></div>
-											<input name="" type="button" class="la_inp" value="提交" />
+											<input name="" id="tijiaosms" type="button" class="la_inp" value="提交" />
 										</div>
+										</div>
+										<script>
+											$(function(){
+												$("#tijiaosms").click(function(){
+													
+													var ajaxUrl = $("#foromProfile").attr('action');
+													$.post(ajaxUrl,{mobile:$("input[name='mobile']").val(),mobile_code:$("input[name='mobile_code']").val(),password:$("input[name='password2']").val()},success,'text');
+													return false;
+													function success(data){
+														alert(data);
+													}
+												})
+											})
+										</script>
 									</div>
+
+
 </block>
 <block name="script">
+<script language="javascript">
+	$(function(){
+		function get_mobile_code(){
+	        
+		};
+		$('#zphone').click(function(){
+			if($('#zphone').html() == '获取手机验证码'){
+				$.post('{:U("Member/User/sms")}', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+				    alert(jQuery.trim(unescape(msg)));
+					if(msg=='提交成功'){
+						RemainTime();
+					}
+				});
+			}
+		})
+		
+
+		
+	})
+	var iTime = 59;
+	var Account;
+	function RemainTime(){
+		document.getElementById('zphone').disabled = true;
+		var iSecond,sSecond="",sTime="";
+		if (iTime >= 0){
+			iSecond = parseInt(iTime%60);
+			iMinute = parseInt(iTime/60)
+			if (iSecond >= 0){
+				if(iMinute>0){
+					sSecond = iMinute + "分" + iSecond + "秒";
+				}else{
+					sSecond = iSecond + "秒";
+				}
+			}
+			sTime=sSecond;
+			if(iTime==0){
+				clearTimeout(Account);
+				sTime='获取手机验证码';
+				iTime = 59;
+				document.getElementById('zphone').disabled = false;
+			}else{
+				Account = setTimeout("RemainTime()",1000);
+				iTime=iTime-1;
+			}
+		}else{
+			sTime='没有倒计时';
+		}
+		$('#zphone').html(sTime);
+	}	
+</script>
 	<script src="__JS__/jquery.validate.js"></script>
 	<script type="text/javascript">
 		$(function() {

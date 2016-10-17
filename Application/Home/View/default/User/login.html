@@ -1,9 +1,10 @@
 <extend name="Base/MemberCommon" />
 <block name='style'>
 	<link rel="stylesheet" type="text/css" href="__CSS__/style.css" />
+	<link rel="stylesheet" type="text/css" href="__CSS__/top.css" />
 	<link rel="stylesheet" type="text/css" href="__CSS__/register.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/layer.css" />
-	<link rel="stylesheet" type="text/css" href="__CSS__/top.css" />
+
 	<script type="text/javascript" src="__JS__/resgin.js"></script>
 	<script type="text/javascript" src="__JS__/layer.js"></script>
 </block>
@@ -52,30 +53,30 @@
 		<div class="clear"></div>
 <div id="bg8"></div>
 
-									<div id="show8">
-										<div class="sckc">
-											<label class="L_1">找回密码</label>
-											<input type="button" value="X" onclick="hidediv8();" class="x1" />
-										</div>
-										<div class="box_xg">
-											<div class=" la_box">输入手机号码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts">获取手机验证码</span>
-										</div>
-										<div class="box_xg1">
-											<div class=" la_box">手机验证码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts"></span>
-										</div>
-										<div class="box_xg1">
-											<div class=" la_box">设置新密码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts"></span>
-										</div>
-										<div class="box_xg2">
-											<div class=" la_box"></div>
-											<input name="" type="button" class="la_inp" value="提交" />
-										</div>
+									<div id="show8" style="display: block;">
+									<div class="sckc">
+									<label class="L_1">找回密码</label>
+				 					<input type="button" value="X" onclick="hidediv8();" class="x1">
+									</div>
+				                   	<div class="box_xg">
+				                    		<div class=" la_box">输入手机号码：</div>
+				                    		<input name="" type="text" class="la_inp">
+				                            <span class="la_ts">获取手机验证码</span>
+				                    </div>
+				                    <div class="box_xg1">
+				                    		<div class=" la_box">手机验证码：</div>
+				                    		<input name="" type="text" class="la_inp">
+				                            <span class="la_ts"></span>
+				                    </div>
+				                    <div class="box_xg1">
+				                    		<div class="la_box">设置新密码：</div>
+				                    		<input name="" type="password" class="la_inp">
+				                            <span class="la_ts"></span>
+				                    </div>
+				                    <div class="box_xg2">
+				                    		<div class=" la_box"></div>
+				                    		<input name="" type="button" class="la_inp" value="提交">
+				                    </div>
 									</div>
 </block>
 <block name="script">

@@ -6,31 +6,29 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/banner.css"/>
     <script type="text/javascript" src="__JS__/jquery.caroufredsel-6.0.4-packed.js" ></script>
     <script type="text/javascript" src="__JS__/jquery.js" ></script>
-    <script type="text/javascript">
-                                    
-                                        $(function() {
+    <script type="text/javascript">                                   
+        $(function() {
+            $('#pinzhong ul li a').click(function() {
+                
+                $("input[name='pinzhong']").val($(this).html());
+                $idstr = $(this).parent().attr('id');
+                $(this).parent().removeClass('show');
 
-                                            $('#pinzhong ul li a').click(function() {
-                                                
-                                                $("input[name='pinzhong']").val($(this).html());
-                                                $idstr = $(this).parent().attr('id');
-                                                $(this).parent().removeClass('show');
-        
-                                                $("#" + $idstr + "Li").removeClass('show')
-                                            })
-                                            $('#caizhi ul li span').click(function() {
-                                                
-                                                $("input[name='caizhi']").val($(this).html());
-                                                $idstr = $(this).parent().parent().attr('id');
-                                                $(this).parent().parent().removeClass('show');
-        
-                                                $("#" + $idstr + "Li").removeClass('show')
-                                            })
-                                            $('#actformbtn').click(function(){
-                                                $('#actform').submit()
-                                            })
-                                        })
-                                    </script>
+                $("#" + $idstr + "Li").removeClass('show')
+            })
+            $('#caizhi ul li span').click(function() {
+                
+                $("input[name='caizhi']").val($(this).html());
+                $idstr = $(this).parent().parent().attr('id');
+                $(this).parent().parent().removeClass('show');
+
+                $("#" + $idstr + "Li").removeClass('show')
+            })
+            $('#actformbtn').click(function(){
+                $('#actform').submit()
+            })
+        })
+    </script>
     <script type="text/javascript" src="__JS__/focus.js" ></script>
     <style type="text/css">
         

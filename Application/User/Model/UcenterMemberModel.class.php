@@ -247,7 +247,27 @@ class UcenterMemberModel extends Model{
 		}
 		return false;
 	}
+	/**
+	 * 更新用户信息
+	 * @param int $uid 用户id
+	 * @param string $password 密码，用来验证
+	 * @param array $data 修改的字段数组
+	 * @return true 修改成功，false 修改失败
+	 * @author huajie <banhuajie@163.com>
+	 */
+	public function updateUserFields2($uid, $data){
+		if(empty($uid) || empty($data)){
+			$this->error = '参数错误！';
+			return false;
+		}
 
+		//更新用户信息
+		$data = $this->create($data);
+		if($data){
+			return $this->where(array('id'=>$uid))->save($data);
+		}
+		return false;
+	}
 	/**
 	 * 验证用户密码
 	 * @param int $uid 用户id

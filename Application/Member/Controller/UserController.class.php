@@ -20,7 +20,31 @@ class UserController extends HomeController {
 	public function index(){
 		
 	}
+	public function sms(){
+		$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
 
+		$mobile = $_POST['mobile'];
+		$send_code = $_POST['send_code'];
+
+		$mobile_code = random(4,1);
+		if(empty($mobile)){
+			exit('手机号码不能为空');
+		}
+
+		if(empty($_SESSION['send_code']) or $send_code!=$_SESSION['send_code']){
+			//防用户恶意请求
+			exit('请求超时，请刷新页面后重试');
+		}
+
+		$post_data = "account=cf_vippdf&password=Pa123456&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+		//查看密码请登录用户中心->验证码、通知短信->帐户及签名设置->APIKEY
+		$gets =  xml_to_array(Post($post_data, $target));
+		if($gets['SubmitResult']['code']==2){
+			$_SESSION['mobile'] = $mobile;
+			$_SESSION['mobile_code'] = $mobile_code;
+		}
+		echo $gets['SubmitResult']['msg'];
+	}
 	/* 注册页面 */
 	public function register($username = NULL, $password = '', $repassword = '', $email = '', $verify = '', $mobile = ''){
         if(!C('USER_ALLOW_REGISTER')){
@@ -94,6 +118,7 @@ class UserController extends HomeController {
 			}
 
 		} else { //显示登录表单
+		 	$_SESSION['send_code'] = random(6,1);
 			$this->display();
 		}
 	}
@@ -155,25 +180,30 @@ class UserController extends HomeController {
      * @author huajie <banhuajie@163.com>
      */
     public function profile(){
-		if ( !is_login() ) {
-			$this->error( '您还没有登陆',U('User/login') );
-		}
         if ( IS_POST ) {
-            //获取参数
-            $uid        =   is_login();
-            $password   =   I('post.old');
-            $repassword = I('post.repassword');
-            $data['password'] = I('post.password');
-            empty($password) && $this->error('请输入原密码');
-            empty($data['password']) && $this->error('请输入新密码');
-            empty($repassword) && $this->error('请输入确认密码');
+			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+				$this->error('手机验证码输入错误。');
+			}else{
+				// $_SESSION['mobile'] = '';
+				// $_SESSION['mobile_code'] = '';	
+				$info = D("UcenterMember")->where('mobile = ' . $_POST['mobile'])->find();
+				if(empty($info)){
+					$this->error('该用号不存在！');
+				}
+			}
 
-            if($data['password'] !== $repassword){
-                $this->error('您输入的新密码与确认密码不一致');
-            }
+        	
+            //获取参数
+            $uid        =   $info[id];
+           
+            
+            $data['password'] = I('post.password');
+            
+            empty($data['password']) && $this->error('请输入新密码');
+          
 
             $Api = new UserApi();
-            $res = $Api->updateInfo($uid, $password, $data);
+            $res = $Api->updateInfo2($uid, $data);
             if($res['status']){
                 $this->success('修改密码成功！');
             }else{
