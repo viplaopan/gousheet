@@ -211,7 +211,7 @@ class IndexController extends BaseController {
 			C("UPLOAD_{$file_driver}_CONFIG")
 		);
 		$excel_path = $info['file']['path'];
-		
+
 		//获取数据
         import("Org.Util.PHPExcel");
         import("Org.Util.PHPExcel.IOFactory");
@@ -220,9 +220,10 @@ class IndexController extends BaseController {
         $objPHPExcel = new \PHPExcel();
         $objReader = \PHPExcel_IOFactory::createReader('Excel5'); //use excel2007 for 2007 format
         $objPHPExcel = $objReader->load('.' . $excel_path);
-       
+       	
 		
 		$result = D('Xianhuo')->addXianhuo($objPHPExcel);
+		
 		$this->ajaxReturn($result,'json');
 	}
 	public function update(){

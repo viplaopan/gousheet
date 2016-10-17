@@ -62,6 +62,8 @@
                             $("#myupload").ajaxSubmit({
                             dataType:  'json',
                             beforeSend: function() {
+                                var percentVal = '0%';
+                                
         //                      showimg.empty();
         //                      progress.show();
         //                      var percentVal = '0%';
@@ -73,6 +75,8 @@
         //                      var percentVal = percentComplete + '%';
         //                      bar.width(percentVal);
         //                      percent.html(percentVal);
+                                var percentVal = percentComplete + '%';
+                                $('#son').width(percentVal);
                             },
                             success: function(data) {
                                 hidediv1();
@@ -80,19 +84,30 @@
                                     $('#message').show();
                                     var count = data.bancai.count + data.juancai.count + data.daicai.count;
                                     $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
-                                    '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+                                    '<div class="judge_right">您已经成功上传');
+                                    // <span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
                                     return false;
                                 }
                                 if(data.category == '管件'){
                                     $('#message').show();
                                     var count = data.wantou.count + data.santong.count + data.fengtou.count;
                                     $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
-                                    '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>');
+                                    '<div class="judge_right">您已经成功上传');
+                                    //<span>【' + data.category + '库存】' + count + '</span>条数据！！！</div>'
                                     return false;
                                 }
+                                if(data.category == '管件'){
+                                    $('#message').show();
+                                    $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+                                    '<div class="judge_right">您已经成功上传');
+                                    return false;
+                                }
+
                                 $('#message').show();
-                                $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
-                                '<div class="judge_right">您已经成功上传<span>【' + data.category + '库存】' + data.count + '</span>条数据！！！</div>');
+                                    $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+                                    '<div class="judge_right">您已经成功上传');
+                                    return false;
+                                
         //                      
                             },
                             error:function(xhr){
@@ -167,37 +182,37 @@
                     <div class="clear"></div>
                         <ul class="daochu">
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">钢管库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/gangguan.xls">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
-                                    <div class="exp2">钢件库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
+                                    <div class="exp2">管件库存样表</div>
+                                    <a class="exp3" href="/Uploads/exceltemp/guanjian.xls">导出</a>
                             </li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">法兰库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/falan.xls">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">圆管库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/xingcai.xls">导出</a>
                             </li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">阀门库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/famen.xls">导出</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">板卷库存样表</div>
-                                    <a class="exp3">导出</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/banjuan.xls">导出</a>
                             </li>
                             <li class="x3">
                                 <input name="" type="button" class="bt_colse" onclick="hidediv4();" value="取消" />
@@ -219,37 +234,37 @@
                     <div class="clear"></div>
                     <ul class="donw">
                     <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">钢管库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/gangguan.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
-                                    <div class="exp2">钢件库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
+                                    <div class="exp2">管件库存样表</div>
+                                    <a class="exp3" href="/Uploads/exceltemp/guanjian.xls">下载</a>
                             </li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">法兰库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/falan.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
-                                    <div class="exp2">圆管库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
+                                    <div class="exp2">型材库存样表</div>
+                                    <a class="exp3" href="/Uploads/exceltemp/xingcai.xls">下载</a>
                             </li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">阀门库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/famen.xls">下载</a>
                             </li>
                             <li class="x2"></li>
                             <li class="x1">
-                                    <div class="exp1"><img src="images/xz_ico.png" /></div>
+                                    <div class="exp1"><img src="__IMG__/xz_ico.png" /></div>
                                     <div class="exp2">板卷库存样表</div>
-                                    <a class="exp3">下载</a>
+                                    <a class="exp3" href="/Uploads/exceltemp/banjuan.xls">下载</a>
                             </li>
                             <li class="x3">
                                 <input name="" type="button" class="bt_colse" onclick="hidediv5();" value="取消" />
@@ -265,30 +280,30 @@
                          <div class="clear"></div>
                     </div>
                     
-                    <div class="judge" style="color:#0F0;margin-left:360px;">
-                        <div class="judge_left"><img src="images/dui.png" /></div>
+                    <div class="judge" id="message" style="color:#0F0;margin-left:360px;">
+                        <div class="judge_left"><img src="__IMG__/dui.png" /></div>
                         <div class="judge_right">删除成功！</div>
                     </div>
                     
                     <div class="judge" style="color:#0F0;display:none; margin-left:360px;">
-                        <div class="judge_left"><img src="images/dui.png" /></div>
+                        <div class="judge_left"><img src="__IMG__/dui.png" /></div>
                         <div class="judge_right">更新成功！</div>
                     </div>
                     
                       <div class="judge" style="display:none">
-                        <div class="judge_left"><img src="images/dui.png" /></div>
+                        <div class="judge_left"><img src="__IMG__/dui.png" /></div>
                         <div class="judge_right">您已经成功上传<span>【钢管库存<!--现货库存，阀门库存，板材库存，卷材库存，法兰库存，型材库存，管件库存-->】207</span>条数据！！！</div>
                     </div>
                     
                     <div class="judge" style="display:none">
-                        <div class="judge_left"><img src="images/cou.png" /></div>
+                        <div class="judge_left"><img src="__IMG__/cou.png" /></div>
                         <div class="judge_right">您今天上传次数已用完，请明天再来！！！</div>
                     </div>
                     
                     
                     
                     <div class="judge" style="display:none;">
-                        <div class="judge_left"><img src="images/cou.png" /></div>
+                        <div class="judge_left"><img src="__IMG__/cou.png" /></div>
                         <div class="judge_right">您今天更新次数已用完，请明天再来！！！</div>
                     </div>
                     

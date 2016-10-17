@@ -16,6 +16,7 @@ namespace Member\Model;
 class XianhuoModel{
 	public function addXianhuo($objPHPExcel){
 		$xls = $objPHPExcel->getsheet(0)->toArray();
+
 		//添加钢管数据
 		if (op_e($xls[0][0]) == '品种(下拉菜单选择)' && op_e($xls[0][1]) == '材质' && op_e($xls[0][2]) == '规格（外径*壁厚）' && op_e($xls[0][3]) == '支数' && op_e($xls[0][4]) == '重量（kg）' && op_e($xls[0][5]) == '备注(限15个字，可不填)') {
 			return $this->addGangguan($xls);
@@ -36,6 +37,7 @@ class XianhuoModel{
 		//板卷
 		if (op_e($xls[0][0]) == '品种(下拉菜单选择)' && op_e($xls[0][1]) == '材质' && op_e($xls[0][2]) == '表面' && op_e($xls[0][3]) == '规格' && op_e($xls[0][4]) == '参厚' && op_e($xls[0][5]) == '等级' && op_e($xls[0][6]) == '件数' && op_e($xls[0][7]) == '总重（kg)' && op_e($xls[0][8]) == '生产厂家' && op_e($xls[0][9]) == '价格（元/吨）' && op_e($xls[0][10]) == '备注(限30个字符，可不填)') {
 			$xls = $objPHPExcel->getsheet(0)->toArray();	
+        
 			$bancai =  $this->addBancai($xls);
 			
 			$xls = $objPHPExcel->getsheet(1)->toArray();	
