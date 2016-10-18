@@ -2,7 +2,7 @@
 
 <block name="style">
     <link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
-    <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+    
     <link rel="stylesheet" type="text/css" href="__CSS__/banner.css"/>
     <script type="text/javascript" src="__JS__/jquery.caroufredsel-6.0.4-packed.js" ></script>
     <script type="text/javascript" src="__JS__/jquery.js" ></script>
@@ -36,6 +36,7 @@
         body{
             overflow:scroll;overflow-x:hidden;overflow-y:yes;
         }
+        a{color: #111111;}
     </style>
 </block>
 <block name="body">
@@ -530,7 +531,7 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><div class="s_right">￥{$vo.price}</div></div>
+                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><div class="s_right">￥{$vo.price|default="0"}</div></div>
                         </div>
                         <div class="clear"></div>
                     </li>   
