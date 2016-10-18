@@ -137,13 +137,33 @@
                                     <div class="juzi">您确定要更新库存日期吗？</div>
                                 </div>
                                 <div class="minlit">
-                            <input name="" type="submit"  value="确定"  class="btleft"/>
-                            <input name="" type="button" value="取消"  onclick="hidediv2();" class="btlright"/>
-                        </div>                              
+                                    <form action="{:U('Member/index/update')}" id="upform">
+                                        <input name="" type="submit"  value="确定"  class="btleft"/>
+                                        <input name="" type="button" value="取消"  onclick="hidediv2();" class="btlright"/>
+                                    </form>
+                                </div>                              
                         </div>
                         
                     </div>
                     </div>
+                    <script>
+                        $('#upform').submit(function(){
+                            var ajaxUrl = $(this).attr('action');
+                            $.post(ajaxUrl,$(this).serialize(),success,'json');
+                            return false;
+
+                            function success(data){
+                                if(data.status){
+                                    $('#message').show();
+                                    $('#message').html('<div class="judge_left"><img src="__IMG__/dui.png" /></div>' + 
+                                    '<div class="judge_right">更新成功');
+                                    hidediv2();
+                                }else{
+                                    alert('更新失败！')
+                                }
+                            }
+                        })
+                    </script>
                     
 <!--删除库存-->
                     <div class="h3">
@@ -163,12 +183,30 @@
                                     <div class="juzi">您确定要删除全部库存吗？</div>
                                 </div>
                                 <div class="minlit">
-                                    <input name="" type="submit"  value="确定"  class="btleft"/>
-                                    <input name="" type="button" value="取消"  onclick="hidediv3();" class="btlright"/>
+                                    <form action="{:U("Member/index/del")}" id="delform">
+                                        <input name="" type="submit"  value="确定"  class="btleft"/>
+                                        <input name="" type="button" value="取消"  onclick="hidediv3();" class="btlright"/>
+                                    </form>
                                 </div>      
                         </div>
                     </div>
-                    </div>     
+                    </div>   
+                    <script>
+                        $('#delform').submit(function(){
+                            var ajaxUrl = $(this).attr('action');
+                            $.post(ajaxUrl,$(this).serialize(),success,'json');
+                            return false;
+
+                            function success(data){
+                                if(data.status){
+                                    alert('删除成功！')
+                                    hidediv3();
+                                }else{
+                                    alert('删除失败！')
+                                }
+                            }
+                        })
+                    </script>  
 <!--导出库存-->
                     <div class="h4">
                     <input  type="button" value="导出库存" onclick="showdiv4();"  
@@ -280,7 +318,7 @@
                          <div class="clear"></div>
                     </div>
                     
-                    <div class="judge" id="message" style="color:#0F0;margin-left:360px;">
+                    <div class="judge" id="message" style="color:#0F0;margin-left:360px; display:none;">
                         <div class="judge_left"><img src="__IMG__/dui.png" /></div>
                         <div class="judge_right">删除成功！</div>
                     </div>
