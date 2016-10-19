@@ -143,7 +143,7 @@
             <volist name='companies' id='vo'>
                 <div class="i1">
                     <div class="i1_top"><a class="blue1" href="#">{$vo.company_name}</a></div>
-                    <div class="i1_bot">{$vo.desc|msubstr=0,18}</div>
+                    <div class="i1_bot">{$vo.desc|msubstr=0,25,'utf-8',false}</div>
                 </div>
             </volist>
             </div>
