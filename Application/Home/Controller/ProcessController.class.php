@@ -47,6 +47,11 @@ class ProcessController extends Controller {
     	$bjl = D('ProcessCategory')->where($map)->order('pid desc')->select();
     	$this->assign('bjl', $bjl);
 
+        //管件类
+        $map['status'] = 1;
+        $map['pid'] = 11;
+        $gjl = D('ProcessCategory')->where($map)->order('pid desc')->select();
+        $this->assign('gjl', $gjl);
 
     	//分类
     	if($cate>0){

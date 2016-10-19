@@ -140,26 +140,12 @@
         <div class="kuaixun_right">
             <div class="h1"></div>
             <div class="h2">
+            <volist name='companies' id='vo'>
                 <div class="i1">
-                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
-                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
+                    <div class="i1_top"><a class="blue1" href="#">{$vo.company_name}</a></div>
+                    <div class="i1_bot">{$vo.desc|msubstr=0,18}</div>
                 </div>
-                <div class="i1">
-                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
-                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
-                </div>
-                <div class="i1">
-                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
-                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
-                </div>
-                <div class="i1">
-                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
-                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
-                </div>
-                <div class="i1">
-                    <div class="i1_top"><a class="blue1" href="#">江苏荣明不锈钢有限公司</a></div>
-                    <div class="i1_bot">踏入8月，众系迎来开门红，而4系市场需求仍然没有大起色，成交较为清淡。料430行情趋稳运行。</div>
-                </div>
+            </volist>
             </div>
             <div class="h3">
                 <div class="i1">0577-89881176</div>

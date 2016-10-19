@@ -68,6 +68,12 @@
                         <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
                     </volist>   
                 </div>
+                <div class="list_bt">管件类</div>
+                <div class="list_con">
+                    <volist name='gjl' id='vo'>
+                        <a href="{:U('Home/Process/index',array('cate'=>$vo['id']))}">{$vo.name}</a>
+                    </volist>   
+                </div>
              
         </div>
             <div class="left_rz">
@@ -80,19 +86,19 @@
             </div>
             
             <div class="left_sj">
-                <div class="sj_bt">行业数据</div>
+                <php>
+                    $news = D('Document')->limit(8)->lists(null);
+
+                </php>
+                <div class="sj_bt">新闻动态</div>
                 <div class="sj_xx">
                     <div class="xx_l"></div>
                     <div class="xx_r"></div>
                 </div>
                 <div class="sj_con">
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <volist name='news' id='vo'>
+                        <a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20}</a>
+                    </volist>
                 </div>
             </div>
         <div class="clear"></div>

@@ -35,6 +35,11 @@ class NewsController extends Controller {
         $shuifa = D('Document')->lists(40);
         $this->assign('shuifa', $shuifa);
 
+        //推荐公司
+        $companies = D('ReCompany')->where(array(
+            array('status'=>1)
+        ))->select();
+        $this->assign('companies', $companies);
         $this->display();
     }
     public function lists($category = 0,$page = 1){
