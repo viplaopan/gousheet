@@ -14,7 +14,7 @@ use Think\Controller;
  * 主要获取首页聚合数据
  */
 class ProcessController extends Controller {
-    public function index($cate = 0){
+    public function index($cate = 0, $page = 1){
         $name = I("get.name");
     	//读取钢管类 分类
     	$map['status'] = 1;
@@ -59,9 +59,11 @@ class ProcessController extends Controller {
             $mapmap['name'] = array('like',$name.'%');
         }
         
-        $lists = D('Process')->where($mapmap)->select();
-
+        $lists = D('Process')->where($mapmap)->page($page, 20)->select();
         $this->assign('lists', $lists);
+        $totalCount = D('Process')->where($map)->count();
+        $this->assign('totalPageCount', $totalCount);
+
         $this->display();
     }
 }

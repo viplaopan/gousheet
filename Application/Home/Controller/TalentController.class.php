@@ -14,9 +14,12 @@ use Think\Controller;
  * 主要获取首页聚合数据
  */
 class TalentController extends Controller {
-    public function index($from = '' ,$to = ''){
+    public function index($page = 1){
         $map['status'] = 1;
-        $lists = D('Recruit')->where($map)->select();
+        $lists = D('Recruit')->where($map)->page($page, 20)->select();
+        $totalCount = D('Recruit')->where($map)->count();
+        $this->assign('totalPageCount', $totalCount);
+        
         foreach($lists as &$val){
             //获取公司信息
             $info = D('Company')->where(array('id'=>$val['cid']))->find();

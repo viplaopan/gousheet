@@ -14,7 +14,7 @@ use Think\Controller;
  * 主要获取首页聚合数据
  */
 class LogisticsController extends Controller {
-    public function index($from = '' ,$to = ''){
+    public function index($from = '' ,$to = '', $page = 1){
         if($from&&$to){
             $from = I('get.from');
             $to = I('get.to');
@@ -24,7 +24,9 @@ class LogisticsController extends Controller {
 
 
         $map['status'] = 1;
-        $lists = D('Logistics')->where($map)->select();
+        $lists = D('Logistics')->where($map)->page($page, 20)->select();
+        $totalCount = D('Logistics')->where($map)->count();
+        $this->assign('totalPageCount', $totalCount);
         $this->assign('lists', $lists);
         $this->display();
     }
