@@ -457,7 +457,7 @@ for(var i=0; i<lis.length; i++){
                             <div class="box_h12">{$vo.caizhi}</div>
                             <div class="box_h13">{$vo.guige}</div>
                             <div class="box_h14">{$vo.shuliang}</div>
-                            <div class="box_h15">{$vo['company']['name']}</div>
+                            <div class="box_h15">{$vo['company']['small_name']|msubstr=0,20,'utf-8',false}</div>
 
                             <div id="title">
                                 <ul>

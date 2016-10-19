@@ -10,14 +10,14 @@
 <?php if($oneplus_seo_meta['keywords']): ?><meta name="keywords" content="<?php echo ($oneplus_seo_meta['keywords']); ?>"/><?php endif; ?>
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" /> -->
-<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
+
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
     <link rel="stylesheet" type="text/css" href="/Public/Home/css/spancolle.css" />
     <script type="text/javascript" src="/Public/Home/js/layer.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css"/>
 <?php echo hook('pageHeader');?>
 
 </head>
