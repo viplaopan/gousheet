@@ -26,7 +26,7 @@ class TalentController extends Controller {
             $val['company'] = $info;
            
             //获取联系信息
-            $contact = D('Contact')->where(array('uid'=>$info['uid']))->find();
+            $contact = D('Contact')->where(array('cid'=>$info['uid']))->find();
             $val['contact'] = $contact;
         }
         unset($val);

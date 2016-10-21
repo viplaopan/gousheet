@@ -91,8 +91,8 @@
                                </li>
                             </ul>
                        </div>
-                            <div class="box_h2">{$vo.company.name}</div>
-                            <div class="box_h3">{$vo.address}</div>
+                            <div class="box_h2">{$vo.company.name|default='无'}</div>
+                            <div class="box_h3">{$vo.address|default='无'}</div>
                             <div class="box_h4">{$vo.create_time|mdate}</div>
                      
                        
