@@ -178,7 +178,7 @@ class IndexController extends BaseController {
 		if(IS_POST){
 			
 			$data = D('Recruit')->create();
-           	dump($data);die;
+           	
 			if($isEdit){
 				$res = D('Recruit')->where(array('id' => $id))->save($data);
 				
