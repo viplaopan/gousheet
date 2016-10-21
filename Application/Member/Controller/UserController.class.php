@@ -67,7 +67,7 @@ class UserController extends HomeController {
 			$uid = $User->register($username, $password, $email, $mobile);
 			if(0 < $uid){ //注册成功
 				$cdata['uid'] = $uid;
-				$cdata['name']  = I('post.company')
+				$cdata['name']  = I('post.company');
 				$cid = D('Company')->add($cdata);
 				$ctdata['cid'] = $cid;
 				$ctdata['name'] = I('post.realname');
