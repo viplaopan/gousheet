@@ -4,7 +4,24 @@
 	<link rel="stylesheet" type="text/css" href="__CSS__/register.css">
 	<link rel="stylesheet" type="text/css" href="__CSS__/top.css" />
 	<script type="text/javascript">
-		
+		$(function(){
+
+			     $('#codeId').click(function(){
+			     	
+			     	$.post('{:U("Sms/getSms")}', {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+			     		
+			            if(!msg.status){
+			            	if(msg.info == 1){
+			            		$("input[name='mobile']").next().html('<label for="mobile" class="error"><i class="error"></i>手机号必须填写</label>')
+			            	}
+			            }else{
+			            	RemainTime();
+			            }
+						
+			        },'json');
+			     })
+				
+			})
 	</script>
 </block>
 <block name='navdown'>
@@ -27,7 +44,7 @@
 					<li>
 						<div><span class="sp1">短信验证码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
 						<input name="code" style="padding-left: 10px;    width: 128px;" type="text" class="iput_code" />
-						<button class="code" id="codeId" type="button" onClick="get_mobile_code();">获取短信验证码</button>
+						<button class="code" id="codeId" type="button" onClick="">获取短信验证码</button>
 						<div class="messages"></div>
 					</li>
 					<!--设置密码-->

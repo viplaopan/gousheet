@@ -6,85 +6,7 @@
 	<script type="text/javascript">
 		
 	</script>
-</block>
-<block name="pageTitle"><div class="nright">欢迎注册</div></block>
-
-<block name="body">
-	<div style="width:100%;padding-top:20px; background-color:#f3f3f3;"></div>
-	<div class="content">
-		<div class="con">
-			<form action="{:U('User/register')}" id="registerForm">
-				<ul class="conleft">
-					<!--手机号-->
-					<li>
-						<div> <span class="sp1">手机号</span > <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="mobile" type="text" value="" placeholder="请输入11位手机号" class="iput_phone" />
-						<div class="messages"></div>
-					</li>
-					<li>
-						<div><span class="sp1">短信验证码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="code" style="padding-left: 10px;    width: 128px;" type="text" class="iput_code" />
-						<button class="code" id="codeId" type="button" onClick="get_mobile_code();">获取短信验证码</button>
-						<div class="messages"></div>
-					</li>
-					<!--设置密码-->
-					<li>
-						<div> <span class="sp1">设置密码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="password" type="password" id="pasd" value="" placeholder="请输入密码" class="iput_pwd" />
-						<div class="messages"></div>
-					</li>
-					<!--确认密码-->
-					<li>
-						<div> <span class="sp1">确认密码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="repassword" type="password" value="" placeholder="请重新输入密码" class="iput_pwd" />
-						<div class="messages"></div>
-					</li>
-					<!--公司名称-->
-					<li>
-						<div> <span class="sp1">公司名称</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="company" type="text" value="" placeholder="请输入公司名称" class="iput_name" />
-					    <div class="messages"></div>
-					</li>
-					<!--姓名-->
-					<li>
-						<div> <span class="sp1">姓名</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
-						<input name="realname" type="text" value="" placeholder="请输入姓名" class="iput_name" />
-					    <div class="messages"></div>
-					</li>
-					<li>
-						<input name="" type="checkbox" value="" class="xz" />
-						<div class="xy">我已同意或阅读<span>《购钢现货网会员服务协议》</span></div>
-					</li>
-					<li>
-						<input type="submit" class="bt" value="提交注册" />
-					</li>
-				</ul>
-			</form>
-			<div class="coright">
-				<ul class="r-up">
-					<li class="h1">已有购钢现货网账号？</li>
-					<li class="h2">登录购钢现货网，即可免费查看或在线购买全国便宜、实惠 的钢材资源，也可以将您的现货资源发布到购钢现货网。 </li>
-					<li class="h3"> <a>登录</a> </li>
-				</ul>
-				<ul class="r-up">
-					<li class="h1">有任何问题请联系客服!</li>
-					<li class="h2">客服热线：0577-89881176</li>
-					<li class="h4">
-						<a></a>
-					</li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-			
-		</div>
-		<div style=" padding-top:55px;"></div>
-</div>
-</block>
-
-<block name="side"> </block>
-<block name="script">
-	    <script src="__JS__/jquery.validate.js"></script>
-		<script type="text/javascript">
+	<script type="text/javascript">
 			$(function() {
 				// 在键盘按下并释放及提交后验证提交表单
 				$("#registerForm").validate({
@@ -198,8 +120,13 @@
 				}
 				document.getElementById('codeId').innerHTML = sTime;
 				
-				function get_mobile_code(){
-			        $.post('{:U("Sms/getSms")}', {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+				
+			}
+			$(function(){
+
+			     $('#codeId').click(function(){
+			     	alert()
+			     	$.post('{:U("Sms/getSms")}', {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
 			            if(!msg.status){
 			            	if(msg.info == 1){
 			            		$("input[name='mobile']").next().html('<label for="mobile" class="error"><i class="error"></i>手机号必须填写</label>')
@@ -209,10 +136,101 @@
 			            }
 						
 			        },'json');
-				}
+			     })
+				
+			})
+			function get_mobile_code(){
+		        $.post('{:U("Sms/getSms")}', {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+		            if(!msg.status){
+		            	if(msg.info == 1){
+		            		$("input[name='mobile']").next().html('<label for="mobile" class="error"><i class="error"></i>手机号必须填写</label>')
+		            	}
+		            }else{
+		            	RemainTime();
+		            }
+					
+		        },'json');
 			}
-			
 	</script>
+</block>
+<block name="pageTitle"><div class="nright">欢迎注册</div></block>
+
+<block name="body">
+	<div style="width:100%;padding-top:20px; background-color:#f3f3f3;"></div>
+	<div class="content">
+		<div class="con">
+			<form action="{:U('User/register')}" id="registerForm">
+				<ul class="conleft">
+					<!--手机号-->
+					<li>
+						<div> <span class="sp1">手机号</span > <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="mobile" type="text" value="" placeholder="请输入11位手机号" class="iput_phone" />
+						<div class="messages"></div>
+					</li>
+					<li>
+						<div><span class="sp1">短信验证码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="code" style="padding-left: 10px;    width: 128px;" type="text" class="iput_code" />
+						<button class="code" id="codeId" type="button">获取短信验证码</button>
+						<div class="messages"></div>
+					</li>
+					<!--设置密码-->
+					<li>
+						<div> <span class="sp1">设置密码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="password" type="password" id="pasd" value="" placeholder="请输入密码" class="iput_pwd" />
+						<div class="messages"></div>
+					</li>
+					<!--确认密码-->
+					<li>
+						<div> <span class="sp1">确认密码</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="repassword" type="password" value="" placeholder="请重新输入密码" class="iput_pwd" />
+						<div class="messages"></div>
+					</li>
+					<!--公司名称-->
+					<li>
+						<div> <span class="sp1">公司名称</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="company" type="text" value="" placeholder="请输入公司名称" class="iput_name" />
+					    <div class="messages"></div>
+					</li>
+					<!--姓名-->
+					<li>
+						<div> <span class="sp1">姓名</span> <span class="sp1"><img src="__IMG__/xh.jpg" /></span> </div>
+						<input name="realname" type="text" value="" placeholder="请输入姓名" class="iput_name" />
+					    <div class="messages"></div>
+					</li>
+					<li>
+						<input name="" type="checkbox" value="" class="xz" />
+						<div class="xy">我已同意或阅读<span>《购钢现货网会员服务协议》</span></div>
+					</li>
+					<li>
+						<input type="submit" class="bt" value="提交注册" />
+					</li>
+				</ul>
+			</form>
+			<div class="coright">
+				<ul class="r-up">
+					<li class="h1">已有购钢现货网账号？</li>
+					<li class="h2">登录购钢现货网，即可免费查看或在线购买全国便宜、实惠 的钢材资源，也可以将您的现货资源发布到购钢现货网。 </li>
+					<li class="h3"> <a>登录</a> </li>
+				</ul>
+				<ul class="r-up">
+					<li class="h1">有任何问题请联系客服!</li>
+					<li class="h2">客服热线：0577-89881176</li>
+					<li class="h4">
+						<a></a>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			
+		</div>
+		<div style=" padding-top:55px;"></div>
+</div>
+</block>
+
+<block name="side"> </block>
+<block name="script">
+	    <script src="__JS__/jquery.validate.js"></script>
+		
 	<script type="text/javascript">
 		$(document)
 			.ajaxStart(function() {

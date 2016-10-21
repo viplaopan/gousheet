@@ -60,8 +60,8 @@ class IndexController extends Controller {
         $adm['pos_id'] = 2;
         $banners = D('Adv')->where($adm)->order('sort desc')->select();
         $this->assign('banners',$banners);
-
+       
         $this->display();
     }
-
+    
 }
