@@ -10,8 +10,7 @@
 <?php if($oneplus_seo_meta['keywords']): ?><meta name="keywords" content="<?php echo ($oneplus_seo_meta['keywords']); ?>"/><?php endif; ?>
 <?php if($oneplus_seo_meta['description']): ?><meta name="description" content="<?php echo ($oneplus_seo_meta['description']); ?>"/><?php endif; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" /> -->
-<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
+
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
@@ -27,6 +26,7 @@
         }
     </style>
 
+<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css"/>
 <?php echo hook('pageHeader');?>
 
 </head>
@@ -47,11 +47,11 @@
 				<a href="/">首页</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?php echo U('Home/Guandao/sactuals');?>">
 					<div style=" float:left">搜索现货</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
-				<div class="pay">
+				<!-- <div class="pay">
 			    	<div class="dis"></div>
 			        <ul>
 			    	<li class="list_1">      
@@ -111,14 +111,14 @@
 					<div><a href="<?php echo U('Home/Guandao/plank');?>">卷材</a></div>
 			        </li>
 			        </ul>
-			    </div>
+			    </div> -->
 			</li>
 			<li>
 				<a href="<?php echo U('Home/News/index');?>">
 					<div style=" float:left">资讯行情</div>
 					<div class="span" style="float:left"><img src="/Public/Home/images/sanjiao.png" /></div>
 				</a>
-				<div class="pay1">
+				<!-- <div class="pay1">
 			    	<div class="dis"></div>
 			        <ul>
 			    	<li class="list_1">      
@@ -135,19 +135,19 @@
 					<div><a href="<?php echo U('Home/News/lists',array('category'=>43));?>">泵阀行情</a></div>
 			        </li> 
 			        </ul>
-			    </div>	
+			    </div> -->	
 			</li>
 			<li>
-				<a href="#">加工定做</a>
+				<a href="<?php echo U('Home/Process/index');?>">加工定做</a>
 			</li>
 			<li>
 				<a href="#">求购信息</a>
 			</li>
 			<li>
-				<a href="#">人才招聘</a>
+				<a href="<?php echo U('Home/Talent/index');?>">人才招聘</a>
 			</li>
 			<li>
-				<a href="#">货运物流</a>
+				<a href="<?php echo U('Home/Logistics/index');?>">货运物流</a>
 			</li>
 			<li>
 				<a href="#">商务合作</a>
@@ -351,7 +351,7 @@
 	<a <?php if((ACTION_NAME) == "sheet"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/sheet');?>">卷材</a>
 </div>
 <div class="down_box">
-	<a class="box_n" style="border-right:0; color:#F00" href="company.html">搜公司</a>
+	<a <?php if((ACTION_NAME) == "search"): ?>style="color:#F00"<?php endif; ?> class="box_n" href="<?php echo U('Home/Guandao/search');?>">搜公司</a>
 </div>
 <div class="clear"></div>
 				</div>
@@ -610,45 +610,41 @@
 		                    <div class="box_h20"><?php echo ($vo["caizhi"]); ?></div>
 		                    <div class="box_h21"><?php echo ($vo["guige"]); ?></div>
 		                    <div class="box_h22"><?php echo ((isset($vo["shuliang"]) && ($vo["shuliang"] !== ""))?($vo["shuliang"]):0); ?></div>
-		                    <div class="box_h23"><?php echo ($vo['company']['name']); ?> </div> 
+		                    <div class="box_h23"><?php echo ($vo['company']['small_name']); ?> </div> 
 							
 							<div id="title">
-								<ul>
-									<li>
-										<a href="#">点我联系</a>
-										<div class="div_ul">
-											<ul class="h1">
-												<li class="s1"><?php echo ($vo['company']['name']); ?></li>
-												<li class="s2">进入商铺</li>
-												<li class="s3">
-													<img src="/Public/Home/images/h2_zhizhao.png" />
-													<span>执照已验证</span>
-													<span style="display:none">执照未验证</span>
-												</li>
-												<li class="s4">
-													<span>信用等级</span>
-													<div><img src="/Public/Home/images/hongxing.png" /></div>
-													<div><img src="/Public/Home/images/hongxing.png" /></div>
-													<div><img src="/Public/Home/images/hongxing.png" /></div>
-													<div><img src="/Public/Home/images/huixing.png" /></div>
-													<div><img src="/Public/Home/images/huixing.png" /></div>
-												</li>
-												<li class="s5"></li>
-												<li class="s6"> 联系人:朱呼呼（总经理）
-													<div class="aa"><img src="/Public/Home/images/qq.jpg" /></div>
-												</li>
-												<li class="s7"> 电话：057786988161</li>
-												<li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo["mobile2"]); ?></span></li>
-												<li class="s7"> 传真：<?php echo ($vo["fax"]); ?></li>
-												<li class="s7"> 经营模式：<?php echo ($vo["business"]); ?></li>
-												<li class="s7"> 仓库：<?php echo ($vo["com_address"]); ?></li>
-												<li class="s7">备注：<?php echo ($vo["beizhu"]); ?></li>
-											</ul>
+                                <ul>
+                                    <li>
+                                        <a href="#">点我联系</a>
+                                        <div class="div_ul">
+                                            <ul class="h1">
+                                                <li class="s1"><?php echo ($vo['company']['name']); ?></li>
+                                                <li class="s2">进入商铺</li>
+                                                <li class="s3">
+                                                    <img src="/Public/Home/images/h2_zhizhao.png" />
+                                                    <span>执照已验证</span>
+                                                    <span style="display:none">执照未验证</span>
+                                                </li>
+                                                
+                                                <li class="s5"></li>
+                                                <li class="s6"> 联系人:<?php echo ($vo['contact']['name']); ?>
+                                                    <?php if(!empty($vo['contact']['qq'])): ?><div class="aa">
+                                                        <a class="aqq" style="background:none;padding:0;" href="tencent://message/?uin=<?php echo ($vo['contact']['qq']); ?>&amp;Site=www.gousteel.com&amp;Menu=yes" target="_blank"><img src="/Public/Home/images/qq.jpg" alt="点击这里给我发送消息" border="0"></a>
 
-										</div>
-									</li>
-								</ul>
-							</div>
+                                                    </div><?php endif; ?>
+                                                </li>
+                                                <li class="s7"> 电话：<?php echo ($vo['contact']['tel']); ?></li>
+                                                <li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo['contact']['mobile']); ?></span></li>
+                                                <li class="s7"> 传真：<?php echo ($vo['contact']['fax']); ?></li>
+                                                <li class="s7"> 经营模式：<?php echo ($vo["business"]); ?></li>
+                                                <li class="s7"> 仓库：<?php echo ($vo["com_address"]); ?></li>
+                                                <li class="s7">备注：<?php echo ((isset($vo["beizhu"]) && ($vo["beizhu"] !== ""))?($vo["beizhu"]):'无'); ?></li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
 							<div class="box_h25"><?php echo ($vo["ware_city"]); ?></div>
 							<div class="box_h26"><?php echo (mdate($vo["create_time"])); ?></div>

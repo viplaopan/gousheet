@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
     <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
     <link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/overall.css"/>
+    
     <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="__JS__/focus.js"></script>
 </block>
@@ -28,21 +30,17 @@
             <div class="right">
                 <div class="banner">
                     <div class="banner_show" id="banner_show">
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
-                    <a href="javascript:void(0)" class="bannger_inbox"><img src="__IMG__/banner1.jpg" width="720" height="318"></a>
+                        <volist name="banners" id="vo">
+                            <a href="{$vo.url}" class="bannger_inbox" title="{$vo.title}"><img src="/Uploads/Images/{$vo.data}" width="720" height="318"></a>
+                            
+                        </volist>
                     </div>
                     <div class="yq_banner_list" id="yq_banner_list">
-                        <div class="wenben">台风“妮旦”登陆广东南沙 千余人体育馆过夜</div>
-                        <a href="javascript:;" rel="0" class="hover">&nbsp;</a>
-                        <a href="javascript:;" rel="1">&nbsp;</a>
-                        <a href="javascript:;" rel="2">&nbsp;</a>
-                        <a href="javascript:;" rel="3">&nbsp;</a>
-                        <a href="javascript:;" rel="4">&nbsp;</a>
-                        <a href="javascript:;" rel="5">&nbsp;</a>
+                        <div class="wenben">标题</div>
+                        <volist name="banners" id="vo" key="k">
+
+                        <a href="javascript:;" rel="{$k-1}" <eq name='k' value="1">class="hover"</eq>>&nbsp;</a>
+                        </volist>
                     </div>
                 </div>
             </div>
@@ -61,12 +59,14 @@
                     <volist name='shichang' id='vo'>
                         <div class="i1">
                             <div class="i1_left">
-                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j1">
+                                    <a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a>
+                                </div>
                                 <div class="j2">作者:购钢网</div>
                                 <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
                                 <div class="j4">1322</div>
-                                <div class="j5">标签:指导价</div>
-                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                                <div class="j5">标签:{$vo.tag}</div>
+                                <div class="j6">{$vo.description|msubstr=0,70,'utf-8',false}</div>
                             </div>
                             <div class="i1_right">
                                 <img src="__IMG__/pppppppp.jpg" width="190" height="120">
@@ -82,12 +82,12 @@
                     <volist name='yuancai' id='vo'>
                         <div class="i1">
                             <div class="i1_left">
-                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
                                 <div class="j2">作者:购钢网</div>
                                 <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
                                 <div class="j4">1322</div>
                                 <div class="j5">标签:指导价</div>
-                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                                <div class="j6">{$vo.description|msubstr=0,70,'utf-8',false}</div>
                             </div>
                             <div class="i1_right">
                                 <img src="__IMG__/pppppppp.jpg" width="190" height="120">
@@ -102,12 +102,12 @@
                     <volist name='guanjian' id='vo'>
                         <div class="i1">
                             <div class="i1_left">
-                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
                                 <div class="j2">作者:购钢网</div>
                                 <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
                                 <div class="j4">1322</div>
                                 <div class="j5">标签:指导价</div>
-                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                                <div class="j6">{$vo.description|msubstr=0,70,'utf-8',false}</div>
                             </div>
                             <div class="i1_right">
                                 <img src="__IMG__/pppppppp.jpg" width="190" height="120">
@@ -122,12 +122,12 @@
                     <volist name='shuifa' id='vo'>
                         <div class="i1">
                             <div class="i1_left">
-                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j1"><a class="blue" href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></div>
                                 <div class="j2">作者:购钢网</div>
                                 <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
                                 <div class="j4">1322</div>
                                 <div class="j5">标签:指导价</div>
-                                <div class="j6">{$vo.description|msubstr=0,20}</div>
+                                <div class="j6">{$vo.description|msubstr=0,70,'utf-8',false}</div>
                             </div>
                             <div class="i1_right">
                                 <img src="__IMG__/pppppppp.jpg" width="190" height="120">

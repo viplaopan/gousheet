@@ -43,9 +43,9 @@
    <!-- banner代码 开始 -->
   <div class="banner">
     <div class="banner_show" id="banner_show">
-    <a href="case.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner1.png" width="1920" height="325"></a>
-    <a href="about.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner2.png" width="1920" height="325"></a>
-    <a href="service.php" target="_blank" class="bannger_inbox"><img src="__IMG__/banner3.png" width="1920" height="325"></a>
+        <volist name="banners" id="vo">
+            <a href="{$vo.data}" target="_blank" class="bannger_inbox"><img src="/Uploads/Images/{$vo.data}" width="1920" height="325"></a>
+        </volist>
         
          
          <div class="nva_banner">
@@ -418,40 +418,26 @@
                 <div class="clear"></div>
             </ul>
     </div>
-    <div class="content_hot" style="padding-bottom:30px;">
+    <div class="content_hot" style="padding-bottom:12px;">
             
             <div class="content_bt">
-                <div class="bt_left"><img src="__IMG__/index_cangjiatuijian.png"><span>厂家推荐</span></div>
+                <div class="bt_left"><img src="__IMG__/index_cangjiatuijian.png"/><span>厂家推荐</span></div>
                 <div class="bt_right">更多</div>
             </div>
             
 <style>
-#div1{height:320px;overflow:hidden; padding-left:40px;}
+#div1{height:268px;overflow:hidden; padding-left:40px; margin-top:7px; padding-bottom:10px;}
        
-.i1_lists{ width:300px; float:left; padding-bottom:5px;}
-.i1_lists .j1{ width:300px; height:30px; float:left; line-height:30px; font-size:14px;color:#0066cc;/* font-weight:bold; */}
-.i1_lists .j2{ width:300px; height:20px; line-height:20px; float:left;font-size:12px;color: #555555;}
+.i1_lists{ width:278px; float:left; padding-bottom:5px;}
+.i1_lists .j1{ width:300px; height:30px; float:left; line-height:30px; font-size:14px;color:#555555;/* font-weight:bold; */}
+.i1_lists .j2{ width:300px; height:20px; line-height:20px; float:left;font-size:12px;color:#0066cc;}
 </style>
 
-
-
            <div id="div1">
-           <volist name='companies' id='vo'>
+                <volist name='companies' id='vo'>
                 <a href="{$vo.url}" class="i1_lists">
                 <span class="j1">{$vo.desc|msubstr=0,18}</span>
                 <span class="j2">{$vo.company_name}</span>
-                </a>
-            </volist>
-
-<script>
-var c,_=Function;
-with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=1"); onmouseout=_("c=0");}
-(F=_("if(#%55||!c)#++,#%=o.scrollHeight>>1;setTimeout(F,#%55?10:3000);".replace(/#/g,"o.scrollTop")))();
-</script>
-            <volist name='companies' id='vo'>
-                <a href="{$vo.url}" class="i1_lists">
-                 <span class="j1">{$vo.desc|msubstr=0,18}</span>
-                 <span class="j2">{$vo.company_name}</span>
                 </a>
             </volist>
 <script>
@@ -531,7 +517,7 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><div class="s_right">￥{$vo.price|default="0"}</div></div>
+                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><!-- <div class="s_right">￥{$vo.price|default="0"}</div></div> -->
                         </div>
                         <div class="clear"></div>
                     </li>   

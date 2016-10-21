@@ -151,21 +151,22 @@ class AdvController extends AdminController
     {
         $aPosId = I('pos_id', 0, 'intval');
         $map['status'] = 1;
+        $map['pos_id'] = $aPosId;
  		$advs =  D('Adv')->where($map)->page($page, $r)->order('id asc')->select();
         $totalCount =  D('Adv')->where($map)->count();
 
         //todo 广告管理列表
         $builder = new AdminListBuilder();
 
-        $builder->keyId()->keyLink('title', '广告说明', 'editAdv?id=###');
-        $builder->keyHtml('pos', '所属广告位');
+        $builder->keyId()->keyLink('title', '广告标题', 'editAdv?id=###');
+        
         $builder->keyText('click_count', '点击量');
         $builder->buttonNew(U('editAdv?pos_id=' . $aPosId), '新增广告');
         if ($aPosId != 0) {
             $builder->button('广告排期查看', array('href' => U('schedule?pos_id=' . $aPosId)));
             $builder->button('设置广告位', array('href' => U('editPos?id=' . $aPosId)));
-        }
-        $builder->keyText('url', '链接地址')->keyTime('start_time', '开始生效时间', '不设置则立即生效')->keyTime('end_time', '失效时间', '不设置则一直有效')->keyText('sort', '排序')->keyCreateTime()->keyStatus();
+        } 
+        $builder->keyTime('start_time', '开始生效时间', '不设置则立即生效')->keyTime('end_time', '失效时间', '不设置则一直有效')->keyText('sort', '排序')->keyStatus()->keyDoActionEdit('editAdv?id=###');
         $builder->data($advs);
         $builder->pagination($totalCount, $r);
         $builder->display();

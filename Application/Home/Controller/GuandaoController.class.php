@@ -104,10 +104,9 @@ class GuandaoController extends HomeController {
 			$info = D("ucenter_member")->find($company['uid']);
 			$val['mobile'] = $info['mobile'];
 			
-			$contact = D('contact')->where('uid = ' . $company['uid'])->find();
-			$val['mobile2'] = $contact['mobile'];
-			$val['fax'] = $contact['fax'];
-			
+			$contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
+
 			$bus = explode(',',$company['main_business']);
 			$bstr = '';
 			foreach($bus as $bs){
@@ -191,9 +190,8 @@ class GuandaoController extends HomeController {
 			$info = D("ucenter_member")->find($company['uid']);
 			$val['mobile'] = $info['mobile'];
 			
-			$contact = D('contact')->where('uid = ' . $company['uid'])->find();
-			$val['mobile2'] = $contact['mobile'];
-			$val['fax'] = $contact['fax'];
+			$contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 			
 			$bus = explode(',',$company['main_business']);
 			$bstr = '';
@@ -275,9 +273,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -388,9 +385,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -465,9 +461,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -536,9 +531,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -604,9 +598,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -675,9 +668,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';
@@ -747,9 +739,8 @@ class GuandaoController extends HomeController {
             $info = D("ucenter_member")->find($company['uid']);
             $val['mobile'] = $info['mobile'];
 
-            $contact = D('contact')->where('uid = ' . $company['uid'])->find();
-            $val['mobile2'] = $contact['mobile'];
-            $val['fax'] = $contact['fax'];
+            $contact = D('contact')->where('cid = ' . $val['cid'])->find();
+			$val['contact'] = $contact;
 
             $bus = explode(',',$company['main_business']);
             $bstr = '';

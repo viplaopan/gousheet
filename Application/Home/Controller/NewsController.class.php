@@ -20,19 +20,19 @@ class NewsController extends Controller {
         $this->assign('hot', $hot);
 
         //市场快讯
-        $shichang = D('Document')->limit(3)->lists(41);
+        $shichang = D('Document')->limit(3)->lists(39);
         $this->assign('shichang', $shichang);
 
         //原材行情
-        $yuancai = D('Document')->lists(2);
+        $yuancai = D('Document')->lists(41);
         $this->assign('yuancai', $yuancai);
 
         //管件行情
-        $guanjian = D('Document')->lists(39);
+        $guanjian = D('Document')->lists(42);
         $this->assign('guanjian', $guanjian);
 
         //泵阀行情
-        $shuifa = D('Document')->lists(40);
+        $shuifa = D('Document')->lists(43);
         $this->assign('shuifa', $shuifa);
 
         //推荐公司
@@ -40,6 +40,12 @@ class NewsController extends Controller {
             array('status'=>1)
         ))->select();
         $this->assign('companies', $companies);
+
+        //Banner
+        $adm['status'] = 1;
+        $adm['pos_id'] = 3;
+        $banners = D('Adv')->where($adm)->order('sort desc')->select();
+        $this->assign('banners',$banners);
         $this->display();
     }
     public function lists($category = 0,$page = 1){

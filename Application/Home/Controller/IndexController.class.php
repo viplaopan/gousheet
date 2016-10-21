@@ -18,7 +18,7 @@ class IndexController extends Controller {
 	//网站首页
     public function index(){
         //推荐公司
-        $companies = D('ReCompany')->where(array(
+        $companies = D('ReCompany')->limit(5)->where(array(
             array('status'=>1)
         ))->select();
         $this->assign('companies', $companies);
@@ -55,7 +55,11 @@ class IndexController extends Controller {
         $wangzhan = D('Document')->limit(8)->lists(44);
         $this->assign('wangzhan', $wangzhan);
 
-
+        //Banner
+        $adm['status'] = 1;
+        $adm['pos_id'] = 2;
+        $banners = D('Adv')->where($adm)->order('sort desc')->select();
+        $this->assign('banners',$banners);
 
         $this->display();
     }

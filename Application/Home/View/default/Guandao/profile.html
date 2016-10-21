@@ -350,15 +350,20 @@
 												</li>
 												
 												<li class="s5"></li>
-												<li class="s6"> 联系人:朱呼呼（总经理）
-													<div class="aa"><img src="__IMG__/qq.jpg" /></div>
+												<li class="s6"> 联系人:{$vo['contact']['name']}
+													<notempty name="vo['contact']['qq']">
+													<div class="aa">
+														<a class="aqq" style="background:none;padding:0;" href="tencent://message/?uin={$vo['contact']['qq']}&amp;Site=www.gousteel.com&amp;Menu=yes" target="_blank"><img src="__IMG__/qq.jpg" alt="点击这里给我发送消息" border="0"></a>
+
+													</div>
+													</notempty>
 												</li>
-												<li class="s7"> 电话：057786988161</li>
-												<li class="s7"> 手机：{$vo.mobile} <span>{$vo.mobile2}</span></li>
-												<li class="s7"> 传真：{$vo.fax}</li>
+												<li class="s7"> 电话：{$vo['contact']['tel']}</li>
+												<li class="s7"> 手机：{$vo.mobile} <span>{$vo['contact']['mobile']}</span></li>
+												<li class="s7"> 传真：{$vo['contact']['fax']}</li>
 												<li class="s7"> 经营模式：{$vo.business}</li>
 												<li class="s7"> 仓库：{$vo.com_address}</li>
-												<li class="s7">备注：{$vo.beizhu}</li>
+												<li class="s7">备注：{$vo.beizhu|default='无'}</li>
 											</ul>
 
 										</div>

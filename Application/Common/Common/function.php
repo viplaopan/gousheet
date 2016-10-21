@@ -204,14 +204,14 @@ function mdate($time = NULL) {
      case $t < 60 * 60 * 24 * 3:
       $text = floor($time/(60*60*24)) ==1 ?'昨天 ' . date('H:i', $time) : '前天 ' . date('H:i', $time) ; //昨天和前天
       break;
-     case $t < 60 * 60 * 24 * 30:
-      $text = date('m月d日', $time); //一个月内
+     case $t < 60 * 60 * 24 * 7:
+      $text = '<div class="b1">1周内未更新</div><div class="b2">谨慎选择</div>'; //一个月内
       break;
      case $t < 60 * 60 * 24 * 365&&$y==0:
-      $text = date('m月d日', $time); //一年内
+      $text = '<div class="b1">1周内未更新</div><div class="b2">谨慎选择</div>'; //一个月内
       break;
      default:
-      $text = date('Y年m月d日', $time); //一年以前
+      $text = '<div class="b1">1周内未更新</div><div class="b2">谨慎选择</div>'; //一个月内
       break; 
     }
         

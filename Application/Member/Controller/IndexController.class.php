@@ -68,9 +68,11 @@ class IndexController extends BaseController {
 	}
 	
 	public function contact(){
-		if(IS_POST){			
+		$cid = D('Company')->where(array('uid'=>UID))->getField('id');
+		if(IS_POST){
+
 			//获取公司信息
-			$contact = D('Contact')->where('uid = ' . UID )->find();
+			$contact = D('Contact')->where('cid = ' . $cid )->find();
 			$isEdit = $contact?1:0;
 			$data = D('Contact')->create();
 			
@@ -78,8 +80,9 @@ class IndexController extends BaseController {
 				$this->error('数据错误');
 			}
 			if($isEdit){
-				$res = D('Contact')->where('uid = ' . UID)->save($data);
+				$res = D('Contact')->where('cid = ' . $cid)->save($data);
 			}else{
+				$data['cid'] = $cid;
 				$res = D('Contact')->add($data);
 			}
 			if($res){
@@ -88,11 +91,10 @@ class IndexController extends BaseController {
 				$this->error('数据错误');
 			}
 		}else{
-			$contact = D('Contact')->where('uid = ' . UID )->find();
+			$contact = D('Contact')->where('cid = ' . $cid )->find();
 			$this->assign('contact',$contact);
 			$this->display();
 		}
-		
 	}
 	
 	public function field(){

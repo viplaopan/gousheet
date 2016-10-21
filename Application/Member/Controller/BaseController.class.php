@@ -33,7 +33,7 @@ class BaseController extends Controller {
 		
 		define('UID',is_login());
         if( !UID ){// 还没登录 跳转到登录页面
-            $this->redirect('Home/user/login');
+            $this->redirect('Member/user/login');
         }
     }
 

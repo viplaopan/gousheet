@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="/Public/Home/js/layer.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css"/>
+
 <?php echo hook('pageHeader');?>
 
 </head>
@@ -527,7 +528,7 @@
 							<div class="box_h2"><?php echo ($vo["guige"]); ?></div>
 							<div class="box_h3"><?php echo ($vo["zhishu"]); ?></div>
 							<div class="box_h4"><?php echo ((isset($vo["zhongliang"]) && ($vo["zhongliang"] !== ""))?($vo["zhongliang"]):"0"); ?></div>
-							<div class="box_h5"><?php echo ($vo['company']['name']); ?></div>
+							<div class="box_h5"><?php echo ($vo['company']['small_name']); ?></div>
 
 							<div id="title">
 								<ul>
@@ -544,15 +545,18 @@
 												</li>
 												
 												<li class="s5"></li>
-												<li class="s6"> 联系人:朱呼呼（总经理）
-													<div class="aa"><img src="/Public/Home/images/qq.jpg" /></div>
+												<li class="s6"> 联系人:<?php echo ($vo['contact']['name']); ?>
+													<?php if(!empty($vo['contact']['qq'])): ?><div class="aa">
+														<a class="aqq" style="background:none;padding:0;" href="tencent://message/?uin=<?php echo ($vo['contact']['qq']); ?>&amp;Site=www.gousteel.com&amp;Menu=yes" target="_blank"><img src="/Public/Home/images/qq.jpg" alt="点击这里给我发送消息" border="0"></a>
+
+													</div><?php endif; ?>
 												</li>
-												<li class="s7"> 电话：057786988161</li>
-												<li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo["mobile2"]); ?></span></li>
-												<li class="s7"> 传真：<?php echo ($vo["fax"]); ?></li>
+												<li class="s7"> 电话：<?php echo ($vo['contact']['tel']); ?></li>
+												<li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo['contact']['mobile']); ?></span></li>
+												<li class="s7"> 传真：<?php echo ($vo['contact']['fax']); ?></li>
 												<li class="s7"> 经营模式：<?php echo ($vo["business"]); ?></li>
 												<li class="s7"> 仓库：<?php echo ($vo["com_address"]); ?></li>
-												<li class="s7">备注：<?php echo ($vo["beizhu"]); ?></li>
+												<li class="s7">备注：<?php echo ((isset($vo["beizhu"]) && ($vo["beizhu"] !== ""))?($vo["beizhu"]):'无'); ?></li>
 											</ul>
 
 										</div>

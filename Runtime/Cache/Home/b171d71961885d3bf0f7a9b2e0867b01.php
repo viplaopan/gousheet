@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
-<html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 <head>
 	<?php $map['b.status'] = 1; $map['b.type'] = 1; $map['b.path'] = MODULE_NAME."/".CONTROLLER_NAME."/".ACTION_NAME; $advs = D("Adv")->join('__ADV_POS__ as b ON __ADV__.pos_id = b.id','LEFT')->where($map)->select(); $advlist = array(); foreach($advs as $v){ $advlist[$v['name']] = $v; } ?>
 <meta charset="UTF-8">
@@ -14,16 +14,17 @@
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/register.css">
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/layer.css" />
-	<link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css" />
+
 	<script type="text/javascript" src="/Public/Home/js/resgin.js"></script>
 	<script type="text/javascript" src="/Public/Home/js/layer.js"></script>
 
 <?php echo hook('pageHeader');?>
 
 </head>
-<body>
+<body>222
 	<!-- 头部 -->
 	<div class="top">
 	<div class="nav">
@@ -107,30 +108,30 @@
 		<div class="clear"></div>
 <div id="bg8"></div>
 
-									<div id="show8">
-										<div class="sckc">
-											<label class="L_1">找回密码</label>
-											<input type="button" value="X" onclick="hidediv8();" class="x1" />
-										</div>
-										<div class="box_xg">
-											<div class=" la_box">输入手机号码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts">获取手机验证码</span>
-										</div>
-										<div class="box_xg1">
-											<div class=" la_box">手机验证码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts"></span>
-										</div>
-										<div class="box_xg1">
-											<div class=" la_box">设置新密码：</div>
-											<input name="" type="text" class="la_inp" />
-											<span class="la_ts"></span>
-										</div>
-										<div class="box_xg2">
-											<div class=" la_box"></div>
-											<input name="" type="button" class="la_inp" value="提交" />
-										</div>
+									<div id="show8" style="display: block;">
+									<div class="sckc">
+									<label class="L_1">找回密码</label>
+				 					<input type="button" value="X" onclick="hidediv8();" class="x1">
+									</div>
+				                   	<div class="box_xg">
+				                    		<div class=" la_box">输入手机号码：</div>
+				                    		<input name="" type="text" class="la_inp">
+				                            <span class="la_ts">获取手机验证码</span>
+				                    </div>
+				                    <div class="box_xg1">
+				                    		<div class=" la_box">手机验证码：</div>
+				                    		<input name="" type="text" class="la_inp">
+				                            <span class="la_ts"></span>
+				                    </div>
+				                    <div class="box_xg1">
+				                    		<div class="la_box">设置新密码：</div>
+				                    		<input name="" type="password" class="la_inp">
+				                            <span class="la_ts"></span>
+				                    </div>
+				                    <div class="box_xg2">
+				                    		<div class=" la_box"></div>
+				                    		<input name="" type="button" class="la_inp" value="提交">
+				                    </div>
 									</div>
 
 	<!-- /主体 -->

@@ -324,35 +324,40 @@ for(var i=0; i<lis.length; i++){
 						<div class="box_h5">{$vo['company']['small_name']}</div>
 
 						<div id="title">
-							<ul>
-								<li>
-									<a href="#">点我联系</a>
-									<div class="div_ul">
-										<ul class="h1">
-											<li class="s1">{$vo['company']['name']}</li>
-											<li class="s2">进入商铺</li>
-											<li class="s3">
-												<img src="__IMG__/h2_zhizhao.png" />
-												<span>执照已验证</span>
-												<span style="display:none">执照未验证</span>
-											</li>
-											
-											<li class="s5"></li>
-											<li class="s6"> 联系人:朱呼呼（总经理）
-												<div class="aa"><img src="__IMG__/qq.jpg" /></div>
-											</li>
-											<li class="s7"> 电话：057786988161</li>
-											<li class="s7"> 手机：{$vo.mobile} <span>{$vo.mobile2}</span></li>
-											<li class="s7"> 传真：{$vo.fax}</li>
-											<li class="s7"> 经营模式：{$vo.business}</li>
-											<li class="s7"> 仓库：{$vo.com_address}</li>
-											<li class="s7">备注：{$vo.beizhu}</li>
-										</ul>
+                                <ul>
+                                    <li>
+                                        <a href="#">点我联系</a>
+                                        <div class="div_ul">
+                                            <ul class="h1">
+                                                <li class="s1">{$vo['company']['name']}</li>
+                                                <li class="s2">进入商铺</li>
+                                                <li class="s3">
+                                                    <img src="__IMG__/h2_zhizhao.png" />
+                                                    <span>执照已验证</span>
+                                                    <span style="display:none">执照未验证</span>
+                                                </li>
+                                                
+                                                <li class="s5"></li>
+                                                <li class="s6"> 联系人:{$vo['contact']['name']}
+                                                    <notempty name="vo['contact']['qq']">
+                                                    <div class="aa">
+                                                        <a class="aqq" style="background:none;padding:0;" href="tencent://message/?uin={$vo['contact']['qq']}&amp;Site=www.gousteel.com&amp;Menu=yes" target="_blank"><img src="__IMG__/qq.jpg" alt="点击这里给我发送消息" border="0"></a>
 
-									</div>
-								</li>
-							</ul>
-						</div>
+                                                    </div>
+                                                    </notempty>
+                                                </li>
+                                                <li class="s7"> 电话：{$vo['contact']['tel']}</li>
+                                                <li class="s7"> 手机：{$vo.mobile} <span>{$vo['contact']['mobile']}</span></li>
+                                                <li class="s7"> 传真：{$vo['contact']['fax']}</li>
+                                                <li class="s7"> 经营模式：{$vo.business}</li>
+                                                <li class="s7"> 仓库：{$vo.com_address}</li>
+                                                <li class="s7">备注：{$vo.beizhu|default='无'}</li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
 						<div class="box_h7">{$vo.ware_city}</div>
 						<div class="box_h8">{$vo.create_time|mdate}</div>
