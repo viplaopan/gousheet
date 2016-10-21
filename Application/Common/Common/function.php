@@ -31,7 +31,7 @@ function is_login(){
 }
 function get_company(){
     $uid = is_login();
-    dump($uid);
+   
     return D('Company')->where(array('uid'=>$uid))->getField('id',true);
 }
 /**
