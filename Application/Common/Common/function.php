@@ -31,7 +31,8 @@ function is_login(){
 }
 function get_company(){
     $uid = is_login();
-    return D('company')->where(array('uid'=>$uid))->getField('id',true);
+    dump($uid);
+    return D('Company')->where(array('uid'=>$uid))->getField('id',true);
 }
 /**
  * 检测当前用户是否为管理员
