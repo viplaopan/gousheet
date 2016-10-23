@@ -167,11 +167,15 @@ function think_decrypt($data, $key = ''){
     }
     return base64_decode($str);
 }
-function get_ad($ad = 0){
+function getAd($ad = 0){
     if($ad > 0){
-
+        //Banner
+        $adm['status'] = 1;
+        $adm['id'] = $ad;
+        $banner = D('Adv')->where($adm)->order('sort desc')->find();
+        return "<a title='" .$banner['title']. "' href='" .$banner['url']. "'><img src='/Uploads/Images/" .$banner['data']. "'></a>";
     }else{
-        return '/1.png';
+        return '<img src="/1.png">';
     }
 }
 /**

@@ -12,23 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
-					$(function(){
-						$('.ajaxOut').click(function(){
-							
-							$.post("<?php echo U('Member/User/logout');?>",{},success,'json');
-							return false;
 
-							function success(data){
-								if(data.status){
-									history.go(0)
-								}else{
-									alert('Error')
-								}
-							}
-						})
-					})
-				</script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/spancolle.css" />
@@ -46,6 +30,12 @@
 	.top .navdown .nminll .m img {
 	    width: 189px;
 	    height: 3px;
+	    display: block;
+	}
+	#headm li ul .i_h3 .h3_miss img {
+	    width: 8px;
+	    height: 8px;
+	    margin-top: 4px;
 	    display: block;
 	}
 </style>
@@ -150,7 +140,7 @@
 				<a href="<?php echo U('Home/Process/index');?>">加工定做</a>
 			</li>
 			<li>
-				<a href="#">求购信息</a>
+				<a href="<?php echo U('Home/Issue/index');?>">求购信息</a>
 			</li>
 			<li>
 				<a href="<?php echo U('Home/Talent/index');?>">人才招聘</a>
@@ -169,12 +159,28 @@
 						<div class="exit ajaxOut">安全退出</div>
 					</div>
 				</li>
-				
+				<script type="text/javascript">
+					$(function(){
+						$('.ajaxOut').click(function(){
+							
+							$.post("<?php echo U('Member/User/logout');?>",{},success,'json');
+							return false;
+
+							function success(data){
+								if(data.status){
+									history.go(0)
+								}else{
+									alert('Error')
+								}
+							}
+						})
+					})
+				</script>
 			<?php else: ?>
 				<li class="reg">
 					<div class="login"><a href="<?php echo U('Member/User/login');?>">登录</a></div>
 					<div>|</div>
-					<div class="register"><a href="<?php echo U('Member/User/login');?>">免费注册</a></div>
+					<div class="register"><a href="<?php echo U('Member/User/register');?>">免费注册</a></div>
 				</li><?php endif; ?>
 		</ul>
 	</div>

@@ -187,7 +187,7 @@ class AdvController extends AdminController
             
             $pos = D('AdvPos')->create();
             if ($isEdit) {
-                $pos['id'] = $aId;
+               
                 $result = D('AdvPos')->save($pos);
             } else {
             	$result = D('AdvPos')->add($pos);
