@@ -44,7 +44,8 @@
 						self.sync();
 						K('form[name=example]')[0].submit();
 					});
-				}
+				},
+				afterBlur: function(){this.sync();}
 			});
 			prettyPrint();
 		});
@@ -226,7 +227,6 @@
 				},
 				submitHandler: function(form) {
 					var self = $('form');
-					KindEditor.sync();
 					$.post(self.attr("action"), self.serialize(), success, "json");
 					return false;
 
