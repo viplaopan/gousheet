@@ -1,7 +1,4 @@
    function showdiv1() {
-   	document.getElementById("myhead").value = '';
-   	document.getElementById("message").style.display ="none";
-   	document.getElementById("son").style.width ="0%";
  document.getElementById("bg1").style.display ="block";
  document.getElementById("show1").style.display ="block";
  }

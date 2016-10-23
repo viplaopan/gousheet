@@ -8,11 +8,14 @@
 .top .nav ul li a .span{ font-size:20px;color:#ffffff;letter-spacing:1px; font-size:15px;color:#f28f18;margin-left: 5px;}
 .top .nav ul li a:hover {padding-left:15px; padding-right:15px;display:block;height:45px;line-height:45px;text-align:center;letter-spacing:1px; background-color:#222222; color:#f28329}
 .top .nav ul li a:hover .span{ font-size:20px;color:#ffffff;float: right;letter-spacing:1px; font-size:15px;color:#f28f18;}
-.top .nav ul .reg { width:130px;height:45px; float:right;}
-.top .nav ul .reg .login{text-align:center; height:45px; width:45px; display:block; font-size:15px; color:#ffffff; float:left}
-.top .nav ul .reg .login:hover{text-align:center; height:45px; width:45px; display:block; font-size:15px; color:#ffffff; float:left; text-decoration:underline; cursor:pointer}
-.top .nav ul .reg .register{text-align:right; height:45px;width:60px; display:block; font-size:15px; color:#ffffff; float:left}
-.top .nav ul .reg div{ width:10px; height:45px; float:left; font-size:12px; color:#ffffff; line-height:45px;}
+
+.top .nav ul .reg {height:45px; float:right;}
+.top .nav ul .reg .login{text-align:center; height:45px;display:block; font-size:15px; color:#ffffff; float:right}
+.top .nav ul .reg .login:hover{text-align:center; height:45px;display:block; font-size:15px; color:#ffffff; float:right; text-decoration:underline; cursor:pointer}
+.top .nav ul .reg .register{text-align:right; height:45px; display:block; font-size:15px; color:#ffffff; float:right}
+.top .nav ul .reg .register:hover{text-align:right; height:45px; display:block; font-size:15px; color:#ffffff; float:right; text-decoration:underline;}
+
+.top .nav ul .reg div{ height:45px; float:right; font-size:12px; color:#ffffff; line-height:45px;}
 .top .nav ul .user {height:45px; float:right;}
 .top .nav ul .user .us{text-align:center; height:45px; /*! width:45px; */ display:block; font-size:15px; color:#ffffff; float:left}
 .top .nav ul .user .us .ico{ width:31px; height:30px; float:left; margin-top:7px; margin-right:5px;}
@@ -60,5 +63,29 @@ border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
 .top .navdown .nminlls .nm_input{ width:349px; float:left;height:33px; border-bottom:#bdbdbd 1px solid; border-left:#bdbdbd 1px solid; border-top:#bdbdbd 1px solid;}
 .top .navdown .nminlls .nm_bt{ width:100px; float:left; height:35px; background-color:#e35d57; font-size:18px; letter-spacing:2px; color:#FFF}
 
+.spot{width:100%; border-top:2px solid #0e6eb8; background-color:#ffffff; padding-bottom:30px;}
 
+.spot .fields{ width:1180px; margin:0 auto; padding-top:35px; padding-bottom:60px;}
+.spot .fields .zw{ width:100px;font-family:"微软雅黑"; letter-spacing:1px; line-height:30px; font-size:22px; float:left; color:#333333}
+.spot .fields .yw{ width:120px; color:#9a9a9a; font-family:Arial, Helvetica, sans-serif; line-height:33px; letter-spacing:1px; text-transform:uppercase;font-size:18px; float:left}
+.spot .fields .xt{ width:960px; float:left; border-bottom:2px solid #e8e8e8; margin-top:14px; margin-bottom:14px;}
 
+.spot .fields .tops{ width:1180px; float:left; margin-top:50px;}
+.spot .fields .tops img{ width:400px; height:275px; float:left; margin-top:15px; margin-right:15px;}
+.spot .fields .tops .cons{ width:510px; height:290px; float:left; margin-left:15px;}
+.spot .fields .tops .cons .title{ width:510px; height:60px; float:left; line-height:30px;font-family:"宋体"; font-size:22px; font-weight:bold}
+.spot .fields .tops .cons p{ width:510px; font-size:14px; font-family:"黑体"; line-height:20px; float:left; margin-top:10px; color:#434343}
+.spot .fields .tops .cons .zd{ width:510px; float:left; line-height:40px; height:40px; border-top:1px dashed #969696; margin-top:10px;}
+.spot .fields .tops .cons .bt{ width:510px; float:left; height:30px; margin-bottom:15px;}
+.spot .fields .tops .cons .bt .bt_f{ width:145px; height:30px; display:block; float:left; background:url(../images/fields_bt.png) no-repeat}
+.spot .fields .tops .cons .bt .bt_shi{ margin-left:30px; width:23px; height:30px; float:left; background:url(../images/fields_shi.png) no-repeat}
+.spot .fields .tops .cons .bt .sp{ width:110px; height:30px; background: url(../images/fields_yrz.png) no-repeat; float:left; margin-left:10px;}
+.spot .fields .tops .cons .p1{ width:510px; height:20px; line-height:20px; float:left;font-size:14px; font-family:"黑体"; color:#434343}
+.spot .fields .tops .box{ width:188px; border:1px solid #c9c9c9; float:left; height:268px; margin-left:30px; padding:10px;background-color:#eeeeee}
+.spot .fields .tops .box .tiles{ width:188px; height:30px; border-bottom:1px solid #c9c9c9; color:#0572c6;font-family:"宋体"; font-size:16px; font-weight:bold}
+.spot .fields .tops .box span{ width:188px; line-height:40px; float:left; font-size:14px;font-family:"黑体"; color:#010101; font-weight:bold; letter-spacing:1px}
+.spot .fields .tops .box div{width:188px; line-height:20px; float:left; font-size:8px;font-family:"微软雅黑"; letter-spacing:1px;color:#000000;}
+.spot .fields .tops .box div .h1{font-size:12px;font-family:"黑体"; color:#000000}
+.spot .fields .kz{ width:1180px; padding-top:25px; float:left}
+.spot .fields .contens{ width:1180px; float:left; margin-top:25px; line-height:25px;}
+.spot .fields .contens p{ text-indent:2em; font-size:16px;font-family:"黑体"; color:#434343 }

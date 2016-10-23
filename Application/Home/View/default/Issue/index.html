@@ -1,0 +1,121 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/main.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
+    <link rel="Shortcut Icon" href="__IMG__/guo.png" type="image/x-icon">
+    
+    <script type="text/javascript" src="__JS__/focus.js"></script>
+</block>
+<block name="body">
+
+
+<div class="content_bg"  style="background-color:#ffffff">
+    <div class="content">
+        <div class="conLeft">
+            <div class="pos"   style=" height:30px; line-height:30px;">
+                 您现在的位置：<a class="blue" href="#">购钢现货网</a> > <a class="blue" href="">求购信息</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="hot_news_bg">
+
+
+    <div class="hot_news">
+        <div class="h1" style=" background:url(__IMG__/qfxxzq.png) no-repeat">
+        
+            <div class="search">
+                <input name="" type="text"  class="s_ipt"/>
+                <input name="" type="submit"  class="s_bt" value="搜索"/>
+            </div>
+            <div class="rz">
+                当前共有<span>412</span>家企业入驻
+            </div>
+        
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="buy">
+    <div class="log_left">
+    <volist name='lists' id='vo'>
+        <div class="left_con">
+            <div class="con_l">
+                <div class="l_bt">{$vo.title|msubstr=0,50,'utf-8',false}</div>
+                <div class="l_div">内容：{$vo.yaoqiu|msubstr=0,70,'utf-8',false}</div>
+                <div class="l_div">地址：{$vo.address|msubstr=0,30,'utf-8',false}</div>
+                <div class="l_div">联系人：{$vo.mingzi}</div>
+                <div class="l_div">发布时间：{$vo.create_time|date='Y-m-d',###}</div>
+            </div>
+            <eq name="vo['time']" value="0">
+            <div class="con_r">
+                <div class="sp11">交易结束</div>
+                <div class="bt1">我要供货</div>
+                <div class="sp_d">
+                    <div class="d_tp1"></div>
+                    <div class="llsit1">已过期</div>
+                </div>
+                
+            </div>
+                <else/>
+            <div class="con_r">
+                <div class="sp1">正在求购</div>
+                <div class="bt">我要供货</div>
+                <div class="sp_d">
+                    <div class="d_tp"></div>
+                    <div class="llsit">{$vo.time}</div>
+                </div>
+                
+            </div>
+            </eq>
+        </div>
+    </volist>  
+        
+     <div class="xx">
+                <div class="xx_down1">
+                            {:getPagination2($totalPageCount,20)}
+              </div>
+              
+           </div>
+    </div>
+    <div class="log_right">
+    
+        <div class="right_rz">
+            <div class="rz_tb">发布求购信息</div>
+                <div class="rz_con">
+                    <a>您可以联系购钢现货网工作人员</a>
+                    <a>由工作人员帮您发布求购信息</a>
+                    <span>电话：0577-89881176</span>
+                    <a class="aa" href="{:U('Home/Issue/edit')}">在线发布求购</a>
+                </div>
+          </div>
+          
+        <div class="right_sj">
+        
+                <div class="sj_bt">新闻动态</div>
+                <div class="sj_xx">
+                    <div class="xx_l"></div>
+                    <div class="xx_r"></div>
+                </div>
+                <div class="sj_con">
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                </div>
+        </div>
+        
+    </div>
+</div>
+
+</block>

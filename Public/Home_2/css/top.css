@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+.top{ width:100%;background:url(../images/top_bg.png) repeat-x}
+/*以下是一级导航*/
+.top .nav { width:1180px; height:45px; margin:0 auto}
+.top .nav ul li {float:left; position:relative;}
+.top .nav ul li a {padding-left:15px; padding-right:15px;display:block;height:45px;line-height:45px;text-align:center;  font-size:15px; color:#ffffff; letter-spacing:1px;}
+.top .nav ul li a .span{ font-size:20px;color:#ffffff;letter-spacing:1px; font-size:15px;color:#f28f18;margin-left: 5px;}
+.top .nav ul li a:hover {padding-left:15px; padding-right:15px;display:block;height:45px;line-height:45px;text-align:center;letter-spacing:1px; background-color:#222222; color:#f28329}
+.top .nav ul li a:hover .span{ font-size:20px;color:#ffffff;float: right;letter-spacing:1px; font-size:15px;color:#f28f18;}
+.top .nav ul .reg { width:130px;height:45px; float:right;}
+.top .nav ul .reg .login{text-align:center; height:45px; width:45px; display:block; font-size:15px; color:#ffffff; float:left}
+.top .nav ul .reg .login:hover{text-align:center; height:45px; width:45px; display:block; font-size:15px; color:#ffffff; float:left; text-decoration:underline; cursor:pointer}
+.top .nav ul .reg .register{text-align:right; height:45px;width:60px; display:block; font-size:15px; color:#ffffff; float:left}
+.top .nav ul .reg div{ width:10px; height:45px; float:left; font-size:12px; color:#ffffff; line-height:45px;}
+.top .nav ul .user {height:45px; float:right;}
+.top .nav ul .user .us{text-align:center; height:45px; /*! width:45px; */ display:block; font-size:15px; color:#ffffff; float:left}
+.top .nav ul .user .us .ico{ width:31px; height:30px; float:left; margin-top:7px; margin-right:5px;}
+.top .nav ul .user .us .phone{ padding-right:10px; font-size:12px;color:#fffefe; float:left;/*! padding-left: 19px; */}
+.top .nav ul .user .us .phone:hover{color:#fffefe;text-decoration:underline }
+.top .nav ul .user .us .exit{  font-size:12px; margin-right:8px;}
+.top .nav ul .user .us .exit:hover{  font-size:12px; margin-right:8px; text-decoration:underline }
+.top .nav ul .user .exit{text-align:right; height:45px;width:60px; display:block; font-size:15px; color:#ffffff; float:left}
+.top .nav ul .user div{ /*! width:10px; */ height:45px; float:left; font-size:12px; color:#ffffff; line-height:45px;}
+/*以下是二级导航*/
+.top .nav ul li .pay {display:none}
+.top .nav ul li:hover .pay{ display:block;position:absolute; width:600px;padding-top:-12px; top:34px; left:0;z-index:100000;background-size:cover}
+.top .nav ul li:hover .pay .dis{ width:602px; float:left; top:2px; position:relative; z-index:10; height:11px; background:url(../images/erji_nav_01_01.png) no-repeat}
+.top .nav ul li:hover .pay ul{ width:720px; float:left;display:block;
+background-color:#ffffff;border: 2px solid #f28f18;
+border-radius:5px;box-shadow: 0 0 5px 0px #444; z-index:9;position:relative;}
+.top .nav ul li:hover .pay ul .list_1{width:119px;float:left;display:block;height:290px;border-right:#d2d2d2 1px solid; }
+.top .nav ul li:hover .pay ul .list_1 span{ width:119px; height:35px; float:left; line-height:35px; font-size:16px;color:#f28329; text-align:center;}
+.top .nav ul li:hover .pay ul .list_1 div{ width:119px; letter-spacing:1px;display:block;height:30px; line-height:30px;text-align:center;font-family:"微软雅黑"; font-size:13px; color:#999999; float:left;}
+.top .nav ul li:hover .pay ul .list_1 div:hover {width:119px;font-family:"微软雅黑";letter-spacing:1px; font-size:13px; text-decoration:underline; color:#999999; line-height:30px;display:block;  }
+
+.top .nav ul li .pay1{display:none}
+.top .nav ul li:hover .pay1{ display:block;position:absolute; width:242px;padding-top:-12px; top:34px; left:0; z-index:100000;background-size:cover}
+.top .nav ul li:hover .pay1 .dis{ width:242px; float:left; height:11px; background:url(../images/erji_nav_01_01.png) no-repeat;top:2px; position:relative; z-index:10;}
+.top .nav ul li:hover .pay1 ul{ width:238px;float:left;display:block; 
+background-color:#ffffff;border: 2px solid #f28f18;
+border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
+.top .nav ul li:hover .pay1 ul .list_1{width:118px;float:left;display:block;height:170px;border-right:#d2d2d2 1px solid; }
+.top .nav ul li:hover .pay1 ul .list_1 span{ width:118px; height:35px; float:left; line-height:35px; font-size:16px;color:#f28f18; text-align:center;}
+.top .nav ul li:hover .pay1 ul .list_1 div{ width:118px; letter-spacing:1px;display:block;height:30px; line-height:30px;text-align:center;font-family:"微软雅黑"; font-size:13px; color:#999999; float:left;}
+.top .nav ul li:hover .pay1 ul .list_1 div:hover {width:118px;font-family:"微软雅黑";letter-spacing:1px; font-size:13px; color:#999999; line-height:30px;display:block; text-decoration:underline;cursor:pointer}
+
+
+
+.top .navdown{ width:1180px; height:73px; padding-top:17px; margin:0 auto; background-color:#FFFFFF;}
+.top .navdown .nleft{ width:155px;height:55px;float:left;}
+.top .navdown .nright{ margin-left:40px; font-size:24px; color:#333333; line-height:55px; height:55px; float:left}
+.top .navdown .nminll{ height:55px;float:right; width:189px;}
+.top .navdown .nminll .u{width:189px; height:25px; float:left; line-height:25px;}
+.top .navdown .nminll .m{width:189px; height:3px; margin:1px 0; float:left}
+.top .navdown .nminll .m img{width:189px; height:3px;}
+.top .navdown .nminll .d{width:189px; height:25px; float:left; line-height:25px;}
+
+.top .navdown .nminlls{ height:35px;float:right;padding-top:10px; padding-bottom:10px; width:450px;}
+.top .navdown .nminlls .nm_input{ width:349px; float:left;height:33px; border-bottom:#bdbdbd 1px solid; border-left:#bdbdbd 1px solid; border-top:#bdbdbd 1px solid;}
+.top .navdown .nminlls .nm_bt{ width:100px; float:left; height:35px; background-color:#e35d57; font-size:18px; letter-spacing:2px; color:#FFF}
+
+
+

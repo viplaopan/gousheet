@@ -54,22 +54,18 @@
                 <div class="i1">相关新闻</div>
                 <div class="i2"></div>
             </div>
+                <php>
+                    $news = D('Document')->limit(8)->lists(null);
+                </php>
             <ul class="h2">
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
-                <li><a class="blue" href="">价格其实可以涨的更猛一些</a></li>
+                <volist name='news' id='vo'>
+                    <li><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,18,'utf-8',false}</a></li>
+                </volist>
             </ul>
             <div class="h3">
                 <div class="i1">0577-89881176</div>
-                <div class="i2"><img src="../images/erer1.jpg" width="107"></div>
-                <div class="i3"><img src="../images/erer2.jpg" width="107"></div>
+                <div class="i2"><img src="__IMG__/erer1.jpg" width="107"></div>
+                <div class="i3"><img src="__IMG__/erer2.jpg" width="107"></div>
                 <div class="i4"><p>扫描进入购钢网手机端</p><p>手机选货，安心保障</p></div>
                 <div class="i5"><p>关注购钢网微信</p><p>实时掌握最新消息</p></div>
             </div>

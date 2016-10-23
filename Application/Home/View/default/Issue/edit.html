@@ -1,0 +1,171 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/overall.css"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
+	<link rel="stylesheet" type="text/css" href="__CSS__/spancolle.css"/>
+	<link rel="Shortcut Icon" href="__IMG__/guo.png" type="image/x-icon">
+	<script type="text/javascript" src="__JS__/layer.js"></script>
+</block>
+<block name="body">
+
+<!--发布求购-->
+<div class="issue">
+	<div class="is_box">
+    	<form id="issueForm" action="__SELF__" method="post">
+    	<div class="box_top">
+        	<span class="span_left">发布求购</span>
+            <span class="span_right">请勿发布无关或虚假信息！</span>
+        </div>
+    	<div class="formDiv">
+        	<div class="item">
+            	<div class="labelDiv"><label><i>采购标题</i><em>*</em></label></div><input class="text" name="title" type="text" />
+            </div>
+            <div class="item">
+            	<div class="labelDiv">
+                <label><i>详情要求</i><em>*</em></label>
+                </div>
+                <div class="labe_span">
+                <textarea class="text1" name="yaoqiu" cols="" rows=""></textarea>
+                <span>请详细填写您的需求，如订做（或现货）、规格、材质、数量（或重量、长度）及其它要求等。                  帮我填写</span>
+                </div>
+            </div>
+            
+            <div class="item">
+            	<div class="labelDiv"><label><i style="font-size:13px">信息有效期</i><em>*</em></label></div>
+                <div class="times">
+                    <input class="checkbox" name="day_type" id="day1" checked="" type="radio" value="1">
+                    <label class="itemLabel" for="day1">1天</label>
+                    <input class="checkbox" name="day_type" id="day2" type="radio" value="2">
+                    <label class="itemLabel" for="day2">2天</label>
+                    <input class="checkbox" name="day_type" id="day3" type="radio" value="3">
+                    <label class="itemLabel" for="day3">3天</label>
+                    <input class="checkbox" name="day_type" id="day4" type="radio" value="4">
+                    <label class="itemLabel" for="day4">4天</label>
+                    <input class="checkbox" name="day_type" id="day5" type="radio" value="5">
+                    <label class="itemLabel" for="day5">5天</label>
+                    <input class="checkbox" name="day_type" id="day7" type="radio" value="7">
+                    <label class="itemLabel" for="day7">7天</label>
+                    <input class="checkbox" name="day_type" id="day10" type="radio" value="6">
+                    <label class="itemLabel" for="day10">10天</label>
+                    <input class="checkbox" name="day_type" id="day15" type="radio" value="15">
+                    <label class="itemLabel" for="day15">15天</label>
+                    <input class="checkbox" name="day_type" id="day20" type="radio" value="20">
+                    <label class="itemLabel" for="day20">20天</label>
+                    <div class="clear"></div>            
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        
+        <div class="box_top">
+        	<span class="span_left">联系信息</span>
+        </div>
+        <div class="formDiv">
+        	<div class="item">
+            	<div class="labelDiv"><label><i>公司名称</i><em>*</em></label></div><input class="text" name="company_name" type="text" />
+            </div>
+            <div class="item">
+                <div class="labelDiv"><label><i>联系人</i><em>*</em></label></div><input class="text" name="mingzi" type="text" />
+            </div>
+            <div class="item">
+            	<div class="labelDiv"><label><i>联系电话</i><em>*</em></label></div><input class="text" name="lianxi" type="text" />
+            </div>
+            <div class="item">
+                <div class="labelDiv"><label><i>地址</i><em>*</em></label></div><input class="text" name="address" type="text" />
+            </div>
+            <div class="item">
+            	<div class="labelDiv"><label><i>验证码</i><em>*</em></label></div><input class="text" name="verify" type="text"  style="width:108px; float:left"/>
+                <div class="verifyDiv">
+                	<img class="verifyimg reloadverify" src="{:U('Home/User/verify')}" />
+            	</div>
+            </div>
+            <div class="item">
+            	<div class="labelDiv">&nbsp;</div><a type="button" class="btn-primary" id="submitBtn" href="javascript:void(0)">立刻发布</a>
+            </div>
+              
+        </div>
+        <script type="text/javascript">
+        	$(function(){
+        		var verifyimg = $(".verifyimg").attr("src");
+        		$(".reloadverify").click(function(){
+        			
+	                if( verifyimg.indexOf('?')>0){
+	                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+	                }else{
+	                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+	                }
+	            });
+        		$("#submitBtn").click(function(){
+        			var title = $("input[name = 'title']").val();
+        			if(title == ''){
+        				alert('采购标题必须填写');
+        				return false;
+        			}
+        			var yaoqiu = $("input[name = 'yaoqiu']").val();
+        			if(yaoqiu == ''){
+        				alert('详情要求必须填写');
+        				return false;
+        			}
+        			var company_name = $("input[name = 'company_name']").val();
+        			if(company_name == ''){
+        				alert('公司名称必须填写');
+        				return false;
+        			}
+        			var lianxi = $("input[name = 'lianxi']").val();
+        			if(lianxi == ''){
+        				alert('联系电话必须填写');
+        				return false;
+        			}
+                    var address = $("input[name = 'address']").val();
+                    if(address == ''){
+                        alert('地址必须填写');
+                        return false;
+                    }
+                    var mingzi = $("input[name = 'mingzi']").val();
+                    if(mingzi == ''){
+                        alert('联系人必须填写');
+                        return false;
+                    }
+        			$("#issueForm").submit()
+        		})
+        		var self = $("#issueForm");
+        		self.submit(function(){
+    				var ajaxUrl = self.attr('action');
+    				$.post(ajaxUrl,self.serialize(),success,'json');
+    				return false;
+    				function success(data){
+    					$(".reloadverify").click();
+    					alert(data.info);
+
+    				}
+    			})
+        	})
+        </script>
+        <div class="clear"></div>
+         <div class="bottomDiv">
+         		<h3>网站声明</h3>
+         		<div class="pptd">购钢现货网（www.gousteel.com)仅作为用户发布信息的平台。请您在发布信息时遵守以下规则：</div>
+<p><span class="s2">1.</span>不得发布虚假、禁限售类产品信息。<p />
+<p><span class="s2">2.</span>不得重复发布同一条信息。
+本网站对信息的准确性、完整性、合法性及真实性均不承担任何责任。</p>
+<p><span class="s2">3.</span>如果因您发布的信息侵犯任何第三人的合法权利，本网站也不承担任何责任。</p>
+<p><span class="s2">4.</span>以上如有疑问请联系我们购钢网客服:<span class="s1">0577-89881156</span>/<span class="s1">0577-89881176</span></p>
+
+
+</p>
+         </div>
+         <div style="padding-bottom:40px; width:100%"></div>
+         <div class="clear"></div>
+        
+    </div>
+    </form>
+ <div class="clear"></div> 
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+</block>

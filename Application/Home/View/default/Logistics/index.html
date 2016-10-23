@@ -97,19 +97,18 @@
                 </div>
         </div>
         <div class="right_sj">
+                <php>
+                    $news = D('Document')->limit(8)->lists(null);
+                </php>
         		<div class="sj_bt">行业数据</div>
                 <div class="sj_xx">
                 	<div class="xx_l"></div>
                     <div class="xx_r"></div>
                 </div>
                 <div class="sj_con">
-                	<a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                  	<a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
-                    <a>市场||钢厂指导价格持续强势304稳步跟涨</a>
+                    <volist name='news' id='vo'>
+                        <a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,18,'utf-8',false}</a>
+                    </volist>        	
                 </div>
         </div>
     </div>

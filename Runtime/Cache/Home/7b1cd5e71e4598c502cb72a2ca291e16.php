@@ -12,6 +12,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+					$(function(){
+						$('.ajaxOut').click(function(){
+							
+							$.post("<?php echo U('Member/User/logout');?>",{},success,'json');
+							return false;
+
+							function success(data){
+								if(data.status){
+									history.go(0)
+								}else{
+									alert('Error')
+								}
+							}
+						})
+					})
+				</script>
 
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
 	<link rel="stylesheet" type="text/css" href="/Public/Home/css/spancolle.css" />
@@ -142,16 +159,17 @@
 				<a href="<?php echo U('Home/Logistics/index');?>">货运物流</a>
 			</li>
 			<li>
-				<a href="#">商务合作</a>
+				<a href="/swhz/index.html" target="block">商务合作</a>
 			</li>
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
 						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
-						<div class="exit">安全退出</div>
+						<div class="exit ajaxOut">安全退出</div>
 					</div>
 				</li>
+				
 			<?php else: ?>
 				<li class="reg">
 					<div class="login"><a href="<?php echo U('Member/User/login');?>">登录</a></div>
