@@ -79,8 +79,8 @@
                                         <div class="si_2">招聘人数：{$vo.num}人</div>
                                         <div class="si_2">工作经验：{$vo.jyan}年</div>
                                         <div class="si_2">学历要求：{$vo.xli|default='不限'}</div>
-                                        <div class="si_3">联系人：{$vo.contact.name}</div>
-                                        <div class="si_3">联系电话：{$vo.contact.tel}</div>
+                                        <div class="si_3">联系人：{$vo.contact.name|default='无'}</div>
+                                        <div class="si_3">联系电话：{$vo.contact.tel|default='无'}</div>
                                         <div class="si_3">公司地址：{$vo.company.com_address}</div>
                                         <div class="si_4">工作职责：{$vo.content}</div>
                                     </div>
