@@ -30,7 +30,7 @@
   <tr>
     <td class="d1" style="font-weight:bold">#</td>
     <td class="d2" style="font-weight:bold">标题</td>
-    <td class="d3" style="font-weight:bold">内容</td>
+    <td class="d3" style="font-weight:bold">学历要求</td>
     <td class="d4" style="font-weight:bold">创建时间</td>
     <td class="d5" style="font-weight:bold">操作</td>
   </tr>
@@ -38,7 +38,7 @@
 	  <tr>
 	    <td class="d1">{$key}</td>
 	    <td class="d2">{$vo.title}</td>
-	    <td class="d3">{$vo.content}</td>
+	    <td class="d3">{$vo.xli}</td>
 	    <td class="d4">{$vo.create_time|date="Y-m-d",###}</td>
 	    <td class="d5"><a href="{:U('Index/recruitEdit',array('id'=>$vo['id']))}">编辑</a><a href="{:U('Index/recruitEdit',array('id'=>$vo['id']))}">删除</a></td>
 	  </tr>
