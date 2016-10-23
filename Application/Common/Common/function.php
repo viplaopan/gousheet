@@ -167,7 +167,13 @@ function think_decrypt($data, $key = ''){
     }
     return base64_decode($str);
 }
+function get_ad($ad = 0){
+    if($ad > 0){
 
+    }else{
+        return '/1.png';
+    }
+}
 /**
  * 数据签名认证
  * @param  array  $data 被认证的数据

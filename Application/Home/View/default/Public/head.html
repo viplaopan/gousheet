@@ -13,23 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="text/javascript" src="__JS__/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
-					$(function(){
-						$('.ajaxOut').click(function(){
-							
-							$.post("{:U('Member/User/logout')}",{},success,'json');
-							return false;
 
-							function success(data){
-								if(data.status){
-									history.go(0)
-								}else{
-									alert('Error')
-								}
-							}
-						})
-					})
-				</script>
 <block name="style"></block>
 <link rel="stylesheet" type="text/css" href="__CSS__/top.css"/>
 
