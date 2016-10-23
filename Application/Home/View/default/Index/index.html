@@ -516,7 +516,7 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
                     <li>
                         <div class="div_spL1"></div>
                         <div class="div_spR1">
-                            <div class="spR_s"><span class="s_left">{$vo.title|msubstr=0,20,'utf-8',false}</span><!-- <div class="s_right">￥{$vo.price|default="0"}</div></div> -->
+                            <div class="spR_s"><span class="s_left"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a></span><!-- <div class="s_right">￥{$vo.price|default="0"}</div></div> -->
                         </div>
                         <div class="clear"></div>
                     </li>   
