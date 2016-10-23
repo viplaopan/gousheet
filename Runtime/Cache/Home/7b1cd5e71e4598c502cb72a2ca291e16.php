@@ -206,34 +206,34 @@
 		<div class="spot_con">
 			<div class="spot_lirk">
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp1.png" />
+					<?php echo getAd(10027);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp2.png" />
+					<?php echo getAd(10028);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp3.png" />
+					<?php echo getAd(10029);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp4.png" />
+					<?php echo getAd(10030);?>
 				</div>
 				<div class="k_tp1">
-					<img src="/Public/Home/images/k_tp5.png" />
+					<?php echo getAd(10031);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp1.png" />
+					<?php echo getAd(10032);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp2.png" />
+					<?php echo getAd(10033);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp3.png" />
+					<?php echo getAd(10034);?>
 				</div>
 				<div class="k_tp">
-					<img src="/Public/Home/images/k_tp4.png" />
+					<?php echo getAd(10035);?>
 				</div>
 				<div class="k_tp1">
-					<img src="/Public/Home/images/k_tp5.png" />
+					<?php echo getAd(10036);?>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -550,7 +550,7 @@
 					<?php if(is_array($lists)): $key = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($key % 2 );++$key;?><div class="xx_title1">
 							<div class="box_h1"><?php echo ($vo["caizhi"]); ?></div>
 							<div class="box_h2"><?php echo ($vo["guige"]); ?></div>
-							<div class="box_h3"><?php echo ($vo["zhishu"]); ?></div>
+							<div class="box_h3"><?php echo (floor($vo["zhishu"])); ?></div>
 							<div class="box_h4"><?php echo ((isset($vo["zhongliang"]) && ($vo["zhongliang"] !== ""))?($vo["zhongliang"]):"0"); ?></div>
 							<div class="box_h5"><?php echo ($vo['company']['small_name']); ?></div>
 
@@ -595,9 +595,19 @@
 				</div>
 				<!--信息右边-->
 				<div class="right_c">
-					<img src="/Public/Home/images/k_tp1.png" class="right_gg" />
+					<style>
+						.laop img{
+							width: 275px;
+						    height: 80px;
+						    float: left;
+						    margin-bottom: 18px;
+						}
+					</style>
+					<div class="laop">
+						<?php echo getAd(10037);?>
 
-					<img src="/Public/Home/images/k_tp2.png" class="right_gg" />
+					<?php echo getAd(10038);?>
+					</div>
 					<ul class="right_qg">
 						<li class="right_title">
 							求购信息
