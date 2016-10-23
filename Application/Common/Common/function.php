@@ -172,7 +172,7 @@ function getAd($ad = 0){
         //Banner
         $adm['status'] = 1;
         $adm['id'] = $ad;
-        $banner = D('Adv')->where($adm)->order('sort desc')->find();
+        $banner = D('Adv')->where($adm)->find();
         return "<a title='" .$banner['title']. "' href='" .$banner['url']. "'><img src='/Uploads/Images/" .$banner['data']. "'></a>";
     }else{
         return '<img src="/1.png">';
