@@ -226,6 +226,7 @@
 				},
 				submitHandler: function(form) {
 					var self = $('form');
+					KindEditor.sync();
 					$.post(self.attr("action"), self.serialize(), success, "json");
 					return false;
 
