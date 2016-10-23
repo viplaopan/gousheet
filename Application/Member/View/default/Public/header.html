@@ -106,7 +106,7 @@
                 <a href="{:U('Home/Process/index')}">加工定做</a>
             </li>
             <li>
-                <a href="#">求购信息</a>
+                <a href="{:U('Home/Issue/index')}">求购信息</a>
             </li>
             <li>
                 <a href="{:U('Home/Talent/index')}">人才招聘</a>
@@ -115,7 +115,7 @@
                 <a href="{:U('Home/Logistics/index')}">货运物流</a>
             </li>
             <li>
-                <a href="/swhz/index.html">商务合作</a>
+                <a href="/swhz/index.html" target="block">商务合作</a>
             </li>
             <if condition="is_login()">
                 <li class="user">
@@ -123,14 +123,15 @@
                         <div class="ico"><img src="__IMG__/user.png" /></div>
                         <div class="phone"><a href="{:U('Member/Index/manage')}">{:get_username()}</a></div>
                         <div style=" color:#5a5a5a">|</div>
-                        <div class="exit">安全退出</div>
+                        <div class="exit ajaxOut">安全退出</div>
                     </div>
                 </li>
+                
             <else/>
                 <li class="reg">
                     <div class="login"><a href="{:U('Member/User/login')}">登录</a></div>
                     <div>|</div>
-                    <div class="register"><a href="{:U('Member/User/login')}">免费注册</a></div>
+                    <div class="register"><a href="{:U('Member/User/register')}">免费注册</a></div>
                 </li>
             </if>
         </ul>
