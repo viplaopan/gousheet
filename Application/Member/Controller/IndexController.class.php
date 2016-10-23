@@ -21,6 +21,16 @@ class IndexController extends BaseController {
 		
 		$loginTimes = D('Member')->where('uid = ' . UID )->getField('login');
 		$this->assign('loginTimes',$loginTimes);
+
+		$member = D('Member')->where('uid = ' . UID )->find();
+		$this->assign('member',$member);
+
+		$cid = get_company();
+        $contact = D('Contact')->where(array('cid'=>$cid))->find();
+        $this->assign('contact',$contact);
+
+        $company = D("Company")->where('uid = ' . UID)->find();
+        $this->assign('company',$company);
 		$this->display();
 	}
 	
@@ -162,6 +172,8 @@ class IndexController extends BaseController {
 	}
 	
 	public function manage(){
+		$member = D('Member')->where('uid = ' . UID )->find();
+		$this->assign('member',$member);
 		$this->display();
 	}
 	public function recruit(){

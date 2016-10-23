@@ -18,7 +18,7 @@
 					<ul class="right2">
 						<li><span class="s1">{:get_nickname()}</span> 您好：</li>
 						<li>欢迎访问中国不锈钢现货网，在您浏览本网过程中，有任何问题或者建议，请随时跟我们联系。</li>
-						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />会员级别：您是<span class="s1">VIP</span>会员，还有<span class="s1">138</span>天到期</li>
+						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />会员级别：您是<eq name="member['is_vip']" value='1'><span class="s1"></span><else/>普通</eq>VIP会员</li>
 						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />登录状态：今天您第<span class="s1">1</span>次登录，总共登录<span class="s1">{$loginTimes}</span>次，上次登录的<span class="s1">IP</span>是 {:long2ip($lastIP)}</li>
 					</ul>
 
@@ -34,10 +34,10 @@
 							<li style="letter-spacing:26px;">传真</li>
 						</ul>
 						<ul class="r2">
-							<li>温州市龙泰管业有限公司</li>
-							<li>王先生</li>
-							<li> 18057753538 18057753538 </li>
-							<li>057789881156</li>
+							<li>{$company.name}</li>
+							<li>{$contact.name}</li>
+							<li>{$contact.tel}</li>
+							<li>{$contact.fax}</li>
 						</ul>
 						<ul class="r1">
 							<li>联系地址</li>
@@ -46,10 +46,10 @@
 							<li style="letter-spacing:26px;">邮箱</li>
 						</ul>
 						<ul class="r2">
-							<li>温州市龙湾区永兴工业区</li>
-							<li></li>
-							<li></li>
-							<li>273336521@qq.com</li>
+							<li>{$company.com_address}</li>
+							<li>20000</li>
+							<li>{$company.website}</li>
+							<li>{$contact.email}</li>
 						</ul>
 					</div>
 				</div>

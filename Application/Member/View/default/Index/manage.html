@@ -27,6 +27,19 @@
         </div> 
         <div class="right">
              <div class="right1">管理库存</div>
+             <eq name="member['is_vip']" value='0'>
+                 
+                 <ul class="right2">
+                <li>欢迎访问中国不锈钢现货网，在您浏览本网过程中，有任何问题或者建议，请随时跟我们联系。</li>
+            </ul>
+            <div class="right3">
+                <span>尊敬的会员：</span>
+                <br>
+           
+                <p> 您好，您还不是购钢现货网VIP会员！申请VIP会员，请联系我们客服：0577-89881176/89881156</p>
+            </div>
+             </eq>
+        <eq name="member['is_vip']" value='1'>
                  <div class="manage">
                      <div class="ma">当前您有<span >514</span> 条库存信息</div>
 <!--上传库存-->                       
@@ -53,10 +66,10 @@
                                 <input type="button" value="取消" onclick="hidediv1();" class="btlright"/>
                             </div>  
                         </div>  
-                               
+                           </form>     
                         </div>  
                         </div>                  
-                    </form> 
+                    
                     <script>
                         $("#myupload").submit(function(){
                             $("#myupload").ajaxSubmit({
@@ -346,6 +359,10 @@
                     </div>
                     
                     </div>
+
+
+                    </eq>
+
                 </div>
             <div class="clear">
         </div>
