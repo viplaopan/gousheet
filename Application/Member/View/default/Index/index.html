@@ -16,7 +16,7 @@
 				<div class="right">
 					<div class="right1">会员信息</div>
 					<ul class="right2">
-						<li><span class="s1">{:get_nickname()}</span> 您好：</li>
+						<li><span class="s1">{$contact.name}</span> 您好：</li>
 						<li>欢迎访问中国不锈钢现货网，在您浏览本网过程中，有任何问题或者建议，请随时跟我们联系。</li>
 						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />会员级别：您是<eq name="member['is_vip']" value='1'><span class="s1"></span><else/>普通</eq>VIP会员</li>
 						<li><img src="images/未标题-1.png" width="7" height="9" style="margin-right:5px;" />登录状态：今天您第<span class="s1">1</span>次登录，总共登录<span class="s1">{$loginTimes}</span>次，上次登录的<span class="s1">IP</span>是 {:long2ip($lastIP)}</li>
