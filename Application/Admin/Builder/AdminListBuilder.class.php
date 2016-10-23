@@ -180,7 +180,11 @@ class AdminListBuilder extends AdminBuilder
         $map = array(-1 => '删除', 0 => '禁用', 1 => '启用', 2 => '未审核');
         return $this->key($name, $title, 'status', $map);
     }
-
+    public function keyVip($name = 'status', $title = '状态')
+    {
+        $map = array(-1 => '删除', 0 => '否', 1 => '是', 2 => '未审核');
+        return $this->key($name, $title, 'status', $map);
+    }
     public function keyYesNo($name, $title)
     {
         $map = array(0 => '不是', 1 => '是');

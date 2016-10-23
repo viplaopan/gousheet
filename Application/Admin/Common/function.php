@@ -64,7 +64,9 @@ function get_list_field($data, $grid){
     }
     return $value;
 }
-
+function get_admin_company($uid = 0){
+    return D('Company')->where(array('uid'=>$uid))->getField('id');
+}
 /* 解析插件数据列表定义规则*/
 
 function get_addonlist_field($data, $grid,$addon){
