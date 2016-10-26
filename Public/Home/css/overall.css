@@ -8,6 +8,7 @@ body{
     width:expression(document.body.clientWidth <=1180? "1180px": "auto");
     min-width:1180px;
 	letter-spacing:0.5px;
+	
 }
 /*头部*/
 
@@ -750,11 +751,14 @@ box-shadow:0 0 10px #333;}
 .banner_show{ width:720px; text-align:center; height:318px; overflow:hidden; position:relative;}
 .bannger_inbox{ position:absolute;left:50%;top:0;}
 .bannger_inbox .img{ border:none;}
+
+.yq_banner_con{ width:500px; height:40px;position:absolute; text-align:center; z-index:9999; top:278px; left:0; float:left}
+.yq_banner_con .wenben{ color:#ffffff; font-size:16px; line-height:40px; float:left; margin-left:20px;}
+
 /*圆点*/
-.yq_banner_list{ width:700px; height:40px;position:absolute; text-align:right; z-index:9999;background: rgba(0,0,0,0.4) none repeat scroll !important; top:278px; left:0; padding-right:20px;}
-.yq_banner_list .wenben{ color:#fff; font-size:16px; line-height:40px; float:left; margin-left:20px;}
-.yq_banner_list a{ display:inline-block; width:14px; height:24px;background:url(../images/abg1.png) no-repeat right; margin-right:5px; margin-top:10px;}
-.yq_banner_list a.hover{background:url(../images/abg1.png) no-repeat left;}
+.yq_banner_list{ width:200px; height:40px;position:absolute; text-align:right; z-index:9999;background: rgba(0,0,0,0.4) none repeat scroll !important; top:278px; left:0; padding-right:20px; float:right; padding-left:500px;}
+.yq_banner_list a{ display:inline-block; width:19px; height:19px;background:url(../images/abg.png) no-repeat right; margin-right:3px; margin-top:10px;}
+.yq_banner_list a.hover{background:url(../images/abg.png) no-repeat left;}
 
 /*市场快讯*/
 .kuaixun_bg{ width:100%; float:left;}
@@ -1054,26 +1058,25 @@ background:url(../images/xialakuang-ss.png) no-repeat
 
 .talent .tal .tal_left .left_box1 .box_h1{color:#e95850; line-height:50px; float:left; padding-left:20px; width:320px; text-align:left;font-size:14px;}
 
-.talent .tal .tal_left .left_box1 .box_h2{color:#4b4b4b; line-height:50px; float:left; padding-left:20px; width:260px; text-align:left;font-size:14px;font-family:"微软雅黑";font-weight:bold}
-.talent .tal .tal_left .left_box1 .box_h2:hover{color:#4b4b4b; line-height:50px; text-decoration:underline; cursor:pointer; float:left; padding-left:20px; width:260px; text-align:left;font-size:14px; font-family:"微软雅黑"; font-weight:bold}
-.talent .tal .tal_left .left_box1 .box_h3{color:#4b4b4b; line-height:50px; float:left; padding-left:20px; width:110px; text-align:left; font-size:14px;}
-.talent .tal .tal_left .left_box1 .box_h4{color:#4b4b4b; line-height:50px; float:left; padding-left:20px; width:110px; text-align:left; font-size:14px;}
+.talent .tal .tal_left .left_box1 .box_h2{color:#4b4b4b; line-height:50px;font-family: Arial,sans-serif,'宋体';float:left; padding-left:20px; width:260px; text-align:left;font-size:14px;}
+.talent .tal .tal_left .left_box1 .box_h2:hover{color:#4b4b4b; line-height:50px;font-family: Arial,sans-serif,'宋体'; text-decoration:underline; cursor:pointer; float:left; padding-left:20px; width:260px; text-align:left;font-size:14px; }
+.talent .tal .tal_left .left_box1 .box_h3{color:#4b4b4b; line-height:50px; float:left;font-family: Arial,sans-serif,'宋体'; padding-left:20px; width:110px; text-align:left; font-size:14px;}
+.talent .tal .tal_left .left_box1 .box_h4{color:#4b4b4b; line-height:50px; float:left;font-family: Arial,sans-serif,'宋体'; padding-left:20px; width:110px; text-align:left; font-size:14px;}
 
 #title1{color:#e95850; line-height:50px; float:left; padding-left:20px; width:320px; text-align:left; font-weight:bold; font-size:14px;}
 #title1 ul{width:320px;height:50px;}
 #title1 ul li{width:320px;height:50px;float:left;position:relative;}
 #title1 ul li .inp_d{ width:20px; margin:10px 0 20px 0; float:left; outline:none}
-#title1 ul li a{display:block;color:#09F;line-height:50px;float:left;width:290px; margin-left:10px;text-align:left;font-size:14px;}
+#title1 ul li a{display:block;color:#09F;line-height:50px;float:left;width:290px; margin-left:10px;text-align:left;font-size:14px; font-family:Arial, sans-serif, "宋体"; font-weight:normal}
 #title1 ul li a:hover{display:block;color:#fd8000; text-decoration:underline; line-height:50px;float:left;width:290px; margin-left:10px;text-align:left;font-size:14px;}
 #title1 ul li .div_ul{margin:0px;position:absolute;top:40px; right:30px;width:782px;height:782px;display:none;
-background: url(../images/rencai.png) no-repeat; z-index:1000;}
+background: url(../images/rencai.png) no-repeat; z-index:1000; }
 #title1 ul li:hover .div_ul{ margin-top:-60px;position:absolute;width:782px;height:367px; display:block;z-index:1000; left:250px; }
 #title1 ul li:hover .div_ul .ul_si{ width:742px; height:307px; padding:30px 0 30px 40px; float:left;}
-#title1 ul li:hover .div_ul .ul_si .si_1{ width:742px; height:60px; float:left; line-height:60px; font-size:24px; color:#535353}
-#title1 ul li:hover .div_ul .ul_si .si_2{ width:331px; margin-right:40px; float:left; height:30px; font-size:14px; line-height:30px; color:#70737c; border-bottom:1px dotted #CCC; letter-spacing:1px}
-#title1 ul li:hover .div_ul .ul_si .si_3{ width:331px;border-bottom:1px dotted #fbfbfb; float:left;margin-right:40px; height:30px; font-size:14px; line-height:30px; color:#535353;border-bottom:1px dotted #CCC; letter-spacing:1px}
-#title1 ul li:hover .div_ul .ul_si .si_4{width:702px;margin-right:40px; letter-spacing:1px; float:left; margin-top:20px; color:#676b6e;line-height:25px;}
-
+#title1 ul li:hover .div_ul .ul_si .si_1{ width:742px; height:60px; float:left; line-height:60px; font-size:24px; color:#282828;font-family:Arial, sans-serif, "宋体";}
+#title1 ul li:hover .div_ul .ul_si .si_2{ width:331px; margin-right:40px; float:left; height:30px; font-size:14px; line-height:30px; color:#70737c; border-bottom:1px dotted #CCC; letter-spacing:1px; font-family:Arial, sans-serif, "宋体"; font-weight:normal}
+#title1 ul li:hover .div_ul .ul_si .si_3{ width:331px;border-bottom:1px dotted #fbfbfb; float:left;margin-right:40px;font-family:Arial, sans-serif, "宋体"; font-weight:normal height:30px; font-size:14px; line-height:30px; color:#535353;border-bottom:1px dotted #CCC; letter-spacing:1px;font-family:Arial, sans-serif, "宋体"; font-weight:normal}
+#title1 ul li:hover .div_ul .ul_si .si_4{width:702px;margin-right:40px; letter-spacing:1px; float:left; margin-top:20px;font-family:Arial, sans-serif, "宋体"; font-weight:normal;color:#333333;line-height:25px;}
 
 
 .talent .tal_right{ width:280px; float:right}

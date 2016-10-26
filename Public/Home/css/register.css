@@ -5,7 +5,7 @@ body{
     width:100%;
     width:expression(document.body.clientWidth <=1180? "1180px": "auto");
     min-width:1000px;
-	background-color:#fff;
+	background-color:#f9f9f9;
 }
 
 .wrapper{width:710px;margin:60px auto;}

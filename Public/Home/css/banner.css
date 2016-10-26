@@ -8,7 +8,6 @@ body{
     width:expression(document.body.clientWidth <=1180? "1180px": "auto");
     min-width:1180px;
 	letter-spacing:0.5px;
-	background-color:#ffffff;
 }
 /*头部*/
 
@@ -48,7 +47,9 @@ width:65px; padding-left:55px; line-height:75px; color:#0e70b9; text-align:left 
 
 .nva_banner .banner_news .dd5 .banner_downs{ width:490px; height:30px; float:left}
 .nva_banner .banner_news .dd5 .banner_downs .banner_d{ width:70px; height:30px; float:left}
-.btn1{padding-bottom:5px;width:70px; height:25px;float:left; background:url(../images/index_nobianxian.png) no-repeat}
+.btn1{width:70px; height:30px;float:left;color:#111111; letter-spacing:1px; outline:none;background: url(../images/index_nobianxian.png) no-repeat; font-family:"微软雅黑"; font-size:16px;}
+.btn1:active{width:70px; height:30px;float:left;color:red;font-size:16px;letter-spacing:1px;  outline:none; background:url(../images/index_bianxian.png) no-repeat; font-family:"微软雅黑"}
+
 .btn2{ padding-bottom:5px;width:70px; height:25px;float:left; background:url(../images/index_bianxian.png) no-repeat}
 .nva_banner .banner_news .dd5 .banner_next{ width:450px; margin:0 auto;}
 .nva_banner .banner_news .dd5 .banner_next .left_middle{width:450px; margin:0 auto;padding-top: 40px;}
@@ -331,9 +332,10 @@ width:65px; padding-left:55px; line-height:75px; color:#0e70b9; text-align:left 
 .index_content .content_bbs{ width:1180px; height:60px;float:left;padding-bottom:20px;/* position: relative; *//* z-index: 1; */}
 .index_content .content_bbs .bbs_tp{ width:224px; height:60px; margin-right:15px; float:left;/* position: relative; *//* z-index: 1; */}
 .index_content .content_bbs .bbs_tp img{ width:224px; height:60px;/* position: relative; *//* z-index: 1; */}
-.index_content .content_hot{ width:370px; margin-right:32px; float:left; margin-bottom:20px; border:#bfbfbf 1px solid; padding-bottom:20px;}
+.index_content .content_hot{ width:370px; margin-right:32px; float:left;
+ margin-bottom:20px; border:#bfbfbf 1px solid; padding-bottom:20px; background-color:#ffffff;}
 
-.index_content .content_hot .content_bt{ width:370px; height:35px;border-bottom:#cccccc 3px solid}
+.index_content .content_hot .content_bt{ width:370px; height:35px;border-bottom:#cccccc 3px solid;background-color:#ffffff;}
 .index_content .content_hot .content_bt .bt_left{ height:33px; border-top:#e35c56 2px solid; border-bottom:3px solid #ffffff; border-right:#bfbfbf 1px solid;float:left;top:-1px;}
 
 .index_content .content_hot .content_bt .bt_left label{ margin: 0 10px; height:35px; letter-spacing:2px; color:#e35c56}

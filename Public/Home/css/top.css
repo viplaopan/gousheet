@@ -63,7 +63,7 @@ border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
 .top .navdown .nminlls .nm_input{ width:349px; float:left;height:33px; border-bottom:#bdbdbd 1px solid; border-left:#bdbdbd 1px solid; border-top:#bdbdbd 1px solid;}
 .top .navdown .nminlls .nm_bt{ width:100px; float:left; height:35px; background-color:#e35d57; font-size:18px; letter-spacing:2px; color:#FFF}
 
-.spot{width:100%; border-top:2px solid #0e6eb8; background-color:#ffffff; padding-bottom:30px;}
+.spot{width:100%; border-top:2px solid #0e6eb8; padding-bottom:30px;}
 
 .spot .fields{ width:1180px; margin:0 auto; padding-top:35px; padding-bottom:60px;}
 .spot .fields .zw{ width:100px;font-family:"微软雅黑"; letter-spacing:1px; line-height:30px; font-size:22px; float:left; color:#333333}

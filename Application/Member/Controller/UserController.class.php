@@ -36,7 +36,7 @@ class UserController extends HomeController {
 			exit('请求超时，请刷新页面后重试');
 		}
 
-		$post_data = "account=cf_vippdf&password=Pa123456&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+		$post_data = "account=cf_buluo&password=tYC9aD&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
 		//查看密码请登录用户中心->验证码、通知短信->帐户及签名设置->APIKEY
 		$gets =  xml_to_array(Post($post_data, $target));
 		if($gets['SubmitResult']['code']==2){
