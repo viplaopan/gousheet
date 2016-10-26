@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 
 namespace Member\Controller;
+use User\Api\UserApi;
 
 /**
  * 文件控制器
@@ -21,6 +22,12 @@ class SmsController extends HomeController {
 		$mobile = $_POST['mobile'];
 		$send_code = $_POST['send_code'];
 		
+		$User = new UserApi;
+		$res = $User->checkMobile($mobile);
+		if($res){
+			$this->error('用户已经存在');
+		}
+
 		$mobile_code = random(4,1);
 		if(empty($mobile)){
 
