@@ -28,7 +28,7 @@ class IndexController extends Controller {
     	$this->assign('hot', $hot);
 
     	//市场快讯
-    	$shichang = D('Document')->limit(11)->lists(39);
+    	$shichang = D('Document')->limit(9)->lists(39);
     	$this->assign('shichang', $shichang);
 
         //原料行情
