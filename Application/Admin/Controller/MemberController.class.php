@@ -25,8 +25,12 @@ class MemberController extends AdminController
         $totalCount = $MemberModel->where($map)->count();
         foreach($lists as &$val){
             $cid = get_admin_company($val['uid']);
+            $company = D("Company")->where(array('id'=>$cid))->find();
+
             $con = D('Contact')->where(array('cid'=>$cid))->find();
+
             $val['name'] = $con['name']?$con['name']:'暂无';
+            $val['company_name'] = $company['name']?$company['name']:'客户未填写';
             $val['id'] = $val['uid'];
 
         }
@@ -37,6 +41,7 @@ class MemberController extends AdminController
             ->setStatusUrl(U('setVip'))
             ->keyId()
             ->keyText('name', '用户名')
+            ->keyText('company_name', '公司名称')
             ->keyTime('last_login_time','上次登陆时间')
             ->keyVip('is_vip','是否VIP')
             ->data($lists)
