@@ -24,7 +24,7 @@ class SmsController extends HomeController {
 		
 		$User = new UserApi;
 		$res = $User->checkMobile($mobile);
-		if(!$res){
+		if($res>0){
 			$this->error('用户已经存在');
 		}
 
