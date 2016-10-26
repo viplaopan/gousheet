@@ -379,7 +379,7 @@
 							<ul>
 								<li id="pinzhongLi">
 									<div class="dh">
-										<a class="topa"><input name="pinzhong" type="text" class="box_ipt1" value="<?php echo I('get.pinzhong');?>" placeholder="工业无缝管"></a>
+										<a class="topa"><input name="pinzhong" type="text" class="box_ipt1" value="<?php echo I('get.pinzhong');?>" placeholder="型材"></a>
 										<ul>
 											<li class="i_h0"><img src="/Public/Home/images/ggw_sanjiaoxing.png" /><span>型材</span></li>
 											<li class="i_h1" id="pinzhong">
@@ -390,6 +390,8 @@
 												<a>方钢</a>
 												<a>槽钢</a>
 												<a>线材</a>
+												<a>光圆</a>
+												<a>六角棒</a>
 											</li>
 											<li class="i_hxian"></li>
 											<li class="i_h2"><span>清除</span></li>

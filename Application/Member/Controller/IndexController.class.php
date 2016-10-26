@@ -237,7 +237,11 @@ class IndexController extends BaseController {
        	
 		
 		$result = D('Xianhuo')->addXianhuo($objPHPExcel);
-		
+		//更新公司
+		$company = D('Company')->where('uid = ' . UID)->find();
+        $cid = $company['id'];
+        $data['cid'] = $cid;
+		D("NewCompany")->add($data);
 		$this->ajaxReturn($result,'json');
 	}
 	public function update(){

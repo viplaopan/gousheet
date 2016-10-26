@@ -527,7 +527,7 @@
 				<div class="left_dies">
 					<div class="dies_gp">广播</div>
 					<div class="dies_ico"><img src="/Public/Home/images/gb.gif" /></div>
-					<div class="dies_news"><a href="<?php echo ($message["url"]); ?>"><?php echo ($message["title"]); ?></a></div>
+					<div class="dies_news"><a href="<?php echo ($message["url"]); ?>">热列祝贺“购钢现货网”新版网站隆重上线</a></div>
 				</div>
 
 			</div>

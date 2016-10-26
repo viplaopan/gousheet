@@ -13,11 +13,13 @@
 
 <script type="text/javascript" src="/Public/Home/js/jquery-1.11.3.min.js"></script>
 
+
     <link rel="stylesheet" type="text/css" href="/Public/Home/css/overall.css" />
     <link rel="stylesheet" type="text/css" href="/Public/Home/css/spancolle.css" />
     <script type="text/javascript" src="/Public/Home/js/layer.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/Public/Home/css/top.css"/>
+
 <?php echo hook('pageHeader');?>
 
 </head>
@@ -28,6 +30,12 @@
 	.top .navdown .nminll .m img {
 	    width: 189px;
 	    height: 3px;
+	    display: block;
+	}
+	#headm li ul .i_h3 .h3_miss img {
+	    width: 8px;
+	    height: 8px;
+	    margin-top: 4px;
 	    display: block;
 	}
 </style>
@@ -132,7 +140,7 @@
 				<a href="<?php echo U('Home/Process/index');?>">加工定做</a>
 			</li>
 			<li>
-				<a href="#">求购信息</a>
+				<a href="<?php echo U('Home/Issue/index');?>">求购信息</a>
 			</li>
 			<li>
 				<a href="<?php echo U('Home/Talent/index');?>">人才招聘</a>
@@ -141,21 +149,38 @@
 				<a href="<?php echo U('Home/Logistics/index');?>">货运物流</a>
 			</li>
 			<li>
-				<a href="#">商务合作</a>
+				<a href="/swhz/index.html" target="block">商务合作</a>
 			</li>
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
 						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
-						<div class="exit">安全退出</div>
+						<div class="exit ajaxOut">安全退出</div>
 					</div>
 				</li>
+				<script type="text/javascript">
+					$(function(){
+						$('.ajaxOut').click(function(){
+							
+							$.post("<?php echo U('Member/User/logout');?>",{},success,'json');
+							return false;
+
+							function success(data){
+								if(data.status){
+									history.go(0)
+								}else{
+									alert('Error')
+								}
+							}
+						})
+					})
+				</script>
 			<?php else: ?>
 				<li class="reg">
 					<div class="login"><a href="<?php echo U('Member/User/login');?>">登录</a></div>
 					<div>|</div>
-					<div class="register"><a href="<?php echo U('Member/User/login');?>">免费注册</a></div>
+					<div class="register"><a href="<?php echo U('Member/User/register');?>">免费注册</a></div>
 				</li><?php endif; ?>
 		</ul>
 	</div>
@@ -181,34 +206,34 @@
         <div class="spot_con">
             <div class="spot_lirk">
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp1.png" />
+                    <?php echo getAd(10027);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp2.png" />
+                    <?php echo getAd(10028);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp3.png" />
+                    <?php echo getAd(10029);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp4.png" />
+                    <?php echo getAd(10030);?>
                 </div>
                 <div class="k_tp1">
-                    <img src="/Public/Home/images/k_tp5.png"/>
+                    <?php echo getAd(10031);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp1.png" />
+                    <?php echo getAd(10032);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp2.png" />
+                    <?php echo getAd(10033);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp3.png" />
+                    <?php echo getAd(10034);?>
                 </div>
                 <div class="k_tp">
-                    <img src="/Public/Home/images/k_tp4.png" />
+                    <?php echo getAd(10035);?>
                 </div>
                 <div class="k_tp1">
-                    <img src="/Public/Home/images/k_tp5.png" />
+                    <?php echo getAd(10036);?>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -669,7 +694,7 @@
                     <div class="dies_ico">
                         <img src="/Public/Home/images/gb.gif" />
                     </div>
-                    <div class="dies_news">福建丰瑞不锈钢特价处理一批TP36L 76*4*6的无缝管（质量保证）</div>
+                    <div class="dies_news">热列祝贺“购钢现货网”新版网站隆重上线</div>
                 </div>
 
             </div>
@@ -742,9 +767,19 @@
                 </div>
                 <!--信息右边-->
                 <div class="right_c">
-                    <img src="/Public/Home/images/k_tp1.png"  class="right_gg"/>
+                    <style>
+                        .laop img{
+                            width: 275px;
+                            height: 80px;
+                            float: left;
+                            margin-bottom: 18px;
+                        }
+                    </style>
+                    <div class="laop">
+                        <?php echo getAd(10037);?>
 
-                    <img src="/Public/Home/images/k_tp2.png" class="right_gg"/>
+                    <?php echo getAd(10038);?>
+                    </div>
                     <ul class="right_qg">
                         <li class="right_title">求购信息</li>
                         <li class="right_li">
