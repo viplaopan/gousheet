@@ -31,12 +31,20 @@
                 <div class="banner">
                     <div class="banner_show" id="banner_show">
                         <volist name="banners" id="vo">
-                            <a href="{$vo.url}" class="bannger_inbox" title="{$vo.title}"><img src="/Uploads/Images/{$vo.data}" width="720" height="318"></a>
                             
+                            <a href="{$vo.url}" class="bannger_inbox">
+                        
+                     <img src="/Uploads/Images/{$vo.data}" width="720" height="318">
+                        <div class="yq_banner_con">
+                            <div class="wenben">
+                        {$vo.title}
+                            </div>
+                         </div>
+                    </a>
                         </volist>
                     </div>
                     <div class="yq_banner_list" id="yq_banner_list">
-                        <div class="wenben">2016年上海国际管材展览会</div>
+                        <div class="wenben"></div>
                         <volist name="banners" id="vo" key="k">
 
                         <a href="javascript:;" rel="{$k-1}" <eq name='k' value="1">class="hover"</eq>>&nbsp;</a>

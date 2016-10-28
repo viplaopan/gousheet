@@ -154,7 +154,7 @@
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
+						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_mobile();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
 						<div class="exit ajaxOut">安全退出</div>
 					</div>
