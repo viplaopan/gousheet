@@ -461,7 +461,16 @@ function get_username($uid = 0){
     }
     return $name;
 }
-
+/**
+ * 根据用户ID获取用户名
+ * @param  integer $uid 用户ID
+ * @return string       用户名
+ */
+function get_mobile($uid = 0){
+    $uid = is_login();
+    $mobile = D("ucenter_member")->getFieldById($uid, 'mobile');
+    return $mobile;
+}
 /**
  * 根据用户ID获取用户昵称
  * @param  integer $uid 用户ID
