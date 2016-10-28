@@ -608,19 +608,7 @@
 
 					<?php echo getAd(10038);?>
 					</div>
-					<ul class="right_qg">
-						<li class="right_title">
-							求购信息
-						</li>
-						<li class="right_li"><span>温州鑫郎特种钢材有限公司</span></li>
-						<li class="right_li"><span>安徽南特钢业有限公司</span></li>
-						<li class="right_li"><span>温州联顺（顺益）不锈钢</span></li>
-						<li class="right_li"><span>温州市维钢流体设备有限公司</span></li>
-						<li class="right_li"><span>温州科光钢业有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_icp">发布求购</li>
-						<div class="clear"></div>
-					</ul>
+					<?php echo W('Home/Issue');?>
 					<ul class="right_qg" style="margin-top:15px; padding-bottom:14px;">
 						<li class="right_title">
 		                最活跃企业  <div class="right_ta"><a href="<?php echo U('Member/Index/manage');?>">我要发布</a></div>
