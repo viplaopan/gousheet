@@ -528,7 +528,7 @@
 				<div class="left_dies">
 					<div class="dies_gp">广播</div>
 					<div class="dies_ico"><img src="/Public/Home/images/gb.gif" /></div>
-					<div class="dies_news"><a href="<?php echo ($message["url"]); ?>"><?php echo ($message["title"]); ?></a></div>
+					<div class="dies_news"><a href="<?php echo ($message["url"]); ?>">热列祝贺“购钢现货网”新版网站隆重上线</a></div>
 				</div>
 
 			</div>
@@ -624,21 +624,10 @@
 					</ul>
 					<ul class="right_qg" style="margin-top:15px; padding-bottom:14px;">
 						<li class="right_title">
-							最活跃企业
-							<div class="right_ta">我要发布</div>
-						</li>
-						<li class="right_li"><span>温州鑫郎特种钢材有限公司</span></li>
-						<li class="right_li"><span>安徽南特钢业有限公司</span></li>
-						<li class="right_li"><span>温州联顺（顺益）不锈钢</span></li>
-						<li class="right_li"><span>温州市维钢流体设备有限公司</span></li>
-						<li class="right_li"><span>温州科光钢业有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-
+		                最活跃企业  <div class="right_ta"><a href="<?php echo U('Member/Index/manage');?>">我要发布</a></div>
+		                </li>
+		                <?php $companies = D("NewCompany")->order('id desc')->limit(11)->select(); $clists = array(); foreach($companies as $key=>$vo){ $company = D('Company')->where('id = ' . $vo['cid'])->find(); $clists[$key]['title'] = $company['small_name']; } ?>
+		                <?php if(is_array($clists)): $i = 0; $__LIST__ = $clists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="right_li"><span><?php echo ($vo["title"]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?> 
 					</ul>
 
 				</div>

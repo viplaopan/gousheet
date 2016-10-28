@@ -579,7 +579,7 @@
 												<li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo['contact']['mobile']); ?></span></li>
 												<li class="s7"> 传真：<?php echo ($vo['contact']['fax']); ?></li>
 												<li class="s7"> 经营模式：<?php echo ($vo["business"]); ?></li>
-												<li class="s7"> 仓库：<?php echo ($vo["com_address"]); ?></li>
+												<li class="s7"> 仓库：<?php echo (msubstr($vo["com_address"],0,15,'utf-8',false)); ?></li>
 												<li class="s7">备注：<?php echo ((isset($vo["beizhu"]) && ($vo["beizhu"] !== ""))?($vo["beizhu"]):'无'); ?></li>
 											</ul>
 
@@ -623,21 +623,10 @@
 					</ul>
 					<ul class="right_qg" style="margin-top:15px; padding-bottom:14px;">
 						<li class="right_title">
-							最活跃企业
-							<div class="right_ta">我要发布</div>
-						</li>
-						<li class="right_li"><span>温州鑫郎特种钢材有限公司</span></li>
-						<li class="right_li"><span>安徽南特钢业有限公司</span></li>
-						<li class="right_li"><span>温州联顺（顺益）不锈钢</span></li>
-						<li class="right_li"><span>温州市维钢流体设备有限公司</span></li>
-						<li class="right_li"><span>温州科光钢业有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-						<li class="right_li"><span>温州利群不锈钢有限公司</span></li>
-
+		                最活跃企业  <div class="right_ta"><a href="<?php echo U('Member/Index/manage');?>">我要发布</a></div>
+		                </li>
+		                <?php $companies = D("NewCompany")->order('id desc')->limit(11)->select(); $clists = array(); foreach($companies as $key=>$vo){ $company = D('Company')->where('id = ' . $vo['cid'])->find(); $clists[$key]['title'] = $company['small_name']; } ?>
+		                <?php if(is_array($clists)): $i = 0; $__LIST__ = $clists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="right_li"><span><?php echo ($vo["title"]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?> 
 					</ul>
 
 				</div>
