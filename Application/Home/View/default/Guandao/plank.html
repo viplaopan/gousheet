@@ -187,7 +187,38 @@
           </ul>
       </div>
     </li>
-        
+        <script type="text/javascript">
+                                    $(function() {
+                                        $('#biaomian a').click(function() {
+                                            $("input[name='biaomian']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().removeClass('show');
+                                            console.log($("#" + $idstr + "Li"));
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        $('#caizhi a').click(function() {
+                                            $("input[name='caizhi']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        $('#chengshi a').click(function() {
+                                            $("input[name='chengshi']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().removeClass('show');
+                                            console.log($("#" + $idstr + "Li"));
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        $('#changjia a').click(function() {
+                                            $("input[name='changjia']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().removeClass('show');
+                                            
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                    })
+                                </script>
    <li id="biaomianLi">
       <div class="dh dh2"><a  class="topa"><input name="biaomian" type="text" class="box_ipt5" placeholder="表面" value="{:I('get.biaomian')}"></a>
           <ul>

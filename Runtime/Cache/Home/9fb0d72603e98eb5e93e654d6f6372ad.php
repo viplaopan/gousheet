@@ -154,7 +154,7 @@
 			<?php if(is_login()): ?><li class="user">
 					<div class="us">
 						<div class="ico"><img src="/Public/Home/images/user.png" /></div>
-						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_username();?></a></div>
+						<div class="phone"><a href="<?php echo U('Member/Index/manage');?>"><?php echo get_mobile();?></a></div>
 						<div style=" color:#5a5a5a">|</div>
 						<div class="exit ajaxOut">安全退出</div>
 					</div>
@@ -391,7 +391,7 @@
 
                 <!--立即搜索-->
                 <div class="left_middle">
-                    <form action="/Home/Guandao/molding_three.html" method="get">
+                    <form action="/Home/Guandao/molding_three/pinzhong/15%E5%BA%A6%E5%BC%AF%E5%A4%B4.html" method="get">
                         <div id="headm">
                             <ul>
                                 <li  id="pinzhongLi">
@@ -752,7 +752,7 @@
                                                 <li class="s7"> 手机：<?php echo ($vo["mobile"]); ?> <span><?php echo ($vo['contact']['mobile']); ?></span></li>
                                                 <li class="s7"> 传真：<?php echo ($vo['contact']['fax']); ?></li>
                                                 <li class="s7"> 经营模式：<?php echo ($vo["business"]); ?></li>
-                                                <li class="s7"> 仓库：<?php echo ($vo["com_address"]); ?></li>
+                                                <li class="s7"> 仓库：<?php echo (msubstr($vo["title"],0,20,'utf-8',false)); ?></li>
                                                 <li class="s7">备注：<?php echo ((isset($vo["beizhu"]) && ($vo["beizhu"] !== ""))?($vo["beizhu"]):'无'); ?></li>
                                             </ul>
 
@@ -780,29 +780,7 @@
 
                     <?php echo getAd(10038);?>
                     </div>
-                    <ul class="right_qg">
-                        <li class="right_title">求购信息</li>
-                        <li class="right_li">
-                            <span>温州鑫郎特种钢材有限公司</span>
-                        </li>
-                        <li class="right_li">
-                            <span>安徽南特钢业有限公司</span>
-                        </li>
-                        <li class="right_li">
-                            <span>温州联顺（顺益）不锈钢</span>
-                        </li>
-                        <li class="right_li">
-                            <span>温州市维钢流体设备有限公司</span>
-                        </li>
-                        <li class="right_li">
-                            <span>温州科光钢业有限公司</span>
-                        </li>
-                        <li class="right_li">
-                            <span>温州利群不锈钢有限公司</span>
-                        </li>
-                        <li class="right_icp">发布求购</li>
-                        <div class="clear"></div>
-                    </ul>
+                    <?php echo W('Home/Issue');?>
                     <ul class="right_qg" style="margin-top:18px; padding-bottom:11px;">
                         <li class="right_title">
                         最活跃企业  <div class="right_ta"><a href="<?php echo U('Member/Index/manage');?>">我要发布</a></div>

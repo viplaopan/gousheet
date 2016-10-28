@@ -183,7 +183,24 @@
 	  </ul>
 	  </div>
 	</li>
-	
+	<script type="text/javascript">
+                                    $(function() {
+                                        $('#pinzhong a').click(function() {
+                                            $("input[name='pinzhong']").val($(this).html());
+                                            $idstr = $(this).parent().attr('id');
+                                            $(this).parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        $('#caizhi a').click(function() {
+                                            $("input[name='caizhi']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                    })
+                                </script>
 	<li id="caizhiLi">
 	  <div class="dh dh2"><a  class="topa"><input name="caizhi" type="text" class="box_ipt2" value="{:I('get.caizhi')}" placeholder="材质"></a>
 		  <ul>
@@ -268,6 +285,24 @@
            <li class="i_h5"><span>清除</span></li>  
 		  </ul>
 	  </div>
+      <script type="text/javascript">
+                                    $(function() {
+                                        $('#pinzhong a').click(function() {
+                                            $("input[name='pinzhong']").val($(this).html());
+                                            $idstr = $(this).parent().attr('id');
+                                            $(this).parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        $('#caizhi a').click(function() {
+                                            $("input[name='caizhi']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+                                            $(this).parent().parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                    })
+                                </script>
 	</li>
 	<li>
 	  <div class="dh"><input name="guige" type="text"  class="box_ipt3" value="{:I('get.guige')}" placeholder="规格">

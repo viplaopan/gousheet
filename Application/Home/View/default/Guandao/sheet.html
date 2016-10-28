@@ -152,16 +152,29 @@
                             <include file="Public/xhnav"/>
 
                         </div>
-
+                    
                         <!--立即搜索-->
+                        <form action="">
                         <div class="left_middle">
                             <div id="headm">
                                 <ul>
-                                    <li>
-                                        <div class="dh dh2">
-                                            <a class="topa"><input name="" type="text" class="box_ipt5" value="卷材"></a>
+                                    <script>
+                                        $(function(){
+                                            $('#pinzhong a').click(function() {
+                                            $("input[name='pinzhong']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
+
+                                            $(this).parent().parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        })
+                                    </script>
+                                    <li id="pinzhongLi">
+                                        <div class="dh dh2" >
+                                            <a class="topa"><input name="pinzhong" type="text" class="box_ipt5" value="卷材"></a>
                                             <ul>
-                                                <li class="i_h3">
+                                                <li class="i_h3" id="pinzhong">
                                                     <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <a>201</a>
@@ -183,11 +196,23 @@
                                         </div>
                                     </li>
 
-                                    <li>
+                                    <li id="biaomianLi">
                                         <div class="dh dh2">
-                                            <a class="topa"><input name="" type="text" class="box_ipt5" value="表面"></a>
+                                            <a class="topa"><input name="biaomian" type="text" class="box_ipt5" value="表面"></a>
                                             <ul>
-                                                <li class="i_h3">
+                                                <script>
+                                                    $(function(){
+                                                        $('#biaomian a').click(function() {
+                                                        $("input[name='biaomian']").val($(this).html());
+                                                        $idstr = $(this).parent().parent().attr('id');
+
+                                                        $(this).parent().parent().removeClass('show');
+                
+                                                        $("#" + $idstr + "Li").removeClass('show')
+                                                    })
+                                                    })
+                                                </script>
+                                                <li class="i_h3" id="biaomian">
                                                     <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <a>BC</a>
@@ -215,12 +240,24 @@
                                         </div>
                                     </li>
 
-                                    <li>
+                                    <li id="changjiaLi">
+                                    <script>
+                                                    $(function(){
+                                                        $('#changjia a').click(function() {
+                                                        $("input[name='changjia']").val($(this).html());
+                                                        $idstr = $(this).parent().attr('id');
+
+                                                        $(this).parent().removeClass('show');
+                
+                                                        $("#" + $idstr + "Li").removeClass('show')
+                                                    })
+                                                    })
+                                                </script>
                                         <div class="dh">
-                                            <a class="topa"><input name="" type="text" class="box_ipt5" value="厂家"></a>
+                                            <a class="topa"><input name="changjia" type="text" class="box_ipt5" value="厂家"></a>
                                             <ul>
                                                 <li class="i_h0"><img src="__IMG__/ggw_sanjiaoxing.png" /><span>厂家</span></li>
-                                                <li class="i_h1">
+                                                <li class="i_h1" id="changjia">
                                                     <a>张家港浦项</a>
                                                     <a>青岛浦项</a>
                                                     <a>宝钢不锈</a>
@@ -241,12 +278,23 @@
                                             </ul>
                                         </div>
                                     </li>
+                                    <script>
+                                        $(function(){
+                                            $('#chengshi a').click(function() {
+                                            $("input[name='chengshi']").val($(this).html());
+                                            $idstr = $(this).parent().parent().attr('id');
 
-                                    <li>
+                                            $(this).parent().parent().parent().removeClass('show');
+    
+                                            $("#" + $idstr + "Li").removeClass('show')
+                                        })
+                                        })
+                                    </script>
+                                    <li id="chengshiLi">
                                         <div class="dh dh2">
-                                            <a class="topa"><input name="" type="text" class="box_ipt5" value="城市"></a>
+                                            <a class="topa"><input name="chengshi" type="text" class="box_ipt5" value="城市"></a>
                                             <ul>
-                                                <li class="i_h3">
+                                                <li class="i_h3" id="chengshi">
                                                     <div class="h3_miss"><img src="__IMG__/ggw_sanjiaoxing.png" /></div>
                                                     <div class="h3_div">
                                                         <a>温州</a>
@@ -266,7 +314,7 @@
                                         </div>
                                     </li>
 
-                                    <li><input name="" type="button" class="box_bt" value="立即搜索"></li>
+                                    <li><input name="" type="submit" class="box_bt" value="立即搜索"></li>
                                 </ul>
                             </div>
                             <script type=text/javascript>
@@ -282,6 +330,7 @@
                             </script>
 
                         </div>
+                        </form>
                         <!--广播-->
                         <div class="left_dies">
                             <div class="dies_gp">广播</div>
