@@ -160,7 +160,7 @@
 							<ul>
 								<li id="pinzhongLi">
 									<div class="dh">
-										<a class="topa"><input name="pinzhong" type="text" class="box_ipt1" value="{:I('get.pinzhong')}" placeholder="工业无缝管"></a>
+										<a class="topa"><input name="pinzhong" type="text" class="box_ipt1" value="{:I('get.pinzhong')}" placeholder="品种"></a>
 										<ul>
 											<li class="i_h0"><img src="__IMG__/ggw_sanjiaoxing.png" /><span>钢管</span></li>
 											<li class="i_h1" id="pinzhong">
@@ -174,12 +174,16 @@
 												<a>装饰管</a>
 											</li>
 											<li class="i_hxian"></li>
-											<li class="i_h2"><span>清除</span></li>
+											<li class="i_h2"><span class="clear" data="pinzhong">清除</span></li>
 										</ul>
 									</div>
 								</li>
 								<script type="text/javascript">
 									$(function() {
+										$(".clear").click(function(){
+                                                $("input[name='"+$(this).attr('data')+"']").val('')
+                                                $("#" + $(this).attr('data') + "Li").removeClass('show')
+                                            })
 										$('#pinzhong a').click(function() {
 											$("input[name='pinzhong']").val($(this).html());
 											$idstr = $(this).parent().attr('id');
@@ -278,7 +282,7 @@
 												</div>
 											</li>
 											<li class="i_h4"></li>
-											<li class="i_h5"><span>清除</span></li>
+											<li class="i_h5"><span class="clear" data="caizhi">清除</span></li>
 										</ul>
 									</div>
 								</li>

@@ -167,7 +167,11 @@
                                             $(this).parent().parent().removeClass('show');
     
                                             $("#" + $idstr + "Li").removeClass('show')
-                                        })
+                                            })
+                                            $(".clear").click(function(){
+                                                $("input[name='"+$(this).attr('data')+"']").val('')
+                                                $("#" + $(this).attr('data') + "Li").removeClass('show')
+                                            })
                                         })
                                     </script>
                                     <li id="pinzhongLi">
@@ -191,7 +195,7 @@
                                                     <div class="clear"></div>
                                                 </li>
                                                 <li class="i_h4"></li>
-                                                <li class="i_h5"><span>清除</span></li>
+                                                <li class="i_h5"><span class="clear" data="pinzhong">清除</span></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -229,7 +233,7 @@
                                                     <div class="clear"></div>
                                                 </li>
                                                 <li class="i_h4"></li>
-                                                <li class="i_h5"><span>清除</span></li>
+                                                <li class="i_h5"><span class="clear" data="biaomian">清除</span></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -274,7 +278,7 @@
 
                                                 </li>
                                                 <li class="i_hxian"></li>
-                                                <li class="i_h2"><span>清除</span></li>
+                                                <li class="i_h2">><span class="clear" data="changjia">清除</span></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -309,7 +313,7 @@
                                                     <div class="clear"></div>
                                                 </li>
                                                 <li class="i_h4"></li>
-                                                <li class="i_h5"><span>清除</span></li>
+                                                <li class="i_h5"><span class="clear" data="chengshi">清除</span></li>
                                             </ul>
                                         </div>
                                     </li>
