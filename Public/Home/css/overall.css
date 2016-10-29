@@ -1008,14 +1008,119 @@ background:url(../images/xialakuang-ss.png) no-repeat
 .buy{width:1180px; margin:0 auto}
 .buy .log_left{ width:880px; float:left; margin-top:10px;}
 .buy .log_left .left_con{ width:880px; float:left; padding:10px 0 10px 0; background-color:#eeeeee; margin-bottom:20px;}
-.buy .log_left .left_con:hover{width:880px; float:left; padding:10px 0 10px 0; background-color:#dddddd; margin-bottom:20px;}
+.buy .log_left .left_con:hover{width:880px; float:left; padding:10px 0 10px 0; background-color:#e2e2e2; margin-bottom:20px;}
 .buy .log_left .left_con .con_l{ width:555px; float:left; padding-left:20px; padding-top:10px;}
-.buy .log_left .left_con .con_l .l_bt{ width:555px; float:left; height:35px; color:#5295c8; font-size:22px;}
+.buy .log_left .left_con .con_l .l_bt{ width:555px; float:left; height:35px;color: #2175e4; font-size:22px;}
 .buy .log_left .left_con .con_l .l_div{ width:555px; float:left; line-height:30px; color:#5d5d5d; font-size:16px;}
 .buy .log_left .left_con .con_r{ padding:10px; float:right; width:225px; border-left:1px #c9c9c9  dotted}
-.buy .log_left .left_con .con_r .sp1{height:60px; width:225px; line-height:60px; text-align:center; font-size:22px; color:#e95850}
+.buy .log_left .left_con .con_r .sp1{height:60px; width:225px; line-height:60px; text-align:center; font-size:22px;color: #2175e4;}
 .buy .log_left .left_con .con_r .sp11{height:60px; width:225px; line-height:60px; text-align:center; font-size:22px; color:#6d6d6d}
-.buy .log_left .left_con .con_r .bt{ width:166px; height:40px; margin:0 auto;border-radius:5px; color:#FFF; letter-spacing:1px;background-color:#e95850; text-align:center; line-height:40px;}
+.buy .log_left .left_con .con_r .bt{ width:166px; height:40px; margin:0 auto;border-radius:5px;background-color:#2170d9; position:relative;text-align:center;}
+.buy .log_left .left_con .con_r .bt img{ width:40px; height:40px; margin-left:26px; float:left;}
+.buy .log_left .left_con .con_r .bt span{ width:100px;height:40px; text-align:left;line-height:40px; float:left; color:#FFF; letter-spacing:1px;}
+
+.buy .log_left .left_con .con_r .bt ul{display:none;}
+.buy .log_left .left_con .con_r .bt:hover ul{
+	left:-650px;
+	position:absolute;display:block;z-index:10000;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    width:650px;
+	padding-bottom:30px;
+    background-color: rgb(255, 255, 255);
+    cursor: default;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 0px 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 999999;
+    white-space: nowrap;
+    font-family: 'Microsoft Yahei', 微软雅黑, 宋体, Tahoma, Arial, Helvetica, STHeiti;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.498039);
+    border-color: rgba(0, 0, 0, 0.498039);
+    transition: opacity 0.1s ease-in;
+	-moz-border-radius:5px;      /* Gecko browsers */
+    -webkit-border-radius:5px;   /* Webkit browsers */
+    border-radius:5px;  }
+.buy .log_left .left_con .con_r .bt:hover ul .li_h1{
+	font-size: 13px;
+	padding-left:20px;
+    width:630px;
+    color: #666;
+    height: 36px;
+	text-align:left;
+    line-height: 36px;
+    border-bottom: 1px solid #e6e6e6;
+
+    background-color: #f5f5f5;}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h2{
+	margin-top:30px;
+	margin-left:80px;
+	text-align:left;
+	width:570px;
+	color:#5d5d5d;
+	 line-height: 36px;
+
+}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h2 .sp1_div{
+color:#5d5d5d; float:left; font-size:14px; line-height: 36px;
+}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h2 .sp2_div{
+font-weight:bold;color:#5d5d5d; float:left;font-size:14px; line-height: 36px;
+}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 {
+	margin: 30px 20px 0 20px;
+	width:610px; float:left;
+	border-top:1px solid  #5d5d5d;
+	
+}
+
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_left{
+	margin-top:30px;
+	width:305px; float:left;
+	font-size:12px;
+	color:#5d5d5d;
+	line-height:30px;
+	text-align:left
+	
+}
+
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right{
+	
+	width:305px; float:left;
+	margin-top:30px;
+	
+	
+}
+
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right{
+	
+	width:305px; float:left;
+	margin-top:30px;
+	
+	
+}
+
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right .weixin{
+	width:183px; margin:0 auto
+	}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right .weixin .img_wenxin{
+	width:183px;
+	 height:183px;
+	 float:left
+	}
+.buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right .weixin .img_sys{
+	width:183px;
+	height:25px;
+	margin-top:15px; 
+	float:left
+	}
+
+
+
 .buy .log_left .left_con .con_r .bt1{ width:166px; height:40px; margin:0 auto;border-radius:5px;color:#FFF; letter-spacing:1px; background-color:#6d6d6d;text-align:center; line-height:40px;}
 .buy .log_left .left_con .con_r .sp_d{width:166px; height:25px; padding-top:15px; margin:0 auto;}
 .buy .log_left .left_con .con_r .sp_d .d_tp{ width:25px; height:25px; float:left; background:url(../images/qg_szh.png) no-repeat}
@@ -1024,13 +1129,13 @@ background:url(../images/xialakuang-ss.png) no-repeat
 .buy .log_left .left_con .con_r .sp_d .llsit1{ height:25px; margin-left:10px; line-height:25px; color:#6d6d6d; font-size:12px;}
 
 .buy .log_right{ width:280px; float:right}
-.buy .log_right  .right_rz{width:276px; border:2px solid #e95850;border-radius:5px; float:left; margin:10px 0;}
-.buy .log_right  .right_rz .rz_tb{ width:276px; height:35px; background-color:#e95850; text-align:center; float:left; color:#FFF; font-family:"微软雅黑"; font-size:18px; line-height:35px;}
+.buy .log_right  .right_rz{width:276px;border: 2px solid #2175e4;border-radius:5px; float:left; margin:10px 0;}
+.buy .log_right  .right_rz .rz_tb{ width:276px; height:35px;background-color: #2175e4; text-align:center; float:left; color:#FFF; font-family:"微软雅黑"; font-size:18px; line-height:35px;}
 .buy .log_right  .right_rz .rz_con{ width:276px; margin-top:10px; float:left; padding-bottom:10px;}
 .buy .log_right  .right_rz .rz_con a{ width:276px; display:block; line-height:40px; float:left; font-size:16px; font-weight:bold ;text-align:center; color:#313131;font-family:"微软雅黑";}
-.buy .log_right  .right_rz .rz_con span{width:276px; display:block; line-height:40px; float:left; font-size:16px; font-weight:bold ;text-align:center; color:#e95850;font-family:"微软雅黑";}
+.buy .log_right  .right_rz .rz_con span{width:276px; display:block; line-height:40px; float:left; font-size:16px; font-weight:bold;text-align:center;color: #2175e4;font-family:"微软雅黑";}
 
-.buy .log_right  .right_rz .rz_con .aa{ width:236px; height:40px; line-height:40px; float:left; margin:20px 20px 10px 20px; border-radius:5px;; background-color:#f4c600; color:#FFF; font-size:18px;font-family:"微软雅黑"; text-align:center; cursor:pointer}
+.buy .log_right  .right_rz .rz_con .aa{ width:236px; height:40px; line-height:40px; float:left; margin:20px 20px 10px 20px; border-radius:5px;background-color: #2175e4; color:#FFF; font-size:18px;font-family:"微软雅黑"; text-align:center; cursor:pointer}
 
 
 
