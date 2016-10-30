@@ -16,12 +16,12 @@
         <div class="xt"></div><!--实线线-->
         
         <div class="tops">
-            <img src="../images/fields_img.png" />
+            <img src="{$himg1.path|default=''}" />
             
               <div class="cons">
               
             <div class="title">
-            【禧力琦科技】 铜镍合金 钛合金管件定制 超级奥氏体 双相 超级双相等特种钢管件
+            【{$company.small_name}】 铜镍合金 钛合金管件定制 超级奥氏体 双相 超级双相等特种钢管件
             </div>
             
             <p>浙江禧力琦科技有限公司是一家专业从事奥氏体不锈钢 超级奥氏体不锈钢 双相不锈钢 超级双相不锈钢 铜镍合金 钛合金等特种钢管件 法兰系列产品开发、生产及销售的股份制企
@@ -31,11 +31,11 @@
                 起订数量：按需定制
             </div>
             <div class="bt">
-                <a class="bt_f"></a>
+                <a class="bt_f"  href="tencent://message/?uin={$vo['contact']['qq']}&amp;Site=www.gousteel.com&amp;Menu=yes" target="_blank"></a>
                 <div class="bt_shi"></div>
                 <div class="sp"></div>
             </div>
-            <div class="p1">地址：浙江省丽水市莲都区水阁工业区南明路801号</div>
+            <div class="p1">地址：{$company.com_address}</div>
             <div class="p1">承诺：按合同约定</div>
             <div class="p1">订金生产 生产完毕 款到发货</div>
         </div>

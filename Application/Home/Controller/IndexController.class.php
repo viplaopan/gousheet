@@ -63,7 +63,16 @@ class IndexController extends Controller {
        
         $this->display();
     }
-    public function detail(){
+    public function detail($cid = 0){
+        $company = D("Company")->where('id = ' . $cid)->find();
+        $this->assign('company' , $company);
+        
+        //企业愿景
+        $himg1 = D('HomeImg')->where(array(
+            array('cid' => $cid),
+            array('type' => 1)
+        ))->find();
+        $this->assign('himg1' , $himg1);
         $this->display();
     }
 }
