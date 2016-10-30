@@ -20,7 +20,6 @@ class SeoRuleModel extends Model
 
     private function getMeta($module, $controller, $action, $seo)
     {
-        dump($controller);die;
         //查询缓存，如果已有，则直接返回
         $cacheKey = "oneplus_seo_meta_{$module}_{$controller}_{$action}";
            $cache = S($cacheKey);
@@ -30,7 +29,7 @@ class SeoRuleModel extends Model
 
         //获取相关的规则
         $rules = $this->getRelatedRules($module, $controller, $action);
-
+        
         //按照排序计算最终结果
         $title = '';
         $keywords = '';
@@ -76,19 +75,14 @@ class SeoRuleModel extends Model
     private function getRelatedRules($module, $controller, $action)
     {
         //防止SQL注入
-        //$module = mysql_escape_string($module);
-        //$controller = mysql_escape_string($controller);
-        //$action = mysql_escape_string($action);
-		
-		$module = addslashes($module);
-        $controller = addslashes($controller);
-        $action = addslashes($action);
+        $module = addslashes ($module);
+        $controller = addslashes ($controller);
+        $action = addslashes ($action);
 
         //查询与当前页面相关的SEO规则
         $map = array();
         $map['_string'] = "(app='' or app='$module') and (controller='' or controller='$controller') and (action='' or action='$action') and status=1";
         $rules = $this->where($map)->order('sort asc')->select();
-
         //返回规则列表
         return $rules;
     }
