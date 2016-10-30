@@ -63,5 +63,7 @@ class IndexController extends Controller {
        
         $this->display();
     }
-    
+    public function detail(){
+        $this->display();
+    }
 }
