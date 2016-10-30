@@ -79,9 +79,9 @@ class SeoRuleModel extends Model
         //$controller = mysql_escape_string($controller);
         //$action = mysql_escape_string($action);
 		
-		$module = mysqli_real_escape_string($module);
-        $controller = mysqli_real_escape_string($controller);
-        $action = mysqli_real_escape_string($action);
+		$module = addslashes($module);
+        $controller = addslashes($controller);
+        $action = addslashes($action);
 
         //查询与当前页面相关的SEO规则
         $map = array();
