@@ -17,12 +17,21 @@ use Think\Controller;
 
 class HomeWidget extends Controller{
 	
-	/* 显示指定分类的同级分类或子分类列表 */
+	/* 求购信息 */
 	public function Issue(){
 		$map['status'] = 1;
         $lists = D('Issue')->where($map)->limit(6)->select();
 		$this->assign('lists', $lists);
 		$this->display('Widget/issue');
 	}
-	
+	public function ad($adId,$w,$h){
+		//Banner
+        $adm['status'] = 1;
+        $adm['id'] = $adId;
+        $ad = D('Adv')->where($adm)->find();
+		$this->assign('ad', $ad);
+		$this->assign('w', $w);
+		$this->assign('h', $h);
+		$this->display('Widget/ad');
+	}
 }
