@@ -200,21 +200,15 @@ function mdate($time = NULL) {
     $t = time() - $time; //时间差 （秒）
     $y = date('Y', $time)-date('Y', time());//是否跨年
     switch($t){
-     case $t == 0:
-       $text = '刚刚';
-       break;
-     case $t < 60:
-      $text = $t . '秒前'; // 一分钟内
-      break;
-     case $t < 60 * 60:
-      $text = floor($t / 60) . '分钟前'; //一小时内
-      break;
+     
      case $t < 60 * 60 * 24:
-      $text = floor($t / (60 * 60)) . '小时前'; // 一天内
+      $text = floor($t / (60 * 60)) . '小时内'; // 一天内
       break;
-     case $t < 60 * 60 * 24 * 3:
-      $text = floor($time/(60*60*24)) ==1 ?'昨天 ' . date('H:i', $time) : '前天 ' . date('H:i', $time) ; //昨天和前天
-      break;
+     case $t < 60 * 60 * 24 * 6:
+      
+        $text = floor($time/(60*60*24)) .'天前'
+        break;
+    
      case $t < 60 * 60 * 24 * 7:
       $text = '<div class="b1">1周内未更新</div><div class="b2">谨慎选择</div>'; //一个月内
       break;
