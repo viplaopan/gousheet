@@ -71,7 +71,7 @@ class IndexController extends Controller {
         //企业愿景
         $himg1 = D('HomeImg')->where(array(
             array('cid' => $cid),
-            array('type' => 1)
+            array('type' => 0)
         ))->find();
         $this->assign('himg1' , $himg1);
         $this->display();
