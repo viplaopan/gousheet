@@ -170,9 +170,17 @@
                                 </div>
                             </div>
                         </div>
-
-                        <input name="" type="text"  class="gs_millde"  value="公司全称/公司简称/关键词"/>
-                        <div class="gs_right">立即搜索</div>
+                        <form method="get" id="searchform" action="{:U('Home/Process/index')}">
+                            <input name="name" type="text"  class="gs_millde"  placeholder ="公司全称/公司简称/关键词"/>
+                            <div class="gs_right" id="sebt">立即搜索</div>
+                        </form>
+                        <script>
+                            $(function(){
+                                $("#sebt").click(function(){
+                                    $("#searchform").submit();
+                                })
+                            })
+                        </script>
                     </div>
                 </div>
             </div>
