@@ -1,9 +1,24 @@
-<empty name="ad">
-	<a title="" href="">
-		<img src="/1.png">
-	</a>
+<eq name="eq.ad_type" value="0">
+	<empty name="ad">
+		<a title="" href="">
+			<img src="/1.png">
+		</a>
+	<else/>
+		<a title="{$ad.title}" href="{$ad.url}">
+			<img src="/Uploads/Images/{$ad.data}" width="{$w}" height="{$h}">
+		</a>
+	</empty>
 <else/>
-	<a title="{$ad.title}" href="{$ad.url}">
-		<img src="/Uploads/Images/{$ad.data}" width="{$w}" height="{$h}">
-	</a>
-</empty>
+<a title="{$ad.title}" href="{$ad.url}">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{$w}" height="{$h}"> 
+            <param name="movie" value="/Uploads/Images/{$ad.data}"> 
+            <!--[if !IE]>--> 
+            <object type="application/x-shockwave-flash" data="/Uploads/Images/{$ad.data}" width="{$w}" height="{$h}"> 
+            <!--<![endif]--> 
+            <p>Alternative content</p> 
+            <!--[if !IE]>--> 
+            </object> 
+            <!--<![endif]--> 
+            </object>
+            </a>	
+</eq>

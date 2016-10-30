@@ -128,6 +128,10 @@ class AdminConfigBuilder extends AdminBuilder
     {
         return $this->key($name, $title, $subtitle, 'imageUrl');
     }
+    public function keyImageSwf($name, $title, $subtitle = null)
+    {
+        return $this->key($name, $title, $subtitle, 'imageUrlswf');
+    }
     public function keySingleUserGroup($name, $title, $subtitle = null)
     {
         $options = $this->readUserGroups();
