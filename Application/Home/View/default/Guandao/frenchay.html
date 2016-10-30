@@ -403,25 +403,7 @@ for(var i=0; i<lis.length; i++){
                         {:W('Home/ad',array(10050,211,60))}
                     </div>
             {:W('Home/Issue')}
-            <ul class="right_qg" style="margin-top:18px; padding-bottom:11px;">
-            	<li class="right_title">
-                最活跃企业  <div class="right_ta"><a href="{:U('Member/Index/manage')}">我要发布</a></div>
-                </li>
-                <php>
-                    $companies = D("NewCompany")->order('id desc')->limit(11)->select();
-                    
-                    $clists = array();
-                    foreach($companies as $key=>$vo){
-
-                        $company = D('Company')->where('id = ' . $vo['cid'])->find();
-                        $clists[$key]['title'] = $company['small_name'];
-                    }
-                </php>
-                <volist name="clists" id="vo"> 
-                <li class="right_li"><span>{$vo.title}</span></li>
-                </volist> 
-               
-            </ul>
+            {:W('Home/huoyue')}
             
        	</div>
        

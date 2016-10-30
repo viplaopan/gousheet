@@ -34,4 +34,16 @@ class HomeWidget extends Controller{
 		$this->assign('h', $h);
 		$this->display('Widget/ad');
 	}
+	public function huoyue(){
+		$companies = D("NewCompany")->order('id desc')->limit(11)->select();
+                    
+        $clists = array();
+        foreach($companies as $key=>$vo){
+
+            $company = D('Company')->where('id = ' . $vo['cid'])->find();
+            $clists[$key]['title'] = $company['name'];
+        }
+        $this->assign('clists', $clists);
+		$this->display('Widget/huoyue');
+	}
 }
