@@ -16,7 +16,7 @@ use Think\Controller;
 class TalentController extends Controller {
     public function index($page = 1){
         $map['status'] = 1;
-        $lists = D('Recruit')->where($map)->page($page, 20)->select();
+        $lists = D('Recruit')->where($map)->order('create_time desc')->page($page, 20)->select();
         $totalCount = D('Recruit')->where($map)->count();
         $this->assign('totalPageCount', $totalCount);
         
