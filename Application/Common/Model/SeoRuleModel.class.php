@@ -20,6 +20,7 @@ class SeoRuleModel extends Model
 
     private function getMeta($module, $controller, $action, $seo)
     {
+        dump($controller);die;
         //查询缓存，如果已有，则直接返回
         $cacheKey = "oneplus_seo_meta_{$module}_{$controller}_{$action}";
            $cache = S($cacheKey);
