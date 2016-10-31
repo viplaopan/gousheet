@@ -1,0 +1,44 @@
+/* 全局*/
+*{margin:0px; padding:0px; list-style:none;text-decoration:none;border:none}
+.clear{clear:both}
+body{
+    width:100%;
+    width:expression(document.body.clientWidth <=1180? "1180px": "auto");
+    min-width:1000px;
+	background-color:#f9f9f9;
+}
+
+.wrapper{width:710px;margin:60px auto;}
+.left{float:left;font-size: 14px;}
+.right{float:right;}
+.clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
+.clearfix{zoom:1;}
+
+/* zcform */
+.zcform{}
+.zcform p{ width:710px;margin-bottom:15px;}
+.zcform a{ color:#f13232;font-size: 14px;}
+.zcform p.last{margin-left:310px;font-size:16px;}
+.zcform p.last input{ cursor:pointer;}
+.zcform label{ width:180px; text-align:right;display:block;float:left;height:48px;line-height:48px;color:#F00;text-indent:10px;}
+.zcform label.one{width:150px;height:48px;text-align:right;color:#000;margin-right: 10px;
+}
+.zcform label.one span{ color:#f13232}
+.zcform input{float:left;font-size:16px;font-family:"微软雅黑";color:#666;}
+.zcform .submit{background:#f13232;font-size:20px;letter-spacing:4px;color:#fff;cursor:pointer;margin-left:160px;}
+
+#telphone{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+#password{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+#confirm_password{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+#agent_name{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+#name{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+.submit{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+#agent{border:1px solid #ccc;width:300px;height:46px;text-indent:10px;}
+.identifying_code{height:46px;width:180px;_line-height:46px;text-indent:10px; border:1px solid #ccc}
+.get_code{height:48px;width:110px;margin-left:10px;border:1px solid #ccc;cursor:pointer;}
+.agreement{margin-left:100px;height:30px;line-height:30px;font-size:12px;}
+.agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;margin-left: 60px;}
+
+
+
+
