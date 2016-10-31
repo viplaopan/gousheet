@@ -201,8 +201,11 @@ function mdate($time = NULL) {
     $y = date('Y', $time)-date('Y', time());//是否跨年
     switch($t){
      
+     case $t < 60 * 60 * 1:
+      $text = floor($t / (60 * 60)) . '1小时内'; // 一天内 
+      break;
      case $t < 60 * 60 * 24:
-      $text = floor($t / (60 * 60)) . '小时内'; // 一天内
+      $text = floor($t / (60 * 60)) . '小时前'; // 一天内
       break;
      case $t < 60 * 60 * 24 * 6:
       
