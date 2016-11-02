@@ -172,6 +172,20 @@ class IndexController extends BaseController {
 	}
 	
 	public function manage(){
+		$cid = D('Company')->where(array('uid'=>UID))->getField('id');
+		$tiao = 0;
+		$tiao += D('xh_bancai')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_daicai')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_falan')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_famen')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_gangguan')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_guanjian_ft')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_guanjian_sst')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_guanjian_wt')->where('cid = ' . $cid )->count();
+		$tiao += D('xh_juancai')->where('cid = ' . $cid )->count();
+		$this->assign('tiao',$tiao);
+		
+
 		$member = D('Member')->where('uid = ' . UID )->find();
 		$this->assign('member',$member);
 		$this->display();
