@@ -86,6 +86,7 @@ class MemberModel extends Model{
             'uid'             => $user['uid'],
             'username'        => get_username($user['uid']),
             'last_login_time' => $user['last_login_time'],
+            'expire'=>360000,
         );
 
         session('user_auth', $auth);
