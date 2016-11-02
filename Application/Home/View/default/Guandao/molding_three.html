@@ -545,7 +545,7 @@
                                                 <li class="s7"> 手机：{$vo.mobile} </li>
                                                 <li class="s7"> 传真：{$vo['contact']['fax']}</li>
                                                 <li class="s7"> 经营模式：{$vo.business}</li>
-                                                <li class="s7"> 仓库：{$vo.title|msubstr=0,20,'utf-8',false}</li>
+                                                <li class="s7"> 仓库：{$vo.company.ware_address|msubstr=0,15,'utf-8',false}</li>
                                                 <li class="s7">备注：{$vo.beizhu|default='无'}</li>
                                             </ul>
 

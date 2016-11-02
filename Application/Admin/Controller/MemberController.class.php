@@ -28,9 +28,12 @@ class MemberController extends AdminController
             $company = D("Company")->where(array('id'=>$cid))->find();
 
             $con = D('Contact')->where(array('cid'=>$cid))->find();
-
+            $info = D("ucenter_member")->find($val['uid']);
             $val['name'] = $con['name']?$con['name']:'暂无';
             $val['company_name'] = $company['name']?$company['name']:'客户未填写';
+            $val['com_address'] = $company['com_address']?$company['com_address']:'客户未填写';
+            $val['mobile2'] = $con['mobile']?$con['mobile']:'暂无';
+            $val['mobile'] = $info['mobile']?$info['mobile']:'暂无';
             $val['id'] = $val['uid'];
 
         }
@@ -41,7 +44,10 @@ class MemberController extends AdminController
             ->setStatusUrl(U('setVip'))
             ->keyId()
             ->keyText('name', '用户名')
+            ->keyText('mobile2', '电话')
             ->keyText('company_name', '公司名称')
+            ->keyText('com_address', '公司地址')
+            ->keyText('mobile', '账号')
             ->keyTime('last_login_time','上次登陆时间')
             ->keyVip('is_vip','是否VIP')
             ->data($lists)
