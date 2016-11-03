@@ -45,7 +45,7 @@ class LinkController extends AdminController
     public function edit($id = 0){
         $isEdit = $id?1:0;
         if(IS_POST){
-            dump(1);
+
             $data = D('Link')->create();
             if ($isEdit) {
                 $res = D('Link')->save($data);
@@ -55,6 +55,8 @@ class LinkController extends AdminController
             if(!$res){
                 $this->error($isEdit ? '编辑失败' : '创建失败');
             }
+            //显示成功信息
+            $this->success($isEdit ? '编辑成功' : '创建成功', U('index'));
         }else{
             if ($isEdit) {
                 $data = M('Link')->where(array('id' => $id))->find();
