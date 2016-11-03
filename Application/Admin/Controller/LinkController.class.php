@@ -21,7 +21,7 @@ class LinkController extends AdminController
         $map = array('status' => array('EGT', 0));
 		$Model = D('Link');
        
-        $lists = $Model->where($map)->page($page, $r)->order('uid desc')->select();
+        $lists = $Model->where($map)->page($page, $r)->select();
         $totalCount = $Model->where($map)->count();
 
         //显示页面
