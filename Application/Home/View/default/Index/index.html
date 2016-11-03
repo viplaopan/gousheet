@@ -650,20 +650,15 @@ with(o=document.getElementById("div1")){ innerHTML+=innerHTML; onmouseover=_("c=
     <div class="content_lirk">
     
         <div class="lirk_re">友情链接</div>
-
+        <php>
+            $links = M('Link')->where(array('status' => 1))->select();
+        </php>
         <div class="lirk_hide">
-            <a href="http://www.51bxg.com/">钢材期货</a>
-            <a href="http://www.qqma.com/">全球机械网</a>
-            <a href="http://www.ccen.net/">中国化工设备网</a>
-            <a href="http://www.cnrongtai.com/">荣泰五金网</a>
-            <a href="http://steel.jdjob88.com/">钢铁英才网</a>
-            <a href="http://www.zhiyaonet.com/">不锈钢商城</a>
-            <a href="http://www.zhiyaonet.com/">金蜘蛛紧固件</a>
-            <a href="http://www.zyzhan.com/">中国制药网</a>
-            <br>
-            <a href="http://www.cswpn.com/">中国制药机械设备网</a>
-            <a href="http://www.huajx.com/">中国化工机械设备网</a>
-            <a href="table.htm">各国不锈钢牌号对照表</a>
+            <volist name="links" key="k" id="vo">
+                <a href="{$vo.url}">{$vo.title}</a>
+                <eq name="k" value="8"><br></eq>
+            </volist>
+
 
 
 
