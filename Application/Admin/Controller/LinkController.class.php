@@ -45,23 +45,30 @@ class LinkController extends AdminController
     public function edit($id = 0){
         $isEdit = $id?1:0;
         if(IS_POST){
-            $data = D('XhMessage')->create();
+            $data = D('Link')->create();
             if ($isEdit) {
-                $res = D('XhMessage')->save($data);
+                $res = D('Link')->save($data);
             } else {
-                $res = D('XhMessage')->add($data);
+                $res = D('Link')->add($data);
             }
             if(!$res){
                 $this->error($isEdit ? '编辑失败' : '创建失败');
             }
         }else{
+            if ($isEdit) {
+                $data = M('Link')->where(array('id' => $id))->find();
+
+            } else {
+                $data['status'] = 1;
+            }
             $builder = new AdminConfigBuilder();
             $builder->title($isEdit ? '编辑规则' : '添加规则')
                     ->keyId()
                     ->keyText('title', '标题')
                     ->keyText('url', '链接')
                     ->keyStatus()
-                    ->buttonSubmit(U('edit'))->buttonBack()
+                    ->buttonSubmit(U('edit'))
+                    ->buttonBack()
                     ->display();
         }
 
