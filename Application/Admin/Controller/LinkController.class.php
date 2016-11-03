@@ -67,6 +67,7 @@ class LinkController extends AdminController
                     ->keyText('title', '标题')
                     ->keyText('url', '链接')
                     ->keyStatus()
+                    ->data($data)
                     ->buttonSubmit(U('edit'))
                     ->buttonBack()
                     ->display();
