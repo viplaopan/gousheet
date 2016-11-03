@@ -45,6 +45,7 @@ class LinkController extends AdminController
     public function edit($id = 0){
         $isEdit = $id?1:0;
         if(IS_POST){
+            dump(1);
             $data = D('Link')->create();
             if ($isEdit) {
                 $res = D('Link')->save($data);
