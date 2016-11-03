@@ -45,8 +45,14 @@ class LinkController extends AdminController
     public function edit($id = 0){
         $isEdit = $id?1:0;
         if(IS_POST){
-            if($isEdit){
-
+            $data = D('XhMessage')->create();
+            if ($isEdit) {
+                $res = D('XhMessage')->save($data);
+            } else {
+                $res = D('XhMessage')->add($data);
+            }
+            if(!$res){
+                $this->error($isEdit ? '编辑失败' : '创建失败');
             }
         }else{
             $builder = new AdminConfigBuilder();
