@@ -54,7 +54,8 @@ class LinkController extends AdminController
                     ->keyId()
                     ->keyText('title', '标题')
                     ->keyText('url', '链接')
-                    ->keyStatus();
+                    ->keyStatus()
+                    ->display();
         }
 
     }
