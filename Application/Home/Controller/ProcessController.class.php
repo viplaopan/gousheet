@@ -61,7 +61,7 @@ class ProcessController extends Controller {
         
         $mapmap['status'] = 1;
         if($name){
-            $mapmap['name'] = array('like',$name.'%');
+            $mapmap['name'] = array('like','%'.$name.'%');
         }
         
         $lists = D('Process')->where($mapmap)->page($page, 20)->select();
