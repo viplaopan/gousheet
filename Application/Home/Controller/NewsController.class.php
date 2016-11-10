@@ -24,15 +24,15 @@ class NewsController extends Controller {
         $this->assign('shichang', $shichang);
 
         //原材行情
-        $yuancai = D('Document')->lists(41);
+        $yuancai = D('Document')->limit(4)->lists(41);
         $this->assign('yuancai', $yuancai);
 
         //管件行情
-        $guanjian = D('Document')->lists(42);
+        $guanjian = D('Document')->limit(4)->lists(42);
         $this->assign('guanjian', $guanjian);
 
         //泵阀行情
-        $shuifa = D('Document')->lists(43);
+        $shuifa = D('Document')->limit(4)->lists(43);
         $this->assign('shuifa', $shuifa);
 
         //推荐公司
