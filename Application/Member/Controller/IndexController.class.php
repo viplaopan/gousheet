@@ -103,8 +103,7 @@ class IndexController extends BaseController {
 		}else{
 			$contact = D('Contact')->where('cid = ' . $cid )->find();
 			$this->assign('contact',$contact);
-			$mobile = D('UcenterMember')->where('id = ' . UID )->getField('mobile');
-			$this->assign('mobile',$mobile);
+			
 			$this->display();
 		}
 	}

@@ -62,7 +62,7 @@
 	                	<label>QQ号码</label><input name="qq" type="text" value="{$contact.qq}" class="input"/><span class="panduan" ></span>
 	                </li>
 	                <li class="ii">
-	                	<label>手机号码</label><input name="mobile" type="text" value="{$contact.mobile|default=$mobile}" class="input"/><span class="panduan" ></span>
+	                	<label>手机号码</label><input name="mobile" type="text" value="{$contact.mobile}" class="input"/><span class="panduan" ></span>
 	                </li>
 	                <li class="ii">
 	                	<label>传真号码</label><input name="fax" type="text" value="{$contact.fax}" class="input"/><span class="panduan" ></span>
@@ -98,10 +98,7 @@
 					qq: {
 						required: true,
 					},
-					mobile: {
-						required: true,
-						isMobile: true
-					},
+
 					email: {
 						required: true,
 						isEmail: true
