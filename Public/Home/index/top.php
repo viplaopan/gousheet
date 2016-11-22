@@ -16,13 +16,13 @@
 </a>
 </li>
 
-<li><a href="process.html">加工定做</a>
+<li><a href="process.html"  target="_blank">加工定做</a>
 	
 </li>
-<li><a href="buy.html">求购信息</a></li>
-<li><a href="talent.html">人才招聘</a></li>
-<li><a href="logistics.html">货运物流</a></li>
-<li><a href="#">商务合作</a></li>
+<li><a href="buy.html"  target="_blank">求购信息</a></li>
+<li><a href="talent.html"  target="_blank">人才招聘</a></li>
+<li><a href="logistics.html"  target="_blank">货运物流</a></li>
+<li><a href="#"  target="_blank">商务合作</a></li>
 <li class="user">
 	<div class="us">
     	<div class="ico"><img src="../images/user.png" /></div>

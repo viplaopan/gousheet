@@ -36,12 +36,12 @@ $(function(){
 </div>
 <div class="nav_bg">
 	<ul class="nav">
-    	<li class="s1"><a href="index.php">首页</a></li>
-        <li class="s1"><a href="about.php">企业简介</a></li>
-        <li class="s1"><a href="qualified.php">企业资质</a></li>
-        <li class="s1"><a href="stock.php">现货库存</a></li>
-        <li class="s1"><a href="recruit.php">企业招聘</a></li>
-        <li class="s1"><a href="contact.php">联系方式</a></li>
+    	<li class="s1"><a href="index.php"  target="_blank">首页</a></li>
+        <li class="s1"><a href="about.php"  target="_blank">企业简介</a></li>
+        <li class="s1"><a href="qualified.php"  target="_blank">企业资质</a></li>
+        <li class="s1"><a href="stock.php"  target="_blank">现货库存</a></li>
+        <li class="s1"><a href="recruit.php"  target="_blank">企业招聘</a></li>
+        <li class="s1"><a href="contact.php"  target="_blank">联系方式</a></li>
     </ul>
 </div>
 

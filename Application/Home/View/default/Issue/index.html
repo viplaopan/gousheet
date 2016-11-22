@@ -77,17 +77,10 @@
             </li>
             <li class="li_h3">
                 <div class="h3_left">
-                
-                1.使用400电话可有效保证您的号码隐私不被泄露<br />
-                2.拨打后可在后台进行拨打记录查询，仅收市话费用<br />
-                3.成交后在会员中心确认可获得积分<br />
-                </div>
-                <div class="h3_right">
-                    <div class="weixin">
-                        <img class="img_wenxin"  src="__IMG__/wx.jpg" />
-                        <img class="img_sys" src="__IMG__/saoyisao_mingpian.png" />
-                    </div>
-                
+               <p class="sp1"> {$vo.company_name}</p>
+                <textarea name="" cols="" rows="" readonly="readonly" disabled="disabled" wrap="physical" class="sp2" style="text-align:left">
+                 {$vo.yaoqiu}
+                 </textarea>
                 </div>
             </li>
             
@@ -104,10 +97,12 @@
          
             <br />
 
-            如果您还不是购钢现货网注册会员，请立即免费注册或登录后才能看到该采购信息！<br />
-            请立即：<a style="color:#2175e4" href="{:U('Member/User/login')}">免费注册</a>或<a style="color:#2175e4" href="{:U('Member/User/login')}">登陆</a>
+            如果您还不是购钢现货网注册会员，
+            <br />请立即免费注册或登录后才能看到该采购信息！<br />
+            请立即：<a style="color:#2175e4" href="../register.html">免费注册</a>或<a style="color:#2175e4" href="../login.html">登陆</a>
                                 
 </div>
+</li>
         </ul>
 </if>
 

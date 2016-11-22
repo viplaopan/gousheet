@@ -41,6 +41,8 @@ border-radius:5px;box-shadow: 0 0 5px 0px #444; z-index:9;position:relative;}
 .top .nav ul li:hover .pay1{ display:block;position:absolute; width:242px;padding-top:-12px; top:34px; left:0; z-index:100000;background-size:cover}
 .top .nav ul li:hover .pay1 .dis{ width:242px; float:left; height:11px; background:url(../images/erji_nav_01_01.png) no-repeat;top:2px; position:relative; z-index:10;}
 .top .nav ul li:hover .pay1 ul{ width:238px;float:left;display:block; 
+
+
 background-color:#ffffff;border: 2px solid #f28f18;
 border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
 .top .nav ul li:hover .pay1 ul .list_1{width:118px;float:left;display:block;height:170px;border-right:#d2d2d2 1px solid; }
@@ -72,20 +74,20 @@ border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
 
 .spot .fields .tops{ width:1180px; float:left; margin-top:50px;}
 .spot .fields .tops img{ width:400px; height:275px; float:left; margin-top:15px; margin-right:15px;}
-.spot .fields .tops .cons{ width:510px; height:290px; float:left; margin-left:15px;}
-.spot .fields .tops .cons .title{ width:510px; height:60px; float:left; line-height:30px;font-family:"宋体"; font-size:22px; font-weight:bold}
-.spot .fields .tops .cons p{ width:510px; font-size:14px; font-family:"黑体"; line-height:20px; float:left; margin-top:10px; color:#434343}
-.spot .fields .tops .cons .zd{ width:510px; float:left; line-height:40px; height:40px; border-top:1px dashed #969696; margin-top:10px;}
-.spot .fields .tops .cons .bt{ width:510px; float:left; height:30px; margin-bottom:15px;}
+.spot .fields .tops .cons{width: 470px; height:290px; float:left; margin-left:15px;}
+.spot .fields .tops .cons .title{width: 470px; height:60px; float:left; line-height:30px;font-family:"宋体"; font-size:22px; font-weight:bold}
+.spot .fields .tops .cons p{width: 470px; font-size:14px; font-family:"黑体"; line-height:20px; float:left; margin-top:10px; color:#434343}
+.spot .fields .tops .cons .zd{width: 470px; float:left; line-height:40px; height:40px; border-top:1px dashed #969696; margin-top:10px;}
+.spot .fields .tops .cons .bt{width: 470px; float:left; height:30px; margin-bottom:15px;}
 .spot .fields .tops .cons .bt .bt_f{ width:145px; height:30px; display:block; float:left; background:url(../images/fields_bt.png) no-repeat}
 .spot .fields .tops .cons .bt .bt_shi{ margin-left:30px; width:23px; height:30px; float:left; background:url(../images/fields_shi.png) no-repeat}
 .spot .fields .tops .cons .bt .sp{ width:110px; height:30px; background: url(../images/fields_yrz.png) no-repeat; float:left; margin-left:10px;}
-.spot .fields .tops .cons .p1{ width:510px; height:20px; line-height:20px; float:left;font-size:14px; font-family:"黑体"; color:#434343}
-.spot .fields .tops .box{ width:188px; border:1px solid #c9c9c9; float:left; height:268px; margin-left:30px; padding:10px;background-color:#eeeeee}
-.spot .fields .tops .box .tiles{ width:188px; height:30px; border-bottom:1px solid #c9c9c9; color:#0572c6;font-family:"宋体"; font-size:16px; font-weight:bold}
-.spot .fields .tops .box span{ width:188px; line-height:40px; float:left; font-size:14px;font-family:"黑体"; color:#010101; font-weight:bold; letter-spacing:1px}
-.spot .fields .tops .box div{width:188px; line-height:20px; float:left; font-size:8px;font-family:"微软雅黑"; letter-spacing:1px;color:#000000;}
+.spot .fields .tops .cons .p1{width: 470px; height:20px; line-height:20px; float:left;font-size: 12px;/* font-family:"黑体"; */ color:#434343}
+.spot .fields .tops .box{width: 228px; border:1px solid #c9c9c9; float:left; height:268px; margin-left:30px; padding:10px;background-color:#eeeeee}
+.spot .fields .tops .box .tiles{width: 228px; height:30px; border-bottom:1px solid #c9c9c9; color:#0572c6;font-family:"宋体"; font-size:16px; font-weight:bold}
+.spot .fields .tops .box span{width: 228px; line-height:40px; float:left; font-size:14px;font-family:"黑体"; color:#010101; font-weight:bold; letter-spacing:1px}
+.spot .fields .tops .box div{width: 228px; line-height:20px; float:left; font-size:8px;font-family:"微软雅黑"; letter-spacing:1px;color:#000000;}
 .spot .fields .tops .box div .h1{font-size:12px;font-family:"黑体"; color:#000000}
 .spot .fields .kz{ width:1180px; padding-top:25px; float:left}
 .spot .fields .contens{ width:1180px; float:left; margin-top:25px; line-height:25px;}
-.spot .fields .contens p{ text-indent:2em; font-size:16px;font-family:"黑体"; color:#434343 }
+.spot .fields .contens p{ text-indent:2em;font-size: 15px;/* font-family:"黑体"; */ color:#434343;font-weight: normal;}

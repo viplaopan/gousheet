@@ -148,13 +148,22 @@ a:hover{ cursor:pointer}
 #title{width:130px;height:50px;float:left;}
 #title ul{width:130px;height:50px;}
 #title ul li{width:130px;height:50px;float:left;position:relative;}
-#title ul li .aa_show{display:block;color:#666666;line-height:50px;float:left;width:90px;padding-left:40px;text-align:left;font-size:14px;
+
+
+#title ul li .aa_show{display:block;color:#666666; position:absolute; z-index:1;line-height:50px;float:left;width:90px;padding-left:40px;text-align:left;font-size:14px;
 background:url(../images/box_h6.png) no-repeat}
-#title ul li .aa_show:hover{display:block;color:#09F;line-height:50px;float:left;width:90px;padding-left:40px;text-align:left;font-size:14px;
+
+
+#title ul li .aa_show:hover{display:block;color:#09F; position:absolute;z-index:1;line-height:50px;float:left;width:90px;padding-left:40px;text-align:left;font-size:14px;
 background:url(../images/box_h6.png) no-repeat}
-#title ul li .div_ul{margin:0px;position:absolute;top:40px; right:30px;width:362px;height:307px;display:none;
-background:url(../images/lianxitanchuang.png); z-index:1000;}
-#title ul li:hover .div_ul{margin:0px;position:absolute;width:362px;height:307px; display:block;z-index:1000;}
+
+
+#title ul li .div_ul{display:none;}
+#title ul li:hover{ z-index:99999;}
+#title ul li:hover .div_ul{margin:0px;position:absolute;top:40px; right:30px;width:362px;height:307px;display:block;
+background:url(../images/lianxitanchuang.png) no-repeat;z-index:1000;}
+
+
 #title ul li:hover .div_ul .h1{ width:310px; padding:0 26px; height:280px; margin-top:27px;}
 #title ul li:hover .div_ul .h1 .s1{ width:310px;height:31px; font-size:20px; color:#000000; text-align:left; }
 #title ul li:hover .div_ul .h1 .s2{ width:100px; height:31px; float:right; background:url(../images/h1_right.png) no-repeat;line-height:31px;}
@@ -899,7 +908,7 @@ box-shadow:0 0 10px #333;}
 .process .p_left .left_sj .sj_xx .xx_l{width:80px; height:2px; background-color:#eb928e; float:left}
 .process .p_left .left_sj .sj_xx .xx_r{ width:200px; float:left; height:2px; background-color:#999999;}
 .process .p_left .left_sj .sj_con{width:280px;margin-top:10px; float:left; padding-bottom:10px;}
-.process .p_left .left_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#551a8b;font-family:"微软雅黑"; overflow:hidden}
+.process .p_left .left_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#4b4b4b;font-family:"微软雅黑"; overflow:hidden}
 .process .p_left .left_sj .sj_con a:hover{ width:280px; line-height:40px; float:left;font-size:16px;text-align:left; color:#0000ee;font-family:"微软雅黑"; overflow:hidden;text-decoration:underline}
 
 
@@ -1009,7 +1018,7 @@ background:url(../images/xialakuang-ss.png) no-repeat
 .logistics .log_right .right_sj .sj_con{width:280px;margin-top:10px; float:left; padding-bottom:10px;}
 
 
-.logistics .log_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#551a8b;font-family:"微软雅黑"; overflow:hidden}
+.logistics .log_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#4b4b4b;font-family:"微软雅黑"; overflow:hidden}
 .logistics .log_right .right_sj .sj_con a:hover{ width:280px; line-height:40px; float:left;font-size:16px;text-align:left; color:#0000ee;font-family:"微软雅黑"; overflow:hidden;text-decoration:underline}
 
 
@@ -1086,33 +1095,24 @@ font-weight:bold;color:#5d5d5d; float:left;font-size:14px; line-height: 36px;
 	border-top:1px solid  #5d5d5d;
 	
 }
-
-
-
 .buy .log_left .left_con .con_r .bt ul .li_h3 .h3_left{
-	width:200px;
+	width:410px;
 	margin-top:30px; 
-	float:left;
-	
-	
+	float:left;	
 }
-
-
 .buy .log_left .left_con .con_r .bt ul .li_h3 .h3_left .sp1{
-	width:200px;
+	width:410px;
 	float:left;
 	
-	font-size:14px;
-	color:#5d5d5d;
+	font-size:20px;
+	color:#2175e4;
 	text-align:left;
 	line-height:30px;
 	font-weight:bold;
 	word-wrap:break-word 
 }
-
-
 .buy .log_left .left_con .con_r .bt ul .li_h3 .h3_left .sp2{
-	width:200px;
+	width:410px;
 	height:150px;
 	float:left;
 	word-wrap:break-word 
@@ -1127,7 +1127,7 @@ font-weight:bold;color:#5d5d5d; float:left;font-size:14px; line-height: 36px;
 
 .buy .log_left .left_con .con_r .bt:hover ul .li_h3 .h3_right{
 	
-	width:200px; float:right;
+	width:410px; float:right;
 	margin-top:30px;
 	
 	
@@ -1175,7 +1175,7 @@ font-weight:bold;color:#5d5d5d; float:left;font-size:14px; line-height: 36px;
 .buy .log_right .right_sj .sj_xx .xx_r{ width:200px; float:left; height:2px; background-color:#999999;}
 .buy .log_right .right_sj .sj_con{width:280px;margin-top:10px; float:left; padding-bottom:10px;}
 
-.buy .log_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#551a8b;font-family:"微软雅黑"; overflow:hidden}
+.buy .log_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#4b4b4b;font-family:"微软雅黑"; overflow:hidden}
 .buy .log_right .right_sj .sj_con a:hover{ width:280px; line-height:40px; float:left;font-size:16px;text-align:left; color:#0000ee;font-family:"微软雅黑"; overflow:hidden;text-decoration:underline}
 
 
@@ -1203,10 +1203,10 @@ font-weight:bold;color:#5d5d5d; float:left;font-size:14px; line-height: 36px;
 #title1 ul li .inp_d{ width:20px; margin:10px 0 20px 0; float:left; outline:none}
 #title1 ul li a{display:block;color:#09F;line-height:50px;float:left;width:290px; margin-left:10px;text-align:left;font-size:14px; font-family:Arial, sans-serif, "宋体"; font-weight:normal}
 #title1 ul li a:hover{display:block;color:#fd8000; text-decoration:underline; line-height:50px;float:left;width:290px; margin-left:10px;text-align:left;font-size:14px;}
-#title1 ul li .div_ul{margin:0px;position:absolute;top:40px; right:30px;width:782px;height:782px;display:none;
-background: url(../images/rencai.png) no-repeat; z-index:1000; }
-#title1 ul li:hover .div_ul{ margin-top:-60px;position:absolute;width:782px;height:367px; display:block;z-index:1000; left:250px; }
-#title1 ul li:hover .div_ul .ul_si{ width:742px; height:307px; padding:30px 0 30px 40px; float:left;}
+#title1 ul li .div_ul{margin:0px;position:absolute;top:40px; right:30px;width:782px;height:auto !important; min-height:782px; padding-bottom:20px;display:none;
+background: url(../images/rencai.png) no-repeat;background-size:782px 100%;zoom:0.90;  z-index:1000; }
+#title1 ul li:hover .div_ul{ margin-top:-60px;position:absolute;width:782px;height:auto !important; min-height:367px; display:block;z-index:1000; left:250px; }
+#title1 ul li:hover .div_ul .ul_si{ width:742px;height:auto !important; min-height:307px; padding:30px 0 30px 40px; float:left;}
 #title1 ul li:hover .div_ul .ul_si .si_1{ width:742px; height:60px; float:left; line-height:60px; font-size:24px; color:#282828;font-family:Arial, sans-serif, "宋体";}
 #title1 ul li:hover .div_ul .ul_si .si_2{ width:331px; margin-right:40px; float:left; height:30px; font-size:14px; line-height:30px; color:#70737c; border-bottom:1px dotted #CCC; letter-spacing:1px; font-family:Arial, sans-serif, "宋体"; font-weight:normal}
 #title1 ul li:hover .div_ul .ul_si .si_3{ width:331px;border-bottom:1px dotted #fbfbfb; float:left;margin-right:40px;font-family:Arial, sans-serif, "宋体"; font-weight:normal height:30px; font-size:14px; line-height:30px; color:#535353;border-bottom:1px dotted #CCC; letter-spacing:1px;font-family:Arial, sans-serif, "宋体"; font-weight:normal}
@@ -1228,7 +1228,7 @@ background: url(../images/rencai.png) no-repeat; z-index:1000; }
 .talent .tal_right .right_sj .sj_xx .xx_r{ width:200px; float:left; height:2px; background-color:#999999;}
 .talent .tal_right .right_sj .sj_con{width:280px;margin-top:10px; float:left; padding-bottom:10px;}
 
-.talent .tal_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#551a8b;font-family:"微软雅黑"; overflow:hidden}
+.talent .tal_right .right_sj .sj_con a{ width:280px; line-height:40px; float:left;font-size:16px ;text-align:left; color:#4b4b4b;font-family:"微软雅黑"; overflow:hidden}
 .talent .tal_right .right_sj .sj_con a:hover{ width:280px; line-height:40px; float:left;font-size:16px;text-align:left; color:#0000ee;font-family:"微软雅黑"; overflow:hidden;text-decoration:underline}
 
 

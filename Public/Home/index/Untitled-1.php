@@ -1,62 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-<html lang="zh-CN">  
-<head>  
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />  
-<script src="../../../shangxing/js/jquery.js"></script>
-<title>js控制按钮样式切换</title>  
-  
-<link href="css/my.css" rel="stylesheet">  
-<style>
-.btn1{  
-  border:none;  
-  height:3.5em;  
-  background-color:#000000;  
-  color:white;  
-  font-size:1.2em;  
-  margin-top:0.5em;  
-  width:100%;  
-  border-radius:1em;  
-}  
-.btn2{  
-  border:none;  
-  height:3.5em;  
-  background-color:#3E8CD0;  
-  color:white;  
-  font-size:1.2em;  
-  margin-top:0.5em;  
-  width:100%;  
-  border-radius:1em;  
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style type="text/css">
+body{
+    background-color: #444;
+}
+.test{
+    width: 15px;
+    height: 30px;
+    box-sizing:border-box;
+    border-top: 15px solid #f5f5f5;
+    border-bottom: 15px solid #f5f5f5;
+    /*border-left: 20px solid #0f0;*/
+    border-right: 15px solid transparent;
+   /* border-top-right-radius: 4px;
+    border-radius: 12px;*/
+}
+.csspic{
+    width: 200px;
+    height: 400px;
+    margin:50px auto;
+    background:  url(images/5.jpg) -15px top no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border-radius: 10px;
+    position: relative;
+    border: 15px solid #f5f5f5;
+    -moz-background-clip: border;
+    -webkit-background-clip: border-box;
+    -o-background-clip: border-box;
+    background-clip: border-box;
+}
+.img{    
+    overflow: hidden;
+    width: 260px;
+    height: 400px;
+}
+.sjx{
+    position: absolute;
+    top:30px;
+    left: -15px;
+    background:  url(images/5.jpg) left -30px no-repeat;
+    -webkit-background-size: 500px;
+    background-size: 500px;
+    z-index: 9999;
+}
+.csspic img{
+    height: 100%;
 } 
 </style>
-  <script type="text/javascript">  
-//左边按钮的点击事件  
-    window.onload = function(){  
-        var arr = document.getElementsByTagName('button');  
-        for(var i = 0;i<arr.length;i++){  
-            arr[i].onclick = function(){      
-                //this是当前激活的按钮，在这里可以写对应的操作    
-                if(this.className == 'btn1'){  
-                    this.className = 'btn2';  
-                    var name = this.id;  
-                    var btn = document.getElementsByClassName('btn2');  
-                    for(var j=0;j<btn.length;j++){  
-                        if(btn[j].id!=name){  
-                            btn[j].className = 'btn1';  
-                        }  
-                    }     
-                }  
-             }   
-         }  
-     }  
-</script>  
-  
- 
-              <div style="width:20%"><button id = "1" type = "button" class = "btn2"> 按钮1</button></div>  
-              <div style="width:20%"><button  id = "2" type = "button" class = "btn1"> 按钮2</button></div>  
-              <div style="width:20%"><button id = "3" type = "button" class = "btn1"> 按钮3</button></div>  
-              <div style="width:20%"><button id = "4" type ="button" class = "btn1"> 按钮4</button></div>  
-
-            
-  
-  
-</html>  
+</head>
+<body>
+    
+    
+    <div class="csspic">
+        <div class="sjx">
+            <div class="test"></div>
+        </div>
+        <div class="img"><!-- <img src="images/5.jpg"> --></div>
+        
+    </div>
+</body>
+</html>
