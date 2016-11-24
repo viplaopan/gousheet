@@ -39,9 +39,8 @@ class HomeWidget extends Controller{
                     
         $clists = array();
         foreach($companies as $key=>$vo){
-
             $company = D('Company')->where('id = ' . $vo['cid'])->find();
-            $clists[$key]['title'] = $company['name'];
+            $clists[$key]['title'] = $company['name'].$vo['cid'];
         }
         $this->assign('clists', $clists);
 		$this->display('Widget/huoyue');
