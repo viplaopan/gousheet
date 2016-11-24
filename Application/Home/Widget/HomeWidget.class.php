@@ -35,7 +35,7 @@ class HomeWidget extends Controller{
 		$this->display('Widget/ad');
 	}
 	public function huoyue(){
-		$companies = D("NewCompany")->order('id desc')->limit(11)->select();
+		$companies = D("NewCompany")->distinct('cid')->order('id desc')->limit(11)->select();
                     
         $clists = array();
         foreach($companies as $key=>$vo){
