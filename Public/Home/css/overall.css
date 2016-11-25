@@ -105,9 +105,14 @@ a:hover{ cursor:pointer}
 12px; text-align:right}
 .spot .spot_left .right_c  .right_qg .right_title .right_ta:hover{ float:right; margin-right:10px;color:#0e6eb8; font-size:
 12px; text-align:right; text-decoration:underline}
+
 .spot .spot_left .right_c  .right_qg .right_li{list-style:square inside ; padding:0 20px;width:233px; height:30px; line-height:30px; color:#d5d5d5; background-color:#ffffff; float:left}
 .spot .spot_left .right_c  .right_qg .right_li span{ color:#666666; font-size:14px; margin:0 5px;}
 .spot .spot_left .right_c  .right_qg .right_li span:hover{ color:#0e6eb8; font-size:14px; margin:0 5px;}
+
+.spot .spot_left .right_c  .right_qg .right_li a{ color:#666666; font-size:14px; margin:0 5px;}
+.spot .spot_left .right_c  .right_qg .right_li a:hover{ color:#0e6eb8; font-size:14px; margin:0 5px;}
+
 .spot .spot_left .right_c  .right_qg .right_icp{ margin:5px 34px 0px 34px; width:204px; float:left; height:37px;background:url(../images/right_icp.png) no-repeat; background-color:#ffffff; color:#0e6eb8; line-height:37px; text-align:center}
 
 

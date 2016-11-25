@@ -30,9 +30,8 @@ function getPagination($totalCount, $countPerPage = 10)
 
     //添加头部
     $html .= '<div class="xx_xia">';
-	$html .= '<div class="div_font2">页</div>';
-	$html .= '<input name="" type="text" class="div_ipt" />';
-	$html .= '<div class="div_font1">跳转至</div>';
+	
+	
 	$html .= '<div class="div_buis">' . $totalCount . ' 条记录</div>';
 	$html .= '<div class="div_buis">'. $currentPage .'/' . $pageCount . ' 页</div>';
 
@@ -110,7 +109,9 @@ function getPagination($totalCount, $countPerPage = 10)
     } else {
         //$html .= "<li class=\"disabled\"><a>&raquo;</a></li>";
     }
-
+    $html .= '<div class="div_font1">跳转至</div>';
+    $html .= '<input name="" type="text" class="div_ipt" />';
+    $html .= '<div class="div_font2">页</div>';
     //收尾
     $html .= '</div>';
     return $html;
