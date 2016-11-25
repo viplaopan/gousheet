@@ -86,7 +86,7 @@ border-radius:5px;box-shadow: 0 0 5px 0px #444;z-index:9;position:relative;}
 .spot .fields .tops .box{width: 228px; border:1px solid #c9c9c9; float:left; height:268px; margin-left:30px; padding:10px;background-color:#eeeeee}
 .spot .fields .tops .box .tiles{width: 228px; height:30px; border-bottom:1px solid #c9c9c9; color:#0572c6;font-family:"宋体"; font-size:16px; font-weight:bold}
 .spot .fields .tops .box span{width: 228px; line-height:40px; float:left; font-size:14px;font-family:"黑体"; color:#010101; font-weight:bold; letter-spacing:1px}
-.spot .fields .tops .box div{width: 228px; line-height:20px; float:left; font-size:12px;font-family:"微软雅黑"; letter-spacing:1px;color:#000000;}
+.spot .fields .tops .box div{width: 228px; line-height:20px; float:left; font-size:14px;font-family:"微软雅黑"; letter-spacing:1px;color:#000000;}
 .spot .fields .tops .box div .h1{font-size:12px;font-family:"黑体"; color:#000000}
 .spot .fields .kz{ width:1180px; padding-top:25px; float:left}
 .spot .fields .contens{ width:1180px; float:left; margin-top:25px; line-height:25px;}
