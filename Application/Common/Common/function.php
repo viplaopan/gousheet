@@ -213,7 +213,7 @@ function mdate($time = NULL) {
      case $t < 60 * 60 * 24: 
       $text = floor($t / (60 * 60)) . '小时前'; // 一天内 
       break;
-      case $t < 60 * 60 * 24 * 6:、
+      case $t < 60 * 60 * 24 * 6:
         $text = floor($t/(60*60*24)) .'天前';
         break;
      case $t < 60 * 60 * 24 * 7:
