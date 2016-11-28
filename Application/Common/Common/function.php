@@ -202,7 +202,7 @@ function mdate($time = NULL) {
     switch($t){
      
      case $t < 60 * 60 * 1:
-      $text = '1小时内'; // 一天内 
+      $text = date('Y-m-d',$time); // 一天内 
       break;
      case $t < 60 * 60 * 24:
       $text = floor($t / (60 * 60)) . '小时前'; // 一天内
