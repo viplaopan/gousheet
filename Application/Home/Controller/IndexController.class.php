@@ -65,6 +65,7 @@ class IndexController extends Controller {
     }
     public function detail($cid = 0){
         $company = D("Company")->where('id = ' . $cid)->find();
+        $company['descsm'] = strip_tags($company['desc']);
         $this->assign('company' , $company);
         $contact = D('contact')->where('cid = ' . $cid)->find();
          $this->assign('contact' , $contact);
