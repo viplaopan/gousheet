@@ -24,7 +24,7 @@ class LogisticsController extends Controller {
 
 
         $map['status'] = 1;
-        $lists = D('Logistics')->where($map)->page($page, 20)->select();
+        $lists = D('Logistics')->where($map)->page($page, 10)->select();
         $totalCount = D('Logistics')->where($map)->count();
         $this->assign('totalPageCount', $totalCount);
         $this->assign('lists', $lists);
