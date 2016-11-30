@@ -379,7 +379,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']].2;
+			$val['business'] = $pattern[$company['business']].'2';
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
