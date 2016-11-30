@@ -380,7 +380,7 @@ class GuandaoController extends HomeController {
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
             dump($pattern);
-            echo $val['uid'];
+            echo $company['uid'];
             die;
 
 			$val['business'] = $pattern[$company['business']].'2';
