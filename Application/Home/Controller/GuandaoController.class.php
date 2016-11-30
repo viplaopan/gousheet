@@ -95,7 +95,7 @@ class GuandaoController extends HomeController {
 			$val['name'] = $company['name'];
 			$val['qq'] = $company['qq'];
 			$pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
 			$val['com_address'] = $company['com_address'];
 			
 			//获取仓库
@@ -186,7 +186,7 @@ class GuandaoController extends HomeController {
 
 			$val['qq'] = $company['qq'];
 			$pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
 			$val['com_address'] = $company['com_address'];
 			
 			$info = D("ucenter_member")->find($company['uid']);
@@ -265,7 +265,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
 			//获取仓库
@@ -379,11 +379,8 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-            dump($pattern);
-            echo $company['uid'];
-            die;
 
-			$val['business'] = $pattern[$company['business']].'2';
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
@@ -460,7 +457,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
@@ -531,7 +528,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
@@ -599,7 +596,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
@@ -670,7 +667,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
@@ -742,7 +739,7 @@ class GuandaoController extends HomeController {
             $val['name'] = $company['name'];
             $val['qq'] = $company['qq'];
             $pattern = C('PATTERN');
-			$val['business'] = $pattern[$company['business']];
+			$val['business'] = $pattern[$company['pattern']];
             $val['com_address'] = $company['com_address'];
 
             //获取仓库
