@@ -47,4 +47,8 @@ return array(
 
     /* 文档模型配置 (文档模型核心配置，请勿更改) */
     'DOCUMENT_MODEL_TYPE' => array(2 => '主题', 1 => '目录', 3 => '段落'),
+    'APP_SUB_DOMAIN_DEPLOY'   =>    1, // 开启子域名配置
+    'APP_SUB_DOMAIN_RULES' => array(
+        'm.gs.dev'   => 'Mobile', 
+    ),
 );
