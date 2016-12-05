@@ -1,0 +1,35 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    
+</block>
+<block name="body">
+  
+
+<!-- 公司详情 -->
+<div class="am-panel am-panel-default" id="companymain" style="">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">{$info.title}</h3>
+  </div>
+  <div class="am-panel-bd">
+    <p>
+      <figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }">
+      <img src="__IMG__/bxg1.jpg" alt="太钢纳米晶超薄带行试生产"/>
+          <figcaption class="am-figure-capition-btm">
+            {$info.title}
+          </figcaption>  
+      </figure>
+    </p>
+    
+    <p>
+      {$info.content}
+    </p>
+    <p>发布时间：2016-09-18</p>
+  </div>
+  
+</div>
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+</block>

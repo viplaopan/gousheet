@@ -1,0 +1,1280 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<!-- 搜索界面 -->
+<form id="search_main" class="am-form" action="">
+  <fieldset>
+    <div class="am-form-group" >
+        <div class="am-form-field am-radius" id="pz_div" style="height:38px">选择品种<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+        <input type="hidden" name="pz" id="pz" value="">
+    </div>
+
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="cz_div" style="height:38px">选择材质<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="cz" id="cz">
+
+    </div>
+    <div class="am-form-group">
+       <input type="text" id="gg" name="gg" class="am-form-field am-radius" placeholder="输入规格" />
+    </div>
+
+    <!-- 弯头 -->
+    <div style="display:none" id="search_wt">
+    <div class="am-form-group">
+        <div class="am-form-field am-radius" id="wtgy_div" style="height:38px">选择工艺<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+        <input type="hidden" name="wtgy" id="wtgy">
+
+    </div>
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="wtbm_div" style="height:38px">选择表面<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="wtbm" id="wtbm">
+    </div>
+    <div class="am-form-group">
+       <input type="text" id="wtrz" name="wtrz" class="am-form-field am-radius" placeholder="输入R值" />
+    </div>    
+    </div>
+
+<!-- 三通 -->
+    <div style="display:none" id="search_st">
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="stgy_div" style="height:38px">选择工艺<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="stgy" id="stgy">
+    </div>
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="stbm_div" style="height:38px">选择表面<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="stbm" id="stbm">
+    </div>    
+    </div>
+
+<!-- 封头 -->
+    <div style="display:none" id="search_ft">
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="ftbm_div" style="height:38px">选择表面<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="ftbm" id="ftbm">
+    </div>    
+    </div>
+
+<!-- 板材 -->
+    <div style="display:none" id="search_bc">
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="bcbm_div" style="height:38px">选择表面<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="bcbm" id="bcbm">
+    </div>
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="bccj_div" style="height:38px">选择厂家<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="bccj" id="bccj">
+    </div>  
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="bccs_div" style="height:38px">选择城市<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="bccs" id="bccs">
+    </div>      
+    </div>
+
+<!-- 卷材 -->
+    <div style="display:none" id="search_jc">
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="jcbm_div" style="height:38px">选择表面<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="jcbm" id="jcbm">
+    </div>
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="jccj_div" style="height:38px">选择厂家<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="jccj" id="jccj">
+    </div>  
+    <div class="am-form-group">
+       <div class="am-form-field am-radius" id="jccs_div" style="height:38px">选择城市<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
+       <input type="hidden" name="jccs" id="jccs">
+    </div>      
+    </div>
+
+    <p><button type="submit" class="am-btn am-btn-primary am-btn-lg am-btn-block am-radius" id="searchbutton"}">搜索现货</button></p>
+  </fieldset>
+</form>
+
+
+
+
+
+<!-- 产品 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="pz_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">钢管</a>
+              <ul class="am-menu-sub am-collapse am-avg-sm-3" id="gg">
+                  <li class="">
+                    <a href="#">工业无缝管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">卫生级无缝管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">工业焊管</a>
+                  </li>
+                   <li class="">
+                    <a href="#">卫生级焊管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">精密管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">六角管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">毛细管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">装饰管</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">型材</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="xc">
+                  <li class="">
+                    <a href="#">圆钢</a>
+                  </li>
+                  <li class="">
+                    <a href="#">管坯</a>
+                  </li>
+                  <li class="">
+                    <a href="#">黑棒</a>
+                  </li>
+                  <li class="">
+                    <a href="#">光圆</a>
+                  </li>
+                  <li class="">
+                    <a href="#">角钢</a>
+                  </li>
+                  <li class="">
+                    <a href="#">扁钢</a>
+                  </li>
+                  <li class="">
+                    <a href="#">线材</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">法兰</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fl">
+                  <li class="">
+                    <a href="#">平焊法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">对焊法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">板式法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">松套法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">带颈法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">人孔法兰</a>
+                  </li>
+                  <li class="">
+                    <a href="#">法兰盖</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">阀门</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fm">
+                  <li class="">
+                    <a href="#">球阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">蝶阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">闸阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">截止阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">止回阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">旋塞阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">疏水阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">减压阀</a>
+                  </li>
+                  <li class="">
+                    <a href="#">波纹管</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">管件</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="gj">
+                  <li class="">
+                    <a href="#">15度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">30度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">45度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">60度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">90度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">120度弯头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">180度弯头</a>
+                  </li>
+                  <li class="">
+                  </li>
+                  <li class="">
+                  </li>
+
+                  <li class="">
+                    <a href="#">三通</a>
+                  </li>
+                  <li class="">
+                    <a href="#">四通</a>
+                  </li>
+                  <li class="">
+                    <a href="#">Y型三通</a>
+                  </li>
+                  <li class="">
+                    <a href="#">同心异径管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">偏心异径管</a>
+                  </li>
+                  <li class="">
+                  </li>
+
+                  <li class="">
+                    <a href="#">翻边</a>
+                  </li>
+                  <li class="">
+                    <a href="#">管帽</a>
+                  </li>
+                  <li class="">
+                    <a href="#">金属软管</a>
+                  </li>
+                  <li class="">
+                    <a href="#">椭圆封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">锥形封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">球形封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">球冠形封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">平底封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">碟形封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">弓底封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">浅形封头</a>
+                  </li>
+                  <li class="">
+                    <a href="#">桶体旋边封头</a>
+                  </li>                  
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">板材</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="bc">
+                  <li class="" style="margin:14px ">请选择材质</li>
+                  <li class=""></li>
+                  <li class=""></li>
+
+                  <li class="">
+                    <a href="#">201</a>
+                  </li>
+                  <li class="">
+                    <a href="#">202</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304</a>
+                  </li>
+                  <li class="">
+                    <a href="#">316L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">430</a>
+                  </li>
+                  <li class="">
+                    <a href="#">439</a>
+                  </li>
+                  <li class="">
+                    <a href="#">410</a>
+                  </li>
+                  <li class="">
+                    <a href="#">436</a>
+                  </li>
+                  <li class="">
+                    <a href="#">409L</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">卷材</a>
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="jc">
+                  <li class="" style="margin:14px ">请选择材质</li>
+                  <li class=""></li>
+                  <li class=""></li>
+                  <li class="">
+                    <a href="#">201</a>
+                  </li>
+                  <li class="">
+                    <a href="#">202</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304</a>
+                  </li>
+                  <li class="">
+                    <a href="#">316L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">430</a>
+                  </li>
+                  <li class="">
+                    <a href="#">439</a>
+                  </li>
+                  <li class="">
+                    <a href="#">410</a>
+                  </li>
+                  <li class="">
+                    <a href="#">436</a>
+                  </li>
+                  <li class="">
+                    <a href="#">409L</a>
+                  </li>
+              </ul>
+          </li>
+
+
+      </ul>
+  </nav>
+
+<!-- 材质 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="cz_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">热门材质</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="rmcz">
+                  <li class="">
+                    <a href="#">200</a>
+                  </li>
+                  <li class="">
+                    <a href="#">201</a>
+                  </li>
+                  <li class="">
+                    <a href="#">310S</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP304</a>
+                  </li>                  
+                  <li class="">
+                    <a href="#">321</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP316L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP321</a>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="am-parent">
+            <a href="#" class="">更多其它材质</a>
+              <ul class="am-menu-sub am-collapse am-avg-sm-3" id="qtcz">
+                  <li class="">
+                    <a href="#">200</a>
+                  </li>
+                  <li class="">
+                    <a href="#">201</a>
+                  </li>
+                  <li class="">
+                    <a href="#">201H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">201B</a>
+                  </li>
+                  <li class="">
+                    <a href="#">202</a>
+                  </li>
+                  <li class="">
+                  </li>
+
+                  <li class="">
+                    <a href="#">301</a>
+                  </li>
+                  <li class="">
+                    <a href="#">302</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">304H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">309</a>
+                  </li>
+                  <li class="">
+                    <a href="#">309S</a>
+                  </li>
+                  <li class="">
+                    <a href="#">310S</a>
+                  </li>
+                  <li class="">
+                    <a href="#">316</a>
+                  </li>
+                  <li class="">
+                    <a href="#">316L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">316H</a>
+                  </li>
+                   <li class="">
+                    <a href="#">316Ti</a>
+                  </li>
+                  <li class="">
+                    <a href="#">317</a>
+                  </li>
+                  <li class="">
+                    <a href="#">317L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">321</a>
+                  </li>
+                  <li class="">
+                    <a href="#">321H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">347</a>
+                  </li>
+                  <li class="">
+                    <a href="#">347H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">400</a>
+                  </li>
+                  <li class="">
+                    <a href="#">625</a>
+                  </li>
+                  <li class="">
+                    <a href="#">600H</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">800H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">825</a>
+                  </li>
+                  <li class="">
+                  </li>
+                  <li class="">
+                    <a href="#">TP304</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">TP304L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP304H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP310S</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">TP316</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP316L</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP316H</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">TP316Ti</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP317</a>
+                  <li class="">
+                    <a href="#">TP317L</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">TP321</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP321H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">TP347</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">TP347H</a>
+                  </li>
+                  <li class="">
+                    <a href="#">S31500</a>
+                  <li class="">
+                    <a href="#">S31803</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">S32205</a>
+                  </li>
+                  <li class="">
+                    <a href="#">S32304</a>
+                  <li class="">
+                    <a href="#">S32750</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">S32760</a>
+                  </li>
+                  <li class="">
+                    <a href="#">904L</a>
+                  <li class="">
+                    <a href="#">254SMO</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">C-22</a>
+                  </li>
+                  <li class="">
+                    <a href="#">C-276</a>
+                  </li>
+                  <li class="">
+                    <a href="#">1CR13</a>
+                  </li>
+                  <li class="">
+                    <a href="#">2CR13</a>
+                  </li>
+                  <li class="">
+                    <a href="#">3CR13</a>
+                  </li>
+                  <li class="">
+                    <a href="#">17-4PH</a>
+                  </li>                                           
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+
+<!-- 弯头选择工艺 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="wtgy_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择工艺</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="wtgy">
+                  <li class="">
+                    <a href="#">无缝对焊</a>
+                  </li>
+                  <li class="">
+                    <a href="#">有缝对焊</a>
+                  </li>
+                  <li class="">
+                    <a href="#">承插</a>
+                  </li>
+                  <li class="">
+                    <a href="#">螺纹</a>
+                  </li>
+                  <li class="">
+                    <a href="#">卡压</a>
+                  </li>                  
+                  <li class="">
+                    <a href="#">快装</a>
+                  </li>
+                  <li class="">
+                    <a href="#">沟槽</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 弯头选择表面 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="wtbm_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择表面</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="wtbm">
+                  <li class="">
+                    <a href="#">喷砂</a>
+                  </li>
+                  <li class="">
+                    <a href="#">滚沙</a>
+                  </li>
+                  <li class="">
+                    <a href="#">酸洗</a>
+                  </li>
+                  <li class="">
+                    <a href="#">抛光</a>
+                  </li>
+                  <li class="">
+                    <a href="#">镜面</a>
+                  </li>                  
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+  <!-- 三通选择工艺 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="stgy_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择工艺</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="stgy">
+                  <li class="">
+                    <a href="#">无缝对焊</a>
+                  </li>
+                  <li class="">
+                    <a href="#">有缝对焊</a>
+                  </li>
+                  <li class="">
+                    <a href="#">承插</a>
+                  </li>
+                  <li class="">
+                    <a href="#">螺纹</a>
+                  </li>
+                  <li class="">
+                    <a href="#">卡压</a>
+                  </li>                  
+                  <li class="">
+                    <a href="#">快装</a>
+                  </li>
+                  <li class="">
+                    <a href="#">沟槽</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+  <!-- 三通选择表面 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="stbm_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择表面</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="stbm">
+                  <li class="">
+                    <a href="#">喷砂</a>
+                  </li>
+                  <li class="">
+                    <a href="#">滚沙</a>
+                  </li>
+                  <li class="">
+                    <a href="#">酸洗</a>
+                  </li>
+                  <li class="">
+                    <a href="#">抛光</a>
+                  </li>
+                  <li class="">
+                    <a href="#">镜面</a>
+                  </li>                  
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 封头选择表面 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="ftbm_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择表面</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="ftbm">
+                  <li class="">
+                    <a href="#">喷砂</a>
+                  </li>
+                  <li class="">
+                    <a href="#">滚沙</a>
+                  </li>
+                  <li class="">
+                    <a href="#">酸洗</a>
+                  </li>
+                  <li class="">
+                    <a href="#">抛光</a>
+                  </li>
+                  <li class="">
+                    <a href="#">镜面</a>
+                  </li>                  
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 板材选择表面 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="bcbm_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择表面</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="bcbm">
+                  <li class="">
+                    <a href="#">BC</a>
+                  </li>
+                  <li class="">
+                    <a href="#">2B</a>
+                  </li>
+                  <li class="">
+                    <a href="#">NO.2B</a>
+                  </li>
+                  <li class="">
+                    <a href="#">2BB</a>
+                  </li>
+                  <li class="">
+                    <a href="#">BA1</a>
+                  </li>
+                  <li class="">
+                    <a href="#">BA</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">DC</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">2D</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">NO.1</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">3/4H</a>
+                  </li>                   
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 板材选择厂家 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="bccj_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择厂家</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="bccj">
+                  <li class="">
+                    <a href="#">张家港浦项</a>
+                  </li>
+                  <li class="">
+                    <a href="#">青岛浦项</a>
+                  </li>
+                  <li class="">
+                    <a href="#">宝钢不锈</a>
+                  </li>
+                  <li class="">
+                    <a href="#">宁波宝新</a>
+                  </li>
+                  <li class="">
+                    <a href="#">多钢厂混包</a>
+                  </li>
+                  <li class="">
+                    <a href="#">酒钢</a>
+                  </li>
+                  <li class="">
+                    <a href="#">太钢不锈</a>
+                  </li>
+                  <li class="">
+                    <a href="#">台州</a>
+                  </li>
+                  <li class="">
+                    <a href="#">上海克虏伯</a>
+                  </li>
+                  <li class="">
+                    <a href="#">东特</a>
+                  </li>
+                  <li class="">
+                    <a href="#">广州联众</a>
+                  </li>
+                  <li class="">
+                    <a href="#">鼎信</a>
+                  </li>
+                  <li class="">
+                    <a href="#">甬金</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 板材选择城市 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="bccs_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择城市</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="bccs">
+                  <li class="">
+                    <a href="#">温州</a>
+                  </li>
+                  <li class="">
+                    <a href="#">无锡</a>
+                  </li>
+                  <li class="">
+                    <a href="#">戴南</a>
+                  </li>
+                  <li class="">
+                    <a href="#">佛山</a>
+                  </li>
+                  <li class="">
+                    <a href="#">淄博</a>
+                  </li>
+                  <li class="">
+                    <a href="#">天津</a>
+                  </li>
+                  <li class="">
+                    <a href="#">成都</a>
+                  </li>
+                  <li class="">
+                    <a href="#">武汉</a>
+                  </li>                   
+              </ul>
+          </li>
+      </ul>
+  </nav>
+
+<!-- 卷材选择表面 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="jcbm_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择表面</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="jcbm">
+                  <li class="">
+                    <a href="#">BC</a>
+                  </li>
+                  <li class="">
+                    <a href="#">2B</a>
+                  </li>
+                  <li class="">
+                    <a href="#">NO.2B</a>
+                  </li>
+                  <li class="">
+                    <a href="#">2BB</a>
+                  </li>
+                  <li class="">
+                    <a href="#">BA1</a>
+                  </li>
+                  <li class="">
+                    <a href="#">BA</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">DC</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">2D</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">NO.1</a>
+                  </li> 
+                  <li class="">
+                    <a href="#">3/4H</a>
+                  </li>                   
+              </ul>
+          </li>
+      </ul>
+  </nav>
+<!-- 卷材选择厂家 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="jccj_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择厂家</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="jccj">
+                  <li class="">
+                    <a href="#">张家港浦项</a>
+                  </li>
+                  <li class="">
+                    <a href="#">青岛浦项</a>
+                  </li>
+                  <li class="">
+                    <a href="#">宝钢不锈</a>
+                  </li>
+                  <li class="">
+                    <a href="#">宁波宝新</a>
+                  </li>
+                  <li class="">
+                    <a href="#">多钢厂混包</a>
+                  </li>
+                  <li class="">
+                    <a href="#">酒钢</a>
+                  </li>
+                  <li class="">
+                    <a href="#">太钢不锈</a>
+                  </li>
+                  <li class="">
+                    <a href="#">台州</a>
+                  </li>
+                  <li class="">
+                    <a href="#">上海克虏伯</a>
+                  </li>
+                  <li class="">
+                    <a href="#">东特</a>
+                  </li>
+                  <li class="">
+                    <a href="#">广州联众</a>
+                  </li>
+                  <li class="">
+                    <a href="#">鼎信</a>
+                  </li>
+                  <li class="">
+                    <a href="#">甬金</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+<!-- 卷材选择城市 -->
+  <nav data-am-widget="menu" class="am-menu am-menu-stack" id="jccs_main" style="display:none"> 
+    <a href="javascript: void(0)" class="am-menu-toggle">
+    </a>
+      <ul class="am-menu-nav am-avg-sm-1"> 
+          <li class="am-parent">
+            <a href="#" class="">选择城市</a>
+              <ul class="am-menu-sub am-active am-avg-sm-3" id="jccs">
+                  <li class="">
+                    <a href="#">温州</a>
+                  </li>
+                  <li class="">
+                    <a href="#">无锡</a>
+                  </li>
+                  <li class="">
+                    <a href="#">戴南</a>
+                  </li>
+                  <li class="">
+                    <a href="#">佛山</a>
+                  </li>
+                  <li class="">
+                    <a href="#">淄博</a>
+                  </li>
+                  <li class="">
+                    <a href="#">天津</a>
+                  </li>
+                  <li class="">
+                    <a href="#">成都</a>
+                  </li>
+                  <li class="">
+                    <a href="#">武汉</a>
+                  </li>                   
+              </ul>
+          </li>
+      </ul>
+  </nav>
+  
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script type="text/javascript">
+
+$('#pz_div').click(function () {
+    $("#search_main").hide();
+    $("#pz_main").show();
+});
+$('#cz_div').click(function () {
+    $("#search_main").hide();
+    $("#cz_main").show();
+});
+
+//弯头选择面板显示
+$('#wtgy_div').click(function () {
+    $("#search_main").hide();
+    $("#wtgy_main").show();
+});
+$('#wtbm_div').click(function () {
+    $("#search_main").hide();
+    $("#wtbm_main").show();
+});
+
+//三通选择面板显示
+$('#stgy_div').click(function () {
+    $("#search_main").hide();
+    $("#stgy_main").show();
+});
+$('#stbm_div').click(function () {
+    $("#search_main").hide();
+    $("#stbm_main").show();
+});
+//封头选择面板显示
+$('#ftbm_div').click(function () {
+    $("#search_main").hide();
+    $("#ftbm_main").show();
+});
+//板材选择面板显示
+$('#bcbm_div').click(function () {
+    $("#search_main").hide();
+    $("#bcbm_main").show();
+});
+$('#bccj_div').click(function () {
+    $("#search_main").hide();
+    $("#bccj_main").show();
+});
+$('#bccs_div').click(function () {
+    $("#search_main").hide();
+    $("#bccs_main").show();
+});
+//卷材选择面板显示
+$('#jcbm_div').click(function () {
+    $("#search_main").hide();
+    $("#jcbm_main").show();
+});
+$('#jccj_div').click(function () {
+    $("#search_main").hide();
+    $("#jccj_main").show();
+});
+$('#jccs_div').click(function () {
+    $("#search_main").hide();
+    $("#jccs_main").show();
+});
+
+$(function(){
+$('#gg li a,#xc li a,#fl li a,#fm li a').click(function(){
+        //alert(this.text);
+        $('#pz_div').html(this.text);
+        $("#pz").val(this.text);
+        $('#pz_main').hide();
+        $("#cz_div").show();
+        //隐藏不相关的选项
+        $("#search_wt").hide();
+        $("#search_st").hide();
+        $("#search_ft").hide();
+        $("#search_bc").hide();
+        $("#search_jc").hide();
+        //显示需要的选项
+        $('#search_main').show();
+   })
+});
+
+$(function(){
+$('#gj li a').click(function(){
+        $('#pz_div').html(this.text);
+        $("#pz").val(this.text);
+        $('#pz_main').hide();
+        $("#cz_div").show();
+        $("#search_bc").hide();
+        $("#search_jc").hide();
+        $('#search_main').show();
+        //显示弯头的额外选项
+        if(this.text.indexOf("弯头")>0){
+        $('#search_wt').show();
+        $('#search_st').hide();
+        $('#search_ft').hide();}
+
+        //显示三通的额外选项
+        else if(this.text.indexOf("通")>0||this.text.indexOf("异径管")>0){
+        $('#search_wt').hide();
+        $('#search_st').show();
+        $('#search_ft').hide();}
+
+        //显示封头的额外选项
+        else{
+        $('#search_wt').hide();
+        $('#search_st').hide();
+        $('#search_ft').show();}
+   })
+});
+
+$(function(){
+$('#bc li a').click(function(){
+        //alert(this.text);
+        $('#pz_div').html("板材"+this.text);
+        $("#pz").val(this.text);
+        $('#pz_main').hide();
+        //隐藏不相关的选项
+        $("#search_wt").hide();
+        $("#search_st").hide();
+        $("#search_ft").hide();
+        $("#search_jc").hide();
+        $("#cz_div").hide();
+        //显示需要的选项
+        $('#search_main').show();
+        $("#search_bc").show();
+   })
+});
+$(function(){
+$('#jc li a').click(function(){
+        //alert(this.text);
+        $('#pz_div').html("卷材"+this.text);
+        $("#pz").val(this.text);
+        $('#pz_main').hide();
+        //隐藏不相关的选项
+        $("#search_wt").hide();
+        $("#search_st").hide();
+        $("#search_ft").hide();
+        $("#search_bc").hide();
+        $("#cz_div").hide();
+        //显示需要的选项
+        $('#search_main').show();
+        $("#search_jc").show();
+   })
+});
+
+
+//材质选择
+$(function(){
+$('#rmcz li a,#qtcz li a').click(function(){
+        $('#cz_div').html(this.text);
+        $("#cz").val(this.text);
+        $('#cz_main').hide();
+        $('#search_main').show();
+   })
+});
+
+//弯头工艺选择
+$(function(){
+$('#wtgy li a').click(function(){
+        $('#wtgy_div').html(this.text);
+        $("#wtgy").val(this.text);
+        $('#wtgy_main').hide();
+        $('#search_main').show();
+   })
+});
+//弯头表面选择
+$(function(){
+$('#wtbm li a').click(function(){
+        $('#wtbm_div').html(this.text);
+        $("#wtbm").val(this.text);
+        $('#wtbm_main').hide();
+        $('#search_main').show();
+   })
+});
+
+//三通工艺选择
+$(function(){
+$('#stgy li a').click(function(){
+        $('#stgy_div').html(this.text);
+        $("#stgy").val(this.text);
+        $('#stgy_main').hide();
+        $('#search_main').show();
+   })
+});
+//三通表面选择
+$(function(){
+$('#stbm li a').click(function(){
+        $('#stbm_div').html(this.text);
+        $("#stbm").val(this.text);
+        $('#stbm_main').hide();
+        $('#search_main').show();
+   })
+});
+
+//封头表面选择
+$(function(){
+$('#ftbm li a').click(function(){
+        $('#ftbm_div').html(this.text);
+        $("#ftbm").val(this.text);
+        $('#ftbm_main').hide();
+        $('#search_main').show();
+   })
+});
+
+//板材选择
+$(function(){
+$('#bcbm li a').click(function(){
+        $('#bcbm_div').html(this.text);
+        $("#bcbm").val(this.text);
+        $('#bcbm_main').hide();
+        $('#search_main').show();
+   })
+});
+$(function(){
+$('#bccj li a').click(function(){
+        $('#bccj_div').html(this.text);
+        $("#bccj").val(this.text);
+        $('#bccj_main').hide();
+        $('#search_main').show();
+   })
+});
+$(function(){
+$('#bccs li a').click(function(){
+        $('#bccs_div').html(this.text);
+        $("#bccs").val(this.text);
+        $('#bccs_main').hide();
+        $('#search_main').show();
+   })
+});
+
+//卷材选择
+$(function(){
+$('#jcbm li a').click(function(){
+        $('#jcbm_div').html(this.text);
+        $("#jcbm").val(this.text);
+        $('#jcbm_main').hide();
+        $('#search_main').show();
+   })
+});
+$(function(){
+$('#jccj li a').click(function(){
+        $('#jccj_div').html(this.text);
+        $("#jccj").val(this.text);
+        $('#jccj_main').hide();
+        $('#search_main').show();
+   })
+});
+$(function(){
+$('#jccs li a').click(function(){
+        $('#jccs_div').html(this.text);
+        $("#jccs").val(this.text);
+        $('#jccs_main').hide();
+        $('#search_main').show();
+   })
+});
+
+
+// $('#searchbutton').click(function () {
+//   var $btn = $(this)
+//   $btn.button('loading');
+//     setTimeout(function(){
+//       $btn.button('reset');
+//   }, 2000);
+// });
+
+</script>
+</block>

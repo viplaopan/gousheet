@@ -13,23 +13,13 @@ use Think\Controller;
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
-class IndexController extends Controller {
+class SearchController extends Controller {
 
-	//网站首页
-    public function index(){
-    	$issue = D('Issue')->where($map)->order('create_time desc')->limit(4)->select();
-    	$this->assign('issue',$issue);
-
-    	//今日头条
-        $hot = D('Document')->limit(4)->position(4);
-        $this->assign('hot', $hot);
-
-        //Banner
-        $adm['status'] = 1;
-        $adm['pos_id'] = 10;
-        $banners = D('Adv')->where($adm)->order('sort desc')->select();
-        $this->assign('banners',$banners);
-       
+	//网站资讯
+    public function index($page = 1){
         $this->display();
+    }
+    public function doSearch(){
+        echo 2;
     }
 }

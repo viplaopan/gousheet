@@ -1,0 +1,58 @@
+<extend name="Base/common"/>
+
+<block name="body">
+   
+
+  <!-- List -->
+  <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <!--列表标题-->
+    <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default"  style="margin-top:0px; height:0px">
+    
+  </div>
+
+    <div class="am-list-news-bd" style="margin-top:-8px;">
+      <ul class="am-list" id="amlist">
+        <volist name="lists" id="vo">
+          <li class="am-g am-list-item-desced">
+              <a href="#" class="am-list-item-hd" ><eq name="vo.time" value="0"><img src="__IMG__/overdue.png" width="42px;"></eq>{$vo.title}          
+                <span class="am-list-date date">{$vo.create_time|date='Y-m-d',###}</span>
+              </a>
+              <a href="tel:{$vo.lianxi}">
+                <div class="am-list-item-text" style="color:#eb4f38">{$vo.company_name} Tel:{$vo.lianxi}</div></a>
+              <div class="am-list-item-text">
+                {$vo.yaoqiu}
+              </div>
+          </li>
+        </volist>
+      </ul>
+    </div>
+
+
+    <!--更多在底部-->
+        <div class="am-list-news-ft">
+          <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
+        </div>
+  </div>
+
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script>
+      $(function(){
+        //点击更多
+        var page = 2;
+        $("#more").click(function(){
+          $.post("__SELF__",{page:page},success,'html');
+          return false;
+          function success(data){
+            if(data){
+              $("#amlist").append(data);
+              page++;
+
+            }
+          }
+        })
+      })
+    </script>
+</block>

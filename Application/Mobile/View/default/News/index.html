@@ -1,0 +1,73 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    
+</block>
+<block name="body">
+   <!-- List -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+  <!--列表标题-->
+  <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default"  style="margin-top:0px;">
+    <h2 class="am-titlebar-title ">
+        头条新闻
+    </h2>
+</div>
+
+ <div class="am-list-news-bd">
+    <ul class="am-list" id="amlist">
+      <!--缩略图在标题右边-->
+      <volist name='lists' id='vo'>
+        <eq name="vo.cover_id">
+          <li class="am-g am-list-item-desced">
+            <div class="am-list-main">
+              <h3 class="am-list-item-hd">
+                <a href="{:U('Mobile/News/detail',array('id'=>$vo['id']))}">{$vo.title|msubstr=0,20,'utf-8',false}</a>
+              </h3>
+              <span class="am-list-date">{$vo.create_time|date='Y-m-d',###}</span>
+            </div>
+          </li>
+        <else/>
+          <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-right">
+            <div class=" am-u-sm-8 am-list-main">
+                <h3 class="am-list-item-hd"><a href="{:U('Mobile/News/detail',array('id'=>$vo['id']))}" class="">{$vo.title|msubstr=0,20,'utf-8',false}”
+    </a></h3>
+                <span class="am-list-date">{$vo.create_time|date='Y-m-d',###}</span>
+            </div>
+              <div class="am-u-sm-4 am-list-thumb">
+                <a href="{:U('Mobile/News/detail',array('id'=>$vo['id']))}" class="">
+                  <img src="{:get_cover($vo['cover_id'],'path')}" />
+                </a>
+              </div>
+          </li>
+        </eq>
+      </volist>
+    </ul>
+  </div>
+
+  <!--更多在底部-->
+      <div class="am-list-news-ft">
+        <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
+      </div>
+</div>
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script>
+      $(function(){
+        //点击更多
+        var page = 2;
+        $("#more").click(function(){
+          $.post("__SELF__",{page:page},success,'html');
+          return false;
+          function success(data){
+            if(data){
+              $("#amlist").append(data);
+              page++;
+
+            }
+          }
+        })
+      })
+    </script>
+</block>
