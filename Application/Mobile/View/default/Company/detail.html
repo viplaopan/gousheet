@@ -1,0 +1,37 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    
+</block>
+<block name="body">
+    
+
+<!-- 公司详情 -->
+<div class="am-panel am-panel-default" id="companymain" style="">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">{$company.name}</h3>
+  </div>
+  <div class="am-panel-bd">
+    <p>
+      <figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }">
+      <img src="{$himg1.path|default=''}" alt="公司营业执照"/>
+          <figcaption class="am-figure-capition-btm">
+            公司营业执照
+          </figcaption>  
+      </figure>
+    </p>
+    <p>更新日期：{$info.create_time|date="Y-m-d",###}</p>
+    <p>公司简介：{$company.descsm}</p>
+  </div>
+  <div class="am-panel-footer">
+    <p>联系电话：{$contact.mobile}</p>
+    <p>地址：{$company.com_address}</p>
+    <a href="tel:13758797128"><img src="{$himg1.path|default=''}" width="50px" style="float: right; margin-top:-53px" /></a>    
+  </div>
+</div>
+
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+</block>

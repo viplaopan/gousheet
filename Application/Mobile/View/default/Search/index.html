@@ -2,7 +2,7 @@
 
 <block name="body">
 <!-- 搜索界面 -->
-<form id="search_main" class="am-form" action="">
+<form id="search_main" class="am-form" action="{:U('detail')}" method="get">
   <fieldset>
     <div class="am-form-group" >
         <div class="am-form-field am-radius" id="pz_div" style="height:38px">选择品种<img src="__IMG__/unfold.png" height="20px" style="float:right;"/></div>
@@ -101,7 +101,7 @@
       <ul class="am-menu-nav am-avg-sm-1"> 
           <li class="am-parent">
             <a href="#" class="">钢管</a>
-              <ul class="am-menu-sub am-collapse am-avg-sm-3" id="gg">
+              <ul class="am-menu-sub am-collapse am-avg-sm-3" id="gg" data-url="{:U('Sactuals')}">
                   <li class="">
                     <a href="#">工业无缝管</a>
                   </li>
@@ -131,7 +131,7 @@
 
           <li class="am-parent">
             <a href="#" class="">型材</a>
-              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="xc">
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="xc" data-url="{:U('profile')}">
                   <li class="">
                     <a href="#">圆钢</a>
                   </li>
@@ -158,7 +158,7 @@
 
           <li class="am-parent">
             <a href="#" class="">法兰</a>
-              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fl">
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fl" data-url="{:U('frenchay')}">
                   <li class="">
                     <a href="#">平焊法兰</a>
                   </li>
@@ -185,7 +185,7 @@
 
           <li class="am-parent">
             <a href="#" class="">阀门</a>
-              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fm">
+              <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="fm" data-url="{:U('valve')}">
                   <li class="">
                     <a href="#">球阀</a>
                   </li>
@@ -219,25 +219,25 @@
           <li class="am-parent">
             <a href="#" class="">管件</a>
               <ul class="am-menu-sub am-collapse  am-avg-sm-3" id="gj">
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">15度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">30度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">45度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">60度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">90度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">120度弯头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_three')}">
                     <a href="#">180度弯头</a>
                   </li>
                   <li class="">
@@ -245,58 +245,58 @@
                   <li class="">
                   </li>
 
-                  <li class="">
+                  <li class="" data-url="{:U('molding_two')}">
                     <a href="#">三通</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_two')}">
                     <a href="#">四通</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_two')}">
                     <a href="#">Y型三通</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_two')}">
                     <a href="#">同心异径管</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_two')}">
                     <a href="#">偏心异径管</a>
                   </li>
                   <li class="">
                   </li>
 
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">翻边</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">管帽</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">金属软管</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">椭圆封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">锥形封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">球形封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">球冠形封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">平底封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">碟形封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">弓底封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">浅形封头</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('molding_one')}">
                     <a href="#">桶体旋边封头</a>
                   </li>                  
               </ul>
@@ -309,31 +309,31 @@
                   <li class=""></li>
                   <li class=""></li>
 
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">201</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">202</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">304</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">316L</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">430</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">439</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">410</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">436</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('plank')}">
                     <a href="#">409L</a>
                   </li>
               </ul>
@@ -345,31 +345,31 @@
                   <li class="" style="margin:14px ">请选择材质</li>
                   <li class=""></li>
                   <li class=""></li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">201</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">202</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">304</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">316L</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">430</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">439</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">410</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">436</a>
                   </li>
-                  <li class="">
+                  <li class="" data-url="{:U('sheet')}">
                     <a href="#">409L</a>
                   </li>
               </ul>
@@ -1075,8 +1075,11 @@ $('#jccs_div').click(function () {
 });
 
 $(function(){
+//钢管点击事件
 $('#gg li a,#xc li a,#fl li a,#fm li a').click(function(){
-        //alert(this.text);
+        var action = $(this).parent().parent().attr('data-url');
+        // 改变form auction
+        $("#search_main").attr('action',action);
         $('#pz_div').html(this.text);
         $("#pz").val(this.text);
         $('#pz_main').hide();
@@ -1093,36 +1096,42 @@ $('#gg li a,#xc li a,#fl li a,#fm li a').click(function(){
 });
 
 $(function(){
-$('#gj li a').click(function(){
-        $('#pz_div').html(this.text);
-        $("#pz").val(this.text);
-        $('#pz_main').hide();
-        $("#cz_div").show();
-        $("#search_bc").hide();
-        $("#search_jc").hide();
-        $('#search_main').show();
-        //显示弯头的额外选项
-        if(this.text.indexOf("弯头")>0){
-        $('#search_wt').show();
-        $('#search_st').hide();
-        $('#search_ft').hide();}
+  $('#gj li a').click(function(){
+        var action = $(this).parent().attr('data-url');
+        // 改变form auction
+        $("#search_main").attr('action',action);
+          $('#pz_div').html(this.text);
+          $("#pz").val(this.text);
+          $('#pz_main').hide();
+          $("#cz_div").show();
+          $("#search_bc").hide();
+          $("#search_jc").hide();
+          $('#search_main').show();
+          //显示弯头的额外选项
+          if(this.text.indexOf("弯头")>0){
+          $('#search_wt').show();
+          $('#search_st').hide();
+          $('#search_ft').hide();}
 
-        //显示三通的额外选项
-        else if(this.text.indexOf("通")>0||this.text.indexOf("异径管")>0){
-        $('#search_wt').hide();
-        $('#search_st').show();
-        $('#search_ft').hide();}
+          //显示三通的额外选项
+          else if(this.text.indexOf("通")>0||this.text.indexOf("异径管")>0){
+          $('#search_wt').hide();
+          $('#search_st').show();
+          $('#search_ft').hide();}
 
-        //显示封头的额外选项
-        else{
-        $('#search_wt').hide();
-        $('#search_st').hide();
-        $('#search_ft').show();}
-   })
-});
+          //显示封头的额外选项
+          else{
+          $('#search_wt').hide();
+          $('#search_st').hide();
+          $('#search_ft').show();}
+     })
+  });
 
-$(function(){
+$(function(){ 
 $('#bc li a').click(function(){
+        var action = $(this).parent().attr('data-url');
+        // 改变form auction
+        $("#search_main").attr('action',action);
         //alert(this.text);
         $('#pz_div').html("板材"+this.text);
         $("#pz").val(this.text);
@@ -1140,6 +1149,9 @@ $('#bc li a').click(function(){
 });
 $(function(){
 $('#jc li a').click(function(){
+        var action = $(this).parent().attr('data-url');
+        // 改变form auction
+        $("#search_main").attr('action',action);
         //alert(this.text);
         $('#pz_div').html("卷材"+this.text);
         $("#pz").val(this.text);
@@ -1267,7 +1279,13 @@ $('#jccs li a').click(function(){
    })
 });
 
-
+$('#search_main').submit(function(){
+  var pz = $("input[name='pz']").val();
+  if(pz == ''){
+    alert('请填写品种');
+    return false;
+  }
+})
 // $('#searchbutton').click(function () {
 //   var $btn = $(this)
 //   $btn.button('loading');

@@ -1,0 +1,66 @@
+<extend name="Base/common"/>
+
+<block name="body">
+  <div class="am-btn-group am-btn-group-justify">
+  <a class="am-btn am-btn-default" role="button">{$pinzhong}</a>
+  <a class="am-btn am-btn-default" role="button">{$caizhi|default="无"}</a>
+  <a class="am-btn am-btn-default" role="button">{$guige|default='无'}</a>
+</div>
+<table class="am-table am-table-bordered am-table-striped am-table-hover am-text-nowrap am-table-centered">
+    <thead>
+        <tr>
+            <th>公司简称</th>
+            <th>规格</th>
+            <th>重量</th>
+            <th>电话咨询</th>
+        </tr>
+    </thead>
+    <tbody id="lists">
+        <volist name="lists" id="vo">
+            <tr>
+                <td><a href="{$vo.url}">{$vo['company']['small_name']}</a></td>
+                <td>{$vo.guige}</td>
+                <td>{$vo.zhongliang|default="0"}</td>
+                <td><a href="tel:{$vo.contact.mobile}">点击拨打</a></td>
+            </tr>   
+        </volist>
+        <tr>
+            <td>
+                <div class="am-list-news-ft">
+                  <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
+                </div>
+            </td>
+        </tr>  
+    </tbody>
+</table>
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script>
+      $(function(){
+        var page = 2;
+        $('#more').click(function(){
+            $.post("__SELF__",{page:page},success,'json');
+            return false;
+            function success(data){
+                if(data.status){
+                    var html ="";
+                    $.each(data.content,function(i,item){
+                        html += '<tr>'+
+                                    '<td><a href="' +item.url+ '">' +item.company.small_name+ '</a></td>' +
+                                    '<td>' +item.guige+ '</td>' +
+                                    '<td>' +item.zhongliang+ '</td>' +
+                                    '<td><a href="tel:' +item.contact.mobile+'">点击拨打</a></td>' +
+                                '</tr>';
+                    });
+                    $("#lists").append(html);
+                    $page++;
+                }else{
+                    alert('数据为空');
+                }
+            }
+        })
+      })
+  </script>
+</block>
