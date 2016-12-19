@@ -21,13 +21,27 @@ class LogisticsController extends Controller {
             $map['from'] = $from;
             $map['to'] = array('like',"%$to%");
         }
-
-
         $map['status'] = 1;
         $lists = D('Logistics')->where($map)->page($page, 10)->select();
         $totalCount = D('Logistics')->where($map)->count();
         $this->assign('totalPageCount', $totalCount);
-        $this->assign('lists', $lists);
-        $this->display();
+
+        if(IS_POST){
+            if($lists){
+                foreach($lists as &$val){
+                   
+                }
+                unset($val);
+                $data['lists'] = $lists;
+                $data['status'] = 1;
+                $this->ajaxReturn($data,'json');
+            }else{
+                $this->error('没有数据');
+            }
+        }else{
+            $this->assign('lists', $lists);
+            $this->display();
+        }
+        
     }
 }

@@ -43,13 +43,36 @@
         //点击更多
         var page = 2;
         $("#more").click(function(){
-          $.post("__SELF__",{page:page},success,'html');
+          $.post("__SELF__",{page:page},success,'json');
           return false;
           function success(data){
-            if(data){
-              $("#amlist").append(data);
+            if(data.status){
+              var html = "";
+              $.each(data.lists,function(i,item){
+                var endtimeHtml = '';
+                if(item.time ==0) {
+                  endtimeHtml = '<img src="__IMG__/overdue.png" width="42px;">';
+                }
+                html +='<li class="am-g am-list-item-desced">'+ 
+                  '<a href="#" class="am-list-item-hd" >'+
+                      endtimeHtml+
+                      item.title+
+                      '<span class="am-list-date date">'+
+                        item.create_time+
+                      '</span>'+
+                    '</a>'+
+                    '<a href="tel:'+item.lianxi+'">'+
+                      '<div class="am-list-item-text" style="color:#eb4f38">' + item.company_name + ' Tel:' + item.lianxi + '</div>'+
+                    '</a>'+
+                    '<div class="am-list-item-text">'+
+                      item.yaoqiu
+                    '</div>'+
+                '</li>'
+              })
+              $("#amlist").append(html);
               page++;
-
+            }else{
+              alert(data.info);
             }
           }
         })

@@ -1,0 +1,85 @@
+<extend name="Base/common"/>
+<block name="header-title">
+  <div class="am-header-left am-header-nav">
+      <a href="index.html" class="">
+          <img class="am-header-icon-custom" src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;" alt=""/>       
+      </a>
+  </div>
+  <h1 class="am-header-title">
+    <a href="#title-link">货运物流</a>
+  </h1>
+</block>
+<block name="body">
+<!-- List -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+  <!--列表标题-->
+  <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default"  style="margin-top:0px; height:0px">
+  
+</div>
+<!-- Search -->
+<div class="am-g">
+  <div class="col-lg-6">
+    <div class="am-input-group am-input-group-primary">
+      <input type="text" class="am-form-field" placeholder="输入目的地">
+       <span class="am-input-group-btn">
+        <button class="am-btn am-btn-primary" type="button"><span class="am-icon-search"></span></button>
+      </span>
+    </div>
+  </div>
+</div>
+
+  <div class="am-list-news-bd">
+  <ul class="am-list" id="amlist">
+    <volist name="lists" id="vo">
+      <li class="am-g am-list-item-desced">
+          <a href="#" class="am-list-item-hd ">{$vo.name}</a>
+          <div class="am-list-item-text">经营路线：{$vo.lists}</div>
+          <div class="am-list-item-text">地址：{$vo.address}</div>
+          <div class="am-list-item-text">联系人：{$vo.contact}</div>
+          <div class="am-list-item-text">手机：{$vo.mobile}</div>
+          <div class="am-list-item-text">电话：{$vo.fax}</div>
+      </li>
+    </volist>
+  </ul>
+  </div>
+
+
+  <!--更多在底部-->
+      <div class="am-list-news-ft">
+        <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
+      </div>
+</div>
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script>
+      $(function(){
+        //点击更多
+        var page = 2;
+        $("#more").click(function(){
+          $.post("__SELF__",{page:page},success,'json');
+          return false;
+          function success(data){
+            if(data.status){
+              var html = '';
+              $.each(data.lists,function(i,item){
+                html += '<li class="am-g am-list-item-desced ">'+
+                  '<a href="#" class="am-list-item-hd ">' + item.name + '</a>'+
+                  '<div class="am-list-item-text">经营路线：' + item.lists + '</div>'+
+                  '<div class="am-list-item-text">地址：' + item.address + '</div>'+
+                  '<div class="am-list-item-text">联系人：' + item.contact + '</div>'+
+                  '<div class="am-list-item-text">手机：' + item.mobile + '</div>'+
+                  '<div class="am-list-item-text">电话：' + item.fax + '</div>'+
+                '</li>';
+              })
+              $("#amlist").append(html);
+              page++;
+            }else{
+              alert(data.info);
+            }
+          }
+        })
+      })
+    </script>
+</block>

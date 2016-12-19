@@ -51,16 +51,18 @@ class IssueController extends Controller {
         unset($val);
 
         if(IS_POST){
-            $html = '';
-            foreach($lists as $vo){
-
-                $html .= '<li class="am-g am-list-item-desced">'.
-                         '<a href="#" class="am-list-item-hd" >'.$vo['title'].'<span class="am-list-date date">'.date('Y-m-d',$vo['create_time']).'</span></a>'.
-                         '<a href="tel:'.$vo['lianxi'].'"><div class="am-list-item-text" style="color:#eb4f38">'.$vo['company_name'].' Tel:'.$vo['lianxi'].'</div></a>'.
-                         '<div class="am-list-item-text">'.$vo['yaoqiu'].'</div>'.
-                         '</li>';
+            if($lists){
+                foreach($lists as &$val){
+                   $val['create_time'] = date('Y-m-d',$val['create_time']);
+                }
+                unset($val);
+                $data['lists'] = $lists;
+                $data['status'] = 1;
+                $this->ajaxReturn($data,'json');
+            }else{
+                $this->error('没有数据');
             }
-            echo $html;
+            
         }else{
             $this->assign('lists', $lists);
             $this->display();

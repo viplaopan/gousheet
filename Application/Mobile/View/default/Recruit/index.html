@@ -1,0 +1,92 @@
+<extend name="Base/common"/>
+<block name="header-title">
+  <div class="am-header-left am-header-nav">
+          <a href="index.html" class="">
+              <img class="am-header-icon-custom" src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;" alt=""/>       
+          </a>
+      </div>
+  <h1 class="am-header-title">
+    <a href="#title-link">企业招聘</a>
+  </h1>
+</block>
+<block name="body">
+
+<!-- List -->
+<div class="am-panel-group" id="accordion">
+
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+        招聘不锈钢业务员
+      </h4>
+      <span class="companyname">浙江新锐特钢有限公司</span>
+    </div>
+    <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+        <p class="textred">任职要求</p>
+        <p>本公司为了业务需求，现在招聘业务员若干名，有意者联系我。</p>
+        <p class="textred">联系方式</p>
+          <table class="recruit-table">
+            <tbody>
+                <tr>
+                    <td>
+                      <span>联系人</span>
+                      <p>王经理</p>
+                    </td>
+                    <td>
+                      <span>手机</span>
+                      <p>137455478574</p>
+                   </td>
+                </tr>
+                <tr>
+                    <td>
+                      <span>电话</span>
+                      <p>0577-86888888</p>
+                    </td>
+                    <td>
+                      <span>传真</span>
+                      <p>0577-85858585</p>
+                   </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> 
+                      <span>地址</span>
+                      <p>浙江温州市龙湾区万达广场</p>
+                    </td> 
+                </tr>   
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <!--更多在底部-->
+      <div class="am-list-news-ft">
+        <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
+      </div>
+</div>
+
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script>
+      $(function(){
+        //点击更多
+        var page = 2;
+        $("#more").click(function(){
+          $.post("__SELF__",{page:page},success,'html');
+          return false;
+          function success(data){
+            if(data){
+              $("#amlist").append(data);
+              page++;
+
+            }
+          }
+        })
+      })
+    </script>
+</block>

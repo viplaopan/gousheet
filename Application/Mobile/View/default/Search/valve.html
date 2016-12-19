@@ -24,15 +24,9 @@
                 <td><a href="tel:{$vo.contact.mobile}">点击拨打</a></td>
             </tr>   
         </volist>
-        <tr>
-            <td>
-                <div class="am-list-news-ft">
-                  <a class="am-list-news-more am-btn am-btn-default " id="more" href="###">查看更多 &raquo;</a>
-                </div>
-            </td>
-        </tr>  
     </tbody>
 </table>
+<div id="loading" style="text-align: center; display: none;"><img src="__IMG__/Loading.gif" height="40px;"></div>
 </block>
 <block name="script">
   <script src="__JS__/jquery.min.js"></script>
@@ -40,24 +34,28 @@
   <script>
       $(function(){
         var page = 2;
-        $('#more').click(function(){
-            $.post("__SELF__",{page:page},success,'json');
-            return false;
-            function success(data){
-                if(data.status){
-                    var html ="";
-                    $.each(data.content,function(i,item){
-                        html += '<tr>'+
-                                    '<td><a href="' +item.url+ '">' +item.company.small_name+ '</a></td>' +
-                                    '<td>' +item.guige+ '</td>' +
-                                    '<td>' +item.zhongliang+ '</td>' +
-                                    '<td><a href="tel:' +item.contact.mobile+'">点击拨打</a></td>' +
-                                '</tr>';
-                    });
-                    $("#lists").append(html);
-                    $page++;
-                }else{
-                    alert('数据为空');
+        $(window).scroll(function(){
+            if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                $("#loading").show();
+                $.post("__SELF__",{page:page},success,'json');
+                return false;
+                function success(data){
+                    if(data.status){
+                        var html ="";
+                        $.each(data.content,function(i,item){
+                            html += '<tr>'+
+                                        '<td><a href="' +item.url+ '">' +item.company.small_name+ '</a></td>' +
+                                        '<td>' +item.guige+ '</td>' +
+                                        '<td>' +item.zhongliang+ '</td>' +
+                                        '<td><a href="tel:' +item.contact.mobile+'">点击拨打</a></td>' +
+                                    '</tr>';
+                        });
+                        $("#lists").append(html);
+                        $page++;
+                        $("#loading").hide();
+                    }else{
+                        alert('数据为空');
+                    }
                 }
             }
         })

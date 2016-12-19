@@ -1,0 +1,114 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <style>
+      .header {
+        text-align: center;
+      }
+      .header h1 {
+        font-size: 100%;
+        color: #333;
+        margin-top: 30px;
+      }
+      .header p {
+        font-size: 14px;
+      }
+
+      /*注册验证吗*/
+      .am-form input[name="code"]
+      {
+        display: inline-block;
+        width:calc(70%);
+        top:0;
+      }
+      .am-form input[name="sms"]
+      {
+        margin-left: -6px;
+        display: inline-block;
+        width: calc(30% + 0.03em);
+        top:0;
+        padding: 0.5em;
+        color: #999;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        border-radius: 0; 
+      }
+      .am-form input[name="sms"]:focus {
+        border:0;
+      }
+
+    </style> 
+</block>
+<block name="body">
+<div class="header">
+  <div class="am-alert am-alert-danger" id="dangeralert" data-am-alert style="display:none;">
+    <p id="dangeralert_text">两次输入的密码不相同</p>
+  </div>
+
+    <div class="am-g">
+      <h1>第一步：填写用户信息</h1>
+      <br>
+    </div>
+  </div>
+  <div class="am-g">
+    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+      <form id="registerForm" action="__SELF__" method="post" class="am-form am-radius">
+        <fieldset class="am-form-set">
+
+        <input type="number" name="mobile" class="am-input-lg am-radius" id="phonenumber" value="" placeholder="输入手机号码">
+        <input type="number" name="code" class="am-input-lg am-radius" value="" placeholder="输入密码">
+        <input type="button" name="sms" class="am-input-lg am-radius" value="请输入短信" placeholder="输入密码">
+        <input type="password" id="password" name="" class="am-input-lg am-radius" value="" placeholder="输入密码">
+        <input type="password" id="passwordagain" name="" class="am-input-lg am-radius"  value="" placeholder="确认密码">
+        </fieldset>
+
+        <br>
+        <div class="am-cf">
+           <div class="am-btn am-btn-primary  am-radius am-btn-lg am-btn-block" id="nextbtn" >下一步，填写联系方式</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        $('#nextbtn').click(function(){
+          var phonenumber = $('#phonenumber').val();
+          var password = $('#password').val();
+          var passwordagain = $('#passwordagain').val();
+          if(password!=passwordagain){
+            $("#dangeralert_text").html("两次输入的密码不相同");
+            $('#dangeralert').show();
+            return false;
+          }
+          else if(phonenumber==""||password==""||passwordagain==""){
+            $("#dangeralert_text").html("您有的项目还没有填写");
+            $('#dangeralert').show();
+            return false;
+          }
+          else if(phonenumber.length!=11){
+            $("#dangeralert_text").html("手机号码长度错误");
+            $('#dangeralert').show();
+            return false;
+          }
+          else{
+            window.location.href='register2contact.html';
+            var rf = $("#registerForm");
+            var ajaxUrl = rf.attr('action');
+            $.post(ajaxUrl,rf.serialize(),success,'json');
+            return false;
+            function success(){
+              
+            }
+            return true;
+          }
+        })
+      });
+      </script>
+</block>
