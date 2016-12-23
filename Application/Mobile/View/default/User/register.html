@@ -28,7 +28,7 @@
         width: calc(30% + 0.03em);
         top:0;
         padding: 0.5em;
-        color: #999;
+        color: #0e90d2;
         font-size: 1.6rem;
         line-height: 1.2;
         vertical-align: middle;
@@ -56,12 +56,11 @@
     <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
       <form id="registerForm" action="__SELF__" method="post" class="am-form am-radius">
         <fieldset class="am-form-set">
-
-        <input type="number" name="mobile" class="am-input-lg am-radius" id="phonenumber" value="" placeholder="输入手机号码">
-        <input type="number" name="code" class="am-input-lg am-radius" value="" placeholder="输入密码">
-        <input type="button" name="sms" class="am-input-lg am-radius" value="请输入短信" placeholder="输入密码">
-        <input type="password" id="password" name="" class="am-input-lg am-radius" value="" placeholder="输入密码">
-        <input type="password" id="passwordagain" name="" class="am-input-lg am-radius"  value="" placeholder="确认密码">
+          <input type="number" name="mobile" class="am-input-lg am-radius" id="phonenumber" value="" placeholder="输入手机号码">
+          <input type="number" name="code" class="am-input-lg am-radius" value="" placeholder="输入验证码">
+          <input type="button" name="sms" id="codeId" class="am-input-lg am-radius" value="点击发送短信" onclick="get_mobile_code();">
+          <input type="password" id="password" name="password" class="am-input-lg am-radius" value="" placeholder="输入密码">
+          <input type="password" id="passwordagain" name="repassword" class="am-input-lg am-radius"  value="" placeholder="确认密码">
         </fieldset>
 
         <br>
@@ -77,7 +76,6 @@
     <script src="__JS__/amazeui.min.js"></script>
     <script type="text/javascript">
       $(function(){
-
         $('#nextbtn').click(function(){
           var phonenumber = $('#phonenumber').val();
           var password = $('#password').val();
@@ -98,17 +96,66 @@
             return false;
           }
           else{
-            window.location.href='register2contact.html';
+            
             var rf = $("#registerForm");
             var ajaxUrl = rf.attr('action');
             $.post(ajaxUrl,rf.serialize(),success,'json');
             return false;
-            function success(){
-              
+            function success(data){
+              if(data.status){
+                window.location.href = data.url;
+              }else{
+                $("#dangeralert_text").html(data.info);
+                $('#dangeralert').show();
+                return false;
+              }
             }
-            return true;
           }
         })
+        
       });
+      
+      var iTime = 59;
+      var Account;
+      function RemainTime(){
+        document.getElementById('codeId').disabled = true;
+        var iSecond,sSecond="",sTime="";
+        if (iTime >= 0){
+          iSecond = parseInt(iTime%60);
+          iMinute = parseInt(iTime/60)
+          if (iSecond >= 0){
+            if(iMinute>0){
+              sSecond = iMinute + "分" + iSecond + "秒";
+            }else{
+              sSecond = iSecond + "秒";
+            }
+          }
+          sTime=sSecond;
+          if(iTime==0){
+            clearTimeout(Account);
+            sTime='获取手机验证码';
+            iTime = 59;
+            document.getElementById('codeId').disabled = false;
+          }else{
+            Account = setTimeout("RemainTime()",1000);
+            iTime=iTime-1;
+          }
+        }else{
+          sTime='没有倒计时';
+        }
+        document.getElementById('codeId').value = sTime;
+      }
+      function get_mobile_code(){
+        $.post('{:U("Member/Sms/getSms")}', {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+
+            if(!msg.status){
+              $("#dangeralert_text").html(msg.info);
+              $('#dangeralert').show();
+              return false;
+            }else{
+              RemainTime();
+            }
+        },'json');
+      }
       </script>
 </block>

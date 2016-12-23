@@ -1,0 +1,127 @@
+<extend name="Base/common"/>
+
+<block name="style">
+   <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style> 
+</block>
+<!-- Header -->
+<block name="header-title">
+  <h1 class="am-header-title">
+    <a href="#title-link">注册会员</a>
+  </h1>
+</block>
+<block name="body">
+<div class="header">
+<div class="am-alert am-alert-danger" id="dangeralert" data-am-alert style="display:none;">
+  <p id="dangeralert_text"></p>
+</div>
+
+  <div class="am-g">
+    <h1>第二步：填写联系方式</h1>
+    <br>
+  </div>
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <form method="post" action="__SELF__" class="am-form am-radius">
+      <fieldset class="am-form-set">
+
+      <input type="text" name="name" class="am-input-lg am-radius" id="name" value="" placeholder="联系人">
+      <input type="number" name="tel" class="am-input-lg am-radius" id="telnumber" value="" placeholder="座机电话">
+      <input type="number" name="qq" class="am-input-lg am-radius" id="qqnumber" value="" placeholder="QQ号码
+">
+      <input type="number" name="mobile" class="am-input-lg am-radius" id="phonenumber" value="" placeholder="手机">
+      <input type="number" name="fax" class="am-input-lg am-radius" id="faxnumber" value="" placeholder="传真">
+      <input type="email" name="email" class="am-input-lg am-radius" id="email" value="" placeholder="邮箱">
+      </fieldset>
+
+      <br>
+      <div class="am-cf">
+         <div class="am-btn am-btn-primary  am-radius am-btn-lg am-btn-block" id="nextbtn" >下一步，填写公司信息</div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Navbar -->
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    <li >
+      <a href="index.html" class="">
+          <img src="assets/images/home.png" alt="首页"/>
+          <span class="am-navbar-label">首页</span>
+      </a>
+    </li>
+    <li >
+      <a href="search.html" class="">
+          <img src="assets/images/search.png" alt="找现货"/>
+          <span class="am-navbar-label">找现货</span>
+      </a>
+    </li>
+    <li >
+      <a href="calculator.html" class="">
+          <img src="assets/images/jisuanqi.png" alt="计算器"/>
+          <span class="am-navbar-label">计算器</span>
+      </a>
+    </li>
+    <li >
+      <a href="login.html" class="">
+          <img src="assets/images/my.png" alt="我的"/>
+          <span class="am-navbar-label">我的</span>
+      </a>
+    </li>
+  </ul>
+</div>
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+
+      $('#nextbtn').click(function(){
+        var name = $('#name').val();
+        var telnumber = $('#telnumber').val();
+        var qqnumber = $('#qqnumber').val();
+        var phonenumber = $('#phonenumber').val();
+        var faxnumber = $('#faxnumber').val();
+        var email = $('#email').val();
+        if(name==""||telnumber==""||qqnumber==""||phonenumber==""||faxnumber==""||email==""){
+          $("#dangeralert_text").html("您有的项目还没有填写");
+          $('#dangeralert').show();
+          return false;
+        }
+        else{
+          //提交数据
+          var self = $('form');
+          var ajaxUrl = self.attr('action');
+          $.post(ajaxUrl,self.serialize(),success,'json');
+          return false;
+          function success(data){
+            if(data.status){
+              window.location.href = data.url;
+            }else{
+              $("#dangeralert_text").html(data.info);
+              $('#dangeralert').show();
+              return false;
+            }
+          }
+
+          window.location.href='register3company.html'
+          return true;
+        }
+      })
+    });
+  </script>
+</block>

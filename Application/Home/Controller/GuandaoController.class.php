@@ -505,6 +505,12 @@ class GuandaoController extends HomeController {
 			$guige_yali = $guiges[1];
 			if($guige_koujing != '')$map['guige_koujing'] = array('like','%'.$guige_koujing.'%');
 			if($guige_yali != '')$map['guige_yali'] = array('like','%'.$guige_yali.'%');
+
+			if($order){
+				$order.=",CAST(`guige_koujing` AS DECIMAL) asc";
+			}else{
+				$order.="CAST(`guige_koujing` AS DECIMAL) asc";
+			}
 		}
 		if($order){
 			$order.=",create_time desc";

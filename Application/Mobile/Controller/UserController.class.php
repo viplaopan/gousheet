@@ -27,33 +27,111 @@ class UserController extends HomeController {
             $this->error('注册已关闭');
         }
 		if(IS_POST){ //注册用户
-
-			/* 检测验证码 */
-//			if(!check_verify($verify)){
-//				$this->error('验证码输入错误！');
-//			}
+			// 验证code
+			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['code'])){
+				//$this->error('验证码错误');
+			}
 
 			/* 检测密码 */
 			if($password != $repassword){
 				$this->error('密码和重复密码不一致！');
 			}			
 
+
 			/* 调用注册接口注册用户 */
             $User = new UserApi;
 			$uid = $User->register($username, $password, $email, $mobile);
 			if(0 < $uid){ //注册成功
+				$Member = D('Member');
+				$Member->login($uid);
+				$cdata['uid'] = $uid;
+				$cdata['name']  = I('post.company');
+				$cid = D('Company')->add($cdata);
+				$ctdata['cid'] = $cid;
+				$ctdata['name'] = I('post.realname');
+				D('Contact')->add($ctdata);
 				//TODO: 发送验证邮件
-				$this->success('注册成功！',U('login'));
+				$this->success('注册成功！',U('register2'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
 			}
-
 		} else { //显示注册表单
 		    $_SESSION['send_code'] = random(6,1);
 			$this->display();
 		}
 	}
-	
+	public function register2(){
+		$cid = D('Company')->where(array('uid'=>UID))->getField('id');
+		if(IS_POST){
+			//获取公司信息
+			$contact = D('Contact')->where('cid = ' . $cid )->find();
+			$isEdit = $contact?1:0;
+			$data = D('Contact')->create();
+			
+			if(!$data){
+				$this->error('数据错误');
+			}
+			if($isEdit){
+				$res = D('Contact')->where('cid = ' . $cid)->save($data);
+			}else{
+				$data['cid'] = $cid;
+				$res = D('Contact')->add($data);
+			}
+			if($res){
+				$this->success('提交成功',U('register3'));
+			}else{
+				$this->error('数据错误');
+			}
+		}else{
+			$this->display();
+		}
+	}
+	public function register3(){
+		if(IS_POST){
+			//获取公司信息
+			$cinfo = D('Company')->where('uid = ' . UID )->find();
+			$isEdit = $cinfo?1:0;
+			$data = D('Company')->create();
+			//主营业务
+			dump(I('post.business'));
+			$data['business'] = implode(',', I('post.business'));
+			
+			if(!$data){
+				$this->error('数据错误');
+			}
+			if($isEdit){
+				$res = D('Company')->where('uid = ' . UID)->save($data);
+			}else{
+				$res = D('Company')->add($data);
+			}
+			if($res){
+				$this->success('提交成功',U('myinfo'));
+			}else{
+				$this->error('数据错误');
+			}
+		}else{
+			$this->display();
+		}
+	}
+	public function myinfo(){
+		$info = D('Member')->where('uid = ' . UID )->find();
+		$this->assign('info',$info);
+		
+		$cinfo = D('Company')->where('uid = ' . UID )->find();
+		$this->assign('cinfo',$cinfo);
+
+		$cont = D('Contact')->where('cid = ' . $cinfo['id'])->find();
+		$this->assign('cont',$cont);
+
+		$uinfo = D('UcenterMember')->where('id = ' . UID )->find();
+		$this->assign('uinfo',$uinfo);
+		$this->display();
+	}
+	public function myinfocompany(){
+		$cinfo = D('Company')->where('uid = ' . UID )->find();
+		$this->assign('cinfo',$cinfo);
+		$this->display();
+	}
 	/* 登录页面 */
 	public function login($username = '', $password = '', $verify = ''){
 		if(IS_POST){ //登录验证

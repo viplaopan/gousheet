@@ -1,0 +1,61 @@
+<extend name="Base/common"/>
+<block name='style'>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</block>
+<!-- Header -->
+<block name="header-title">
+  <div class="am-header-left am-header-nav">
+      <a href="my.html" class="">
+          <img class="am-header-icon-custom" src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;" alt=""/>       
+      </a>
+  </div>
+  <h1 class="am-header-title">
+    <a href="#title-link">会员中心</a>
+  </h1>
+</block>
+<block name="body">
+  
+
+<ul class="am-list">
+  <li><a href="">&nbsp;&nbsp;用户名
+    <span class="app-text-gray-right">{$uinfo.mobile}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a>
+</li>
+  <li><a href="">&nbsp;&nbsp;联系人
+    <span class="app-text-gray-right">{$cont.name}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a href="">&nbsp;&nbsp;联系电话
+    <span class="app-text-gray-right">{$cont.tel}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a href="">&nbsp;&nbsp;手机
+    <span class="app-text-gray-right">{$cont.mobile}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a href="">&nbsp;&nbsp;传真
+    <span class="app-text-gray-right">{$cont.fax}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a href="">&nbsp;&nbsp;QQ
+    <span class="app-text-gray-right">{$cont.qq}</span>
+    <img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a href="{:U('myinfocompany')}">&nbsp;&nbsp;公司信息<img src="__IMG__/rightfold.png" class="minicon"></a></li>
+
+</ul>
+
+
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+ 
+</block>

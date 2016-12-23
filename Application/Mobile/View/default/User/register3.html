@@ -1,0 +1,113 @@
+<extend name="Base/common"/>
+<block name='style'>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</block>
+<!-- Header -->
+<block name="header-title">
+  <h1 class="am-header-title">
+    <a href="#title-link">注册会员</a>
+  </h1>
+</block>
+<block name="body">
+  <div class="header">
+  <div class="am-alert am-alert-danger" id="dangeralert" data-am-alert style="display:none;">
+    <p id="dangeralert_text"></p>
+  </div>
+
+    <div class="am-g">
+      <h1>第三步：填写公司信息</h1>
+      <br>
+    </div>
+  </div>
+  <div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <form method="post" action="__SELF__" class="am-form am-radius">
+
+      <input type="text" name="name" class="am-input-lg am-radius" id="companyname" value="" placeholder="企业名称"></br>
+      <input type="text" name="small_name" class="am-input-lg am-radius" id="companysimplename" value="" placeholder="企业简称"></br>
+      <input type="text" name="ware_address" class="am-input-lg am-radius" id="warehouseaddress" value="" placeholder="仓库地址"></br>
+
+      经营模式：
+      <select name="pattern" data-am-selected>
+        <volist name=":C('PATTERN')" key='k' id="vo">
+          <option value="{$k}">{$vo}</option>
+        </volist>
+      </select>
+      </br></br>
+
+      主营业务：
+      <select name="business" multiple data-am-selected="{maxHeight: 150}">
+      <volist name=":C('BUSINESS')" key='k' id="vo">
+        <option value="{$k}">{$vo}</option>
+      </volist> 
+      </select></br></br>
+
+
+      <label class="am-checkbox am-secondary">
+        <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
+        已阅读并同意<span>《购钢网用户协议》</span>
+      </label>
+
+      <br>
+      <div class="am-cf">
+         <div class="am-btn am-btn-primary  am-radius am-btn-lg am-btn-block" id="nextbtn" >完成注册</div>
+      </div>
+      </br>
+    </form>
+  </div>
+</div>
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script type="text/javascript">
+$(function(){
+
+  $('#nextbtn').click(function(){
+    var name = $('#name').val();
+    var telnumber = $('#telnumber').val();
+    var qqnumber = $('#qqnumber').val();
+    var phonenumber = $('#phonenumber').val();
+    var faxnumber = $('#faxnumber').val();
+    var email = $('#email').val();
+    if(name==""||telnumber==""||qqnumber==""||phonenumber==""||faxnumber==""||email==""){
+      $("#dangeralert_text").html("您有的项目还没有填写");
+      $('#dangeralert').show();
+      return false;
+    }
+    else{
+      //提交数据
+      var self = $('form');
+      var ajaxUrl = self.attr('action');
+      $.post(ajaxUrl,self.serialize(),success,'json');
+      return false;
+      function success(data){
+        if(data.status){
+          window.location.href = data.url;
+        }else{
+          $("#dangeralert_text").html(data.info);
+          $('#dangeralert').show();
+          return false;
+        }
+      }
+
+      window.location.href='register3company.html'
+      return true;
+ 
+    }
+  })
+});
+</script>
+</block>
