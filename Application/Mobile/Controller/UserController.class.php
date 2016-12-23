@@ -29,7 +29,7 @@ class UserController extends HomeController {
 		if(IS_POST){ //注册用户
 			// 验证code
 			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['code'])){
-				//$this->error('验证码错误');
+				$this->error('验证码错误');
 			}
 
 			/* 检测密码 */

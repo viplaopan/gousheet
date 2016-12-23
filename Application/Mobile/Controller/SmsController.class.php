@@ -33,10 +33,10 @@ class SmsController extends HomeController {
 
 		$mobile_code = random(4,1);
 		// 测试
-		$_SESSION['mobile'] = $mobile;
-		$_SESSION['mobile_code'] = $mobile_code;
-		$this->success('提交成功');
-		die;
+		// $_SESSION['mobile'] = $mobile;
+		// $_SESSION['mobile_code'] = $mobile_code;
+		// $this->success('提交成功');
+		// die;
 		if(empty($_SESSION['send_code']) or $send_code!=$_SESSION['send_code']){
 			//防用户恶意请求
 			$this->error('请求超时，请刷新页面后重试');
