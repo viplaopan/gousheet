@@ -93,8 +93,7 @@ class UserController extends HomeController {
 			$isEdit = $cinfo?1:0;
 			$data = D('Company')->create();
 			//主营业务
-			dump(I('post.business'));
-			$data['business'] = implode(',', I('post.business'));
+			$data['business'] = I('post.business');
 			
 			if(!$data){
 				$this->error('数据错误');
@@ -128,12 +127,39 @@ class UserController extends HomeController {
 		$this->display();
 	}
 	public function myinfocompany(){
-		$cinfo = D('Company')->where('uid = ' . UID )->find();
-		$this->assign('cinfo',$cinfo);
-		$this->display();
+		if(IS_POST){
+			//获取公司信息
+			$cinfo = D('Company')->where('uid = ' . UID )->find();
+			$isEdit = $cinfo?1:0;
+			$data = D('Company')->create();
+			//主营业务
+			$data['business'] = I('post.business');
+			
+			if(!$data){
+				$this->error('数据错误');
+			}
+			if($isEdit){
+				$res = D('Company')->where('uid = ' . UID)->save($data);
+			}else{
+				$res = D('Company')->add($data);
+			}
+			if($res){
+				$this->success('提交成功',U('myinfocompany'));
+			}else{
+				$this->error('数据错误');
+			}
+		}else{
+			$cinfo = D('Company')->where('uid = ' . UID )->find();
+			// $business = explode(',',$cinfo['business']);
+			// dump($business);
+			$this->assign('cinfo',$cinfo);
+			$this->display();
+		}
+
+		
 	}
 	/* 登录页面 */
-	public function login($username = '', $password = '', $verify = ''){
+	public function login($mobile = '', $password = '', $verify = ''){
 		if(IS_POST){ //登录验证
 			/* 检测验证码 */
 //			if(!check_verify($verify)){
@@ -142,11 +168,11 @@ class UserController extends HomeController {
 			
 			/* 调用UC登录接口登录 */
 			$user = new UserApi;
-			if(preg_match('/^1[3|4|5|7|8]\d{9}$/', $username)){
+			if(preg_match('/^1[3|4|5|7|8]\d{9}$/', $mobile)){
 			//这里有无限想象
-				$uid = $user->login($username, $password,3);
+				$uid = $user->login($mobile, $password,3);
 			}else{
-				$uid = $user->login($username, $password);
+				$uid = $user->login($mobile, $password);
 			}
 			
 			if(0 < $uid){ //UC登录成功
@@ -154,7 +180,7 @@ class UserController extends HomeController {
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
 					//TODO:跳转到登录前页面
-					$this->success('登录成功！',U('Home/Member/index'));
+					$this->success('登录成功！',U('myinfo'));
 				} else {
 					$this->error($Member->getError());
 				}
@@ -169,6 +195,7 @@ class UserController extends HomeController {
 			}
 
 		} else { //显示登录表单
+		 	$_SESSION['send_code'] = random(6,1);
 			$this->display();
 		}
 	}

@@ -87,4 +87,12 @@ function get_nav_url($url){
     }
     return $url;
 }
+function check_business($business,$id){
+    $business = explode(',',$business);
+    if(in_array($id, $business)){
+        return true;
+    }else{
+        return false;
 
+    }
+}

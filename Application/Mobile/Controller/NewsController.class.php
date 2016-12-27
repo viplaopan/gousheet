@@ -67,4 +67,21 @@ class NewsController extends Controller {
         $this->assign('cates', $cates);
         $this->display();
     }
+    public function steelrod($page = 1){
+        $lists = D('Document')->page($page,20)->lists(42);
+
+        if(IS_POST){
+            if($lists){
+                $data['lists'] = $lists;
+                $data['status'] = 1;
+                $this->ajaxReturn($data,'json');
+            }else{
+                $this->error('没有数据');
+            }
+        }else{
+            $this->assign('lists', $lists);
+            $this->display();
+        }
+        
+    }
 }

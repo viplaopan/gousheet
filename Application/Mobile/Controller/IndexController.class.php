@@ -32,4 +32,8 @@ class IndexController extends Controller {
        
         $this->display();
     }
+
+    public function calculator(){
+        $this->display();
+    }
 }

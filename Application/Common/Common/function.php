@@ -1197,7 +1197,6 @@ function op_e($text)
 {
     $text = str_replace(array("\r\n", "\n", "\r","\r\n"), "", $text);
     return $text;
-	
 }
 require_once(APP_PATH . '/Common/Common/seo.php');
 require_once(APP_PATH . '/Common/Common/cache.php');

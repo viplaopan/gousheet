@@ -48,11 +48,13 @@
       </br></br>
 
       主营业务：
-      <select name="business" multiple data-am-selected="{maxHeight: 150}">
+      <select name="business" multiple data-am-selected="{maxHeight: 150}" id="yewuselected">
       <volist name=":C('BUSINESS')" key='k' id="vo">
         <option value="{$k}">{$vo}</option>
       </volist> 
-      </select></br></br>
+      </select>
+      <input type="hidden" id="yewu" name="business" value="">
+      </br></br>
 
 
       <label class="am-checkbox am-secondary">
@@ -73,41 +75,46 @@
   <script src="__JS__/jquery.min.js"></script>
   <script src="__JS__/amazeui.min.js"></script>
   <script type="text/javascript">
-$(function(){
+    $(function(){
 
-  $('#nextbtn').click(function(){
-    var name = $('#name').val();
-    var telnumber = $('#telnumber').val();
-    var qqnumber = $('#qqnumber').val();
-    var phonenumber = $('#phonenumber').val();
-    var faxnumber = $('#faxnumber').val();
-    var email = $('#email').val();
-    if(name==""||telnumber==""||qqnumber==""||phonenumber==""||faxnumber==""||email==""){
-      $("#dangeralert_text").html("您有的项目还没有填写");
-      $('#dangeralert').show();
-      return false;
-    }
-    else{
-      //提交数据
-      var self = $('form');
-      var ajaxUrl = self.attr('action');
-      $.post(ajaxUrl,self.serialize(),success,'json');
-      return false;
-      function success(data){
-        if(data.status){
-          window.location.href = data.url;
-        }else{
-          $("#dangeralert_text").html(data.info);
+      $('#nextbtn').click(function(){
+        var name = $('#name').val();
+        var telnumber = $('#telnumber').val();
+        var qqnumber = $('#qqnumber').val();
+        var phonenumber = $('#phonenumber').val();
+        var faxnumber = $('#faxnumber').val();
+        var email = $('#email').val();
+        if(name==""||telnumber==""||qqnumber==""||phonenumber==""||faxnumber==""||email==""){
+          $("#dangeralert_text").html("您有的项目还没有填写");
           $('#dangeralert').show();
           return false;
         }
-      }
+        else{
+          var selectedValues = [];
+          $("#yewuselected").each(function(){
+             selectedValues.push($(this).val()); 
+             document.getElementById("yewu").setAttribute("value", selectedValues);
+          });
+          //提交数据
+          var self = $('form');
+          var ajaxUrl = self.attr('action');
+          $.post(ajaxUrl,self.serialize(),success,'json');
+          return false;
+          function success(data){
+            if(data.status){
+              window.location.href = data.url;
+            }else{
+              $("#dangeralert_text").html(data.info);
+              $('#dangeralert').show();
+              return false;
+            }
+          }
 
-      window.location.href='register3company.html'
-      return true;
- 
-    }
-  })
-});
-</script>
+          window.location.href='register3company.html'
+          return true;
+     
+        }
+      })
+    });
+    </script>
 </block>

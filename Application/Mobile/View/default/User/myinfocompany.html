@@ -52,11 +52,18 @@
       </br></br>
 
       主营业务：
-      <select name="business" multiple data-am-selected="{maxHeight: 150}">
+      <select name="business" id="yewuselected" multiple data-am-selected="{maxHeight: 150}">
+
       <volist name=":C('BUSINESS')" key='k' id="vo">
-        <option <eq name="cinfo.business" value="$k">selected="selected"</eq> value="{$k}">{$vo}</option>
+        <if condition="check_business($cinfo['business'],$k)">
+          <option selected="selected" value="{$k}">{$vo}</option>
+        <else/>
+          <option value="{$k}">{$vo}</option>
+        </if>
       </volist> 
-      </select></br></br>
+      </select>
+      <input type="hidden" id="yewu" name="business" value="{$cinfo.business}">
+      </br></br>
 
       <div class="am-cf">
          <div class="am-btn am-btn-primary  am-radius am-btn-lg am-btn-block" id="nextbtn" >完成注册</div>
@@ -87,6 +94,12 @@
             return false;
           }
           else{
+            var selectedValues = [];
+            $("#yewuselected").each(function(){
+               selectedValues.push($(this).val()); 
+               document.getElementById("yewu").setAttribute("value", selectedValues);
+            });
+
             //提交数据
             var self = $('form');
             var ajaxUrl = self.attr('action');

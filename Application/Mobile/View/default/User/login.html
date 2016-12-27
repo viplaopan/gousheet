@@ -72,7 +72,7 @@ $(function(){
         return false;
         function success(data){
             if(data.status){
-                alert('登录成功');
+                window.location.href = data.url;
 
             }else{
                 $("#dangeralert_text").html(data.info);

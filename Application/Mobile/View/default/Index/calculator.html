@@ -1,0 +1,130 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    
+</block>
+<block name="header-title">
+  <!-- Header -->
+  <header data-am-widget="header" class="am-header am-header-default">
+    <h1 class="am-header-title">
+      <a href="#title-link">计算器</a>
+    </h1>
+  </header>
+</block>
+
+<block name="body">
+    
+<!-- TAB -->
+<div data-am-widget="tabs"
+       class="am-tabs am-tabs-default"
+        >
+      <ul class="am-tabs-nav am-cf">
+          <li class="am-active"><a href="[data-tab-panel-0]">重量计算器</a></li>
+          <li class=""><a href="[data-tab-panel-1]">压力计算器</a></li>
+      </ul>
+      <div class="am-tabs-bd">
+          <div data-tab-panel-0 class="am-tab-panel am-active">
+                <form class="am-form am-form-horizontal">
+                  <div class="am-form-group">
+                    <label for="doc-ipt-1" class="am-u-sm-4 am-form-label">外径(mm)：</label>
+                    <div class="am-u-sm-8">
+                      <input type="number" id="weight_waijing" placeholder="输入外径">
+                    </div>
+                  </div>
+
+                  <div class="am-form-group">
+                    <label for="doc-ipt-2" class="am-u-sm-4 am-form-label">壁厚(mm)：</label>
+                    <div class="am-u-sm-8">
+                      <input type="number" id="weight_bihou" placeholder="输入壁厚">
+                    </div>
+                  </div>
+
+                 <div class="am-form-group">
+                    <label for="doc-ipt-3" class="am-u-sm-4 am-form-label">长度(M)：</label>
+                    <div class="am-u-sm-8">
+                      <input type="number" id="weight_long" placeholder="输入长度">
+                    </div>
+                  </div>
+
+                  <div class="am-form-group" >
+                    <label for="doc-ipt-3" class="am-u-sm-10 am-form-label" id="showvaluediv" style="color:#eb4f38;display:none;">结果：</label>
+                  </div>
+
+                  <div class="am-form-group">
+                    <div class="am-u-sm-12 am-u-sm-offset-0">
+                      <div class="am-btn am-btn-primary am-radius am-btn-lg am-btn-block" id="startbtn">开始计算</div>
+                    </div>
+                  </div>
+                </form>
+          </div>
+          <div data-tab-panel-1 class="am-tab-panel "> 
+             <form class="am-form am-form-horizontal">
+                  <div class="am-form-group">
+                  <label for="doc-ipt-1" class="am-u-sm-4 am-form-label">材质：</label>
+                   &nbsp;&nbsp;<select data-am-selected="{maxHeight: 220}" id="pressure_caizhi">
+                      <option value="520" selected>304(抗拉强度为520)</option>
+                      <option value="480">304L(抗拉强度为480)</option>
+                      <option value="480">316L(抗拉强度为480)</option>
+                      <option value="520">321(抗拉强度为520)</option>
+                      <option value="530">310S(抗拉强度为530)</option>
+                      <option value="530">316Ti(抗拉强度为530)</option>
+                      <option value="480">317L(抗拉强度为480)</option>
+                      <option value="520">347H(抗拉强度为520)</option>
+                    </select>
+                  </div>
+                  <div class="am-form-group">
+                    <label for="doc-ipt-1"  class="am-u-sm-4 am-form-label">外径(mm)：</label>
+                    <div class="am-u-sm-8">
+                      <input type="number" id="pressure_waijing" placeholder="输入外径">
+                    </div>
+                  </div>
+
+                  <div class="am-form-group">
+                    <label for="doc-ipt-2" class="am-u-sm-4 am-form-label">壁厚(mm)：</label>
+                    <div class="am-u-sm-8">
+                      <input type="number" id="pressure_bihou" placeholder="输入壁厚">
+                    </div>
+                  </div>
+
+                  <div class="am-form-group" >
+                    <label for="doc-ipt-3" class="am-u-sm-10 am-form-label" id="pressure_showvaluediv" style="color:#eb4f38;display:none;">结果：</label>
+                  </div>
+
+                  <div class="am-form-group">
+                    <div class="am-u-sm-12 am-u-sm-offset-0">
+                      <button id="pressure_startbtn" class="am-btn am-btn-primary am-btn-lg am-btn-block am-radius">开始计算</button>
+
+                    </div>
+
+                  </div>
+                </form>
+          </div>
+      </div>
+  </div>
+</block>
+<block name="script">
+    <script src="__JS__/jquery.min.js"></script>
+    <script src="__JS__/amazeui.min.js"></script>
+    <script type="text/javascript">
+      $('#startbtn').click(function () {
+        var waijing = $('#weight_waijing').val();
+        var bihou = $('#weight_bihou').val();
+        var long = $('#weight_long').val();
+        var finalvalue = (waijing-bihou)*bihou*0.02491*long;
+
+        $("#showvaluediv").html("计算结果 : "+finalvalue+" 公斤");
+        $("#showvaluediv").show();
+      });
+
+        $('#pressure_startbtn').click(function () {
+        var caizhi = $('#pressure_caizhi').val();
+        var waijing = $('#pressure_waijing').val();
+        var bihou = $('#pressure_bihou').val();
+        var finalvalue = 2*bihou*caizhi*0.4/waijing;
+
+        $("#pressure_showvaluediv").html("计算结果 : "+finalvalue+" 压力(Mpa)");
+        $("#pressure_showvaluediv").show();
+        return false;
+      });
+    </script>
+</block>
