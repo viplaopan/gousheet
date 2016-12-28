@@ -322,6 +322,9 @@ class UserController extends HomeController {
     }
 
     public function edit_my_recruit($id = 0){
+    	if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
     	$isEdit = $id?1:0;
 		if(IS_POST){
 			
@@ -354,6 +357,9 @@ class UserController extends HomeController {
     	$this->display();
     }
     public function do_xianhuo($do = ''){
+    	if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
     	if($do == 'update'){
     		$company = D('Company')->where('uid = ' . UID)->find();
 	        $cid = $company['id'];
