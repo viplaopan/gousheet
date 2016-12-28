@@ -1,0 +1,82 @@
+<extend name="Base/common"/>
+<block name='style'>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</block>
+<!-- Header -->
+<block name="header-title">
+  <div class="am-header-left am-header-nav">
+          <a href="my-recruit.html" class="">
+              <img class="am-header-icon-custom" src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;" alt=""/>       
+          </a>
+      </div>
+  <h1 class="am-header-title">
+    <a href="#title-link">发布招聘</a>
+  </h1>
+</block>
+<block name="body">
+  
+
+<form class="am-form" method="post" action="__SELF__">
+  <fieldset>
+    <div class="am-form-group">
+      <input type="text" name="title" value="{$recruit.title}" placeholder="标题：">
+    </div>
+
+    <div class="am-form-group">
+      <input type="text" name="address" value="{$recruit.address}" placeholder="工作地址：">
+    </div>
+
+    <div class="am-form-group">
+      <input type="text" name="num" value="{$recruit.num}" placeholder="招聘人数：">
+    </div>
+
+    <div class="am-form-group">
+      <input type="text" name="jyan" value="{$recruit.jyan}" placeholder="工作经验：">
+    </div>
+
+    <div class="am-form-group">
+      <input type="text" name="xli" value="{$recruit.xli}" placeholder="学历要求：">
+    </div>
+
+    <div class="am-form-group">
+      <textarea class="" name="content" rows="5" placeholder="内容">{$recruit.content}</textarea>
+    </div>
+    <input type="hidden" name="id" value="{$recruit.id}">
+    <p><button type="submit" class="am-btn am-btn-primary am-radius am-btn-lg am-btn-block">提 交</button></p>
+  </fieldset>
+</form>
+
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('form').submit(function(){
+        var self = $(this);
+        $.post(self.attr('action'),self.serialize(),success,'json');
+        return false;
+        function success(data){
+          if(data.status){
+            alert(data.info);
+            window.location.href = data.url;
+          }else{
+            alert(data.info)
+          }
+        }
+      });
+    })
+  </script>
+</block>

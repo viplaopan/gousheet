@@ -180,7 +180,7 @@ class UserController extends HomeController {
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
 					//TODO:跳转到登录前页面
-					$this->success('登录成功！',U('myinfo'));
+					$this->success('登录成功！',U('my'));
 				} else {
 					$this->error($Member->getError());
 				}
@@ -285,5 +285,112 @@ class UserController extends HomeController {
             $this->display();
         }
     }
+    public function my(){
+    	if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
+		$info = D('Member')->where('uid = ' . UID )->find();
+		$this->assign('info',$info);
+		
+		$cinfo = D('Company')->where('uid = ' . UID )->find();
+		$this->assign('cinfo',$cinfo);
 
+		$cont = D('Contact')->where('cid = ' . $cinfo['id'])->find();
+		$this->assign('cont',$cont);
+
+		$uinfo = D('UcenterMember')->where('id = ' . UID )->find();
+		$this->assign('uinfo',$uinfo);
+    	$this->display();
+    }
+    public function my_recruit(){
+        if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
+		$recruits = D('Recruit')->where(array('cid'=>get_company())) -> select();
+		foreach($recruits as &$val){
+            //获取公司信息
+            $info = D('Company')->where(array('id'=>$val['cid']))->find();
+            $val['company'] = $info;
+           
+            //获取联系信息
+            $contact = D('Contact')->where(array('cid'=>$val['cid']))->find();
+            $val['contact'] = $contact;
+        }
+        unset($val);
+		$this->assign('recruits',$recruits);
+		$this->display();
+    }
+
+    public function edit_my_recruit($id = 0){
+    	$isEdit = $id?1:0;
+		if(IS_POST){
+			
+			$data = D('Recruit')->create();
+           	
+			if($isEdit){
+				$res = D('Recruit')->where(array('id' => $id))->save($data);
+				
+			}else{
+				$res = D('Recruit')->add($data);  
+			}
+
+			if($res){
+				$this->success('提交成功',U('User/my_recruit'));
+			}else{
+				$this->error('数据错误');
+			}
+			
+		}else{
+			if($isEdit){
+				$recruit = D('Recruit')->where('id = ' . $id) -> find();
+			}
+			
+			$this->assign('recruit',$recruit);
+			$this->display();
+		}
+    }
+
+    public function my_stock(){
+    	$this->display();
+    }
+    public function do_xianhuo($do = ''){
+    	if($do == 'update'){
+    		$company = D('Company')->where('uid = ' . UID)->find();
+	        $cid = $company['id'];
+			D('xhGangguan')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhFalan')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhFamen')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhXingcai')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhBancai')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhJuancai')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhDaicai')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhGuanjianWt')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhGuanjianSst')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			D('xhGuanjianFt')->where('cid = '.$cid)->save(array('create_time'=>time()));
+			$this->success('更新成功');
+    	}
+    	if($do == 'delete'){
+    		$company = D('Company')->where('uid = ' . UID)->find();
+	        $cid = $company['id'];
+			D('xhGangguan')->where('cid = '.$cid)->delete();
+			D('xhFalan')->where('cid = '.$cid)->delete();
+			D('xhFamen')->where('cid = '.$cid)->delete();
+			D('xhXingcai')->where('cid = '.$cid)->delete();
+			D('xhBancai')->where('cid = '.$cid)->delete();
+			D('xhJuancai')->where('cid = '.$cid)->delete();
+			D('xhDaicai')->where('cid = '.$cid)->delete();
+			D('xhGuanjianWt')->where('cid = '.$cid)->delete();
+			D('xhGuanjianSst')->where('cid = '.$cid)->delete();
+			D('xhGuanjianFt')->where('cid = '.$cid)->delete();
+			$this->success('删除成功');
+    	}
+    	if($do == 'logout'){
+    		if(is_login()){
+				D('Member')->logout();
+				$this->success('退出成功！', U('User/login'));
+			} else {
+				$this->redirect('User/login');
+			}
+    	}
+    }
 }

@@ -1,0 +1,41 @@
+<extend name="Base/common"/>
+<block name='style'>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</block>
+<!-- Header -->
+<block name="header-title">
+  <h1 class="am-header-title">
+    <a href="#title-link">会员中心</a>
+  </h1>
+</block>
+<block name="body">
+  
+
+<ul class="am-list">
+  <li><a href="{:U('User/myinfo')}">&nbsp;&nbsp;您好，{$uinfo.mobile}<img src="assets/images/rightfold.png" class="minicon"></a></li>
+</ul>
+<ul class="am-list">
+  <li><a href="{:U('User/my_stock')}">&nbsp;&nbsp;管理库存<img src="assets/images/rightfold.png" class="minicon"></a> </li>
+  <li><a href="{:U('User/my_recruit')}">&nbsp;&nbsp;我的招聘<img src="assets/images/rightfold.png" class="minicon"></a></li>
+  <li><a href="my-repassword.html">&nbsp;&nbsp;修改密码<img src="assets/images/rightfold.png" class="minicon"></a></li>
+</ul>
+<include file="Public/infolists"/>
+
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+ 
+</block>

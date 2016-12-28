@@ -1,0 +1,104 @@
+<extend name="Base/common"/>
+<block name='style'>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 100%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</block>
+<!-- Header -->
+<block name="header-title">
+  <div class="am-header-left am-header-nav">
+          <a href="my.html" class="">
+              <img class="am-header-icon-custom" src="data:image/svg+xml;charset&#x3D;utf-8,&lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; viewBox&#x3D;&quot;0 0 12 20&quot;&gt;&lt;path d&#x3D;&quot;M10,0l2,2l-8,8l8,8l-2,2L0,10L10,0z&quot; fill&#x3D;&quot;%23fff&quot;/&gt;&lt;/svg&gt;" alt=""/>       
+          </a>
+      </div>
+  <h1 class="am-header-title">
+    <a href="#title-link">库存管理</a>
+  </h1>
+</block>
+<block name="body">
+<div class="header">
+  <div class="am-alert am-alert-danger" id="dangeralert" data-am-alert style="display:none;">
+    <p id="dangeralert_text"></p>
+  </div>
+</div>
+  <ul class="am-list">
+  <li><a id="update_xh" href="javascript:;">&nbsp;&nbsp;更新库存<img src="__IMG__/rightfold.png" class="minicon"></a></li>
+  <li><a id="del_xh" href="javascript:;">&nbsp;&nbsp;删除库存<img src="__IMG__/rightfold.png" class="minicon"></a></li>
+</ul>
+
+
+<Button id='logout' value="登  录" class="am-btn am-btn-danger am-radius am-btn-lg am-btn-block">
+退出登录</Button>
+</block>
+<block name="script">
+  <script src="__JS__/jquery.min.js"></script>
+  <script src="__JS__/amazeui.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('#update_xh').click(function(){
+        var ajaxUrl = '{:U("do_xianhuo")}';
+        $.post(ajaxUrl,{do:'update'},success,'json');
+        return false;
+        function success(data){
+          if(data.status){
+              $("#dangeralert_text").html(data.info);
+              $('#dangeralert').css('background-color','#35ecac');
+              $('#dangeralert').css('border-color','#35ecac');
+              
+              $('#dangeralert').show();
+              return false;
+          }else{
+
+          }
+        }
+      })
+      $('#del_xh').click(function(){
+        var ajaxUrl = '{:U("do_xianhuo")}';
+        $.post(ajaxUrl,{do:'delete'},success,'json');
+        return false;
+        function success(data){
+          if(data.status){
+              $("#dangeralert_text").html(data.info);
+              $('#dangeralert').css('background-color','#35ecac');
+              $('#dangeralert').css('border-color','#35ecac');
+              
+              $('#dangeralert').show();
+              return false;
+          }else{
+
+          }
+        }
+      })
+      $('#logout').click(function(){
+        var ajaxUrl = '{:U("do_xianhuo")}';
+        $.post(ajaxUrl,{do:'logout'},success,'json');
+        return false;
+        function success(data){
+          if(data.status){
+              window.location.href = data.url;
+              $("#dangeralert_text").html(data.info);
+              $('#dangeralert').css('background-color','#35ecac');
+              $('#dangeralert').css('border-color','#35ecac');
+              
+              $('#dangeralert').show();
+
+
+              return false;
+          }else{
+
+          }
+        }
+      })
+    })
+  </script>
+</block>
