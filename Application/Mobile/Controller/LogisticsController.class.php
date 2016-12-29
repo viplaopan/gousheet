@@ -15,7 +15,7 @@ use Think\Controller;
  */
 class LogisticsController extends Controller {
     public function index($from = '' ,$to = '', $page = 1){
-        if($from&&$to){
+        if($to){
             $from = I('get.from');
             $to = I('get.to');
             $map['from'] = $from;
