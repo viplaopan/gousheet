@@ -16,9 +16,7 @@ use Think\Controller;
 class LogisticsController extends Controller {
     public function index($from = '' ,$to = '', $page = 1){
         if($to){
-            $from = I('get.from');
             $to = I('get.to');
-            $map['from'] = $from;
             $map['to'] = array('like',"%$to%");
         }
         $map['status'] = 1;
