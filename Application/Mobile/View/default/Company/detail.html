@@ -6,29 +6,30 @@
 <block name="body">
     
 
+
+
 <!-- 公司详情 -->
+<div class="am-panel-bd">
+<p>您要找的是：{$info.pinzhong} 304 194*20*1300</p></br>
+<p>更新日期：{$info.create_time|date="Y-m-d",###}</p>
+<p style="font-weight:bold">供应商：温州科光钢业有限公司</p>
+<p>简称：{$company.small_name}</p>
+<p>仓库：永中建中南街25-33号城北钢材市场（泰丰阀门后面）</p>
+<a href="tel:0577-85981955"><p>电话：{$contact.tel} </p></a>
+<a href="tel:18957726920"><p>手机：{$contact.mobile}</p></a>
+<a href="tel:0577-85981966"><p>传真：{$contact.fax}</p></a>
+</div>
 <div class="am-panel am-panel-default" id="companymain" style="">
   <div class="am-panel-hd">
-    <h3 class="am-panel-title">{$company.name}</h3>
+    <h3 class="am-panel-title">公司介绍</h3>
   </div>
   <div class="am-panel-bd">
-    <p>
-      <figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }">
-      <img src="{$himg1.path|default=''}" alt="公司营业执照"/>
-          <figcaption class="am-figure-capition-btm">
-            公司营业执照
-          </figcaption>  
-      </figure>
-    </p>
-    <p>更新日期：{$info.create_time|date="Y-m-d",###}</p>
-    <p>公司简介：{$company.descsm}</p>
-  </div>
-  <div class="am-panel-footer">
-    <p>联系电话：{$contact.mobile}</p>
-    <p>地址：{$company.com_address}</p>
-    <a href="tel:13758797128"><img src="{$himg1.path|default=''}" width="50px" style="float: right; margin-top:-53px" /></a>    
+    <p>{$company.descsm} </p>
   </div>
 </div>
+
+
+
 
 </block>
 <block name="script">
