@@ -24,7 +24,7 @@ class IndexController extends Controller {
         $this->assign('companies', $companies);
 
     	//热文要闻
-    	$hot = D('Document')->limit(5)->order('updata_time desc')->position(4);
+    	$hot = D('Document')->limit(5)->order('update_time desc')->position(4);
 
     	$this->assign('hot', $hot);
 
