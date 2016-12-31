@@ -16,7 +16,7 @@ use Think\Controller;
 class NewsController extends Controller {
     public function index(){
         //热文要闻
-        $hot = D('Document')->limit(5)->position(4);
+        $hot = D('Document')->order('update_time desc')->limit(5)->position(4);
         $this->assign('hot', $hot);
 
         //市场快讯
