@@ -27,7 +27,7 @@
                     <volist name='lists' id='vo'>
                         <div class="i1">
                             <div class="i1_left">
-                                <div class="j1"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}" class="blue">{$vo.title|msubstr=0,10}</a></div>
+                                <div class="j1"><a href="{:U('Home/News/detail',array('id'=>$vo['id']))}" class="blue">{$vo.title|msubstr=0,20}</a></div>
                                 <div class="j2">作者:购钢网</div>
                                 <div class="j3">{$vo.create_time|date='Y-m-d',###}</div>
                                 <div class="j4">{$vo.view}</div>
