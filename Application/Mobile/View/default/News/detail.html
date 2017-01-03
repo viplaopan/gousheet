@@ -40,4 +40,13 @@
 <block name="script">
     <script src="__JS__/jquery.min.js"></script>
     <script src="__JS__/amazeui.min.js"></script>
+    <script type="text/javascript">
+      function ReImgSize(){
+          for (j=0;j<document.images.length;j++)
+          {
+          document.images[j].width=(document.images[j].width>320)?"320":document.images[j].width;
+          }
+        }
+        ReImgSize()
+    </script>
 </block>
