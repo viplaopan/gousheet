@@ -13,7 +13,7 @@ use Think\Controller;
  * 其他页面控制器
  * 主要获取首页聚合数据
  */
-class LogisticsController extends Controller {
+class LogisticsController extends HomeController {
     public function index($from = '' ,$to = '', $page = 1){
         if($from&&$to){
             $from = I('get.from');

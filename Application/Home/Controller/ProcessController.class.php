@@ -13,7 +13,7 @@ use Think\Controller;
  * 其他页面控制器
  * 主要获取首页聚合数据
  */
-class ProcessController extends Controller {
+class ProcessController extends HomeController {
     public function index($cate = 0, $page = 1){
         $name = I("get.name");
     	//读取钢管类 分类

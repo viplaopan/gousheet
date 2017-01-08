@@ -13,7 +13,7 @@ use Think\Controller;
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
-class NewsController extends Controller {
+class NewsController extends HomeController {
     public function index(){
         //热文要闻
         $hot = D('Document')->order('update_time desc')->limit(5)->position(4);

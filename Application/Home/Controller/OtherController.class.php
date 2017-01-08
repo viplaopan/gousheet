@@ -13,7 +13,7 @@ use Think\Controller;
  * 其他页面控制器
  * 主要获取首页聚合数据
  */
-class OtherController extends Controller {
+class OtherController extends HomeController {
     public function Contact(){
         $this->display();
     }

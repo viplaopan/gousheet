@@ -13,7 +13,7 @@ use Think\Controller;
  * 其他页面控制器
  * 主要获取首页聚合数据
  */
-class BuyController extends Controller {
+class BuyController extends HomeController {
     public function index($cate = 0){
         
         $this->display();

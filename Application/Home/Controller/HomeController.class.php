@@ -23,6 +23,9 @@ class HomeController extends Controller {
 
 
     protected function _initialize(){
+    	if(isMobile()){
+			header("Location: http://m.gousteel.com/"); 
+		}
         /* 读取站点配置 */
         $config = api('Config/lists');
         C($config); //添加配置

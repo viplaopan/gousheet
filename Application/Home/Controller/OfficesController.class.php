@@ -9,7 +9,7 @@ namespace Home\Controller;
 use Think\Controller;
 
 
-class OfficesController extends Controller {
+class OfficesController extends HomeController {
     /*办公室列表页面*/
     public function index (){
     	//获取选中的地区

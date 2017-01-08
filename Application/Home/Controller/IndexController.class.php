@@ -13,7 +13,7 @@ use Think\Controller;
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
-class IndexController extends Controller {
+class IndexController extends HomeController {
 
 	//网站首页
     public function index(){

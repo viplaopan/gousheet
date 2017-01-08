@@ -13,7 +13,7 @@ use Think\Controller;
  * 其他页面控制器
  * 主要获取首页聚合数据
  */
-class TalentController extends Controller {
+class TalentController extends HomeController {
     public function index($page = 1){
         $map['status'] = 1;
         $lists = D('Recruit')->where($map)->order('create_time desc')->page($page, 20)->select();
