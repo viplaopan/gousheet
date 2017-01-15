@@ -88,7 +88,7 @@ class SearchController extends Controller {
 		$page_nums = C('PAGE_NUM');
 		
 		$lists = D("xhGangguan")->where($map)->order($order)->page($page, 20)->select();
-        echo D("xhGangguan")->getLastSql();
+
 		$totalCount = D('xhGangguan')->where($map)->count();
 		
 		$main_business = C('COMPANY_TYPE');
@@ -135,6 +135,7 @@ class SearchController extends Controller {
     		if($lists){
     			$data['status'] = 1;
     			$data['content'] = $lists;
+                $data['page'] = $page;
     			$this->ajaxReturn($data,'json');
     		}else{
     			$this->error();
