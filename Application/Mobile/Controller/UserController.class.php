@@ -287,7 +287,7 @@ class UserController extends HomeController {
     }
     public function my(){
     	if ( !is_login() ) {
-			$this->error( '您还没有登陆',U('User/login') );
+			$this->error( '您还没有登陆',U('User/login'),0);
 		}
 		$info = D('Member')->where('uid = ' . UID )->find();
 		$this->assign('info',$info);
