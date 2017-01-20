@@ -42,10 +42,10 @@
       <volist name='lists' id='vo'>
         <li class="am-g am-list-item-desced">
             <a href="{$vo.url}" class="am-list-item-hd ">{$vo.name}</a>
-            <div class="am-list-item-text">联系人：{$vo.contact.name}</div>
-            <div class="am-list-item-text">联系电话：{$vo.contact.tel}</div>
-            <div class="am-list-item-text">手机号码：{$vo.contact.mobile}</div>
-            <div class="am-list-item-text">地址：{$vo.com_address}</div>
+            <div class="am-list-item-text">联系人：{$vo.contact.name|default='未填写'}</div>
+            <div class="am-list-item-text">联系电话：{$vo.contact.tel|default='未填写'}</div>
+            <div class="am-list-item-text">手机号码：{$vo.contact.mobile|default='未填写'}</div>
+            <div class="am-list-item-text">地址：{$vo.com_address|default='未填写'}</div>
         </li>
       </volist>
 
