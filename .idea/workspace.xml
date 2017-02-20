@@ -25,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/Sactuals.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+              <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -373,12 +373,12 @@
       <workItem from="1472614879848" duration="5448000" />
       <workItem from="1472629821636" duration="1332000" />
       <workItem from="1472704933160" duration="622000" />
-      <workItem from="1487560735689" duration="1838000" />
+      <workItem from="1487560735689" duration="1876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9240000" />
+    <option name="totallyTimeSpent" value="9278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -2314,7 +2314,7 @@
     <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/Sactuals.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding />
         </state>
       </provider>

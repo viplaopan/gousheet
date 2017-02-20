@@ -28,7 +28,7 @@
         <volist name="lists" id="vo">
             <tr>
                 <td><a href="{$vo.url}">{$vo['company']['small_name']}</a></td>
-                <td><eq name="" value="0.00"><else/>{$vo.zhishu}</eq></td>
+                <td><eq name="vo.zhishu" value="0.00"><else/>{$vo.zhishu}</eq></td>
                 <td>{$vo.zhongliang|default="0"}</td>
                 <td><a href="tel:{$vo.contact.mobile}">点击拨打</a></td>
             </tr>   
