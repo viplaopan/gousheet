@@ -783,6 +783,12 @@ class SearchController extends Controller {
         $biaomian = I("get.jcbm");
         $changjia = I("get.jccj");
         $city = I("get.bccs");
+
+        //输出
+        $this->assign('pinzhong',$pinzhong);
+        $this->assign('caizhi',$caizhi);
+        $this->assign('guige',$guige);
+
         //搜索现货开始
         if($biaomian != '')$map['biaomian'] = $biaomian;
         if($caizhi != '')$map['caizhi'] = $caizhi;
