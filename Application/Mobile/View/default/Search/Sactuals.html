@@ -52,9 +52,11 @@
                     if(data.status){
                         var html ="";
                         $.each(data.content,function(i,item){
+
+                            var zhishu = item.zhishu == 0?'':item.zhishu;
                             html += '<tr>'+
                                         '<td><a href="' +item.url+ '">' +item.company.small_name+ '</a></td>' +
-                                        '<td>' +item.zhishu+ '</td>' +
+                                        '<td>' +zhishu+ '</td>' +
                                         '<td>' +item.zhongliang+ '</td>' +
                                         '<td><a href="tel:' +item.contact.mobile+'">点击拨打</a></td>' +
                                     '</tr>';
