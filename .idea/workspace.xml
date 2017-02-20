@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="molding_two.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/molding_two.html">
+      <file leaf-file-name="frenchay.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/frenchay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="57" column="61" lean-forward="false" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+            <state relative-caret-position="306">
+              <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -46,6 +46,7 @@
         <option value="$PROJECT_DIR$/Application/Mobile/View/default/Search/molding_three.html" />
         <option value="$PROJECT_DIR$/Application/Mobile/View/default/Search/molding_one.html" />
         <option value="$PROJECT_DIR$/Application/Mobile/View/default/Search/molding_two.html" />
+        <option value="$PROJECT_DIR$/Application/Mobile/View/default/Search/frenchay.html" />
       </list>
     </option>
   </component>
@@ -253,12 +254,12 @@
       <workItem from="1472614879848" duration="5448000" />
       <workItem from="1472629821636" duration="1332000" />
       <workItem from="1472704933160" duration="622000" />
-      <workItem from="1487560735689" duration="873000" />
+      <workItem from="1487560735689" duration="963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8275000" />
+    <option name="totallyTimeSpent" value="8365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1539,7 +1540,39 @@
     <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/molding_two.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
-          <caret line="57" column="61" lean-forward="false" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+          <caret line="57" column="61" lean-forward="false" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="61" />
+          <folding>
+            <marker date="1487567554000" expanded="true" signature="55:566" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="100:484" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="154:475" ph="..." />
+            <marker date="1487567554000" expanded="false" signature="206:448" ph="data:" />
+            <marker date="1487567554000" expanded="true" signature="515:557" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="586:1617" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="636:857" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="965:1494" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="977:1117" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="990:1104" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1140:1485" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1178:1472" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1195:1451" ph="..." />
+            <marker date="1487567554000" expanded="false" signature="1521:1555" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1639:2982" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1745:2973" ph="..." />
+            <marker date="1487567554000" expanded="true" signature="1765:2961" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="1824:2952" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="1912:2942" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="2083:2928" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="2120:2844" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="2220:2692" ph="{...}" />
+            <marker date="1487567554000" expanded="true" signature="2848:2910" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Mobile/View/default/Search/frenchay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
           <folding />
         </state>
       </provider>
