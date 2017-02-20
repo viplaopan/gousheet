@@ -19,7 +19,7 @@
     <thead>
         <tr>
             <th>公司简称</th>
-            <th>规格</th>
+            <th>支数</th>
             <th>重量</th>
             <th>电话咨询</th>
         </tr>
@@ -28,7 +28,7 @@
         <volist name="lists" id="vo">
             <tr>
                 <td><a href="{$vo.url}">{$vo['company']['small_name']}</a></td>
-                <td>{$vo.guige}</td>
+                <td>{$vo.zhishu}</td>
                 <td>{$vo.zhongliang|default="0"}</td>
                 <td><a href="tel:{$vo.contact.mobile}">点击拨打</a></td>
             </tr>   
@@ -54,7 +54,7 @@
                         $.each(data.content,function(i,item){
                             html += '<tr>'+
                                         '<td><a href="' +item.url+ '">' +item.company.small_name+ '</a></td>' +
-                                        '<td>' +item.guige+ '</td>' +
+                                        '<td>' +item.zhishu+ '</td>' +
                                         '<td>' +item.zhongliang+ '</td>' +
                                         '<td><a href="tel:' +item.contact.mobile+'">点击拨打</a></td>' +
                                     '</tr>';
