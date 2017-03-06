@@ -505,7 +505,11 @@ class GuandaoController extends HomeController {
 			$guige_yali = $guiges[1];
 			if($guige_koujing != '')$map['guige_koujing'] = array('like','%'.$guige_koujing.'%');
 			if($guige_yali != '')$map['guige_yali'] = array('like','%'.$guige_yali.'%');
-
+            if($order){
+                $order.=",create_time desc";
+            }else{
+                $order.="create_time desc";
+            }
 			if($order){
 				$order.=",CAST(`guige_koujing` AS DECIMAL) asc";
 			}else{
@@ -513,11 +517,7 @@ class GuandaoController extends HomeController {
 			}
 		}
 
-		if($order){
-			$order.=",create_time desc";
-		}else{
-			$order.="create_time desc";
-		}
+
 		//获取每页显示数量
 		$page_nums = C('PAGE_NUM');
 		
