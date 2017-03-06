@@ -24,8 +24,8 @@
       <file leaf-file-name="GuandaoController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Home/Controller/GuandaoController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="514" column="21" lean-forward="false" selection-start-line="514" selection-start-column="21" selection-end-line="514" selection-end-column="21" />
+            <state relative-caret-position="692">
+              <caret line="523" column="82" lean-forward="true" selection-start-line="523" selection-start-column="82" selection-end-line="523" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -250,12 +250,12 @@
       <workItem from="1472629821636" duration="1332000" />
       <workItem from="1472704933160" duration="622000" />
       <workItem from="1487560735689" duration="3268000" />
-      <workItem from="1488807563612" duration="82000" />
+      <workItem from="1488807563612" duration="267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10752000" />
+    <option name="totallyTimeSpent" value="10937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -710,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/Controller/GuandaoController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="514" column="21" lean-forward="false" selection-start-line="514" selection-start-column="21" selection-end-line="514" selection-end-column="21" />
+        <state relative-caret-position="692">
+          <caret line="523" column="82" lean-forward="true" selection-start-line="523" selection-start-column="82" selection-end-line="523" selection-end-column="82" />
           <folding />
         </state>
       </provider>

@@ -512,7 +512,7 @@ class GuandaoController extends HomeController {
 				$order.="CAST(`guige_koujing` AS DECIMAL) asc";
 			}
 		}
-		dump($order);
+
 		if($order){
 			$order.=",create_time desc";
 		}else{
@@ -522,6 +522,7 @@ class GuandaoController extends HomeController {
 		$page_nums = C('PAGE_NUM');
 		
 		$lists = D("xhFalan")->where($map)->order($order)->page($p, 20)->select();
+		dump(D("xhFalan")->getLastSql());
 		$totalCount = D('xhFalan')->where($map)->count();
 		
         $this->assign('totalPageCount', $totalCount);
