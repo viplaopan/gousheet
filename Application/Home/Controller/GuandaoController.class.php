@@ -512,6 +512,7 @@ class GuandaoController extends HomeController {
 				$order.="CAST(`guige_koujing` AS DECIMAL) asc";
 			}
 		}
+		dump($order);
 		if($order){
 			$order.=",create_time desc";
 		}else{
