@@ -78,4 +78,7 @@ class IndexController extends HomeController {
         $this->assign('himg1' , $himg1);
         $this->display();
     }
+    public function zx(){
+        $this->display();
+    }
 }
