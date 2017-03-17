@@ -81,4 +81,7 @@ class IndexController extends HomeController {
     public function zx(){
         $this->display();
     }
+    public function swhz(){
+        $this->display();
+    }
 }
