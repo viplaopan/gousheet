@@ -21,12 +21,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Home/View/default/Public/header.html">
+      <file leaf-file-name="swhz.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Home/View/default/Index/swhz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="105">
+              <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#block#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,8 +61,8 @@
         <option value="$PROJECT_DIR$/Application/Home/Controller/GuandaoController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/default/Index/zx.html" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Home/View/default/Index/swhz.html" />
         <option value="$PROJECT_DIR$/Application/Home/View/default/Public/header.html" />
+        <option value="$PROJECT_DIR$/Application/Home/View/default/Index/swhz.html" />
       </list>
     </option>
   </component>
@@ -155,6 +158,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="swhz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gousteelgit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gousteelgit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swhz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,12 +441,12 @@
       <workItem from="1472704933160" duration="622000" />
       <workItem from="1487560735689" duration="3268000" />
       <workItem from="1488807563612" duration="446000" />
-      <workItem from="1489756265771" duration="1384000" />
+      <workItem from="1489756265771" duration="1542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12500000" />
+    <option name="totallyTimeSpent" value="12658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -1163,10 +1192,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/default/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1748">
+          <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
+          <folding>
+            <marker date="1489762144000" expanded="true" signature="6:224" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="38:100" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="134:216" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="242:6973" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="261:6537" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="268:6529" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="276:308" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="316:4149" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="377:509" ph="..." />
+            <marker date="1489762144000" expanded="false" signature="396:407" ph="..." />
+            <marker date="1489762144000" expanded="false" signature="450:460" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="519:4138" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="4157:5109" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="4196:4328" ph="..." />
+            <marker date="1489762144000" expanded="false" signature="4215:4226" ph="..." />
+            <marker date="1489762144000" expanded="false" signature="4269:4279" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="4338:5097" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5117:5192" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5200:5273" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5281:5355" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5363:5440" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5448:5535" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5566:6521" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5588:5866" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5610:5856" ph="..." />
+            <marker date="1489762144000" expanded="false" signature="5779:5793" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5902:6220" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="5921:6206" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="5959:6198" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="6083:6190" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="6108:6142" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="6146:6181" ph="{...}" />
+            <marker date="1489762144000" expanded="true" signature="6252:6512" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="6562:6966" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="6586:6956" ph="..." />
+            <marker date="1489762144000" expanded="true" signature="6673:6947" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/static/swhz/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Public/static/swhz/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="120">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
             <marker date="1489756161000" expanded="true" signature="164:963" ph="..." />
             <marker date="1489756161000" expanded="true" signature="171:347" ph="..." />
@@ -1184,27 +1266,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/default/Index/swhz.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="81" lean-forward="false" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+        <state relative-caret-position="105">
+          <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
           <folding>
-            <marker date="1489762105000" expanded="true" signature="49:139" ph="..." />
-            <marker date="1489762105000" expanded="true" signature="159:883" ph="..." />
-            <marker date="1489762105000" expanded="true" signature="182:874" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="219:253" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="368:383" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="472:490" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="579:597" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="686:704" ph="..." />
-            <marker date="1489762105000" expanded="false" signature="793:811" ph="..." />
+            <element signature="n#style#0;n#div#1;n#div#0;n#block#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#block#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/View/default/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
